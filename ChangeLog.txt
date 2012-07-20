@@ -1,0 +1,55 @@
+ChangeLog for Redland-ObjC
+
+2005-08-23 kianga:
+	Redland-ObjC now uses SenTestingKit instead of UnitKit for all unit tests. SenTestingKit is included with Xcode 2.1.
+	Added limit/setLimit: and offset/setOffset: methods to RedlandQuery class.
+
+2005-02-06 kianga:
+	API CHANGE: Added baseURI argument to all RedlandQuery initializers.
+	Added -[RedlandModel containsContext:] method which checks for the existence of a context in the model.
+	Added methods isBindings, isBoolean, isGraph, getBoolean, and resultStream to QueryResults class.
+	Added new serializer name constants RedlandAbbreviatedRDFXMLSerializer and RedlandRSS10Serializer.
+
+2004-11-06 kianga:
+	Added feature constants for all Raptor features (as of raptor-1.4.2).
+	Recompiled against patched Raptor-1.4.2 to re-enable RSS tag soup parser.
+
+2004-11-03 kianga:
+	Fix librdf assertion when calling [RedlandNode URIValue] on a non-resource node.
+	Change includes from <redland.h> to <Redland/redland.h>.
+	Include Redland headers in framework package.
+	Released 0.9.19p1.
+	Patched Redland header files to include <Redland/...> if LIBRDF_OBJC_FRAMEWORK is defined.
+	Various changes to the build system.
+	Added COMPILING.txt with some hints for compiling the framework from source.
+	Added Documentation target which automatically generates framework documentation via HeaderDoc.
+	Added aggregate target "Release" which runs all tests, compiles the framework, and generates the documentation.
+
+2004-11-02 kianga:
+	RedlandSerializer: Added serializedStringFromModel:, and reimplemented serializedDataFromModel: to use the new librdf_serializer_serialize_model_to_counted_string function.
+	Use librdf_serializer_serialize_model_to_file_handle instead of the deprecated librdf_serializer_serialize_model.
+	Disabled RSS parser support in the statically linked Raptor due to the outdated libxml2 on OS X 10.3.5.
+
+2004-10-27 kianga:
+    Added "real" initializers (which do not return autoreleased objects) to most classes.
+
+2004-10-18 kianga:
+	Fixed bug in the RedlandWorld, RedlandModel, RedlandParser and RedlandSerializer methods setValue:ofFeature: which caused a "selector not recognized" exception when passing a URI as the feature parameter.
+	Added a test case for RedlandParser's setValue:ofFeature: method.
+
+2004-10-15 kianga:
+	Added nil argument checks to various methods.
+	Added valueOfFeature: and setValue:ofFeature: methods to RedlandWorld, RedlandParser, RedlandSerializer, RedlandModel.
+	Added setPrefix:forNamespaceURI: method to RedlandSerializer.
+	Added addNamespace: convenience method to RedlandSerializer.
+	RedlandWorld can now log errors to the console.
+	RedlandParser, RedlandSerializer, and RedlandQuery now check for errors in more methods, and throw exceptions if necessary.
+	Added more sanity checks to [RedlandModel loadURL:withContext:].
+	Added a bad query test to QueryTest.m.
+
+earlier:
+	Added RedlandScanForRDFFeature feature constant (more to follow).
+	Added RedlandNamespace registration and lookup (experimental).
+	Added tests for predefined namespaces.
+	Added tests RedlandNamespace register/unregister tests.
+	Added preliminary Makefile for command-line compilation.
