@@ -1,0 +1,9 @@
+.DS_Store
+
+# Don't version the Docs directory
+Docs
+
+# Xcode user data
+!*.xcodeproj/project.pbxproj
+xcuserdata
+

@@ -12,18 +12,6 @@
 			buildConfigurationList = ED48EB2F08BB53BE00ACF14F /* Build configuration list for PBXAggregateTarget "Release" */;
 			buildPhases = (
 			);
-			buildSettings = {
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Release;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
 			dependencies = (
 				ED82160007397F54001CC6CB /* PBXTargetDependency */,
 				ED82160407397F54001CC6CB /* PBXTargetDependency */,
@@ -37,18 +25,6 @@
 			buildPhases = (
 				EDEDCDF907397483006DB0D1 /* ShellScript */,
 			);
-			buildSettings = {
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Documentation;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
 			dependencies = (
 			);
 			name = Documentation;
@@ -169,33 +145,6 @@
 		EDEDCD5107396F4D006DB0D1 /* rdf_utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD4307396F4D006DB0D1 /* rdf_utf8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		014CEA440018CDF011CA2923 /* Development */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OPTIMIZATION_CFLAGS = "-O0";
-				ZERO_LINK = YES;
-			};
-			name = Development;
-		};
-		014CEA450018CDF011CA2923 /* Deployment */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXContainerItemProxy section */
 		ED8215FF07397F54001CC6CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -237,7 +186,7 @@
 		ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandQueryResults.m; sourceTree = "<group>"; };
 		ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandQueryResultsEnumerator.h; sourceTree = "<group>"; };
 		ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandQueryResultsEnumerator.m; sourceTree = "<group>"; };
-		ED48EB4208BB554300ACF14F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		ED48EB4208BB554300ACF14F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		ED48EB5008BB557A00ACF14F /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED48EB6008BB569200ACF14F /* rdf_digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_digest.h; path = include/rdf_digest.h; sourceTree = REDLAND_PREFIX; };
 		ED48EB6108BB569200ACF14F /* rdf_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_hash.h; path = include/rdf_hash.h; sourceTree = REDLAND_PREFIX; };
@@ -246,7 +195,7 @@
 		ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.3.dylib; path = /usr/lib/libcurl.3.dylib; sourceTree = "<absolute>"; };
 		ED699ECF06F9D3D600A624F7 /* RedlandWrappedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandWrappedObject.h; sourceTree = "<group>"; };
 		ED699ED006F9D3D600A624F7 /* RedlandWrappedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandWrappedObject.m; sourceTree = "<group>"; };
-		ED699F6206F9DB2F00A624F7 /* RedlandTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "RedlandTests-Info.plist"; path = "/Users/kianga/Code/Redland/RedlandTests-Info.plist"; sourceTree = "<absolute>"; };
+		ED699F6206F9DB2F00A624F7 /* RedlandTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RedlandTests-Info.plist"; sourceTree = "<group>"; };
 		ED69A3C006F9DCBA00A624F7 /* URITests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URITests.h; sourceTree = "<group>"; };
 		ED69A3C106F9DCBA00A624F7 /* URITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URITests.m; sourceTree = "<group>"; };
 		ED69A43A06F9E54B00A624F7 /* WorldTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldTests.h; sourceTree = "<group>"; };
@@ -379,7 +328,6 @@
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				ED48EB4208BB554300ACF14F /* Tests-Info.plist */,
 			);
 			name = Redland;
 			sourceTree = "<group>";
@@ -407,10 +355,11 @@
 				ED98662B06FB3D05009186B3 /* rdf-schema.rdf */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				ED699F6206F9DB2F00A624F7 /* RedlandTests-Info.plist */,
+				ED48EB4208BB554300ACF14F /* Tests-Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		08FB77AEFE84172EC02AAC07 /* Additional Classes */ = {
 			isa = PBXGroup;
@@ -435,7 +384,8 @@
 				EDAC63820694506E007A085A /* RedlandNamespace.m */,
 			);
 			name = "Additional Classes";
-			sourceTree = "<group>";
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
@@ -497,7 +447,8 @@
 				ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */,
 			);
 			name = "Basic Wrapper Classes";
-			sourceTree = "<group>";
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
 		};
 		ED69A3BB06F9DCA400A624F7 /* Tests */ = {
 			isa = PBXGroup;
@@ -523,8 +474,8 @@
 				ED69A52A06F9F35E00A624F7 /* NamespaceTests.h */,
 				ED69A52B06F9F35E00A624F7 /* NamespaceTests.m */,
 			);
-			name = Tests;
-			sourceTree = "<group>";
+			path = Tests;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -593,49 +544,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "";
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Redland_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(REDLAND_PREFIX)/include",
-					"$(PCRE_PREFIX)/include",
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PCRE_PREFIX)/lib",
-					"$(REDLAND_PREFIX)/lib",
-				);
-				LIBRARY_STYLE = Dynamic;
-				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
-				);
-				PCRE_LDFLAGS = "$(PCRE_PREFIX)/lib/libpcre.a";
-				PREBINDING = NO;
-				PRODUCT_NAME = Redland;
-				REDLAND_LDFLAGS = "$(REDLAND_PREFIX)/lib/libraptor.a $(REDLAND_PREFIX)/lib/librdf.a $(REDLAND_PREFIX)/lib/librasqal.a";
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = framework;
-			};
 			dependencies = (
 			);
 			name = Redland;
@@ -655,60 +563,11 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "Tests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Cocoa,
-					"-framework",
-					SenTestingKit,
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = Tests;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = octest;
-			};
 			dependencies = (
 			);
 			name = Tests;
 			productName = Tests;
 			productReference = ED48EB5008BB557A00ACF14F /* Tests.octest */;
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
-<dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>Tests</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.Tests</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-</dict>
-</plist>
-";
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -717,16 +576,16 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = ED48EB3308BB53BE00ACF14F /* Build configuration list for PBXProject "Redland" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				014CEA440018CDF011CA2923 /* Development */,
-				014CEA450018CDF011CA2923 /* Deployment */,
-			);
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* Redland */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* Redland */,
 				ED48EB4F08BB557A00ACF14F /* Tests */,
@@ -921,6 +780,7 @@
 					"$(REDLAND_PREFIX)/lib",
 				);
 				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_LDFLAGS = (
 					"$(REDLAND_LDFLAGS)",
@@ -969,6 +829,7 @@
 					"$(REDLAND_PREFIX)/lib",
 				);
 				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = (
 					"$(REDLAND_LDFLAGS)",
 					"$(BDB_LDFLAGS)",
@@ -1014,6 +875,7 @@
 					"$(REDLAND_PREFIX)/lib",
 				);
 				LIBRARY_STYLE = Dynamic;
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = (
 					"$(REDLAND_LDFLAGS)",
 					"$(BDB_LDFLAGS)",
@@ -1182,6 +1044,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1190,7 +1056,7 @@
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "";
+				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"$(REDLAND_LDFLAGS)",
@@ -1214,6 +1080,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
@@ -1222,7 +1092,7 @@
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "";
+				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"$(REDLAND_LDFLAGS)",
@@ -1245,6 +1115,10 @@
 		ED48EB5408BB559800ACF14F /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(value)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
@@ -1253,7 +1127,7 @@
 				INFOPLIST_FILE = "Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "";
+				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"$(REDLAND_LDFLAGS)",
@@ -1324,6 +1198,7 @@
 				ED48EB5408BB559800ACF14F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
 	};
