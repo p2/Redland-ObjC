@@ -215,14 +215,16 @@
 @implementation NSNumber (RedlandNodeConvenience)
 - (RedlandNode *)nodeValue
 {
-    if ([self objCType] == @encode(double))
+	if (strcmp([self objCType], @encode(double))) {
         return [RedlandNode nodeWithLiteralDouble:[self doubleValue]];
-    else if ([self objCType] == @encode(float))
+	}
+    if (strcmp([self objCType], @encode(float))) {
         return [RedlandNode nodeWithLiteralFloat:[self floatValue]];
-    else if ([self objCType] == @encode(BOOL))
+	}
+    if (strcmp([self objCType], @encode(BOOL))) {
         return [RedlandNode nodeWithLiteralBool:[self boolValue]];
-    else
-        return [RedlandNode nodeWithLiteralInt:[self intValue]];
+	}
+    return [RedlandNode nodeWithLiteralInt:[self intValue]];
 }
 @end
 

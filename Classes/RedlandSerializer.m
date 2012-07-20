@@ -92,7 +92,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
     NSParameterAssert(aModel != nil);
     NSParameterAssert(fileName != nil);
     result = librdf_serializer_serialize_model_to_file(wrappedObject, 
-                                                       [fileName cString], 
+                                                       [fileName cStringUsingEncoding:NSUTF8StringEncoding],
                                                        [aURI wrappedURI], 
                                                        [aModel wrappedModel]);
     if (result != 0) {
@@ -141,10 +141,10 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
                                             reason:@"fdopen of file descriptor failed"
                                           userInfo:nil];
     }
-    result = librdf_serializer_serialize_model(wrappedObject, 
-                                               handle,
-                                               [aURI wrappedURI], 
-                                               [aModel wrappedModel]);
+    result = librdf_serializer_serialize_model_to_file_handle(wrappedObject,
+															  handle,
+															  [aURI wrappedURI],
+															  [aModel wrappedModel]);
     fclose(handle);
     if (result != 0) {
         @throw [RedlandException exceptionWithName:RedlandExceptionName

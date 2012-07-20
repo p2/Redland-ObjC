@@ -132,9 +132,9 @@
     return [NSURL URLWithString:[self stringValue]];
 }
 
-- (unsigned)hash
+- (NSUInteger)hash
 {
-    return (unsigned)wrappedObject;
+    return (NSUInteger)wrappedObject;
 }
 
 - (BOOL)isEqualToURI:(RedlandURI *)otherURI

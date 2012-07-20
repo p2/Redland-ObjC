@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -38,7 +38,6 @@
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		ED11265E069DD654006F17FD /* RedlandException.h in Headers */ = {isa = PBXBuildFile; fileRef = ED11265C069DD654006F17FD /* RedlandException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED11265F069DD654006F17FD /* RedlandException.m in Sources */ = {isa = PBXBuildFile; fileRef = ED11265D069DD654006F17FD /* RedlandException.m */; };
-		ED2B3E9E06EDD9BA00CE81BB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
 		ED3B0A6806E621FC001E4C72 /* RedlandModel-Convenience.h in Headers */ = {isa = PBXBuildFile; fileRef = ED3B0A6606E621FC001E4C72 /* RedlandModel-Convenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED3B0A6906E621FC001E4C72 /* RedlandModel-Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3B0A6706E621FC001E4C72 /* RedlandModel-Convenience.m */; };
 		ED486C9506DA6F7900AA6058 /* RedlandQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486C9306DA6F7900AA6058 /* RedlandQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,13 +48,10 @@
 		ED486DF706DA80D500AA6058 /* RedlandQueryResultsEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */; };
 		ED48EB5E08BB565500ACF14F /* WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A43B06F9E54B00A624F7 /* WorldTests.m */; };
 		ED48EB5F08BB565E00ACF14F /* RedlandWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D24910688A22D0039DA12 /* RedlandWorld.m */; };
-		ED48EB6208BB569200ACF14F /* rdf_digest.h in Headers */ = {isa = PBXBuildFile; fileRef = ED48EB6008BB569200ACF14F /* rdf_digest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED48EB6308BB569200ACF14F /* rdf_hash.h in Headers */ = {isa = PBXBuildFile; fileRef = ED48EB6108BB569200ACF14F /* rdf_hash.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED48EB7908BB590600ACF14F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		ED48EB7A08BB590E00ACF14F /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
 		ED48EB7B08BB590F00ACF14F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
 		ED48EB7C08BB591000ACF14F /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
-		ED48EB7E08BB593800ACF14F /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		ED48EB8008BB593800ACF14F /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		ED48EB8208BB596300ACF14F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB8108BB596300ACF14F /* SenTestingKit.framework */; };
 		ED48EB8808BB59C200ACF14F /* RedlandException.m in Sources */ = {isa = PBXBuildFile; fileRef = ED11265D069DD654006F17FD /* RedlandException.m */; };
@@ -90,12 +86,10 @@
 		ED48EC2708BB774E00ACF14F /* rdf-syntax.rdf in Resources */ = {isa = PBXBuildFile; fileRef = ED98642206FAEE3C009186B3 /* rdf-syntax.rdf */; };
 		ED48EC2808BB776B00ACF14F /* SerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98643906FAF064009186B3 /* SerializerTests.m */; };
 		ED48EC3108BB789700ACF14F /* QueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98651B06FB12E6009186B3 /* QueryTests.m */; };
-		ED66E3DD081EA37600951AB6 /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
 		ED699ED106F9D3D600A624F7 /* RedlandWrappedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = ED699ECF06F9D3D600A624F7 /* RedlandWrappedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED699ED206F9D3D600A624F7 /* RedlandWrappedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED699ED006F9D3D600A624F7 /* RedlandWrappedObject.m */; };
 		ED8D24920688A22D0039DA12 /* RedlandWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D24900688A22D0039DA12 /* RedlandWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED8D24930688A22D0039DA12 /* RedlandWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D24910688A22D0039DA12 /* RedlandWorld.m */; };
-		ED8D251C0688A36D0039DA12 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
 		ED8D25520688A6350039DA12 /* RedlandStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25500688A6350039DA12 /* RedlandStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED8D25530688A6350039DA12 /* RedlandStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D25510688A6350039DA12 /* RedlandStorage.m */; };
 		ED8D25B50688A75B0039DA12 /* RedlandParser.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25B30688A75B0039DA12 /* RedlandParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -125,24 +119,39 @@
 		EDB09D2D0688D50F0071464A /* RedlandIteratorEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */; };
 		EDBA0E4907379BDD00610CB1 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDBA0E4807379BDD00610CB1 /* NOTICE.txt */; };
 		EDBA0EB20737A89A00610CB1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED98645906FAF0D8009186B3 /* LICENSE.txt */; };
-		EDEDCA98073946E8006DB0D1 /* librdf.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCA94073946E8006DB0D1 /* librdf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCA99073946E8006DB0D1 /* raptor.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCA95073946E8006DB0D1 /* raptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCA9A073946E8006DB0D1 /* rasqal.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCA96073946E8006DB0D1 /* rasqal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCA9B073946E8006DB0D1 /* redland.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCA97073946E8006DB0D1 /* redland.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4407396F4D006DB0D1 /* rdf_concepts.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3607396F4D006DB0D1 /* rdf_concepts.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4507396F4D006DB0D1 /* rdf_init.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3707396F4D006DB0D1 /* rdf_init.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4607396F4D006DB0D1 /* rdf_iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3807396F4D006DB0D1 /* rdf_iterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4707396F4D006DB0D1 /* rdf_log.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3907396F4D006DB0D1 /* rdf_log.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4807396F4D006DB0D1 /* rdf_model.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3A07396F4D006DB0D1 /* rdf_model.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4907396F4D006DB0D1 /* rdf_node.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3B07396F4D006DB0D1 /* rdf_node.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4A07396F4D006DB0D1 /* rdf_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3C07396F4D006DB0D1 /* rdf_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4B07396F4D006DB0D1 /* rdf_query.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3D07396F4D006DB0D1 /* rdf_query.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4C07396F4D006DB0D1 /* rdf_serializer.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3E07396F4D006DB0D1 /* rdf_serializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4D07396F4D006DB0D1 /* rdf_statement.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD3F07396F4D006DB0D1 /* rdf_statement.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4E07396F4D006DB0D1 /* rdf_storage.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD4007396F4D006DB0D1 /* rdf_storage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD4F07396F4D006DB0D1 /* rdf_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD4107396F4D006DB0D1 /* rdf_stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD5007396F4D006DB0D1 /* rdf_uri.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD4207396F4D006DB0D1 /* rdf_uri.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEDCD5107396F4D006DB0D1 /* rdf_utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCD4307396F4D006DB0D1 /* rdf_utf8.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE74748715B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748815B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748915B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748A15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748B15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748C15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748D15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748E15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74748F15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749015B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749115B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749215B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749315B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749415B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749515B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749615B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749715B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749815B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749915B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749A15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749B15B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749E15B905B7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE74749F15B905B7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE7474A115B905CC004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EE7474A715B90A82004A456E /* redland.h in Headers */ = {isa = PBXBuildFile; fileRef = EDEDCA97073946E8006DB0D1 /* redland.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE7474A815B9139C004A456E /* Redland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
+		EE7474AD15B9149C004A456E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
+		EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
+		EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
+		EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
+		EE7474BB15B91A28004A456E /* librasqal.3.dylib in Resources */ = {isa = PBXBuildFile; fileRef = EE7474B315B919DE004A456E /* librasqal.3.dylib */; };
+		EE7474C015B91BD5004A456E /* libraptor2.0.dylib in Resources */ = {isa = PBXBuildFile; fileRef = EE7474B515B919F2004A456E /* libraptor2.0.dylib */; };
+		EE7474C115B91BDE004A456E /* librdf.0.dylib in Resources */ = {isa = PBXBuildFile; fileRef = EE7474B815B91A0A004A456E /* librdf.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +168,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EDEDCDFA07397483006DB0D1;
 			remoteInfo = Documentation;
+		};
+		EE7474B115B9159D004A456E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Redland;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -188,14 +204,11 @@
 		ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandQueryResultsEnumerator.m; sourceTree = "<group>"; };
 		ED48EB4208BB554300ACF14F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		ED48EB5008BB557A00ACF14F /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED48EB6008BB569200ACF14F /* rdf_digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_digest.h; path = include/rdf_digest.h; sourceTree = REDLAND_PREFIX; };
-		ED48EB6108BB569200ACF14F /* rdf_hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_hash.h; path = include/rdf_hash.h; sourceTree = REDLAND_PREFIX; };
 		ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.1.dylib; path = /usr/lib/libxslt.1.dylib; sourceTree = "<absolute>"; };
-		ED48EB8108BB596300ACF14F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /System/Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
+		ED48EB8108BB596300ACF14F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.3.dylib; path = /usr/lib/libcurl.3.dylib; sourceTree = "<absolute>"; };
 		ED699ECF06F9D3D600A624F7 /* RedlandWrappedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandWrappedObject.h; sourceTree = "<group>"; };
 		ED699ED006F9D3D600A624F7 /* RedlandWrappedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandWrappedObject.m; sourceTree = "<group>"; };
-		ED699F6206F9DB2F00A624F7 /* RedlandTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RedlandTests-Info.plist"; sourceTree = "<group>"; };
 		ED69A3C006F9DCBA00A624F7 /* URITests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URITests.h; sourceTree = "<group>"; };
 		ED69A3C106F9DCBA00A624F7 /* URITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URITests.m; sourceTree = "<group>"; };
 		ED69A43A06F9E54B00A624F7 /* WorldTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldTests.h; sourceTree = "<group>"; };
@@ -252,8 +265,8 @@
 		EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandIteratorEnumerator.m; sourceTree = "<group>"; };
 		EDBA0E4807379BDD00610CB1 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
 		EDEDCA94073946E8006DB0D1 /* librdf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = librdf.h; path = include/librdf.h; sourceTree = REDLAND_PREFIX; };
-		EDEDCA95073946E8006DB0D1 /* raptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = raptor.h; path = include/raptor.h; sourceTree = REDLAND_PREFIX; };
-		EDEDCA96073946E8006DB0D1 /* rasqal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rasqal.h; path = include/rasqal.h; sourceTree = REDLAND_PREFIX; };
+		EDEDCA95073946E8006DB0D1 /* raptor2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = raptor2.h; path = include/raptor2/raptor2.h; sourceTree = RAPTOR_PREFIX; };
+		EDEDCA96073946E8006DB0D1 /* rasqal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rasqal.h; path = include/rasqal/rasqal.h; sourceTree = RASQAL_PREFIX; };
 		EDEDCA97073946E8006DB0D1 /* redland.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = redland.h; path = include/redland.h; sourceTree = REDLAND_PREFIX; };
 		EDEDCD3607396F4D006DB0D1 /* rdf_concepts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_concepts.h; path = include/rdf_concepts.h; sourceTree = REDLAND_PREFIX; };
 		EDEDCD3707396F4D006DB0D1 /* rdf_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_init.h; path = include/rdf_init.h; sourceTree = REDLAND_PREFIX; };
@@ -271,6 +284,9 @@
 		EDEDCD4307396F4D006DB0D1 /* rdf_utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rdf_utf8.h; path = include/rdf_utf8.h; sourceTree = REDLAND_PREFIX; };
 		EDEDCDC80739718F006DB0D1 /* COMPILING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COMPILING.txt; sourceTree = "<group>"; };
 		EDF2FEA9071FE41900B18942 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
+		EE7474B315B919DE004A456E /* librasqal.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librasqal.3.dylib; path = /usr/local/Cellar/rasqal/0.9.29/lib/librasqal.3.dylib; sourceTree = "<absolute>"; };
+		EE7474B515B919F2004A456E /* libraptor2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libraptor2.0.dylib; path = /usr/local/Cellar/raptor/2.0.7/lib/libraptor2.0.dylib; sourceTree = "<absolute>"; };
+		EE7474B815B91A0A004A456E /* librdf.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librdf.0.dylib; path = ../../../../../usr/local/Cellar/redland/1.0.15/lib/librdf.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,10 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
-				ED8D251C0688A36D0039DA12 /* libcrypto.dylib in Frameworks */,
-				ED2B3E9E06EDD9BA00CE81BB /* libxml2.dylib in Frameworks */,
-				ED66E3DD081EA37600951AB6 /* libcurl.3.dylib in Frameworks */,
-				ED48EB7E08BB593800ACF14F /* libxslt.1.dylib in Frameworks */,
+				EE7474AD15B9149C004A456E /* libxml2.dylib in Frameworks */,
+				EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */,
+				EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */,
+				EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7474A815B9139C004A456E /* Redland.framework in Frameworks */,
 				ED48EB7908BB590600ACF14F /* Foundation.framework in Frameworks */,
 				ED48EB7A08BB590E00ACF14F /* libcurl.3.dylib in Frameworks */,
 				ED48EB7B08BB590F00ACF14F /* libxml2.dylib in Frameworks */,
@@ -323,9 +340,13 @@
 				EDBA0E4807379BDD00610CB1 /* NOTICE.txt */,
 				ED699E3406F9CBBF00A624F7 /* Basic Wrapper Classes */,
 				08FB77AEFE84172EC02AAC07 /* Additional Classes */,
-				32C88DFF0371C24200C91783 /* Other Sources */,
 				ED69A3BB06F9DCA400A624F7 /* Tests */,
 				089C1665FE841158C02AAC07 /* Resources */,
+				EE74747115B90143004A456E /* Headers */,
+				EE7474B715B919F8004A456E /* Redland-OSX */,
+				EE74745B15B8FFA1004A456E /* Redland-iOS */,
+				EE7474A615B9099E004A456E /* Redland Headers */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -336,11 +357,11 @@
 			isa = PBXGroup;
 			children = (
 				ED48EB8108BB596300ACF14F /* SenTestingKit.framework */,
-				ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
 				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
 				ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */,
+				ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */,
 				ED8D251B0688A36D0039DA12 /* libcrypto.dylib */,
 				ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */,
 			);
@@ -354,7 +375,6 @@
 				ED98642206FAEE3C009186B3 /* rdf-syntax.rdf */,
 				ED98662B06FB3D05009186B3 /* rdf-schema.rdf */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
-				ED699F6206F9DB2F00A624F7 /* RedlandTests-Info.plist */,
 				ED48EB4208BB554300ACF14F /* Tests-Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
@@ -390,28 +410,8 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				ED48EB6008BB569200ACF14F /* rdf_digest.h */,
-				ED48EB6108BB569200ACF14F /* rdf_hash.h */,
 				32DBCF5E0370ADEE00C91783 /* Redland_Prefix.pch */,
 				ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */,
-				EDEDCA94073946E8006DB0D1 /* librdf.h */,
-				EDEDCA97073946E8006DB0D1 /* redland.h */,
-				EDEDCA95073946E8006DB0D1 /* raptor.h */,
-				EDEDCA96073946E8006DB0D1 /* rasqal.h */,
-				EDEDCD3607396F4D006DB0D1 /* rdf_concepts.h */,
-				EDEDCD3707396F4D006DB0D1 /* rdf_init.h */,
-				EDEDCD3807396F4D006DB0D1 /* rdf_iterator.h */,
-				EDEDCD3907396F4D006DB0D1 /* rdf_log.h */,
-				EDEDCD3A07396F4D006DB0D1 /* rdf_model.h */,
-				EDEDCD3B07396F4D006DB0D1 /* rdf_node.h */,
-				EDEDCD3C07396F4D006DB0D1 /* rdf_parser.h */,
-				EDEDCD3D07396F4D006DB0D1 /* rdf_query.h */,
-				EDEDCD3E07396F4D006DB0D1 /* rdf_serializer.h */,
-				EDEDCD3F07396F4D006DB0D1 /* rdf_statement.h */,
-				EDEDCD4007396F4D006DB0D1 /* rdf_storage.h */,
-				EDEDCD4107396F4D006DB0D1 /* rdf_stream.h */,
-				EDEDCD4207396F4D006DB0D1 /* rdf_uri.h */,
-				EDEDCD4307396F4D006DB0D1 /* rdf_utf8.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -477,6 +477,57 @@
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
+		EE74745B15B8FFA1004A456E /* Redland-iOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Redland-iOS";
+			path = iOS;
+			sourceTree = SOURCE_ROOT;
+		};
+		EE74747115B90143004A456E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Headers;
+			path = RedlandHeaders;
+			sourceTree = "<group>";
+		};
+		EE7474A615B9099E004A456E /* Redland Headers */ = {
+			isa = PBXGroup;
+			children = (
+				EDEDCA94073946E8006DB0D1 /* librdf.h */,
+				EDEDCA97073946E8006DB0D1 /* redland.h */,
+				EDEDCA95073946E8006DB0D1 /* raptor2.h */,
+				EDEDCA96073946E8006DB0D1 /* rasqal.h */,
+				EDEDCD3607396F4D006DB0D1 /* rdf_concepts.h */,
+				EDEDCD3707396F4D006DB0D1 /* rdf_init.h */,
+				EDEDCD3807396F4D006DB0D1 /* rdf_iterator.h */,
+				EDEDCD3907396F4D006DB0D1 /* rdf_log.h */,
+				EDEDCD3A07396F4D006DB0D1 /* rdf_model.h */,
+				EDEDCD3B07396F4D006DB0D1 /* rdf_node.h */,
+				EDEDCD3C07396F4D006DB0D1 /* rdf_parser.h */,
+				EDEDCD3D07396F4D006DB0D1 /* rdf_query.h */,
+				EDEDCD3E07396F4D006DB0D1 /* rdf_serializer.h */,
+				EDEDCD3F07396F4D006DB0D1 /* rdf_statement.h */,
+				EDEDCD4007396F4D006DB0D1 /* rdf_storage.h */,
+				EDEDCD4107396F4D006DB0D1 /* rdf_stream.h */,
+				EDEDCD4207396F4D006DB0D1 /* rdf_uri.h */,
+				EDEDCD4307396F4D006DB0D1 /* rdf_utf8.h */,
+			);
+			name = "Redland Headers";
+			sourceTree = "<group>";
+		};
+		EE7474B715B919F8004A456E /* Redland-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				EE7474B515B919F2004A456E /* libraptor2.0.dylib */,
+				EE7474B315B919DE004A456E /* librasqal.3.dylib */,
+				EE7474B815B91A0A004A456E /* librdf.0.dylib */,
+			);
+			name = "Redland-OSX";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -506,26 +557,31 @@
 				ED3B0A6806E621FC001E4C72 /* RedlandModel-Convenience.h in Headers */,
 				ED699ED106F9D3D600A624F7 /* RedlandWrappedObject.h in Headers */,
 				ED9863A706FAE6AB009186B3 /* RedlandNode-Convenience.h in Headers */,
-				EDEDCA98073946E8006DB0D1 /* librdf.h in Headers */,
-				EDEDCA99073946E8006DB0D1 /* raptor.h in Headers */,
-				EDEDCA9A073946E8006DB0D1 /* rasqal.h in Headers */,
-				EDEDCA9B073946E8006DB0D1 /* redland.h in Headers */,
-				EDEDCD4407396F4D006DB0D1 /* rdf_concepts.h in Headers */,
-				EDEDCD4507396F4D006DB0D1 /* rdf_init.h in Headers */,
-				EDEDCD4607396F4D006DB0D1 /* rdf_iterator.h in Headers */,
-				EDEDCD4707396F4D006DB0D1 /* rdf_log.h in Headers */,
-				EDEDCD4807396F4D006DB0D1 /* rdf_model.h in Headers */,
-				EDEDCD4907396F4D006DB0D1 /* rdf_node.h in Headers */,
-				EDEDCD4A07396F4D006DB0D1 /* rdf_parser.h in Headers */,
-				EDEDCD4B07396F4D006DB0D1 /* rdf_query.h in Headers */,
-				EDEDCD4C07396F4D006DB0D1 /* rdf_serializer.h in Headers */,
-				EDEDCD4D07396F4D006DB0D1 /* rdf_statement.h in Headers */,
-				EDEDCD4E07396F4D006DB0D1 /* rdf_storage.h in Headers */,
-				EDEDCD4F07396F4D006DB0D1 /* rdf_stream.h in Headers */,
-				EDEDCD5007396F4D006DB0D1 /* rdf_uri.h in Headers */,
-				EDEDCD5107396F4D006DB0D1 /* rdf_utf8.h in Headers */,
-				ED48EB6208BB569200ACF14F /* rdf_digest.h in Headers */,
-				ED48EB6308BB569200ACF14F /* rdf_hash.h in Headers */,
+				EE74748715B902E7004A456E /* (null) in Headers */,
+				EE74748815B902E7004A456E /* (null) in Headers */,
+				EE74748915B902E7004A456E /* (null) in Headers */,
+				EE74748A15B902E7004A456E /* (null) in Headers */,
+				EE74748B15B902E7004A456E /* (null) in Headers */,
+				EE74748C15B902E7004A456E /* (null) in Headers */,
+				EE74748D15B902E7004A456E /* (null) in Headers */,
+				EE74748E15B902E7004A456E /* (null) in Headers */,
+				EE74748F15B902E7004A456E /* (null) in Headers */,
+				EE74749015B902E7004A456E /* (null) in Headers */,
+				EE74749115B902E7004A456E /* (null) in Headers */,
+				EE74749215B902E7004A456E /* (null) in Headers */,
+				EE74749315B902E7004A456E /* (null) in Headers */,
+				EE74749415B902E7004A456E /* (null) in Headers */,
+				EE74749515B902E7004A456E /* (null) in Headers */,
+				EE74749615B902E7004A456E /* (null) in Headers */,
+				EE74749715B902E7004A456E /* (null) in Headers */,
+				EE74749815B902E7004A456E /* (null) in Headers */,
+				EE74749915B902E7004A456E /* (null) in Headers */,
+				EE74749A15B902E7004A456E /* (null) in Headers */,
+				EE74749B15B902E7004A456E /* (null) in Headers */,
+				EE74749E15B905B7004A456E /* (null) in Headers */,
+				EE74749F15B905B7004A456E /* (null) in Headers */,
+				EE7474A115B905CC004A456E /* (null) in Headers */,
+				EE7474A715B90A82004A456E /* redland.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +596,6 @@
 				8DC2EF520486A6940098B216 /* Resources */,
 				8DC2EF540486A6940098B216 /* Sources */,
 				8DC2EF560486A6940098B216 /* Frameworks */,
-				8DC2EF580486A6940098B216 /* Rez */,
 			);
 			buildRules = (
 			);
@@ -564,6 +619,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EE7474B215B9159D004A456E /* PBXTargetDependency */,
 			);
 			name = Tests;
 			productName = Tests;
@@ -575,8 +631,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = ED48EB3308BB53BE00ACF14F /* Build configuration list for PBXProject "Redland" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -600,6 +659,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE7474C115B91BDE004A456E /* librdf.0.dylib in Resources */,
+				EE7474C015B91BD5004A456E /* libraptor2.0.dylib in Resources */,
+				EE7474BB15B91A28004A456E /* librasqal.3.dylib in Resources */,
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				EDBA0E4907379BDD00610CB1 /* NOTICE.txt in Resources */,
 				EDBA0EB20737A89A00610CB1 /* LICENSE.txt in Resources */,
@@ -616,16 +678,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXRezBuildPhase section */
-		8DC2EF580486A6940098B216 /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		ED48EB4E08BB557A00ACF14F /* ShellScript */ = {
@@ -734,6 +786,11 @@
 			target = EDEDCDFA07397483006DB0D1 /* Documentation */;
 			targetProxy = ED82160307397F54001CC6CB /* PBXContainerItemProxy */;
 		};
+		EE7474B215B9159D004A456E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* Redland */;
+			targetProxy = EE7474B115B9159D004A456E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -751,15 +808,15 @@
 		ED48EB2408BB53BE00ACF14F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -769,25 +826,21 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(REDLAND_PREFIX)/include",
-					"$(PCRE_PREFIX)/include",
-				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(PCRE_PREFIX)/lib",
-					"$(REDLAND_PREFIX)/lib",
+					"$(REDLAND_PREFIX)/lib/**",
+					"$(RASQAL_PREFIX)/lib/**",
+					"$(RAPTOR_PREFIX)/lib/**",
 				);
 				LIBRARY_STYLE = Dynamic;
 				MACH_O_TYPE = mh_dylib;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
+					"-lrdf",
+					"-lrasqal",
+					"-lraptor2",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = Redland;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -803,13 +856,13 @@
 		ED48EB2508BB53BE00ACF14F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -818,24 +871,20 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(REDLAND_PREFIX)/include",
-					"$(PCRE_PREFIX)/include",
-				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"$(PCRE_PREFIX)/lib",
-					"$(REDLAND_PREFIX)/lib",
+					"$(REDLAND_PREFIX)/lib/**",
+					"$(RASQAL_PREFIX)/lib/**",
+					"$(RAPTOR_PREFIX)/lib/**",
 				);
 				LIBRARY_STYLE = Dynamic;
 				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
+					"-lrdf",
+					"-lrasqal",
+					"-lraptor2",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = Redland;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -848,59 +897,14 @@
 			};
 			name = Deployment;
 		};
-		ED48EB2608BB53BE00ACF14F /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "";
-				FRAMEWORK_VERSION = A;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Redland_Prefix.pch;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(REDLAND_PREFIX)/include",
-					"$(PCRE_PREFIX)/include",
-				);
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PCRE_PREFIX)/lib",
-					"$(REDLAND_PREFIX)/lib",
-				);
-				LIBRARY_STYLE = Dynamic;
-				MACH_O_TYPE = mh_dylib;
-				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = Redland;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Default;
-		};
 		ED48EB2C08BB53BE00ACF14F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				OPTIMIZATION_CFLAGS = "-O0";
@@ -921,8 +925,8 @@
 		ED48EB2D08BB53BE00ACF14F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -937,30 +941,14 @@
 			};
 			name = Deployment;
 		};
-		ED48EB2E08BB53BE00ACF14F /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Documentation;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
-			name = Default;
-		};
 		ED48EB3008BB53BE00ACF14F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				OPTIMIZATION_CFLAGS = "-O0";
@@ -981,8 +969,8 @@
 		ED48EB3108BB53BE00ACF14F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
@@ -997,27 +985,15 @@
 			};
 			name = Deployment;
 		};
-		ED48EB3208BB53BE00ACF14F /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = Release;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
-			name = Default;
-		};
 		ED48EB3408BB53BE00ACF14F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
-				PCRE_LDFLAGS = "$(PCRE_PREFIX)/lib/libpcre.a";
+				HEADER_SEARCH_PATHS = (
+					"$(REDLAND_PREFIX)/include",
+					"$(RASQAL_PREFIX)/include/**",
+					"$(RAPTOR_PREFIX)/include/**",
+				);
 				REDLAND_LDFLAGS = "$(REDLAND_PREFIX)/lib/libraptor.a $(REDLAND_PREFIX)/lib/librdf.a $(REDLAND_PREFIX)/lib/librasqal.a";
 			};
 			name = Development;
@@ -1026,45 +1002,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
-				PCRE_LDFLAGS = "$(PCRE_PREFIX)/lib/libpcre.a";
+				HEADER_SEARCH_PATHS = (
+					"$(REDLAND_PREFIX)/include",
+					"$(RASQAL_PREFIX)/include/**",
+					"$(RAPTOR_PREFIX)/include/**",
+				);
 				REDLAND_LDFLAGS = "$(REDLAND_PREFIX)/lib/libraptor.a $(REDLAND_PREFIX)/lib/librdf.a $(REDLAND_PREFIX)/lib/librasqal.a";
 			};
 			name = Deployment;
 		};
-		ED48EB3608BB53BE00ACF14F /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
-				PCRE_LDFLAGS = "$(PCRE_PREFIX)/lib/libpcre.a";
-				REDLAND_LDFLAGS = "$(REDLAND_PREFIX)/lib/libraptor.a $(REDLAND_PREFIX)/lib/librdf.a $(REDLAND_PREFIX)/lib/librasqal.a";
-			};
-			name = Default;
-		};
 		ED48EB5208BB559800ACF14F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(value)",
-					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Tests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = "$(REDLAND_PREFIX)/lib";
 				LIBRARY_STYLE = BUNDLE;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
+					"-lraptor2",
+					"-lrasqal",
+					"-lrdf",
 				);
 				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
 				PRODUCT_NAME = Tests;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -1079,28 +1048,26 @@
 		ED48EB5308BB559800ACF14F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(value)",
-					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Tests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = "$(REDLAND_PREFIX)/lib";
 				LIBRARY_STYLE = BUNDLE;
 				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
+					"-lraptor2",
+					"-lrasqal",
+					"-lrdf",
 				);
 				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
 				PRODUCT_NAME = Tests;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
@@ -1112,41 +1079,6 @@
 			};
 			name = Deployment;
 		};
-		ED48EB5408BB559800ACF14F /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(value)",
-					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
-				);
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
-				INFOPLIST_FILE = "Tests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				LIBRARY_STYLE = BUNDLE;
-				OPTIMIZATION_CFLAGS = "-O0";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"$(REDLAND_LDFLAGS)",
-					"$(BDB_LDFLAGS)",
-					"$(PCRE_LDFLAGS)",
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = Tests;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Default;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1155,50 +1087,45 @@
 			buildConfigurations = (
 				ED48EB2408BB53BE00ACF14F /* Development */,
 				ED48EB2508BB53BE00ACF14F /* Deployment */,
-				ED48EB2608BB53BE00ACF14F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 		ED48EB2B08BB53BE00ACF14F /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB2C08BB53BE00ACF14F /* Development */,
 				ED48EB2D08BB53BE00ACF14F /* Deployment */,
-				ED48EB2E08BB53BE00ACF14F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 		ED48EB2F08BB53BE00ACF14F /* Build configuration list for PBXAggregateTarget "Release" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB3008BB53BE00ACF14F /* Development */,
 				ED48EB3108BB53BE00ACF14F /* Deployment */,
-				ED48EB3208BB53BE00ACF14F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 		ED48EB3308BB53BE00ACF14F /* Build configuration list for PBXProject "Redland" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB3408BB53BE00ACF14F /* Development */,
 				ED48EB3508BB53BE00ACF14F /* Deployment */,
-				ED48EB3608BB53BE00ACF14F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 		ED48EB5108BB559800ACF14F /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB5208BB559800ACF14F /* Development */,
 				ED48EB5308BB559800ACF14F /* Deployment */,
-				ED48EB5408BB559800ACF14F /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};

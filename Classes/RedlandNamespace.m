@@ -89,7 +89,7 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
     return [[isa allocWithZone:aZone] initWithPrefix:prefix shortName:shortName];
 }
 
-- (unsigned)hash
+- (NSUInteger)hash
 {
     return [prefix hash] ^ [shortName hash];
 }

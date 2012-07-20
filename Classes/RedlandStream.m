@@ -56,11 +56,12 @@
 
 - (RedlandNode *)context
 {
-    librdf_node *context;
-    context = librdf_stream_get_context(wrappedObject);
-	if (context)
-		context = librdf_new_node_from_node(context);
-    return [[[RedlandNode alloc] initWithWrappedObject:context] autorelease];
+    librdf_node *context = librdf_stream_get_context2(wrappedObject);
+	if (context) {
+		librdf_node *node = librdf_new_node_from_node(context);
+		return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+	}
+	return nil;
 }
 
 - (void)print

@@ -81,17 +81,22 @@
 - (id)initWithCoder:(NSCoder *)coder
 {
     unsigned char const *buffer;
-    unsigned int bufSize;
+    NSUInteger bufSize;
+    librdf_world *myWorld;
     librdf_statement *statement;
-    
+	
     NSParameterAssert(coder != nil);
     
-    if ([coder allowsKeyedCoding])
+    if ([coder allowsKeyedCoding]) {
         buffer = [coder decodeBytesForKey:@"encodedBytes" returnedLength:&bufSize];
-    else
+	}
+    else {
         buffer = [coder decodeBytesWithReturnedLength:&bufSize];
-    statement = librdf_new_statement([RedlandWorld defaultWrappedWorld]);
-    if (librdf_statement_decode(statement, (unsigned char *)buffer, bufSize) == 0) {
+	}
+	
+	myWorld = [RedlandWorld defaultWrappedWorld];
+    statement = librdf_new_statement(myWorld);
+	if (librdf_statement_decode2(myWorld, statement, NULL, (unsigned char*) buffer, bufSize)) {
         librdf_free_statement(statement);
         @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                        reason:@"librdf_statement_decode returned zero"
@@ -107,12 +112,14 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder
 {
+    librdf_world *myWorld;
     unsigned char *buffer = NULL;
     unsigned int bufSize;
 	
 	NSParameterAssert(coder != nil);
     
-    bufSize = librdf_statement_encode(wrappedObject, NULL, 0);
+	myWorld = [RedlandWorld defaultWrappedWorld];
+	bufSize = librdf_statement_encode2(myWorld, wrappedObject, NULL, 0);
     @try {
         buffer = malloc(bufSize);
         if (buffer == NULL) {
@@ -120,17 +127,19 @@
                                            reason:[NSString stringWithFormat:@"Failed to allocate buffer of %u bytes for librdf_statement_encode", bufSize]
                                          userInfo:nil];
         }
-        bufSize = librdf_statement_encode(wrappedObject, buffer, bufSize);
+        bufSize = librdf_statement_encode2(myWorld, wrappedObject, buffer, bufSize);
         if (bufSize == 0) {
             @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                            reason:@"librdf_statement_encode returned zero"
                                          userInfo:nil];
         }
         
-        if ([coder allowsKeyedCoding])
+        if ([coder allowsKeyedCoding]) {
             [coder encodeBytes:buffer length:bufSize forKey:@"encodedBytes"];
-        else
+		}
+        else {
             [coder encodeBytes:buffer length:bufSize];
+		}
     }
     @finally {
         free(buffer);
@@ -209,7 +218,7 @@
         return NO;
 }
 
-- (unsigned int)hash
+- (NSUInteger)hash
 {
     // FIXME: This is very, very inefficient.
     return [[self description] hash];

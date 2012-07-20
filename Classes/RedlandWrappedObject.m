@@ -37,7 +37,7 @@
         [self release];
         return nil;
     }
-    else if (self = [super init]) {
+    else if ((self = [super init])) {
         wrappedObject = object;
         isWrappedObjectOwner = ownerFlag;
     }

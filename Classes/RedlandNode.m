@@ -137,7 +137,7 @@
 - (id)initWithCoder:(NSCoder *)coder
 {
     unsigned char const *buffer;
-    unsigned int bufSize;
+    NSUInteger bufSize;
     librdf_node *node;
     NSParameterAssert(coder != nil);
     
@@ -217,9 +217,9 @@
         return NO;
 }
 
-- (unsigned)hash
+- (NSUInteger)hash
 {
-    return (unsigned)wrappedObject;
+    return (NSUInteger)wrappedObject;
 }
 
 - (NSComparisonResult)compare:(id)otherNode

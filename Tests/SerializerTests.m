@@ -43,7 +43,8 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
     if (RDFXMLTestData == nil) {
         NSBundle *bundle = [NSBundle bundleForClass:self];
         NSString *path = [bundle pathForResource:@"rdf-syntax" ofType:@"rdf"];
-        RDFXMLTestData = [[NSString alloc] initWithContentsOfFile:path];
+		NSStringEncoding usedEncoding = 0;
+        RDFXMLTestData = [[NSString alloc] initWithContentsOfFile:path usedEncoding:&usedEncoding error:nil];
     }
 }
 
@@ -70,9 +71,11 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
     STAssertFalse([[NSFileManager defaultManager] fileExistsAtPath:tempFileName], nil);
     STAssertNoThrow([serializer serializeModel:model toFileName:tempFileName withBaseURI:uri], nil);
     STAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:tempFileName isDirectory:(BOOL *)&isDir], nil);
-    STAssertTrue([(NSString *)[NSString stringWithContentsOfFile:tempFileName] length] > 0, nil);
-    if (!isDir)
-        [[NSFileManager defaultManager] removeFileAtPath:tempFileName handler:nil];
+	NSStringEncoding usedEncoding = 0;
+    STAssertTrue([(NSString *)[NSString stringWithContentsOfFile:tempFileName usedEncoding:&usedEncoding error:nil] length] > 0, nil);
+    if (!isDir) {
+		[[NSFileManager defaultManager] removeItemAtPath:tempFileName error:nil];
+	}
 }
 
 - (void)testInMemoryRoundTrip
