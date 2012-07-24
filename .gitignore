@@ -1,7 +1,12 @@
 .DS_Store
 
-# Don't version the Docs directory
-Docs
+# Don't version the C source
+Redland-source/downloads
+Redland-source/build-mac
+Redland-source/build-ios
+Redland-source/*/raptor2*
+Redland-source/*/rasqal*
+Redland-source/*/redland*
 
 # Xcode user data
 !*.xcodeproj/project.pbxproj
