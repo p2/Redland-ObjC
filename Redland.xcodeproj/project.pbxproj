@@ -30,6 +30,17 @@
 			name = Documentation;
 			productName = Documentation;
 		};
+		EE1DDDEC15BED96100882BDA /* Build C Library */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EE1DDDEF15BED96100882BDA /* Build configuration list for PBXAggregateTarget "Build C Library" */;
+			buildPhases = (
+				EE1DDDF115BED97D00882BDA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build C Library";
+			productName = "Build C Library";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -323,6 +334,8 @@
 		EE0CB66115BE5CC1004BB6C9 /* rdf_uri.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdf_uri.h; sourceTree = "<group>"; };
 		EE0CB66215BE5CC1004BB6C9 /* rdf_utf8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdf_utf8.h; sourceTree = "<group>"; };
 		EE0CB66315BE5CC1004BB6C9 /* redland.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redland.h; sourceTree = "<group>"; };
+		EE1DDDF215BEDCC700882BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
 		EE7474B315B919DE004A456E /* librasqal.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librasqal.3.dylib; sourceTree = "<group>"; };
 		EE7474B515B919F2004A456E /* libraptor2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libraptor2.0.dylib; sourceTree = "<group>"; };
 		EE7474B815B91A0A004A456E /* librdf.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librdf.0.dylib; sourceTree = "<group>"; };
@@ -376,6 +389,7 @@
 		0867D691FE84028FC02AAC07 /* Redland */ = {
 			isa = PBXGroup;
 			children = (
+				EE1DDDF215BEDCC700882BDA /* README.md */,
 				EDF2FEA9071FE41900B18942 /* ChangeLog.txt */,
 				EDEDCDC80739718F006DB0D1 /* COMPILING.txt */,
 				ED98645906FAF0D8009186B3 /* LICENSE.txt */,
@@ -530,6 +544,7 @@
 		EE0CB61E15BDD10E004BB6C9 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				EE1DDDF315BEDF0400882BDA /* pp-configure.sh */,
 				EE0CB62115BDD181004BB6C9 /* libs */,
 				EE7474A615B9099E004A456E /* Headers */,
 			);
@@ -564,7 +579,7 @@
 				EE0CB66215BE5CC1004BB6C9 /* rdf_utf8.h */,
 			);
 			name = Headers;
-			path = "../build-ios/include";
+			path = "../product-armv7/include";
 			sourceTree = "<group>";
 		};
 		EE0CB62015BDD17A004BB6C9 /* libs */ = {
@@ -662,7 +677,7 @@
 				EE0CB63915BE4AF7004BB6C9 /* rdf_utf8.h */,
 			);
 			name = Headers;
-			path = "build-mac/include";
+			path = "product-x86_64/include";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -787,6 +802,7 @@
 				ED48EB4F08BB557A00ACF14F /* Tests */,
 				EDEDCDFA07397483006DB0D1 /* Documentation */,
 				ED8215FE07397F4A001CC6CB /* Release */,
+				EE1DDDEC15BED96100882BDA /* Build C Library */,
 			);
 		};
 /* End PBXProject section */
@@ -842,6 +858,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "REDLAND_DOC_DIR=\"$SYMROOT/RedlandDocumentation\"\necho \"Generating documentation...\"\nheaderdoc2html -o \"$REDLAND_DOC_DIR\" \"$SRCROOT\"\necho \"Gathering...\"\ngatherheaderdoc \"$REDLAND_DOC_DIR\"\nexit 0\n";
+		};
+		EE1DDDF115BED97D00882BDA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./redland.py";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1198,6 +1227,20 @@
 			};
 			name = Deployment;
 		};
+		EE1DDDED15BED96100882BDA /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Development;
+		};
+		EE1DDDEE15BED96100882BDA /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Deployment;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1245,6 +1288,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;
+		};
+		EE1DDDEF15BED96100882BDA /* Build configuration list for PBXAggregateTarget "Build C Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE1DDDED15BED96100882BDA /* Development */,
+				EE1DDDEE15BED96100882BDA /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

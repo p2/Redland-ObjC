@@ -2,11 +2,8 @@
 
 # Don't version the C source
 Redland-source/downloads
-Redland-source/build-mac
-Redland-source/build-ios
-Redland-source/*/raptor2*
-Redland-source/*/rasqal*
-Redland-source/*/redland*
+Redland-source/build-*
+Redland-source/product-*
 
 # Xcode user data
 !*.xcodeproj/project.pbxproj

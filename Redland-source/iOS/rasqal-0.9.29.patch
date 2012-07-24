@@ -1,0 +1,15 @@
+--- build-armv6/rasqal-0.9.29/configure	2012-05-13 20:12:34.000000000 -0400
++++ build-armv6/rasqal-0.9.29/configure-patched	2012-07-24 11:23:03.000000000 -0400
+@@ -15271,9 +15271,9 @@
+ 
+   LIBS="$oLIBS"
+ fi
+-if test $ceil_lib = none; then
+-  as_fn_error $? "Could not find ceil, floor, round in default libs or with -lm" "$LINENO" 5
+-fi
++#if test $ceil_lib = none; then
++#  as_fn_error $? "Could not find ceil, floor, round in default libs or with -lm" "$LINENO" 5
++#fi
+ if test $need_libm = 1; then
+   RASQAL_EXTERNAL_LIBS="$RASQAL_EXTERNAL_LIBS -lm"
+ fi
