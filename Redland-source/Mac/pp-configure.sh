@@ -24,7 +24,7 @@ export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig"
 #export CFLAGS="-std=c99 -arch i386 -arch x86_64 -isystem $PREFIX/include"
 export CFLAGS="-std=c99 $ARCH -pipe -isystem $PREFIX/include"
 export CPPFLAGS="-pipe -I$PREFIX/include"
-export CXXFLAGS="$ARCH $CFLAGS"
+export CXXFLAGS="$CFLAGS"
 
 export LDFLAGS="-L$PREFIX/lib"
 

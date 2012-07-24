@@ -75,7 +75,7 @@ export PKG_CONFIG_PATH="$SDKROOT/usr/lib/pkgconfig:$DEVROOT/usr/lib/pkgconfig:$P
 export CFLAGS="-std=c99 $ARCH -pipe --sysroot='$SDKROOT' -isystem '$SDKROOT/usr/include' -isystem '$DEVROOT/usr/include' -isystem '$PREFIX/include'"
 export CPPFLAGS="-pipe -I$SDKROOT/usr/include -I$DEVROOT/usr/include -I$PREFIX/include"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="$ARCH -isysroot='$SDKROOT' -L$SDKROOT/usr/lib/system -L$SDKROOT/usr/lib -L$DEVROOT/usr/lib -L$PREFIX/lib"
+export LDFLAGS="-isysroot='$SDKROOT' -L$SDKROOT/usr/lib/system -L$SDKROOT/usr/lib -L$DEVROOT/usr/lib -L$PREFIX/lib"
 
 # set paths
 export CC="$DEVROOT/usr/bin/cc"
