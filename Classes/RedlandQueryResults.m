@@ -43,7 +43,6 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 {
     if (isWrappedObjectOwner)
         librdf_free_query_results(wrappedObject);
-    [super dealloc];
 }
 
 - (librdf_query_results *)wrappedQueryResults
@@ -72,14 +71,14 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
     value = librdf_query_results_get_binding_value(wrappedObject, offset);
 	if (value)
 		value = librdf_new_node_from_node(value);
-    return [[[RedlandNode alloc] initWithWrappedObject:value] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:value];
 }
 
 - (NSString *)nameOfBindingAtIndex:(int)offset
 {
     char const *name;
     name = librdf_query_results_get_binding_name(wrappedObject, offset);
-    return [[[NSString alloc] initWithUTF8String:name] autorelease];
+    return [[NSString alloc] initWithUTF8String:name];
 }
 
 - (RedlandNode *)valueOfBinding:(NSString *)aName
@@ -89,7 +88,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
     value = librdf_query_results_get_binding_value_by_name(wrappedObject, [aName UTF8String]);
 	if (value)
 		value = librdf_new_node_from_node(value);
-    return [[[RedlandNode alloc] initWithWrappedObject:value] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:value];
 }
 
 - (int)countOfBindings
@@ -101,7 +100,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 {
     librdf_stream *stream;
     stream = librdf_query_results_as_stream(wrappedObject);
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 - (NSDictionary *)bindings
@@ -119,7 +118,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
         id object = [NSNull null];
         if (values[i]) {
             node = librdf_new_node_from_node(values[i]);
-            object = [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+            object = [[RedlandNode alloc] initWithWrappedObject:node];
         }
         [bindings setObject:object forKey:[NSString stringWithUTF8String:names[i]]];
     }
@@ -129,7 +128,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 - (RedlandQueryResultsEnumerator *)resultEnumerator
 {
-    return [[[RedlandQueryResultsEnumerator alloc] initWithResults:self] autorelease];
+    return [[RedlandQueryResultsEnumerator alloc] initWithResults:self];
 }
 
 - (NSString *)stringRepresentationWithFormat:(RedlandURI *)formatURI baseURI:(RedlandURI *)baseURI
@@ -141,7 +140,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 	
 	output = librdf_query_results_to_counted_string(wrappedObject, [formatURI wrappedURI], [baseURI wrappedURI], &output_size);
 	if (output != NULL) {
-		return [[[NSString alloc] initWithBytesNoCopy:output length:output_size encoding:NSUTF8StringEncoding freeWhenDone:YES] autorelease];
+		return [[NSString alloc] initWithBytesNoCopy:output length:output_size encoding:NSUTF8StringEncoding freeWhenDone:YES];
 	}
 	else {
 		return nil;
@@ -173,7 +172,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 	librdf_stream *stream;
 	
 	stream = librdf_query_results_as_stream(wrappedObject);
-	return [[[RedlandStream alloc] initWithWrappedObject:stream owner:NO] autorelease];
+	return [[RedlandStream alloc] initWithWrappedObject:stream owner:NO];
 }
 
 @end

@@ -51,12 +51,12 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 + (RedlandParser *)parserWithName:(NSString *)aName
 {
-    return [[[self alloc] initWithName:aName] autorelease];
+    return [[self alloc] initWithName:aName];
 }
 
 + (RedlandParser *)parserWithName:(NSString *)aName mimeType:(NSString *)mimeType syntaxURI:(RedlandURI *)uri
 {
-    return [[[self alloc] initWithName:aName mimeType:mimeType syntaxURI:uri] autorelease];
+    return [[self alloc] initWithName:aName mimeType:mimeType syntaxURI:uri];
 }
 
 - (id)initWithName:(NSString *)aName
@@ -82,7 +82,6 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 {
     if (isWrappedObjectOwner)
         librdf_free_parser(wrappedObject);
-    [super dealloc];
 }
 
 - (librdf_parser *)wrappedParser
@@ -117,7 +116,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
                                                   (unsigned char *)[aString UTF8String], 
                                                   [uri wrappedURI]);
     [[RedlandWorld defaultWorld] handleStoredErrors];
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 - (void)parseData:(NSData *)data intoModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
@@ -149,7 +148,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
                                                           [data length],
                                                           [baseURI wrappedURI]);
     [[RedlandWorld defaultWorld] handleStoredErrors];
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 #pragma mark Features
@@ -167,7 +166,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 	feature_uri = [featureURI wrappedURI];
 	feature_value = librdf_parser_get_feature(wrappedObject, feature_uri);
 	
-	return [[[RedlandNode alloc] initWithWrappedObject:feature_value] autorelease];
+	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
@@ -236,7 +235,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
         [self addStatementsFromStream:stream withContext:context];
     }
     @finally {
-        [request release];
+        request = nil;
     }
 }
 

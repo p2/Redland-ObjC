@@ -28,7 +28,7 @@
 
 + (RedlandStorage *)storage
 {
-    return [[[self alloc] init] autorelease];
+    return [self new];
 }
 
 - (id)init
@@ -73,7 +73,6 @@
 {
     if (isWrappedObjectOwner && (wrappedObject != NULL))
         librdf_free_storage(wrappedObject);
-    [super dealloc];
 }
 
 - (librdf_storage *)wrappedStorage

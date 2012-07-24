@@ -54,7 +54,7 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 + (void)initialize
 {
 	if (GlobalNamespaceDict == nil) {
-		GlobalNamespaceDict = [[NSMutableDictionary alloc] init];
+		GlobalNamespaceDict = [NSMutableDictionary new];
 	}
 }
 
@@ -79,9 +79,6 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 - (void)dealloc
 {
 	[self unregisterInstance];
-    [prefix release];
-    [shortName release];
-    [super dealloc];
 }
 
 - (id)copyWithZone:(NSZone *)aZone

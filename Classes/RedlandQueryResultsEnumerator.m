@@ -29,17 +29,12 @@
 - (id)initWithResults:(RedlandQueryResults *)theResults
 {
     if (self = [super init]) {
-        results = [theResults retain];
+        results = theResults;
         firstIteration = YES;
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [results release];
-    [super dealloc];
-}
 
 - (id)nextObject
 {

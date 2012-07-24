@@ -36,12 +36,12 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 
 + (id)queryWithLanguageName:(NSString *)langName queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
-	return [[[self alloc] initWithLanguageName:langName queryString:queryString baseURI:baseURI] autorelease];
+	return [[self alloc] initWithLanguageName:langName queryString:queryString baseURI:baseURI];
 }
 
 + (id)queryWithLanguageName:(NSString *)langName languageURI:(RedlandURI *)langURI queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
-	return [[[self alloc] initWithLanguageName:langName languageURI:langURI queryString:queryString baseURI:baseURI] autorelease];
+	return [[self alloc] initWithLanguageName:langName languageURI:langURI queryString:queryString baseURI:baseURI];
 }
 
 - (id)initWithLanguageName:(NSString *)langName queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
@@ -69,7 +69,6 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 {
     if (isWrappedObjectOwner)
         librdf_free_query(wrappedObject);
-    [super dealloc];
 }
 
 - (librdf_query *)wrappedQuery
@@ -83,7 +82,7 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 	NSParameterAssert(aModel != nil);
     results = librdf_query_execute(wrappedObject, [aModel wrappedModel]);
     [[RedlandWorld defaultWorld] handleStoredErrors];
-    return [[[RedlandQueryResults alloc] initWithWrappedObject:results] autorelease];
+    return [[RedlandQueryResults alloc] initWithWrappedObject:results];
 }
 
 - (int)limit

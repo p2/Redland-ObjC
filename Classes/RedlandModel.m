@@ -40,7 +40,7 @@
 
 + (RedlandModel *)model
 {
-    return [[[self alloc] init] autorelease];
+    return [self new];
 }
 
 - (id)init
@@ -66,9 +66,9 @@
 
 - (void)dealloc
 {
-    if (isWrappedObjectOwner)
+    if (isWrappedObjectOwner) {
         librdf_free_model(wrappedObject);
-    [super dealloc];
+	}
 }
 
 - (librdf_model *)wrappedModel
@@ -80,7 +80,7 @@
 {
     librdf_storage *storage;
     storage = librdf_model_get_storage(wrappedObject);
-    return [[[RedlandStorage alloc] initWithWrappedObject:storage owner:NO] autorelease];
+    return [[RedlandStorage alloc] initWithWrappedObject:storage owner:NO];
 }
 
 - (void)print
@@ -200,7 +200,7 @@
     librdf_stream *stream;
     NSParameterAssert(aStatement != nil);
     stream = librdf_model_find_statements(wrappedObject, [aStatement wrappedStatement]);
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 - (RedlandStream *)streamOfAllStatementsWithContext:(RedlandNode *)contextNode
@@ -208,7 +208,7 @@
     librdf_stream *stream;
     NSParameterAssert(contextNode != nil);
     stream = librdf_model_context_as_stream(wrappedObject, [contextNode wrappedNode]);
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 - (RedlandStream *)streamOfStatementsLike:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode
@@ -218,7 +218,7 @@
     stream = librdf_model_find_statements_in_context(wrappedObject, 
                                                      [aStatement wrappedStatement],
                                                      [contextNode wrappedNode]);
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 - (RedlandIterator *)iteratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode
@@ -227,7 +227,7 @@
     NSParameterAssert(arcNode != nil);
     NSParameterAssert(targetNode != nil);
     iterator = librdf_model_get_sources(wrappedObject, [arcNode wrappedNode], [targetNode wrappedNode]);
-    return [[[RedlandIterator alloc] initWithWrappedObject:iterator] autorelease];
+    return [[RedlandIterator alloc] initWithWrappedObject:iterator];
 }
 
 - (RedlandIterator *)iteratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode
@@ -236,7 +236,7 @@
     NSParameterAssert(sourceNode != nil);
     NSParameterAssert(targetNode != nil);
     iterator = librdf_model_get_arcs(wrappedObject, [sourceNode wrappedNode], [targetNode wrappedNode]);
-    return [[[RedlandIterator alloc] initWithWrappedObject:iterator] autorelease];
+    return [[RedlandIterator alloc] initWithWrappedObject:iterator];
 }
 
 - (RedlandIterator *)iteratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode
@@ -245,13 +245,13 @@
     NSParameterAssert(sourceNode != nil);
     NSParameterAssert(arcNode != nil);
     iterator = librdf_model_get_targets(wrappedObject, [sourceNode wrappedNode], [arcNode wrappedNode]);
-    return [[[RedlandIterator alloc] initWithWrappedObject:iterator] autorelease];
+    return [[RedlandIterator alloc] initWithWrappedObject:iterator];
 }
 
 - (RedlandIterator *)contextIterator
 {
     librdf_iterator *iterator = librdf_model_get_contexts(wrappedObject);
-    return [[[RedlandIterator alloc] initWithWrappedObject:iterator] autorelease];
+    return [[RedlandIterator alloc] initWithWrappedObject:iterator];
 }
 
 - (RedlandNode *)sourceWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode
@@ -262,7 +262,7 @@
     node = librdf_model_get_source(wrappedObject, [arcNode wrappedNode], [targetNode wrappedNode]);
 	if (node)
 		node = librdf_new_node_from_node(node);
-    return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
 - (RedlandNode *)arcWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode
@@ -273,7 +273,7 @@
     node = librdf_model_get_arc(wrappedObject, [sourceNode wrappedNode], [targetNode wrappedNode]);
 	if (node)
 		node = librdf_new_node_from_node(node);
-    return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
 - (RedlandNode *)targetWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode
@@ -284,7 +284,7 @@
     node = librdf_model_get_target(wrappedObject, [sourceNode wrappedNode], [arcNode wrappedNode]);
 	if (node)
 		node = librdf_new_node_from_node(node);
-    return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
 - (RedlandIterator *)iteratorOfArcsIn:(RedlandNode *)targetNode
@@ -292,7 +292,7 @@
     librdf_iterator *iterator;
     NSParameterAssert(targetNode != nil);
     iterator = librdf_model_get_arcs_in(wrappedObject, [targetNode wrappedNode]);
-    return [[[RedlandIterator alloc] initWithWrappedObject:iterator] autorelease];
+    return [[RedlandIterator alloc] initWithWrappedObject:iterator];
 }
 
 - (RedlandIterator *)iteratorOfArcsOut:(RedlandNode *)sourceNode
@@ -300,7 +300,7 @@
     librdf_iterator *iterator;
     NSParameterAssert(sourceNode != nil);
     iterator = librdf_model_get_arcs_out(wrappedObject, [sourceNode wrappedNode]);
-    return [[[RedlandIterator alloc] initWithWrappedObject:iterator] autorelease];
+    return [[RedlandIterator alloc] initWithWrappedObject:iterator];
 }
 
 - (BOOL)node:(RedlandNode *)targetNode hasIncomingArc:(RedlandNode *)arcNode
@@ -321,7 +321,7 @@
 {
     librdf_stream *stream;
     stream = librdf_model_as_stream(wrappedObject);
-    return [[[RedlandStream alloc] initWithWrappedObject:stream] autorelease];
+    return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
 - (BOOL)containsContext:(RedlandNode *)contextNode
@@ -344,7 +344,7 @@
 	feature_uri = [featureURI wrappedURI];
 	feature_value = librdf_model_get_feature(wrappedObject, feature_uri);
 	
-	return [[[RedlandNode alloc] initWithWrappedObject:feature_value] autorelease];
+	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI

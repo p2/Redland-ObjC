@@ -26,6 +26,7 @@
 #import "RedlandParser.h"
 #import "RedlandURI.h"
 #import "RedlandStream.h"
+#import "RedlandStreamEnumerator.h"
 #import "RedlandModel-Convenience.h"
 #import "RedlandException.h"
 #import "RedlandNode-Convenience.h"
@@ -89,7 +90,6 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 	STAssertNotNil(path, nil);
     STAssertNoThrow([model loadURL:url withContext:nil], nil);
     STAssertTrue([model size] > 0, nil);
-    [url release];
 }
 
 - (void)testParseError

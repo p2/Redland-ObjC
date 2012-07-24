@@ -33,7 +33,6 @@
     myURI = [[RedlandURI alloc] initWithString:testString];
     STAssertNotNil(myURI, nil);
     STAssertEqualObjects(testString, [myURI stringValue], nil);
-    [myURI release];
 }
 
 - (void)testURLInit
@@ -62,7 +61,7 @@
 - (void)testCopying
 {
     RedlandURI *testURI = [RedlandURI URIWithString:@"http://www.foo.com/bar#test"];
-    RedlandURI *copyURI = [[testURI copy] autorelease];
+    RedlandURI *copyURI = [testURI copy];
     STAssertEqualObjects(testURI, copyURI, nil);
 }
 

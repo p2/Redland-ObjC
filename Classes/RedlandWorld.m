@@ -31,7 +31,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 {
     NSCParameterAssert(user_data != NULL);
     NSCParameterAssert(message != NULL);
-    return [(RedlandWorld *)user_data handleLogMessage:message];
+    return [(__bridge RedlandWorld *)user_data handleLogMessage:message];
 }
 
 @implementation RedlandWorld
@@ -54,7 +54,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
         NSAssert(world != NULL, @"Failed to initialize librdf_world");
         defaultInstance = [[RedlandWorld alloc] initWithWrappedObject:world];
         librdf_world_open(world);
-        librdf_world_set_logger(world, defaultInstance, &redland_log_handler);
+        librdf_world_set_logger(world, (__bridge void *)(defaultInstance), &redland_log_handler);
     }
     return defaultInstance;
 }
@@ -69,10 +69,8 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 
 - (void)dealloc
 {
-    [storedErrors release];
     if (isWrappedObjectOwner)
         librdf_free_world(wrappedObject);
-    [super dealloc];
 }
 
 #pragma mark Accessors
@@ -112,7 +110,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 	feature_uri = [featureURI wrappedURI];
 	feature_value = librdf_world_get_feature(wrappedObject, feature_uri);
 	
-	return [[[RedlandNode alloc] initWithWrappedObject:feature_value] autorelease];
+	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
@@ -162,7 +160,6 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
     [storedErrors addObject:[NSError errorWithDomain:RedlandErrorDomain 
                                                 code:aMessage->code 
                                             userInfo:infoDict]];
-    [infoDict release];
     
     return 1;
 }
@@ -182,7 +179,6 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
     exception = [RedlandException exceptionWithName:RedlandExceptionName
                                              reason:@"Redland Exception"
                                            userInfo:[NSDictionary dictionaryWithObject:errorArray forKey:@"storedErrors"]];
-    [errorArray release];
     [storedErrors removeAllObjects];
     [exception raise];
 }

@@ -36,7 +36,7 @@
                                  predicate:(id)predicateNode 
                                     object:(id)objectNode
 {
-	return [[[self alloc] initWithSubject:subjectNode predicate:predicateNode object:objectNode] autorelease];
+	return [[self alloc] initWithSubject:subjectNode predicate:predicateNode object:objectNode];
 }
 
 - (id)initWithSubject:(id)subjectNode predicate:(id)predicateNode object:(id)objectNode
@@ -64,7 +64,6 @@
 {
     if (isWrappedObjectOwner)
         librdf_free_statement(wrappedObject);
-    [super dealloc];
 }
 
 #pragma mark Copying
@@ -151,7 +150,7 @@
 - (NSString *)description
 {
     unsigned char *statement_string = librdf_statement_to_string(wrappedObject);
-    return [[[NSString alloc] initWithBytesNoCopy:statement_string length:strlen((char *)statement_string) encoding:NSUTF8StringEncoding freeWhenDone:YES] autorelease];
+    return [[NSString alloc] initWithBytesNoCopy:statement_string length:strlen((char *)statement_string) encoding:NSUTF8StringEncoding freeWhenDone:YES];
 }
 
 - (void)print
@@ -171,7 +170,7 @@
     librdf_node *node = librdf_statement_get_subject(wrappedObject);
 	if (node)
 		node = librdf_new_node_from_node(node);
-    return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
 - (RedlandNode *)predicate
@@ -179,7 +178,7 @@
     librdf_node *node = librdf_statement_get_predicate(wrappedObject);
 	if (node)
 		node = librdf_new_node_from_node(node);
-    return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
 - (RedlandNode *)object
@@ -187,7 +186,7 @@
     librdf_node *node = librdf_statement_get_object(wrappedObject);
 	if (node)
 		node = librdf_new_node_from_node(node);
-    return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+    return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
 - (BOOL)isComplete

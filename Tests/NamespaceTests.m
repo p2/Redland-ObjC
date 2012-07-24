@@ -46,7 +46,6 @@
                                            shortName:@"xmlschema"];
     uri = [RedlandURI URIWithString:@"http://www.w3.org/2001/XMLSchema#int"];
     STAssertEqualObjects(uri, [schemaNS URI:@"int"], nil);
-	[schemaNS release];
 }
 
 - (void)testRegistration
@@ -65,7 +64,6 @@
     schemaNS = [[RedlandNamespace alloc] initWithPrefix:@"http://www.w3.org/2001/XMLSchema#"
 											  shortName:@"xmlschema"];
 	[schemaNS registerInstance];
-	[schemaNS release];
 	STAssertNil([RedlandNamespace namespaceWithShortName:@"xmlschema"], nil);
 }
 

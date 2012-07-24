@@ -94,7 +94,7 @@
     static RedlandURI *datatypeURI = nil;
     
     if (datatypeURI == nil)
-        datatypeURI = [[XMLSchemaNS URI:@"int"] retain];
+        datatypeURI = [XMLSchemaNS URI:@"int"];
     if (![[self literalDataType] isEqual:datatypeURI]) {
         [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to int value", self];
         return 0;
@@ -108,7 +108,7 @@
     NSString *stringValue;
     
     if (datatypeURI == nil)
-        datatypeURI = [[XMLSchemaNS URI:@"boolean"] retain];
+        datatypeURI = [XMLSchemaNS URI:@"boolean"];
     if (![[self literalDataType] isEqual:datatypeURI]) {
         [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to bool value", self];
         return 0;
@@ -124,7 +124,7 @@
     static RedlandURI *datatypeURI = nil;
     
     if (datatypeURI == nil)
-        datatypeURI = [[XMLSchemaNS URI:@"string"] retain];
+        datatypeURI = [XMLSchemaNS URI:@"string"];
     if (![[self literalDataType] isEqual:datatypeURI]) {
         [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to string value", self];
         return 0;
@@ -147,7 +147,7 @@
     static RedlandURI *datatypeURI = nil;
     
     if (datatypeURI == nil)
-        datatypeURI = [[XMLSchemaNS URI:@"dateTime"] retain];
+        datatypeURI = [XMLSchemaNS URI:@"dateTime"];
     if (![[self literalDataType] isEqual:datatypeURI]) {
         [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to dateTime value", self];
         return 0;
@@ -173,7 +173,7 @@
     static RedlandURI *datatypeURI = nil;
     
     if (datatypeURI == nil)
-        datatypeURI = [[XMLSchemaNS URI:@"float"] retain];
+        datatypeURI = [XMLSchemaNS URI:@"float"];
     if (![[self literalDataType] isEqual:datatypeURI]) {
         [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to float value", self];
         return 0;
@@ -187,9 +187,9 @@
     static RedlandURI *doubleDatatypeURI = nil;
     
     if (floatDatatypeURI == nil)
-        floatDatatypeURI = [[XMLSchemaNS URI:@"float"] retain];
+        floatDatatypeURI = [XMLSchemaNS URI:@"float"];
     if (doubleDatatypeURI == nil)
-        doubleDatatypeURI = [[XMLSchemaNS URI:@"double"] retain];
+        doubleDatatypeURI = [XMLSchemaNS URI:@"double"];
     if (![[self literalDataType] isEqual:floatDatatypeURI] &&
         ![[self literalDataType] isEqual:doubleDatatypeURI]) {
         [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to double value", self];

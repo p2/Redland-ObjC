@@ -31,13 +31,13 @@
 + (RedlandURI *)URIWithString:(NSString *)aString
 {
 	NSParameterAssert(aString != nil);
-    return [[[self alloc] initWithString:aString] autorelease];
+    return [[self alloc] initWithString:aString];
 }
 
 + (RedlandURI *)URIWithURL:(NSURL *)aURL
 {
 	NSParameterAssert(aURL != nil);
-	return [[[self alloc] initWithURL:aURL] autorelease];
+	return [[self alloc] initWithURL:aURL];
 }
 
 - (id)initWithString:(NSString *)aString // designated initializer
@@ -65,7 +65,6 @@
 {
     if (isWrappedObjectOwner)
         librdf_free_uri(wrappedObject);
-    [super dealloc];
 }
 
 - (id)copyWithZone:(NSZone *)aZone
@@ -83,10 +82,10 @@
 	NSParameterAssert(coder != nil);
 	
     if ([coder allowsKeyedCoding]) {
-        uriString = [[coder decodeObjectForKey:@"URI"] retain];
+        uriString = [coder decodeObjectForKey:@"URI"];
     }
     else {
-        uriString = [[coder decodeObject] retain];
+        uriString = [coder decodeObject];
     }
     uri = librdf_new_uri([RedlandWorld defaultWrappedWorld],
                          (unsigned char *)[uriString UTF8String]);
@@ -124,7 +123,7 @@
 {
     size_t length;
     unsigned char *string_value = librdf_uri_as_counted_string(wrappedObject, &length);
-    return [[[NSString alloc] initWithBytes:string_value length:length encoding:NSUTF8StringEncoding] autorelease];
+    return [[NSString alloc] initWithBytes:string_value length:length encoding:NSUTF8StringEncoding];
 }
 
 - (NSURL *)URLValue

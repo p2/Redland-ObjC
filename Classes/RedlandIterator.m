@@ -28,9 +28,9 @@
 
 - (void)dealloc
 {
-    if (isWrappedObjectOwner)
+    if (isWrappedObjectOwner) {
         librdf_free_iterator(wrappedObject);
-    [super dealloc];
+	}
 }
 
 - (librdf_iterator *)wrappedIterator

@@ -35,18 +35,13 @@
     NSParameterAssert(anIterator != nil);
     self = [super init];
     if (self) {
-        iterator = [anIterator retain];
+        iterator = anIterator;
         firstIteration = YES;
         objectClass = aClass;
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [iterator release];
-    [super dealloc];
-}
 
 - (id)nextObject
 {
@@ -60,12 +55,12 @@
     if ([objectClass isSubclassOfClass:[RedlandNode class]]) {
 		if (object)
 			object = librdf_new_node_from_node(object);
-        return [[[objectClass alloc] initWithWrappedObject:object] autorelease];
+        return [[objectClass alloc] initWithWrappedObject:object];
     }
     else if ([objectClass isSubclassOfClass:[RedlandURI class]]) {
 		if (object)
 			object = librdf_new_uri_from_uri(object);
-        return [[[objectClass alloc] initWithWrappedObject:object] autorelease];
+        return [[objectClass alloc] initWithWrappedObject:object];
     }
     else {
         @throw [NSException exceptionWithName:NSInternalInconsistencyException

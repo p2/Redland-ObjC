@@ -37,18 +37,13 @@
 {
     self = [super init];
     if (self) {
-        stream = [aStream retain];
+        stream = aStream;
         firstIteration = YES;
         modifier = aModifier;
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [stream release];
-    [super dealloc];
-}
 
 - (RedlandNode *)currentContext
 {
@@ -74,7 +69,7 @@
                 return [nextStatement object];
             default:
             case RedlandReturnStatements:
-                return [[nextStatement copy] autorelease];
+                return [nextStatement copy];
         }
     }
     else

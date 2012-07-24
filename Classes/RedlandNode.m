@@ -44,29 +44,29 @@
 
 + (id)nodeWithLiteral:(NSString *)aString language:(NSString *)aLanguage isXML:(BOOL)xmlFlag
 {
-	return [[[self alloc] initWithLiteral:aString language:aLanguage isXML:xmlFlag] autorelease];
+	return [[self alloc] initWithLiteral:aString language:aLanguage isXML:xmlFlag];
 }
 
 + (id)nodeWithLiteral:(NSString *)aString language:(NSString *)aLanguage type:(RedlandURI *)typeURI
 {
-    return [[[self alloc] initWithLiteral:aString language:aLanguage type:typeURI] autorelease];
+    return [[self alloc] initWithLiteral:aString language:aLanguage type:typeURI];
 }
 
 + (id)nodeWithURIString:(NSString *)aString
 {
 	NSParameterAssert(aString != nil);
-	return [[[self alloc] initWithURIString:aString] autorelease];
+	return [[self alloc] initWithURIString:aString];
 }
 
 + (id)nodeWithBlankID:(NSString *)anID
 {
-	return [[[self alloc] initWithBlankID:anID] autorelease];
+	return [[self alloc] initWithBlankID:anID];
 }
 
 + (id)nodeWithURI:(RedlandURI *)aURI
 {
 	NSParameterAssert(aURI != nil);
-	return [[[self alloc] initWithURI:aURI] autorelease];
+	return [[self alloc] initWithURI:aURI];
 }
 
 #pragma mark Init and Cleanup
@@ -122,7 +122,6 @@
 {
     if (isWrappedObjectOwner)
         librdf_free_node(wrappedObject);
-    [super dealloc];
 }
 
 - (id)copyWithZone:(NSZone *)aZone
@@ -197,7 +196,7 @@
 {
     size_t length;
     unsigned char *node_string = librdf_node_to_counted_string(wrappedObject, &length);
-    return [[[NSString alloc] initWithBytesNoCopy:node_string length:length encoding:NSUTF8StringEncoding freeWhenDone:YES] autorelease];
+    return [[NSString alloc] initWithBytesNoCopy:node_string length:length encoding:NSUTF8StringEncoding freeWhenDone:YES];
 }
 
 #pragma mark Comparing Nodes
@@ -270,7 +269,7 @@
     unsigned char *literal_value;
     
     literal_value = librdf_node_get_literal_value_as_counted_string(wrappedObject, &length);
-    return [[[NSString alloc] initWithBytes:literal_value length:length encoding:NSUTF8StringEncoding] autorelease];
+    return [[NSString alloc] initWithBytes:literal_value length:length encoding:NSUTF8StringEncoding];
 }
 
 - (RedlandURI *)URIValue
@@ -279,13 +278,13 @@
 	uri_value = librdf_node_get_uri(wrappedObject);
 	if (uri_value != NULL)
 		uri_value = librdf_new_uri_from_uri(uri_value);
-    return [[[RedlandURI alloc] initWithWrappedObject:uri_value] autorelease];
+    return [[RedlandURI alloc] initWithWrappedObject:uri_value];
 }
 
 - (NSString *)blankID
 {
     char *blank_id = (char *)librdf_node_get_blank_identifier(wrappedObject);
-    return [[[NSString alloc] initWithUTF8String:blank_id] autorelease];
+    return [[NSString alloc] initWithUTF8String:blank_id];
 }
 
 - (int)ordinalValue
@@ -299,7 +298,7 @@
     uri_value = librdf_node_get_literal_value_datatype_uri(wrappedObject);
     if (uri_value != NULL) {
         uri_value = librdf_new_uri_from_uri(uri_value);
-        return [[[RedlandURI alloc] initWithWrappedObject:uri_value] autorelease];
+        return [[RedlandURI alloc] initWithWrappedObject:uri_value];
     }
     else return nil;
 }
@@ -308,7 +307,7 @@
 {
     char *language = librdf_node_get_literal_value_language(wrappedObject);
     if (language)
-        return [[[NSString alloc] initWithUTF8String:language] autorelease];
+        return [[NSString alloc] initWithUTF8String:language];
     else
         return nil;
 }

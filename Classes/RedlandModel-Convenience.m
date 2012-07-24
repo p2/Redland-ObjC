@@ -40,21 +40,21 @@
 {
     NSParameterAssert(aStatement != nil);
     RedlandStream *resultStream = [self streamOfStatementsLike:aStatement withContext:contextNode];
-    return [[[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream modifier:modifier] autorelease];
+    return [[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream modifier:modifier];
 }
 
 - (RedlandStreamEnumerator *)enumeratorOfStatementsLike:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode
 {
     NSParameterAssert(aStatement != nil);
     RedlandStream *resultStream = [self streamOfStatementsLike:aStatement withContext:contextNode];
-    return [[[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream] autorelease];
+    return [[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream];
 }
 
 - (RedlandStreamEnumerator *)enumeratorOfStatementsLike:(RedlandStatement *)aStatement
 {
     NSParameterAssert(aStatement != nil);
     RedlandStream *resultStream = [self streamOfStatementsLike:aStatement];
-    return [[[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream] autorelease];
+    return [[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream];
 }
 
 #pragma mark Finding Sources
@@ -70,7 +70,7 @@
 - (NSEnumerator *)enumeratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode
 {
     RedlandIterator *iterator = [self iteratorOfSourcesWithArc:arcNode target:targetNode];
-    return [[[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]] autorelease];
+    return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
 #pragma mark Finding Arcs
@@ -86,7 +86,7 @@
 - (NSEnumerator *)enumeratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode
 {
     RedlandIterator *iterator = [self iteratorOfArcsWithSource:sourceNode target:targetNode];
-    return [[[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]] autorelease];
+    return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
 #pragma mark Finding Targets
@@ -102,7 +102,7 @@
 - (NSEnumerator *)enumeratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode
 {
     RedlandIterator *iterator = [self iteratorOfTargetsWithSource:sourceNode arc:arcNode];
-    return [[[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]] autorelease];
+    return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
 #pragma mark Finding Arcs In
@@ -118,7 +118,7 @@
 - (NSEnumerator *)enumeratorOfArcsIn:(RedlandNode *)targetNode
 {
     RedlandIterator *iterator = [self iteratorOfArcsIn:targetNode];
-    return [[[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]] autorelease];
+    return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
 #pragma mark Finding Arcs Out
@@ -134,7 +134,7 @@
 - (NSEnumerator *)enumeratorOfArcsOut:(RedlandNode *)sourceNode
 {
     RedlandIterator *iterator = [self iteratorOfArcsOut:sourceNode];
-    return [[[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]] autorelease];
+    return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
 #pragma mark Misc
@@ -142,17 +142,17 @@
 - (NSEnumerator *)contextEnumerator;
 {
     RedlandIterator *iterator = [self contextIterator];
-    return [[[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]] autorelease];
+    return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
 - (RedlandStreamEnumerator *)statementEnumerator
 {
-    return [[[RedlandStreamEnumerator alloc] initWithRedlandStream:[self statementStream]] autorelease];
+    return [[RedlandStreamEnumerator alloc] initWithRedlandStream:[self statementStream]];
 }
 
 - (RedlandStreamEnumerator *)statementEnumeratorWithContext:(RedlandNode *)contextNode
 {
-    return [[[RedlandStreamEnumerator alloc] initWithRedlandStream:[self streamOfAllStatementsWithContext:contextNode]] autorelease];
+    return [[RedlandStreamEnumerator alloc] initWithRedlandStream:[self streamOfAllStatementsWithContext:contextNode]];
 }
 
 //#pragma mark Collections and Containers

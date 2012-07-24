@@ -44,7 +44,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 + (id)serializerWithName:(NSString *)factoryName
 {
 	NSParameterAssert(factoryName != nil);
-    return [[[self alloc] initWithName:factoryName] autorelease];
+    return [[self alloc] initWithName:factoryName];
 }
 
 + (id)serializerWithName:(NSString *)factoryName 
@@ -52,7 +52,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
                  typeURI:(RedlandURI *)typeURI
 {
 	NSParameterAssert(factoryName != nil || mimeType != nil || typeURI != nil);
-	return [[[self alloc] initWithName:factoryName mimeType:mimeType typeURI:typeURI] autorelease];
+	return [[self alloc] initWithName:factoryName mimeType:mimeType typeURI:typeURI];
 }
 
 - (id)initWithName:(NSString *)factoryName
@@ -76,7 +76,6 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 {
     if (isWrappedObjectOwner)
         librdf_free_serializer(wrappedObject);
-    [super dealloc];
 }
 
 - (librdf_serializer *)wrappedSerializer
@@ -183,7 +182,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	feature_uri = [featureURI wrappedURI];
 	feature_value = librdf_serializer_get_feature(wrappedObject, feature_uri);
 	
-	return [[[RedlandNode alloc] initWithWrappedObject:feature_value] autorelease];
+	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
@@ -223,7 +222,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	result = librdf_serializer_serialize_model_to_counted_string(wrappedObject, [baseURI wrappedURI], [aModel wrappedModel], &len);
 	[[RedlandWorld defaultWorld] handleStoredErrors];
 	
-	return [[[NSString alloc] initWithBytesNoCopy:result length:len encoding:NSUTF8StringEncoding freeWhenDone:YES] autorelease];
+	return [[NSString alloc] initWithBytesNoCopy:result length:len encoding:NSUTF8StringEncoding freeWhenDone:YES];
 }
 
 - (NSData *)serializedDataFromModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
@@ -235,7 +234,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	result = librdf_serializer_serialize_model_to_counted_string(wrappedObject, [baseURI wrappedURI], [aModel wrappedModel], &len);
 	[[RedlandWorld defaultWorld] handleStoredErrors];
 	
-	return [[[NSData alloc] initWithBytesNoCopy:result length:len freeWhenDone:YES] autorelease];
+	return [[NSData alloc] initWithBytesNoCopy:result length:len freeWhenDone:YES];
 }
 
 @end

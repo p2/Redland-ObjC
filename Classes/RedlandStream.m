@@ -32,7 +32,6 @@
 {
     if (isWrappedObjectOwner)
         librdf_free_stream(wrappedObject);
-	[super dealloc];
 }
 
 - (librdf_stream *)wrappedStream
@@ -51,7 +50,7 @@
     statement = librdf_stream_get_object(wrappedObject);
     if (statement != NULL)
         statement = librdf_new_statement_from_statement(statement);
-    return [[[RedlandStatement alloc] initWithWrappedObject:statement] autorelease];
+    return [[RedlandStatement alloc] initWithWrappedObject:statement];
 }
 
 - (RedlandNode *)context
@@ -59,7 +58,7 @@
     librdf_node *context = librdf_stream_get_context2(wrappedObject);
 	if (context) {
 		librdf_node *node = librdf_new_node_from_node(context);
-		return [[[RedlandNode alloc] initWithWrappedObject:node] autorelease];
+		return [[RedlandNode alloc] initWithWrappedObject:node];
 	}
 	return nil;
 }
@@ -71,7 +70,7 @@
 
 - (RedlandStreamEnumerator *)statementEnumerator
 {
-    return [[[RedlandStreamEnumerator alloc] initWithRedlandStream:self] autorelease];
+    return [[RedlandStreamEnumerator alloc] initWithRedlandStream:self];
 }
 
 @end

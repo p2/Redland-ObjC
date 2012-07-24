@@ -34,7 +34,6 @@
 - (id)initWithWrappedObject:(void *)object owner:(BOOL)ownerFlag
 {
     if (object == NULL) {
-        [self release];
         return nil;
     }
     else if ((self = [super init])) {
@@ -44,9 +43,5 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 @end
