@@ -39,16 +39,23 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 @implementation RedlandNamespace
 
+@synthesize prefix = _prefix;
+@synthesize shortName = _shortName;
+
 + (void)initGlobalNamespaces
 {
-    if (RedlandRDFSyntaxNS == nil)
+    if (RedlandRDFSyntaxNS == nil) {
         RedlandRDFSyntaxNS = RDFSyntaxNS = [[self alloc] initWithPrefix:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#" shortName:@"rdf"];
-    if (RedlandRDFSchemaNS == nil)
+	}
+    if (RedlandRDFSchemaNS == nil) {
         RedlandRDFSchemaNS = RDFSchemaNS = [[self alloc] initWithPrefix:@"http://www.w3.org/2000/01/rdf-schema#" shortName:@"rdfs"];
-    if (RedlandXMLSchemaNS == nil)
+	}
+    if (RedlandXMLSchemaNS == nil) {
         RedlandXMLSchemaNS = XMLSchemaNS = [[self alloc] initWithPrefix:@"http://www.w3.org/2001/XMLSchema#" shortName:@"xmlschema"];
-    if (RedlandDublinCoreNS == nil)
+	}
+    if (RedlandDublinCoreNS == nil) {
         RedlandDublinCoreNS = DublinCoreNS = [[self alloc] initWithPrefix:@"http://purl.org/dc/elements/1.1/" shortName:@"dc"];
+	}
 }
 
 + (void)initialize
@@ -60,7 +67,7 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 + (RedlandNamespace *)namespaceWithShortName:(NSString *)aName
 {
-	return [[GlobalNamespaceDict objectForKey:aName] nonretainedObjectValue];
+	return [GlobalNamespaceDict objectForKey:aName];
 }
 
 - (id)initWithPrefix:(NSString *)aPrefix shortName:(NSString *)aName
@@ -68,10 +75,9 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
     NSParameterAssert(aPrefix != nil);
     NSParameterAssert(aName != nil);
     
-    self = [super init];
-    if (self) {
-        prefix = [aPrefix copy];
-        shortName = [aName copy];
+    if ((self = [super init])) {
+        self.prefix = aPrefix;
+        self.shortName = aName;
     }
     return self;
 }
@@ -83,36 +89,25 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 - (id)copyWithZone:(NSZone *)aZone
 {
-    return [[isa allocWithZone:aZone] initWithPrefix:prefix shortName:shortName];
+    return [[isa allocWithZone:aZone] initWithPrefix:_prefix shortName:_shortName];
 }
 
 - (NSUInteger)hash
 {
-    return [prefix hash] ^ [shortName hash];
+    return [_prefix hash] ^ [_shortName hash];
 }
 
 - (void)registerInstance
 {
-	NSAssert1([RedlandNamespace namespaceWithShortName:shortName] == nil,
-			  @"Namespace with short name %@ already registered", shortName);
-	[GlobalNamespaceDict setObject:[NSValue valueWithNonretainedObject:self]
-							forKey:shortName];
+	NSAssert1([RedlandNamespace namespaceWithShortName:_shortName] == nil, @"Namespace with short name %@ already registered", _shortName);
+	[GlobalNamespaceDict setObject:self forKey:_shortName];
 }
 
 - (void)unregisterInstance
 {
-	if ([RedlandNamespace namespaceWithShortName:shortName] == self)
-		[GlobalNamespaceDict removeObjectForKey:shortName];
-}
-
-- (NSString *)shortName
-{
-    return shortName;
-}
-
-- (NSString *)prefix
-{
-    return prefix;
+	if (self == [RedlandNamespace namespaceWithShortName:_shortName]) {
+		[GlobalNamespaceDict removeObjectForKey:_shortName];
+	}
 }
 
 - (RedlandNode *)node:(NSString *)suffix
@@ -136,13 +131,13 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 - (NSString *)string:(NSString *)suffix
 {
     NSParameterAssert(suffix != nil);
-    return [prefix stringByAppendingString:suffix];
+    return [_prefix stringByAppendingString:suffix];
 }
 
 - (BOOL)containsURIString:(NSString *)qName
 {
     NSParameterAssert(qName != nil);
-    return [qName hasPrefix:prefix];
+    return [qName hasPrefix:_prefix];
 }
 
 - (BOOL)containsNode:(RedlandNode *)node
@@ -161,7 +156,7 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 {
     NSParameterAssert(qName != nil);
     if ([self containsURIString:qName])
-        return [qName substringFromIndex:[prefix length]];
+        return [qName substringFromIndex:[_prefix length]];
     else
         return nil;
 }

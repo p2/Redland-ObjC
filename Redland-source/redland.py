@@ -15,11 +15,15 @@ URL_RAPTOR = 'http://download.librdf.org/source/raptor2-2.0.8.tar.gz'
 URL_RASQAL = 'http://download.librdf.org/source/rasqal-0.9.29.tar.gz'
 URL_REDLAND = 'http://download.librdf.org/source/redland-1.0.15.tar.gz'
 
+# where to put the universal libraries
+UNIVERSAL = 'Universal'
+
 # where to download to
 DOWNLOAD = 'downloads'
 
-# target architectures per platform
+# target architectures per platform and desired library extensions
 ARCHS = {'iOS': ['armv7'], 'Mac': ['i386', 'x86_64']}
+LIBEXT = {'iOS': 'a', 'Mac': 'dylib'}
 
 # name of custom configure scripts
 CONFIG_NAME = 'pp-configure.sh'
@@ -28,6 +32,7 @@ CONFIG_NAME = 'pp-configure.sh'
 FLAGS = {
 	'redland-1.0.15': {
 		'iOS': ['--without-mysql', '--without-postgresql', '--without-virtuoso'],
+		'Mac': ['--without-mysql', '--without-postgresql', '--without-virtuoso'],
 	}
 }
 
@@ -36,15 +41,16 @@ FLAGS = {
 ##	main function
 ##
 def main():
+	abspath = os.path.abspath(__file__)
+	os.chdir(os.path.split(abspath)[0])
 	
-	# setup
-	arch_bases = []
-	dirs = [DOWNLOAD]
+	# collect all needed directories
+	dirs = [DOWNLOAD, UNIVERSAL]
 	for platform in ARCHS.keys():
+		dirs.append('%s-%s' % (UNIVERSAL, platform))
 		archs = ARCHS[platform]
 		for arch in archs:
 			dirs.append('build-%s' % arch)
-			arch_bases.append('build-%s' % arch)
 			dirs.append('product-%s' % arch)
 	create_directories(dirs)
 	
@@ -54,6 +60,7 @@ def main():
 	rdfsrc = download(URL_REDLAND, DOWNLOAD)
 	
 	# unpack and build
+	platform_libs = {}
 	for platform in ARCHS.keys():
 		archs = ARCHS[platform]
 		for arch in archs:
@@ -61,19 +68,53 @@ def main():
 			product_dir = 'product-%s' % arch
 			
 			# raptor
-			raptordir = unpack_into(raptorsrc, build_dir)
-			compile(raptordir, product_dir, platform, arch, FLAGS)
+			raptordir, do_compile = unpack_into(raptorsrc, build_dir)
+			if do_compile:
+				compile(raptordir, product_dir, platform, arch, FLAGS)
 			
 			# rasqal
-			rasqaldir = unpack_into(rasqalsrc, build_dir)
-			compile(rasqaldir, product_dir, platform, arch, FLAGS)
+			rasqaldir, do_compile = unpack_into(rasqalsrc, build_dir)
+			if do_compile:
+				compile(rasqaldir, product_dir, platform, arch, FLAGS)
 			
 			# librdf
-			rdfdir = unpack_into(rdfsrc, build_dir)
-			compile(rdfdir, product_dir, platform, arch, FLAGS)
+			rdfdir, do_compile = unpack_into(rdfsrc, build_dir)
+			if do_compile:
+				compile(rdfdir, product_dir, platform, arch, FLAGS)
+			
+			# remember platform directory
+			pf = platform_libs[platform] if platform in platform_libs else []
+			pf.append('%s/lib' % product_dir)
+			platform_libs[platform] = pf
 	
-	# now we should use lipo to create fat libraries...
-
+	# use lipo to create fat libraries
+	for lib_base in ['libraptor2', 'librasqal', 'librdf']:
+		
+		# per platform
+		for platform in platform_libs:
+			lib_ext = LIBEXT[platform] if platform in LIBEXT else 'a'
+			lib = '%s.%s' % (lib_base, lib_ext)
+			
+			target = '%s-%s/%s' % (UNIVERSAL, platform, lib)
+			pf = platform_libs[platform]
+			libs = [foo + '/%s' % lib for foo in pf]
+			if len(libs) > 1:
+				p = subprocess.call('lipo -create -output %s %s' % (target, ' '.join(libs)), shell=True)
+				if 0 != p:
+					print 'lipo failed to create the universal library for %s' % lib
+					sys.exit(1)
+			else:
+				shutil.copy2(libs[0], target)
+		
+		# ultra-universal
+		lib = '%s.a' % lib_base
+		p = subprocess.call('lipo -create -output %s/%s product-*/lib/%s' % (UNIVERSAL, lib, lib), shell=True)
+		if 0 != p:
+			print 'lipo failed to create the universal library for %s' % lib
+			sys.exit(1)
+	
+	# set install names
+	# install_name_tool -id @loader_path/Frameworks/librdf.dylib librdf.dylib
 
 
 
@@ -138,7 +179,13 @@ def unpack_into(archive, directory):
 	
 	Will NOT unpack the archive if there already is a directory with the same
 	base name
+	
+	Returns a tuple with the unpacked directory name as first and a bool
+	indicating whether the archive was freshly extracted or not as second
+	member
 	"""
+	
+	newly_unpacked = False
 	
 	# unpack
 	tar = tarfile.open(archive)
@@ -149,11 +196,12 @@ def unpack_into(archive, directory):
 	else:
 		print "Unpacking %s" % archive
 		tar.extractall(directory)
+		newly_unpacked = True
 	
 	# close and remember directory name
 	tar.close()
 	
-	return target_dir
+	return (target_dir, newly_unpacked)
 
 
 def compile(source, target, platform, arch, flag_mapping):

@@ -4,6 +4,7 @@
 Redland-source/downloads
 Redland-source/build-*
 Redland-source/product-*
+Redland-source/Universal*
 
 # Xcode user data
 !*.xcodeproj/project.pbxproj

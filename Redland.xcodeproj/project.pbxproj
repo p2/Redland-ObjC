@@ -58,32 +58,12 @@
 		ED486DF606DA80D500AA6058 /* RedlandQueryResultsEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED486DF706DA80D500AA6058 /* RedlandQueryResultsEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */; };
 		ED48EB5E08BB565500ACF14F /* WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A43B06F9E54B00A624F7 /* WorldTests.m */; };
-		ED48EB5F08BB565E00ACF14F /* RedlandWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D24910688A22D0039DA12 /* RedlandWorld.m */; };
 		ED48EB7908BB590600ACF14F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		ED48EB7A08BB590E00ACF14F /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
 		ED48EB7B08BB590F00ACF14F /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
 		ED48EB7C08BB591000ACF14F /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
 		ED48EB8008BB593800ACF14F /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		ED48EB8208BB596300ACF14F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB8108BB596300ACF14F /* SenTestingKit.framework */; };
-		ED48EB8808BB59C200ACF14F /* RedlandException.m in Sources */ = {isa = PBXBuildFile; fileRef = ED11265D069DD654006F17FD /* RedlandException.m */; };
-		ED48EB8908BB59C400ACF14F /* RedlandNamespace.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC63820694506E007A085A /* RedlandNamespace.m */; };
-		ED48EB8A08BB59CD00ACF14F /* RedlandIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB09CA00688CF300071464A /* RedlandIterator.m */; };
-		ED48EB8B08BB59CD00ACF14F /* RedlandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D25D20688A7DF0039DA12 /* RedlandModel.m */; };
-		ED48EB8C08BB59CE00ACF14F /* RedlandNode.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D26840688AC490039DA12 /* RedlandNode.m */; };
-		ED48EB8D08BB59CF00ACF14F /* RedlandParser.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D25B40688A75B0039DA12 /* RedlandParser.m */; };
-		ED48EB8E08BB59CF00ACF14F /* RedlandQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486C9406DA6F7900AA6058 /* RedlandQuery.m */; };
-		ED48EB8F08BB59D000ACF14F /* RedlandQueryResults.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */; };
-		ED48EB9008BB59D100ACF14F /* RedlandSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D28340688B6CF0039DA12 /* RedlandSerializer.m */; };
-		ED48EB9108BB59D200ACF14F /* RedlandStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D26A70688ACA20039DA12 /* RedlandStatement.m */; };
-		ED48EB9208BB59D200ACF14F /* RedlandStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D25510688A6350039DA12 /* RedlandStorage.m */; };
-		ED48EB9308BB59D500ACF14F /* RedlandStream.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D25F60688A8E80039DA12 /* RedlandStream.m */; };
-		ED48EB9408BB59D500ACF14F /* RedlandURI.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8D26C80688AD1F0039DA12 /* RedlandURI.m */; };
-		ED48EB9508BB59D600ACF14F /* RedlandWrappedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED699ED006F9D3D600A624F7 /* RedlandWrappedObject.m */; };
-		ED48EB9608BB59DC00ACF14F /* RedlandIteratorEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */; };
-		ED48EB9708BB59DD00ACF14F /* RedlandModel-Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3B0A6706E621FC001E4C72 /* RedlandModel-Convenience.m */; };
-		ED48EB9808BB59E000ACF14F /* RedlandNode-Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A49A06F9EB8200A624F7 /* RedlandNode-Convenience.m */; };
-		ED48EB9908BB59E100ACF14F /* RedlandQueryResultsEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */; };
-		ED48EB9A08BB59E200ACF14F /* RedlandStreamEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC616506943C75007A085A /* RedlandStreamEnumerator.m */; };
 		ED48EBA208BB5A2C00ACF14F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 		ED48EBA308BB5A2D00ACF14F /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
 		ED48EBA408BB5B3E00ACF14F /* NamespaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A52B06F9F35E00A624F7 /* NamespaceTests.m */; };
@@ -130,9 +110,6 @@
 		EDB09D2D0688D50F0071464A /* RedlandIteratorEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */; };
 		EDBA0E4907379BDD00610CB1 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDBA0E4807379BDD00610CB1 /* NOTICE.txt */; };
 		EDBA0EB20737A89A00610CB1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED98645906FAF0D8009186B3 /* LICENSE.txt */; };
-		EE0CB64015BE4BBB004BB6C9 /* libraptor2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7474B515B919F2004A456E /* libraptor2.0.dylib */; };
-		EE0CB64115BE4BBE004BB6C9 /* librasqal.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7474B315B919DE004A456E /* librasqal.3.dylib */; };
-		EE0CB64215BE4BC0004BB6C9 /* librdf.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7474B815B91A0A004A456E /* librdf.0.dylib */; };
 		EE0CB64315BE4BF3004BB6C9 /* redland.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB63A15BE4AF7004BB6C9 /* redland.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE74748715B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE74748815B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
@@ -158,14 +135,21 @@
 		EE74749E15B905B7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE74749F15B905B7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE7474A115B905CC004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
-		EE7474A815B9139C004A456E /* Redland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
 		EE7474AD15B9149C004A456E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
 		EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
 		EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
-		EE7474BB15B91A28004A456E /* librasqal.3.dylib in Resources */ = {isa = PBXBuildFile; fileRef = EE7474B315B919DE004A456E /* librasqal.3.dylib */; };
-		EE7474C015B91BD5004A456E /* libraptor2.0.dylib in Resources */ = {isa = PBXBuildFile; fileRef = EE7474B515B919F2004A456E /* libraptor2.0.dylib */; };
-		EE7474C115B91BDE004A456E /* librdf.0.dylib in Resources */ = {isa = PBXBuildFile; fileRef = EE7474B815B91A0A004A456E /* librdf.0.dylib */; };
+		EEBFED8C15C0A9B600E352C7 /* Redland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
+		EEBFED8D15C0A9DB00E352C7 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
+		EEBFED8E15C0A9DD00E352C7 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
+		EEBFED8F15C0A9DF00E352C7 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
+		EEBFED9015C0ADBD00E352C7 /* Redland.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
+		EEDE81BE15BF38C800AC2B64 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
+		EEDE81BF15BF38C800AC2B64 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
+		EEDE81C015BF38C800AC2B64 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
+		EEDE81C715BF4D9D00AC2B64 /* libraptor2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
+		EEDE81C815BF4D9F00AC2B64 /* librasqal.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
+		EEDE81C915BF4DA100AC2B64 /* librdf.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +175,31 @@
 			remoteInfo = Redland;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEDE81C415BF4D4600AC2B64 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EEBFED9015C0ADBD00E352C7 /* Redland.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEDE81C615BF4D8500AC2B64 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EEDE81C715BF4D9D00AC2B64 /* libraptor2.dylib in CopyFiles */,
+				EEDE81C815BF4D9F00AC2B64 /* librasqal.dylib in CopyFiles */,
+				EEDE81C915BF4DA100AC2B64 /* librdf.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -336,9 +345,12 @@
 		EE0CB66315BE5CC1004BB6C9 /* redland.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redland.h; sourceTree = "<group>"; };
 		EE1DDDF215BEDCC700882BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
-		EE7474B315B919DE004A456E /* librasqal.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librasqal.3.dylib; sourceTree = "<group>"; };
-		EE7474B515B919F2004A456E /* libraptor2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libraptor2.0.dylib; sourceTree = "<group>"; };
-		EE7474B815B91A0A004A456E /* librdf.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librdf.0.dylib; sourceTree = "<group>"; };
+		EEDE81B315BF375200AC2B64 /* libraptor2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libraptor2.a; sourceTree = "<group>"; };
+		EEDE81B415BF375200AC2B64 /* librasqal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librasqal.a; sourceTree = "<group>"; };
+		EEDE81B515BF375200AC2B64 /* librdf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librdf.a; sourceTree = "<group>"; };
+		EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libraptor2.dylib; sourceTree = "<group>"; };
+		EEDE81B815BF375F00AC2B64 /* librasqal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librasqal.dylib; sourceTree = "<group>"; };
+		EEDE81B915BF375F00AC2B64 /* librdf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librdf.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,9 +363,9 @@
 				EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */,
 				EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */,
 				EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */,
-				EE0CB64015BE4BBB004BB6C9 /* libraptor2.0.dylib in Frameworks */,
-				EE0CB64115BE4BBE004BB6C9 /* librasqal.3.dylib in Frameworks */,
-				EE0CB64215BE4BC0004BB6C9 /* librdf.0.dylib in Frameworks */,
+				EEDE81BE15BF38C800AC2B64 /* libraptor2.dylib in Frameworks */,
+				EEDE81BF15BF38C800AC2B64 /* librasqal.dylib in Frameworks */,
+				EEDE81C015BF38C800AC2B64 /* librdf.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +373,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE7474A815B9139C004A456E /* Redland.framework in Frameworks */,
 				ED48EB7908BB590600ACF14F /* Foundation.framework in Frameworks */,
 				ED48EB7A08BB590E00ACF14F /* libcurl.3.dylib in Frameworks */,
 				ED48EB7B08BB590F00ACF14F /* libxml2.dylib in Frameworks */,
@@ -370,6 +381,10 @@
 				ED48EB8208BB596300ACF14F /* SenTestingKit.framework in Frameworks */,
 				ED48EBA208BB5A2C00ACF14F /* Cocoa.framework in Frameworks */,
 				ED48EBA308BB5A2D00ACF14F /* AppKit.framework in Frameworks */,
+				EEBFED8C15C0A9B600E352C7 /* Redland.framework in Frameworks */,
+				EEBFED8D15C0A9DB00E352C7 /* libraptor2.dylib in Frameworks */,
+				EEBFED8E15C0A9DD00E352C7 /* librasqal.dylib in Frameworks */,
+				EEBFED8F15C0A9DF00E352C7 /* librdf.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +550,6 @@
 			children = (
 				EE0CB61A15BDD0AD004BB6C9 /* pp-configure.sh */,
 				EE0CB61B15BDD0AD004BB6C9 /* rasqal-0.9.29.patch */,
-				EE0CB62015BDD17A004BB6C9 /* libs */,
 				EE0CB61F15BDD128004BB6C9 /* Headers */,
 			);
 			path = iOS;
@@ -545,7 +559,6 @@
 			isa = PBXGroup;
 			children = (
 				EE1DDDF315BEDF0400882BDA /* pp-configure.sh */,
-				EE0CB62115BDD181004BB6C9 /* libs */,
 				EE7474A615B9099E004A456E /* Headers */,
 			);
 			name = Mac;
@@ -582,26 +595,14 @@
 			path = "../product-armv7/include";
 			sourceTree = "<group>";
 		};
-		EE0CB62015BDD17A004BB6C9 /* libs */ = {
+		EE0CB62015BDD17A004BB6C9 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
 				EE0CB64715BE5CB4004BB6C9 /* libraptor2.a */,
 				EE0CB64815BE5CB4004BB6C9 /* librasqal.a */,
 				EE0CB64915BE5CB4004BB6C9 /* librdf.a */,
 			);
-			name = libs;
-			path = "../build-ios/lib";
-			sourceTree = "<group>";
-		};
-		EE0CB62115BDD181004BB6C9 /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				EE7474B515B919F2004A456E /* libraptor2.0.dylib */,
-				EE7474B315B919DE004A456E /* librasqal.3.dylib */,
-				EE7474B815B91A0A004A456E /* librdf.0.dylib */,
-			);
-			name = libs;
-			path = "build-mac/lib";
+			path = Universal;
 			sourceTree = "<group>";
 		};
 		EE0CB63B15BE4B04004BB6C9 /* raptor2 */ = {
@@ -642,6 +643,9 @@
 			isa = PBXGroup;
 			children = (
 				EE0CB61C15BDD0AD004BB6C9 /* redland.py */,
+				EE0CB62015BDD17A004BB6C9 /* Universal */,
+				EEDE81B215BF375200AC2B64 /* Universal-iOS */,
+				EEDE81B615BF375F00AC2B64 /* Universal-Mac */,
 				EE0CB61D15BDD0DC004BB6C9 /* iOS */,
 				EE0CB61E15BDD10E004BB6C9 /* Mac */,
 			);
@@ -678,6 +682,26 @@
 			);
 			name = Headers;
 			path = "product-x86_64/include";
+			sourceTree = "<group>";
+		};
+		EEDE81B215BF375200AC2B64 /* Universal-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EEDE81B315BF375200AC2B64 /* libraptor2.a */,
+				EEDE81B415BF375200AC2B64 /* librasqal.a */,
+				EEDE81B515BF375200AC2B64 /* librdf.a */,
+			);
+			path = "Universal-iOS";
+			sourceTree = "<group>";
+		};
+		EEDE81B615BF375F00AC2B64 /* Universal-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */,
+				EEDE81B815BF375F00AC2B64 /* librasqal.dylib */,
+				EEDE81B915BF375F00AC2B64 /* librdf.dylib */,
+			);
+			path = "Universal-Mac";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -746,6 +770,7 @@
 			buildPhases = (
 				8DC2EF500486A6940098B216 /* Headers */,
 				8DC2EF520486A6940098B216 /* Resources */,
+				EEDE81C615BF4D8500AC2B64 /* CopyFiles */,
 				8DC2EF540486A6940098B216 /* Sources */,
 				8DC2EF560486A6940098B216 /* Frameworks */,
 			);
@@ -764,6 +789,7 @@
 			buildConfigurationList = ED48EB5108BB559800ACF14F /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				ED48EB4B08BB557A00ACF14F /* Resources */,
+				EEDE81C415BF4D4600AC2B64 /* CopyFiles */,
 				ED48EB4C08BB557A00ACF14F /* Sources */,
 				ED48EB4D08BB557A00ACF14F /* Frameworks */,
 				ED48EB4E08BB557A00ACF14F /* ShellScript */,
@@ -812,9 +838,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE7474C115B91BDE004A456E /* librdf.0.dylib in Resources */,
-				EE7474C015B91BD5004A456E /* libraptor2.0.dylib in Resources */,
-				EE7474BB15B91A28004A456E /* librasqal.3.dylib in Resources */,
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
 				EDBA0E4907379BDD00610CB1 /* NOTICE.txt in Resources */,
 				EDBA0EB20737A89A00610CB1 /* LICENSE.txt in Resources */,
@@ -907,26 +930,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED48EB5E08BB565500ACF14F /* WorldTests.m in Sources */,
-				ED48EB5F08BB565E00ACF14F /* RedlandWorld.m in Sources */,
-				ED48EB8808BB59C200ACF14F /* RedlandException.m in Sources */,
-				ED48EB8908BB59C400ACF14F /* RedlandNamespace.m in Sources */,
-				ED48EB8A08BB59CD00ACF14F /* RedlandIterator.m in Sources */,
-				ED48EB8B08BB59CD00ACF14F /* RedlandModel.m in Sources */,
-				ED48EB8C08BB59CE00ACF14F /* RedlandNode.m in Sources */,
-				ED48EB8D08BB59CF00ACF14F /* RedlandParser.m in Sources */,
-				ED48EB8E08BB59CF00ACF14F /* RedlandQuery.m in Sources */,
-				ED48EB8F08BB59D000ACF14F /* RedlandQueryResults.m in Sources */,
-				ED48EB9008BB59D100ACF14F /* RedlandSerializer.m in Sources */,
-				ED48EB9108BB59D200ACF14F /* RedlandStatement.m in Sources */,
-				ED48EB9208BB59D200ACF14F /* RedlandStorage.m in Sources */,
-				ED48EB9308BB59D500ACF14F /* RedlandStream.m in Sources */,
-				ED48EB9408BB59D500ACF14F /* RedlandURI.m in Sources */,
-				ED48EB9508BB59D600ACF14F /* RedlandWrappedObject.m in Sources */,
-				ED48EB9608BB59DC00ACF14F /* RedlandIteratorEnumerator.m in Sources */,
-				ED48EB9708BB59DD00ACF14F /* RedlandModel-Convenience.m in Sources */,
-				ED48EB9808BB59E000ACF14F /* RedlandNode-Convenience.m in Sources */,
-				ED48EB9908BB59E100ACF14F /* RedlandQueryResultsEnumerator.m in Sources */,
-				ED48EB9A08BB59E200ACF14F /* RedlandStreamEnumerator.m in Sources */,
 				ED48EBA408BB5B3E00ACF14F /* NamespaceTests.m in Sources */,
 				ED48EBB908BB5DB200ACF14F /* URITests.m in Sources */,
 				ED48EBD608BB70A000ACF14F /* NodeTests.m in Sources */,
@@ -978,13 +981,11 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -994,17 +995,11 @@
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/build-mac/lib\"",
-				);
-				LIBRARY_STYLE = Dynamic;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OPTIMIZATION_CFLAGS = "-O0";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1026,7 +1021,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1035,16 +1029,11 @@
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/build-mac/lib\"",
-				);
-				LIBRARY_STYLE = Dynamic;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1147,10 +1136,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Redland-source/build-arm/**",
-					"$(SRCROOT)/Redland-source/build-mac/**",
-				);
 			};
 			name = Development;
 		};
@@ -1158,10 +1143,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Redland-source/build-arm/**",
-					"$(SRCROOT)/Redland-source/build-mac/**",
-				);
 			};
 			name = Deployment;
 		};
@@ -1178,15 +1159,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/build-mac/lib\"",
+					"\"$(SRCROOT)/Redland-source/Universal-Mac\"",
 				);
-				LIBRARY_STYLE = BUNDLE;
-				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Tests;
 				SDKROOT = macosx;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1199,7 +1178,7 @@
 		ED48EB5308BB559800ACF14F /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -1209,15 +1188,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
 				INFOPLIST_FILE = "Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/build-mac/lib\"",
+					"\"$(SRCROOT)/Redland-source/Universal-Mac\"",
 				);
-				LIBRARY_STYLE = BUNDLE;
-				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Tests;
 				SDKROOT = macosx;
-				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -1230,6 +1207,7 @@
 		EE1DDDED15BED96100882BDA /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Development;
@@ -1237,6 +1215,7 @@
 		EE1DDDEE15BED96100882BDA /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Deployment;
@@ -1296,6 +1275,7 @@
 				EE1DDDEE15BED96100882BDA /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};

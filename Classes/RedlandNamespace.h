@@ -52,10 +52,11 @@ extern RedlandNamespace *DublinCoreNS;
 	@abstract Convenience class for generating namespaced nodes, URIs, and strings
 	@discussion Instances of RedlandNamespace are helper objects which make it very easy to create RedlandNodes, RedlandURIs, NSStrings, or NSURLs with a common namespace prefix. Please note that this class is still experimental and its API is subject to change.
 */
-@interface RedlandNamespace : NSObject <NSCopying> {
-    NSString *prefix;
-    NSString *shortName;
-}
+@interface RedlandNamespace : NSObject <NSCopying>
+
+@property (nonatomic, copy) NSString *prefix;
+@property (nonatomic, copy) NSString *shortName;
+
 
 /*!
 	@method initGlobalNamespaces

@@ -18,11 +18,12 @@
 #
 
 export SDKVER="6.0"
+export IPHONEOS_DEPLOYMENT_TARGET="4.0"
 
 # extract ARCH and PREFIX
 archs=()
 confopts=()
-while [ $# -gt 0 ] ; do
+while [ $# -gt 0 ]; do
 	case ${1:0:9} in
 		-arch)		archs+=("-arch $2");		shift 2;;
 		--prefix=)	PREFIX=${1:9};				shift 1;;
@@ -62,7 +63,7 @@ fi
 export SDKROOT="$DEVROOT/SDKs/iPhoneOS$SDKVER.sdk"
 
 if [ ! -d "$SDKROOT" ] ; then
-	echo "The iPhone SDK could not be found. Folder \"$SDKROOT\" does not exist."
+	echo "The iPhone SDK could not be found. Directory \"$SDKROOT\" does not exist."
 	exit 1
 fi
 
@@ -72,10 +73,10 @@ export PKG_CONFIG_PATH="$SDKROOT/usr/lib/pkgconfig:$DEVROOT/usr/lib/pkgconfig:$P
 #export PKG_CONFIG_LIBDIR="$PKG_CONFIG"
 
 # set flags
-export CFLAGS="-std=c99 $ARCH -pipe --sysroot='$SDKROOT' -isystem '$SDKROOT/usr/include' -isystem '$DEVROOT/usr/include' -isystem '$PREFIX/include'"
-export CPPFLAGS="-pipe -I$SDKROOT/usr/include -I$DEVROOT/usr/include -I$PREFIX/include"
+export CFLAGS="-std=c99 $ARCH -pipe --sysroot='$SDKROOT' -isysroot '$SDKROOT' -I$SDKROOT/usr/include -I$DEVROOT/usr/include -I$PREFIX/include"
+export CPPFLAGS="$CFLAGS"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-isysroot='$SDKROOT' -L$SDKROOT/usr/lib/system -L$SDKROOT/usr/lib -L$DEVROOT/usr/lib -L$PREFIX/lib"
+export LDFLAGS="--sysroot='$SDKROOT' -isysroot='$SDKROOT' -L$SDKROOT/usr/lib/system -L$SDKROOT/usr/lib -L$DEVROOT/usr/lib -L$PREFIX/lib"
 
 # set paths
 export CC="$DEVROOT/usr/bin/cc"
@@ -91,4 +92,4 @@ export AR="$DEVROOT/usr/bin/ar"
 export RANLIB="$DEVROOT/usr/bin/ranlib"
 
 # run ./configure
-./configure --prefix="$PREFIX" --build="i386-apple-darwin$BUILD_DARWIN_VER" --host="arm-apple-darwin" --enable-static --disable-shared ac_cv_file__dev_zero=no ac_cv_func_setpgrp_void=yes ${confopts[@]}
+./configure --prefix="$PREFIX" --build="x86_64-apple-darwin$BUILD_DARWIN_VER" --host="arm-apple-darwin" --enable-static --disable-shared ac_cv_file__dev_zero=no ac_cv_func_setpgrp_void=yes ${confopts[@]}
