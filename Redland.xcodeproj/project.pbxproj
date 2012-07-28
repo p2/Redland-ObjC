@@ -998,6 +998,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1032,6 +1033,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
