@@ -4,6 +4,7 @@
 //  $Id: RedlandNode-Convenience.m 4 2004-09-25 15:49:17Z kianga $
 //
 //  Copyright 2004 Rene Puls <http://purl.org/net/kianga/>
+//	Copyright 2012 Pascal Pfiffner <http://www.chip.org/>
 //
 //  This file is available under the following three licenses:
 //   1. GNU Lesser General Public License (LGPL), version 2.1
@@ -15,7 +16,7 @@
 //  for the complete terms and further details.
 //
 //  The most recent version of this software can be found here:
-//  <http://purl.org/net/kianga/latest/redland-objc>
+//  <https://github.com/p2/Redland-ObjC>
 //
 //  For information about the Redland RDF Application Framework, including
 //  the most recent version, see <http://librdf.org/>.
@@ -28,223 +29,302 @@
 
 @implementation RedlandNode (Convenience)
 
+
+#pragma mark - Allocators
+/*!
+	@abstract Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
+	@discussion Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
+ */
 + (RedlandNode *)nodeWithObject:(id)object
 {
-    NSParameterAssert(object);
-    if ([object respondsToSelector:@selector(nodeValue)])
-        return [object nodeValue];
-    else
-        @throw [RedlandException exceptionWithName:RedlandExceptionName
-                                            reason:[NSString stringWithFormat:@"Cannot make node from object %@", object]
-                                          userInfo:nil];
+	if ([object respondsToSelector:@selector(nodeValue)]) {
+		return [object nodeValue];
+	}
+	@throw [RedlandException exceptionWithName:RedlandExceptionName
+										reason:[NSString stringWithFormat:@"Cannot make node from object %@", object]
+									  userInfo:nil];
 }
 
+/*!
+	@abstract Creates and returns a typed literal RedlandNode with the given int value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#int</tt>.
+ */
 + (RedlandNode *)nodeWithLiteralInt:(int)anInt
 {
-    return [RedlandNode nodeWithLiteral:[NSString stringWithFormat:@"%d", anInt]
-                               language:nil
-                                   type:[XMLSchemaNS URI:@"int"]];
+	return [RedlandNode nodeWithLiteral:[NSString stringWithFormat:@"%d", anInt]
+							   language:nil
+								   type:[XMLSchemaNS URI:@"int"]];
 }
 
-+ (RedlandNode *)nodeWithLiteralBool:(BOOL)aBool
-{
-    return [RedlandNode nodeWithLiteral:aBool ? @"true" : @"false"
-                               language:nil
-                                   type:[XMLSchemaNS URI:@"boolean"]];
-}
-
-+ (RedlandNode *)nodeWithLiteralString:(NSString *)aString language:(NSString *)aLanguage
-{
-    return [RedlandNode nodeWithLiteral:aString
-                               language:aLanguage
-                                   type:[XMLSchemaNS URI:@"string"]];
-}
-
+/*!
+	@abstract Creates and returns a typed literal RedlandNode with the given float value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+ */
 + (RedlandNode *)nodeWithLiteralFloat:(float)aFloat
 {
-    return [RedlandNode nodeWithLiteral:[NSString stringWithFormat:@"%f", aFloat]
-                               language:nil
-                                   type:[XMLSchemaNS URI:@"float"]];
+	return [RedlandNode nodeWithLiteral:[NSString stringWithFormat:@"%f", aFloat]
+							   language:nil
+								   type:[XMLSchemaNS URI:@"float"]];
 }
 
+/*!
+	@abstract Creates and returns a typed literal RedlandNode with the given double value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+ */
 + (RedlandNode *)nodeWithLiteralDouble:(double)aDouble
 {
-    return [RedlandNode nodeWithLiteral:[NSString stringWithFormat:@"%f", aDouble]
-                               language:nil
-                                   type:[XMLSchemaNS URI:@"double"]];
+	return [RedlandNode nodeWithLiteral:[NSString stringWithFormat:@"%.15f", aDouble]
+							   language:nil
+								   type:[XMLSchemaNS URI:@"double"]];
 }
 
+/*!
+	@abstract Creates and returns a typed literal RedlandNode with the given boolean value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+ */
++ (RedlandNode *)nodeWithLiteralBool:(BOOL)aBool
+{
+	return [RedlandNode nodeWithLiteral:aBool ? @"true" : @"false"
+							   language:nil
+								   type:[XMLSchemaNS URI:@"boolean"]];
+}
+
+/*!
+	@abstract Creates and returns a typed literal RedlandNode with the given string value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
+ */
++ (RedlandNode *)nodeWithLiteralString:(NSString *)aString language:(NSString *)aLanguage
+{
+	return [RedlandNode nodeWithLiteral:aString
+							   language:aLanguage
+								   type:[XMLSchemaNS URI:@"string"]];
+}
+
+/*!
+	@abstract Creates and returns a typed literal RedlandNode with the given NSDate value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+ */
 + (RedlandNode *)nodeWithLiteralDateTime:(NSDate *)aDate
 {
-    NSString *formattedDate = [aDate descriptionWithCalendarFormat:@"%Y-%m-%dT%H:%M:%SZ" 
-                                                          timeZone:[NSTimeZone timeZoneWithName:@"UTC"]
-                                                            locale:nil];
-    return [RedlandNode nodeWithLiteral:formattedDate
-                               language:nil
-                                   type:[XMLSchemaNS URI:@"dateTime"]];
+	NSString *formattedDate = [aDate descriptionWithCalendarFormat:@"%Y-%m-%dT%H:%M:%SZ"
+														  timeZone:[NSTimeZone timeZoneWithName:@"UTC"]
+															locale:nil];
+	return [RedlandNode nodeWithLiteral:formattedDate
+							   language:nil
+								   type:[XMLSchemaNS URI:@"dateTime"]];
 }
 
+/*!
+	@abstract Creates and returns a RedlandNode of type resource with the given URL.
+ */
 + (RedlandNode *)nodeWithURL:(NSURL *)aURL
 {
-    return [self nodeWithURIString:[aURL absoluteString]];
+	return [self nodeWithURIString:[aURL absoluteString]];
 }
 
+
+
+#pragma mark - Accessors
+/*!
+	@return the literal integer value of the receiver.
+	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
+ */
 - (int)intValue
 {
-    static RedlandURI *datatypeURI = nil;
-    
-    if (datatypeURI == nil)
-        datatypeURI = [XMLSchemaNS URI:@"int"];
-    if (![[self literalDataType] isEqual:datatypeURI]) {
-        [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to int value", self];
-        return 0;
-    }
-    else return [[self literalValue] intValue];
+	static RedlandURI *datatypeURI = nil;
+	
+	if (datatypeURI == nil) {
+		datatypeURI = [XMLSchemaNS URI:@"int"];
+	}
+	if (![[self literalDataType] isEqual:datatypeURI]) {
+		[RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to int value", self];
+		return 0;
+	}
+	return [[self literalValue] intValue];
 }
 
-- (BOOL)boolValue
-{
-    static RedlandURI *datatypeURI = nil;
-    NSString *stringValue;
-    
-    if (datatypeURI == nil)
-        datatypeURI = [XMLSchemaNS URI:@"boolean"];
-    if (![[self literalDataType] isEqual:datatypeURI]) {
-        [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to bool value", self];
-        return 0;
-    }
-    else {
-        stringValue = [[self literalValue] lowercaseString];
-        return [stringValue isEqualToString:@"true"] || [stringValue isEqualToString:@"1"];
-    }
-}
-
-- (NSString *)stringValue
-{
-    static RedlandURI *datatypeURI = nil;
-    
-    if (datatypeURI == nil)
-        datatypeURI = [XMLSchemaNS URI:@"string"];
-    if (![[self literalDataType] isEqual:datatypeURI]) {
-        [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to string value", self];
-        return 0;
-    }
-    else return [self literalValue];
-}
-
-- (NSURL *)URLValue
-{
-    return [[self URIValue] URLValue];
-}
-
-- (NSString *)URIStringValue
-{
-    return [[self URIValue] stringValue];
-}
-
-- (NSCalendarDate *)dateTimeValue
-{
-    static RedlandURI *datatypeURI = nil;
-    
-    if (datatypeURI == nil)
-        datatypeURI = [XMLSchemaNS URI:@"dateTime"];
-    if (![[self literalDataType] isEqual:datatypeURI]) {
-        [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to dateTime value", self];
-        return 0;
-    }
-    else {
-        NSCalendarDate *date;
-        date = [NSCalendarDate dateWithString:[self literalValue] calendarFormat:@"%Y-%m-%dT%H:%M:%SZ"];
-        // FIXME: The parsed date is always in the local timezone, but it should
-        // be in the UTC timezone. Ugly workaround follows...
-        date = [NSCalendarDate dateWithYear:[date yearOfCommonEra]
-                                      month:[date monthOfYear]
-                                        day:[date dayOfMonth]
-                                       hour:[date hourOfDay]
-                                     minute:[date minuteOfHour]
-                                     second:[date secondOfMinute]
-                                   timeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-        return date;
-    }
-}
-
+/*!
+	@return the literal float value of the receiver.
+	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+ */
 - (float)floatValue
 {
-    static RedlandURI *datatypeURI = nil;
-    
-    if (datatypeURI == nil)
-        datatypeURI = [XMLSchemaNS URI:@"float"];
-    if (![[self literalDataType] isEqual:datatypeURI]) {
-        [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to float value", self];
-        return 0;
-    }
-    else return [[self literalValue] floatValue];
+	static RedlandURI *datatypeURI = nil;
+	
+	if (datatypeURI == nil) {
+		datatypeURI = [XMLSchemaNS URI:@"float"];
+	}
+	if (![[self literalDataType] isEqual:datatypeURI]) {
+		[RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to float value", self];
+		return 0.f;
+	}
+	return [[self literalValue] floatValue];
 }
 
+/*!
+	@return the literal double value of the receiver.
+	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+ */
 - (double)doubleValue
 {
-    static RedlandURI *floatDatatypeURI = nil;
-    static RedlandURI *doubleDatatypeURI = nil;
-    
-    if (floatDatatypeURI == nil)
-        floatDatatypeURI = [XMLSchemaNS URI:@"float"];
-    if (doubleDatatypeURI == nil)
-        doubleDatatypeURI = [XMLSchemaNS URI:@"double"];
-    if (![[self literalDataType] isEqual:floatDatatypeURI] &&
-        ![[self literalDataType] isEqual:doubleDatatypeURI]) {
-        [RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to double value", self];
-        return 0;
-    }
-    else return [[self literalValue] doubleValue];
+	static RedlandURI *floatDatatypeURI = nil;
+	static RedlandURI *doubleDatatypeURI = nil;
+	
+	if (floatDatatypeURI == nil) {
+		floatDatatypeURI = [XMLSchemaNS URI:@"float"];
+	}
+	if (doubleDatatypeURI == nil) {
+		doubleDatatypeURI = [XMLSchemaNS URI:@"double"];
+	}
+	if (![[self literalDataType] isEqual:floatDatatypeURI]
+		&&![[self literalDataType] isEqual:doubleDatatypeURI]) {
+		[RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to double value", self];
+		return 0.0;
+	}
+	return [[self literalValue] doubleValue];
 }
 
+/*!
+	@return the literal boolean value of the receiver.
+	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+ */
+- (BOOL)boolValue
+{
+	static RedlandURI *datatypeURI = nil;
+	
+	if (datatypeURI == nil) {
+		datatypeURI = [XMLSchemaNS URI:@"boolean"];
+	}
+	if (![[self literalDataType] isEqual:datatypeURI]) {
+		[RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to bool value", self];
+		return 0;
+	}
+	
+	NSString *stringValue = [[self literalValue] lowercaseString];
+	return [stringValue isEqualToString:@"true"] || [stringValue isEqualToString:@"1"];
+}
+
+/*!
+	@return the literal string value of the receiver.
+	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>. If you just want the literal value, no matter what datatype, user <tt>literalValue</tt>.
+ */
+- (NSString *)stringValue
+{
+	static RedlandURI *datatypeURI = nil;
+	
+	if (datatypeURI == nil) {
+		datatypeURI = [XMLSchemaNS URI:@"string"];
+	}
+	if (![[self literalDataType] isEqual:datatypeURI]) {
+		[RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to string value", self];
+		return 0;
+	}
+	return [self literalValue];
+}
+
+/*!
+	@return the URI of the receiver (which must be a resource node) as an NSURL.
+ */
+- (NSURL *)URLValue
+{
+	return [[self URIValue] URLValue];
+}
+
+/*!
+	@return the URI of the receiver (which must be a resource node) as a string value.
+ */
+- (NSString *)URIStringValue
+{
+	return [[self URIValue] stringValue];
+}
+
+/*!
+	@return the literal dateTime value of the receiver.
+	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+ */
+- (NSDate *)dateTimeValue
+{
+	static RedlandURI *datatypeURI = nil;
+	static NSDateFormatter *dateTimeNodeFormatter = nil;
+	
+	if (datatypeURI == nil) {
+		datatypeURI = [XMLSchemaNS URI:@"dateTime"];
+	}
+	if (![[self literalDataType] isEqual:datatypeURI]) {
+		[RedlandException raise:RedlandExceptionName format:@"Cannot convert node %@ to dateTime value", self];
+		return nil;
+	}
+	
+	// create a date from string
+	if (!dateTimeNodeFormatter) {
+		dateTimeNodeFormatter = [NSDateFormatter new];
+		[dateTimeNodeFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+		[dateTimeNodeFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+	}
+	return [dateTimeNodeFormatter dateFromString:[self literalValue]];
+}
+
+
+/*!
+	@return the receiver.
+ */
 - (RedlandNode *)nodeValue
 {
-    return self;
+	return self;
 }
 
+
 @end
+
 
 @implementation NSURL (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue
 {
-    return [RedlandNode nodeWithURL:self];
+	return [RedlandNode nodeWithURL:self];
 }
+
 @end
 
+
 @implementation NSNumber (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue
 {
 	if (strcmp([self objCType], @encode(double))) {
-        return [RedlandNode nodeWithLiteralDouble:[self doubleValue]];
+		return [RedlandNode nodeWithLiteralDouble:[self doubleValue]];
 	}
-    if (strcmp([self objCType], @encode(float))) {
-        return [RedlandNode nodeWithLiteralFloat:[self floatValue]];
+	if (strcmp([self objCType], @encode(float))) {
+		return [RedlandNode nodeWithLiteralFloat:[self floatValue]];
 	}
-    if (strcmp([self objCType], @encode(BOOL))) {
-        return [RedlandNode nodeWithLiteralBool:[self boolValue]];
+	if (strcmp([self objCType], @encode(BOOL))) {
+		return [RedlandNode nodeWithLiteralBool:[self boolValue]];
 	}
-    return [RedlandNode nodeWithLiteralInt:[self intValue]];
+	return [RedlandNode nodeWithLiteralInt:[self intValue]];
 }
+
 @end
+
 
 @implementation NSString (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue
 {
-    return [RedlandNode nodeWithLiteralString:self language:nil];
+	return [RedlandNode nodeWithLiteralString:self language:nil];
 }
+
 @end
+
 
 @implementation NSDate (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue
 {
-    return [RedlandNode nodeWithLiteralDateTime:self];
+	return [RedlandNode nodeWithLiteralDateTime:self];
 }
+
 @end
 
+
 @implementation RedlandURI (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue
 {
-    return [RedlandNode nodeWithURI:self];
+	return [RedlandNode nodeWithURI:self];
 }
+
 @end
