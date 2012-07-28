@@ -6,6 +6,9 @@ Redland-source/build-*
 Redland-source/product-*
 Redland-source/Universal*
 
+# Don't version the documentation
+Docs
+
 # Xcode user data
 !*.xcodeproj/project.pbxproj
 xcuserdata
