@@ -285,13 +285,13 @@
 
 - (RedlandNode *)nodeValue
 {
-	if (strcmp([self objCType], @encode(double))) {
+	if (NULL != strstr([self objCType], @encode(double))) {
 		return [RedlandNode nodeWithLiteralDouble:[self doubleValue]];
 	}
-	if (strcmp([self objCType], @encode(float))) {
+	if (NULL != strstr([self objCType], @encode(float))) {
 		return [RedlandNode nodeWithLiteralFloat:[self floatValue]];
 	}
-	if (strcmp([self objCType], @encode(BOOL))) {
+	if (NULL != strstr([self objCType], @encode(BOOL))) {
 		return [RedlandNode nodeWithLiteralBool:[self boolValue]];
 	}
 	return [RedlandNode nodeWithLiteralInt:[self intValue]];

@@ -180,6 +180,8 @@
 	//    UKObjectsEqual([RedlandNode nodeWithLiteralBool:YES],
 	//                   [RedlandNode nodeWithObject:[NSNumber numberWithBool:YES]]);
 	STAssertEqualObjects([RedlandNode nodeWithLiteralInt:12345], [RedlandNode nodeWithObject:[NSNumber numberWithInt:12345]], nil);
+	STAssertEqualObjects([RedlandNode nodeWithLiteralFloat:1.2345f], [RedlandNode nodeWithObject:[NSNumber numberWithFloat:1.2345f]], nil);
+	STAssertEqualObjects([RedlandNode nodeWithLiteralDouble:12.3456790], [RedlandNode nodeWithObject:[NSNumber numberWithDouble:12.3456790]], nil);
 	STAssertEqualObjects([RedlandNode nodeWithLiteralString:@"foo" language:nil], [RedlandNode nodeWithObject:@"foo"], nil);
 	STAssertEqualObjects([RedlandNode nodeWithURL:[NSURL URLWithString:@"http://foo"]], [RedlandNode nodeWithObject:[NSURL URLWithString:@"http://foo"]], nil);
 	STAssertEqualObjects([RedlandNode nodeWithLiteralDateTime:[NSDate dateWithTimeIntervalSinceReferenceDate:0]], [RedlandNode nodeWithObject:[NSDate dateWithTimeIntervalSinceReferenceDate:0]], nil);
