@@ -42,6 +42,12 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 @synthesize prefix = _prefix;
 @synthesize shortName = _shortName;
 
+
+#pragma mark -
+/*!
+	Initialises the global variables for various predefined namespaces.
+	@discussion There is no need to call this method directly. It is automatically invoked during initialization of the RedlandWorld class.
+ */
 + (void)initGlobalNamespaces
 {
     if (RedlandRDFSyntaxNS == nil) {
@@ -65,11 +71,13 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 	}
 }
 
-+ (RedlandNamespace *)namespaceWithShortName:(NSString *)aName
-{
-	return [GlobalNamespaceDict objectForKey:aName];
-}
-
+/*!
+	Initialises the receiver with a given URI prefix and short name.
+	@param aPrefix The URI prefix string which will be prepended to objects created by the new instance, e.g. <tt>http://purl.org/dc/elements/1.1/</tt>
+	@param shortName The short name for this namespace, e.g. <tt>dc</tt>
+	@result The newly initialised instance
+	@discussion The shortName is currently not used, but may be used later to provide automatic shortening of URIs.
+ */
 - (id)initWithPrefix:(NSString *)aPrefix shortName:(NSString *)aName
 {
     NSParameterAssert(aPrefix != nil);
@@ -84,6 +92,7 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 - (void)dealloc
 {
+	DLog(@"DEALLOC %p", self);
 	[self unregisterInstance];
 }
 
@@ -97,61 +106,135 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
     return [_prefix hash] ^ [_shortName hash];
 }
 
-- (void)registerInstance
+
+
+#pragma mark - Registration
+/*!
+	Returns a pre-registered instance with the given short name.
+	@discussion This method allows you to retrieve previously registered namespace instances by their short name. For example, if you call
+	[RDFSyntaxNS registerInstance], you can then get this instance by calling: [RedlandNamespace namespaceWithShortName:\@"rdf"].
+	@attention Under ARC, this method returns a strong reference.
+ */
++ (RedlandNamespace *)namespaceWithShortName:(NSString *)aName
 {
-	NSAssert1([RedlandNamespace namespaceWithShortName:_shortName] == nil, @"Namespace with short name %@ already registered", _shortName);
-	[GlobalNamespaceDict setObject:self forKey:_shortName];
+	return [[GlobalNamespaceDict objectForKey:aName] nonretainedObjectValue];
 }
 
+/*!
+	Registers the current instance so it can be retrieved by calling [RedlandNamespace namespaceWithShortName:].
+	@discussion Raises an exception if there is already an instance registered for the receiver's shortName. The receiver automatically unregisters itself when it is deallocated.
+ */
+- (void)registerInstance
+{
+	NSAssert1([GlobalNamespaceDict objectForKey:_shortName] == nil, @"Namespace with short name %@ already registered", _shortName);
+	
+	NSValue *nonretained = [NSValue valueWithNonretainedObject:self];
+	[GlobalNamespaceDict setObject:nonretained forKey:_shortName];
+}
+
+/*!
+	Removes the registration done by [RedlandNamespace registerInstance].
+	@discussion Does nothing if the receiver is not registered.
+	@attention Because "+namespaceWithShortName:" returns a strong reference under ARC, we have to query "GlobalNamespaceDict" directly instead of using it
+	since this method is called from within "dealloc".
+ */
 - (void)unregisterInstance
 {
-	if (self == [RedlandNamespace namespaceWithShortName:_shortName]) {
+	NSValue *existing = [GlobalNamespaceDict objectForKey:_shortName];
+	if (self == [existing nonretainedObjectValue]) {
 		[GlobalNamespaceDict removeObjectForKey:_shortName];
 	}
 }
 
+
+
+#pragma mark - Factory Methods
+/*!
+	Returns a new RedlandNode of type resource whose URI value is the given suffix appended to the receiver's namespace.
+	@param suffix The string to append to the receiver's namespace prefix
+	@result The created RedlandNode instance
+ */
 - (RedlandNode *)node:(NSString *)suffix
 {
     NSParameterAssert(suffix != nil);
     return [RedlandNode nodeWithURIString:[self string:suffix]];
 }
 
+/*!
+	Returns a new RedlandURI by appending the given suffix to the receiver's namespace.
+	@param suffix The string to append to the receiver's namespace prefix
+	@result The created RedlandURI instance
+ */
 - (RedlandURI *)URI:(NSString *)suffix
 {
     NSParameterAssert(suffix != nil);
     return [RedlandURI URIWithString:[self string:suffix]];
 }
 
+/*!
+	Returns a new NSURL by appending the given suffix to the receiver's namespace.
+	@param suffix The string to append to the receiver's namespace prefix
+	@result The created NSURL instance
+ */
 - (NSURL *)URL:(NSString *)suffix
 {
     NSParameterAssert(suffix != nil);
     return [NSURL URLWithString:[self string:suffix]];
 }
 
+/*!
+	Returns a new NSString by appending the given suffix to the receiver's namespace.
+	@param suffix The string to append to the receiver's namespace prefix
+	@result The created NSString instance
+ */
 - (NSString *)string:(NSString *)suffix
 {
     NSParameterAssert(suffix != nil);
     return [_prefix stringByAppendingString:suffix];
 }
 
+
+
+#pragma mark - Property Checks
+/*!
+	Returns YES if the given NSString begins with the same prefix as the receiver.
+	@result YES if the prefixes are equal, otherwise NO.
+ */
 - (BOOL)containsURIString:(NSString *)qName
 {
     NSParameterAssert(qName != nil);
     return [qName hasPrefix:_prefix];
 }
 
+/*!
+	Returns YES if the resource URI of the given RedlandNode begins with the same prefix as the receiver.
+	@result YES if the node is a resource node and the prefixes are equal, otherwise NO.
+ */
 - (BOOL)containsNode:(RedlandNode *)node
 {
     NSParameterAssert(node != nil);
     return [self containsURIString:[node URIStringValue]];
 }
 
+/*!
+	Returns YES if the given RedlandURI begins with the same prefix as the receiver.
+	@result YES if the prefixes are equal, otherwise NO.
+ */
 - (BOOL)containsURI:(RedlandURI *)aURI
 {
     NSParameterAssert(aURI != nil);
     return [self containsURIString:[aURI stringValue]];
 }
 
+
+
+#pragma mark - Properties
+/*!
+	Returns the local name of the given string in the receiver's namespace.
+	@param aString A URI string
+	@result A string generated by stripping the receiver's namespace prefix from the beginning of aString. If the string does not begin with the same prefix as
+	the receiver, nil is returned.
+ */
 - (NSString *)localNameOfURIString:(NSString *)qName
 {
     NSParameterAssert(qName != nil);
@@ -161,12 +244,24 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
         return nil;
 }
 
+/*!
+	Returns the local name of the given RedlandNode in the receiver's namespace.
+	@param aNode A RedlandNode of type resource
+	@result A string generated by stripping the receiver's namespace prefix from the beginning of aNode's resource URI. If the node's resource URI does not
+	begin with the same prefix as the receiver, or if the node is not of type resource, nil is returned.
+ */
 - (NSString *)localNameOfNode:(RedlandNode *)aNode
 {
     NSParameterAssert(aNode != nil);
     return [self localNameOfURIString:[aNode URIStringValue]];
 }
 
+/*!
+	Returns the local name of the given RedlandURI in the receiver's namespace.
+	@param aURI A RedlandURI
+	@result A string generated by stripping the receiver's namespace prefix from the beginning of aURI. If the URI does not begin with the same prefix as the
+	receiver, nil is returned.
+ */
 - (NSString *)localNameOfURI:(RedlandURI *)aURI
 {
     NSParameterAssert(aURI != nil);
@@ -175,12 +270,17 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 @end
 
+
 @implementation RedlandSerializer (NamespaceConvenience)
 
+/*!
+	Adds the URI-to-prefix mapping of the specified namespace to the receiver.
+ */
 - (void)addNamespace:(RedlandNamespace *)aNamespace
 {
 	[self setPrefix:[aNamespace shortName] 
 	forNamespaceURI:[RedlandURI URIWithString:[aNamespace prefix]]];
 }
+
 
 @end

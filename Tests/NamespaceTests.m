@@ -30,7 +30,7 @@
 
 - (void)testPredefined
 {
-	[RedlandWorld defaultWorld]; // make sure that global instances are initialized
+	[RedlandWorld defaultWorld];	// make sure that global instances are initialized
     STAssertNotNil(XMLSchemaNS, nil);
 	STAssertNotNil(RDFSyntaxNS, nil);
 	STAssertNotNil(RDFSchemaNS, nil);
@@ -39,18 +39,15 @@
 
 - (void)testURI
 {
-    RedlandNamespace *schemaNS;
-    RedlandURI *uri;
-    
-    schemaNS = [[RedlandNamespace alloc] initWithPrefix:@"http://www.w3.org/2001/XMLSchema#"
-                                           shortName:@"xmlschema"];
-    uri = [RedlandURI URIWithString:@"http://www.w3.org/2001/XMLSchema#int"];
+    RedlandNamespace *schemaNS = [[RedlandNamespace alloc] initWithPrefix:@"http://www.w3.org/2001/XMLSchema#"
+																shortName:@"xmlschema"];
+    RedlandURI *uri = [RedlandURI URIWithString:@"http://www.w3.org/2001/XMLSchema#int"];
     STAssertEqualObjects(uri, [schemaNS URI:@"int"], nil);
 }
 
 - (void)testRegistration
 {
-	[RedlandWorld defaultWorld]; // make sure that global instances are initialized
+	[RedlandWorld defaultWorld];	// make sure that global instances are initialized
 	STAssertNoThrow([RDFSyntaxNS registerInstance], nil);
 	STAssertThrows([RDFSyntaxNS registerInstance], nil);
 	STAssertEquals(RDFSyntaxNS, [RedlandNamespace namespaceWithShortName:@"rdf"], nil);
@@ -60,10 +57,11 @@
 
 - (void)testAutoUnregister
 {
-	RedlandNamespace *schemaNS;
-    schemaNS = [[RedlandNamespace alloc] initWithPrefix:@"http://www.w3.org/2001/XMLSchema#"
-											  shortName:@"xmlschema"];
+	RedlandNamespace *schemaNS = [[RedlandNamespace alloc] initWithPrefix:@"http://www.w3.org/2001/XMLSchema#"
+																shortName:@"xmlschema"];
 	[schemaNS registerInstance];
+	schemaNS = nil;					// will dealloc the instance
+	
 	STAssertNil([RedlandNamespace namespaceWithShortName:@"xmlschema"], nil);
 }
 

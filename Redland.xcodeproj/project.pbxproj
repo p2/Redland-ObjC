@@ -1206,6 +1206,138 @@
 			};
 			name = Deployment;
 		};
+		EE14DAAF15C70ED7003B9373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BDB_LDFLAGS = "$(BERKELEYDB_PREFIX)/lib/libdb.a";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+			};
+			name = Debug;
+		};
+		EE14DAB015C70ED7003B9373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Redland_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
+				MACH_O_TYPE = mh_dylib;
+				OTHER_CFLAGS = "-DDEBUG";
+				PRODUCT_NAME = Redland;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = framework;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		EE14DAB115C70ED7003B9373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Redland-source/Universal-Mac\"",
+				);
+				PRODUCT_NAME = Tests;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EE14DAB215C70ED7003B9373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Documentation;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		EE14DAB315C70ED7003B9373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Release;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		EE14DAB415C70ED7003B9373 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
 		EE1DDDED15BED96100882BDA /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1229,6 +1361,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB2408BB53BE00ACF14F /* Development */,
+				EE14DAB015C70ED7003B9373 /* Debug */,
 				ED48EB2508BB53BE00ACF14F /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1238,6 +1371,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB2C08BB53BE00ACF14F /* Development */,
+				EE14DAB215C70ED7003B9373 /* Debug */,
 				ED48EB2D08BB53BE00ACF14F /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1247,6 +1381,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB3008BB53BE00ACF14F /* Development */,
+				EE14DAB315C70ED7003B9373 /* Debug */,
 				ED48EB3108BB53BE00ACF14F /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1256,6 +1391,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB3408BB53BE00ACF14F /* Development */,
+				EE14DAAF15C70ED7003B9373 /* Debug */,
 				ED48EB3508BB53BE00ACF14F /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1265,6 +1401,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED48EB5208BB559800ACF14F /* Development */,
+				EE14DAB115C70ED7003B9373 /* Debug */,
 				ED48EB5308BB559800ACF14F /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1274,6 +1411,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE1DDDED15BED96100882BDA /* Development */,
+				EE14DAB415C70ED7003B9373 /* Debug */,
 				EE1DDDEE15BED96100882BDA /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
