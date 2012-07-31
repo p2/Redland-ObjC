@@ -4,6 +4,7 @@
 //  $Id: RedlandStorage.m 4 2004-09-25 15:49:17Z kianga $
 //
 //  Copyright 2004 Rene Puls <http://purl.org/net/kianga/>
+//	Copyright 2012 Pascal Pfiffner <http://www.chip.org/>
 //
 //  This file is available under the following three licenses:
 //   1. GNU Lesser General Public License (LGPL), version 2.1
@@ -15,7 +16,7 @@
 //  for the complete terms and further details.
 //
 //  The most recent version of this software can be found here:
-//  <http://purl.org/net/kianga/latest/redland-objc>
+//  <https://github.com/p2/Redland-ObjC>
 //
 //  For information about the Redland RDF Application Framework, including
 //  the most recent version, see <http://librdf.org/>.
@@ -26,58 +27,61 @@
 
 @implementation RedlandStorage
 
-+ (RedlandStorage *)storage
-{
-    return [self new];
-}
-
+/*!
+	Initializes a new in-memory, context-enabled hash storage.
+ */
 - (id)init
 {
 	return [self initWithFactoryName:@"hashes" identifier:nil options:@"hash-type='memory', contexts='yes'"];
 }
 
-- (id)initWithFactoryName:(NSString *)factoryName
-               identifier:(NSString *)anIdentifier 
-                  options:(NSString *)someOptions
+/*!
+	The designated initializer, initialises a new RedlandStorage.
+	@param factoryName Name of the storage factory
+	@param anIdentifier Storage identifier (may be used as a file name)
+	@param options Storage options (see the Redland C documentation for possible values)
+ */
+- (id)initWithFactoryName:(NSString *)factoryName identifier:(NSString *)anIdentifier options:(NSString *)someOptions
 {
-    char *factory_name;
-    char *identifier = NULL;
-    char *options = NULL;
-    librdf_storage *newStorage;
-    
-    NSParameterAssert(factoryName != nil);
-    
-    // This strdup madness is necessary because librdf_new_storage wants
-    // non-const strings as its parameters:
-    factory_name = strdup([factoryName UTF8String]);
-    if (anIdentifier)
-        identifier = strdup([anIdentifier UTF8String]);
-    if (someOptions)
-        options = strdup([someOptions UTF8String]);
-    newStorage = librdf_new_storage([RedlandWorld defaultWrappedWorld],
-                               factory_name, 
-                               identifier, 
-                               options);
-    free(factory_name);
-    free(identifier);
-    free(options);
-    
-    self = [super initWithWrappedObject:newStorage];
-    if (self != nil) {
-		// ...
-    }
-    return self;
+	NSParameterAssert(factoryName != nil);
+	
+	char *identifier = NULL;
+	char *options = NULL;
+	
+	// This strdup madness is necessary because librdf_new_storage wants non-const strings as its parameters:
+	char *factory_name = strdup([factoryName UTF8String]);
+	if (anIdentifier) {
+		identifier = strdup([anIdentifier UTF8String]);
+	}
+	if (someOptions) {
+		options = strdup([someOptions UTF8String]);
+	}
+	librdf_storage *newStorage = librdf_new_storage([RedlandWorld defaultWrappedWorld],
+													factory_name,
+													identifier,
+													options);
+	free(factory_name);
+	free(identifier);
+	free(options);
+	
+	self = [super initWithWrappedObject:newStorage];
+	return self;
 }
 
 - (void)dealloc
 {
-    if (isWrappedObjectOwner && (wrappedObject != NULL))
-        librdf_free_storage(wrappedObject);
+	if (isWrappedObjectOwner && (wrappedObject != NULL)) {
+		librdf_free_storage(wrappedObject);
+	}
 }
 
+/*!
+	Returns the underlying librdf_storage pointer of the receiver.
+ */
 - (librdf_storage *)wrappedStorage
 {
-    return wrappedObject;
+	return wrappedObject;
 }
+
 
 @end

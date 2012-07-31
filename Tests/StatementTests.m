@@ -30,69 +30,64 @@
 
 - (void)testSimple
 {
-    RedlandStatement *statement;
-    RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
-    RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://foo/"];
-    RedlandNode *object = [RedlandNode nodeWithLiteralString:@"blah" language:@"en"];
-    
-    statement = [RedlandStatement statementWithSubject:subject
-                                             predicate:predicate
-                                                object:object];
-    STAssertNotNil(statement, nil);
-    STAssertTrue([statement isComplete], nil);
-    STAssertEqualObjects(subject, [statement subject], nil);
-    STAssertEqualObjects(predicate, [statement predicate], nil);
-    STAssertEqualObjects(object, [statement object], nil);
-    STAssertEqualObjects(statement, statement, nil);
-    
-    statement = [RedlandStatement statementWithSubject:subject
-                                             predicate:predicate
-                                                object:nil];
-    STAssertNotNil(statement, nil);
-    STAssertFalse([statement isComplete], nil);
+	RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
+	RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://foo/"];
+	RedlandNode *object = [RedlandNode nodeWithLiteralString:@"blah" language:@"en"];
+	
+	RedlandStatement *statement = [RedlandStatement statementWithSubject:subject
+															   predicate:predicate
+																  object:object];
+	STAssertNotNil(statement, nil);
+	STAssertTrue([statement isComplete], nil);
+	STAssertEqualObjects(subject, [statement subject], nil);
+	STAssertEqualObjects(predicate, [statement predicate], nil);
+	STAssertEqualObjects(object, [statement object], nil);
+	STAssertEqualObjects(statement, statement, nil);
+	
+	statement = [RedlandStatement statementWithSubject:subject
+											 predicate:predicate
+												object:nil];
+	STAssertNotNil(statement, nil);
+	STAssertFalse([statement isComplete], nil);
 }
 
 - (void)testEquality
 {
-    RedlandStatement *statement1, *statement2;
-    RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
-    RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://foo/"];
-    RedlandNode *object1 = [RedlandNode nodeWithLiteralString:@"blah" language:@"en"];
-    RedlandNode *object2 = [RedlandNode nodeWithLiteralString:@"blah2" language:@"en"];
-    
-    statement1 = [RedlandStatement statementWithSubject:subject
-                                              predicate:predicate
-                                                 object:object1];
-    statement2 = [RedlandStatement statementWithSubject:subject
-                                              predicate:predicate
-                                                 object:object2];
-    STAssertFalse([statement1 isEqual:statement2], nil);
-    STAssertFalse([statement1 matchesPartialStatement:statement2], nil);
-    statement2 = [RedlandStatement statementWithSubject:subject
-                                              predicate:predicate
-                                                 object:object1];
-    STAssertEqualObjects(statement1, statement2, nil);
-    statement1 = [RedlandStatement statementWithSubject:subject
-                                              predicate:predicate
-                                                 object:nil];
-    STAssertTrue([statement2 matchesPartialStatement:statement1], nil);
+	RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
+	RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://foo/"];
+	RedlandNode *object1 = [RedlandNode nodeWithLiteralString:@"blah" language:@"en"];
+	RedlandNode *object2 = [RedlandNode nodeWithLiteralString:@"blah2" language:@"en"];
+	
+	RedlandStatement *statement1 = [RedlandStatement statementWithSubject:subject
+																predicate:predicate
+																   object:object1];
+	RedlandStatement *statement2 = [RedlandStatement statementWithSubject:subject
+																predicate:predicate
+																   object:object2];
+	STAssertFalse([statement1 isEqual:statement2], nil);
+	STAssertFalse([statement1 matchesPartialStatement:statement2], nil);
+	statement2 = [RedlandStatement statementWithSubject:subject
+											  predicate:predicate
+												 object:object1];
+	STAssertEqualObjects(statement1, statement2, nil);
+	statement1 = [RedlandStatement statementWithSubject:subject
+											  predicate:predicate
+												 object:nil];
+	STAssertTrue([statement2 matchesPartialStatement:statement1], nil);
 }
 
 - (void)testArchiving
 {
-    RedlandStatement *sourceStatement;
-    RedlandStatement *decodedStatement;
-    NSData *data;
-    
-    sourceStatement = [RedlandStatement 
-        statementWithSubject:[RedlandNode nodeWithBlankID:@"foo"]
-                   predicate:[RedlandNode nodeWithURIString:@"http://foo/"]
-                      object:[RedlandNode nodeWithLiteralString:@"hello world" language:@"en"]];
-    data = [NSArchiver archivedDataWithRootObject:sourceStatement];
-    STAssertNotNil(data, nil);
-    decodedStatement = [NSUnarchiver unarchiveObjectWithData:data];
-    STAssertNotNil(decodedStatement, nil);
-    STAssertEqualObjects(sourceStatement, decodedStatement, nil);
+	RedlandNode *fooNode = [RedlandNode nodeWithBlankID:@"foo"];
+	RedlandNode *fooPredicate = [RedlandNode nodeWithURIString:@"http://foo/"];
+	RedlandNode *hello = [RedlandNode nodeWithLiteralString:@"hello world" language:@"en"];
+	
+	RedlandStatement *sourceStatement = [RedlandStatement statementWithSubject:fooNode predicate:fooPredicate object:hello];
+	NSData *data = [NSArchiver archivedDataWithRootObject:sourceStatement];
+	STAssertNotNil(data, nil);
+	RedlandStatement *decodedStatement = [NSUnarchiver unarchiveObjectWithData:data];
+	STAssertNotNil(decodedStatement, nil);
+	STAssertEqualObjects(sourceStatement, decodedStatement, nil);
 }
 
 @end
