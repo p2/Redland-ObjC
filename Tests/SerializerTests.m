@@ -52,7 +52,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 - (void)setUp
 {
 	RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
-	model = [RedlandModel model];
+	model = [RedlandModel new];
 	uri = [RedlandURI URIWithString:RDFXMLTestDataLocation];
 	[parser parseString:RDFXMLTestData intoModel:model withBaseURI:uri];
 }
@@ -83,7 +83,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
     RedlandSerializer *serializer = [RedlandSerializer serializerWithName:RedlandRDFXMLSerializerName];
     RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
     NSData *data = nil;
-    RedlandModel *newModel = [RedlandModel model];
+    RedlandModel *newModel = [RedlandModel new];
     
     STAssertNoThrow(data = [serializer serializedDataFromModel:model withBaseURI:uri], nil);
     STAssertNotNil(data, nil);

@@ -38,7 +38,7 @@
     RedlandNode *predicate = [RedlandNode nodeWithURIString:@"foo:bar"];
     RedlandNode *object = [RedlandNode nodeWithLiteral:@"test"];
     
-    model = [RedlandModel model];
+    model = [RedlandModel new];
     STAssertNotNil(model, nil);
     
     testStatement = [RedlandStatement statementWithSubject:subject
@@ -64,7 +64,7 @@
     RedlandNode *object = [RedlandNode nodeWithLiteral:@"test"];
 	RedlandStatement *statement;
 
-	model = [RedlandModel model];
+	model = [RedlandModel new];
     statement = [RedlandStatement statementWithSubject:subject
 											 predicate:predicate
 												object:object];

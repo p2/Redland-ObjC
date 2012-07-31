@@ -50,7 +50,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 - (void)setUp
 {
 	RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
-	model = [RedlandModel model];
+	model = [RedlandModel new];
 	uri = [RedlandURI URIWithString:RDFXMLTestDataLocation];
 	[parser parseString:RDFXMLTestData intoModel:model withBaseURI:uri];
 	NSAssert([model size] > 0, @"Test model is empty");

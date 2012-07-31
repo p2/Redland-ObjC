@@ -83,7 +83,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 
 - (void)testConvenience
 {
-    RedlandModel *model = [RedlandModel model];
+    RedlandModel *model = [RedlandModel new];
     NSBundle *bundle = [NSBundle bundleForClass:isa];
     NSString *path = [bundle pathForResource:@"rdf-syntax" ofType:@"rdf"];
     NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
