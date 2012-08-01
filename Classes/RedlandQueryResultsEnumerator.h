@@ -21,7 +21,7 @@
 //  the most recent version, see <http://librdf.org/>.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 @class RedlandQueryResults;
 

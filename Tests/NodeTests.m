@@ -148,7 +148,7 @@
 	
 	STAssertEqualsWithAccuracy((float)M_PI, [floatNode floatValue], 0.000001, nil);
 	STAssertEqualsWithAccuracy((double)M_PI, [floatNode doubleValue], 0.000001, nil);
-	STAssertThrowsSpecific((float)[doubleNode floatValue], RedlandException, nil);
+	STAssertThrowsSpecific([doubleNode floatValue], RedlandException, nil);
 	STAssertEqualsWithAccuracy((double)M_PI, [doubleNode doubleValue], 0.0000000000001, nil);
 }
 
@@ -167,9 +167,9 @@
 - (void)testArchiving
 {
 	RedlandNode *sourceNode = [RedlandNode nodeWithLiteralString:@"Hello world" language:@"en"];
-	NSData *data = [NSArchiver archivedDataWithRootObject:sourceNode];
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:sourceNode];
 	STAssertNotNil(data, nil);
-	RedlandNode *decodedNode = [NSUnarchiver unarchiveObjectWithData:data];
+	RedlandNode *decodedNode = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 	STAssertNotNil(decodedNode, nil);
 	STAssertEqualObjects(sourceNode, decodedNode, nil);
 }

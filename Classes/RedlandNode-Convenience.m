@@ -32,8 +32,8 @@
 
 #pragma mark - Allocators
 /*!
-	@abstract Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
-	@discussion Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
+	Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
+	@attention Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
  */
 + (RedlandNode *)nodeWithObject:(id)object
 {
@@ -46,7 +46,7 @@
 }
 
 /*!
-	@abstract Creates and returns a typed literal RedlandNode with the given int value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#int</tt>.
+	Creates and returns a typed literal RedlandNode with the given int value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#int</tt>.
  */
 + (RedlandNode *)nodeWithLiteralInt:(int)anInt
 {
@@ -56,7 +56,7 @@
 }
 
 /*!
-	@abstract Creates and returns a typed literal RedlandNode with the given float value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+	Creates and returns a typed literal RedlandNode with the given float value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
  */
 + (RedlandNode *)nodeWithLiteralFloat:(float)aFloat
 {
@@ -66,7 +66,7 @@
 }
 
 /*!
-	@abstract Creates and returns a typed literal RedlandNode with the given double value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+	Creates and returns a typed literal RedlandNode with the given double value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
  */
 + (RedlandNode *)nodeWithLiteralDouble:(double)aDouble
 {
@@ -76,7 +76,7 @@
 }
 
 /*!
-	@abstract Creates and returns a typed literal RedlandNode with the given boolean value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+	Creates and returns a typed literal RedlandNode with the given boolean value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
  */
 + (RedlandNode *)nodeWithLiteralBool:(BOOL)aBool
 {
@@ -86,7 +86,7 @@
 }
 
 /*!
-	@abstract Creates and returns a typed literal RedlandNode with the given string value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
+	Creates and returns a typed literal RedlandNode with the given string value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
  */
 + (RedlandNode *)nodeWithLiteralString:(NSString *)aString language:(NSString *)aLanguage
 {
@@ -96,20 +96,20 @@
 }
 
 /*!
-	@abstract Creates and returns a typed literal RedlandNode with the given NSDate value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+	Creates and returns a typed literal RedlandNode with the given NSDate value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
  */
 + (RedlandNode *)nodeWithLiteralDateTime:(NSDate *)aDate
 {
-	NSString *formattedDate = [aDate descriptionWithCalendarFormat:@"%Y-%m-%dT%H:%M:%SZ"
-														  timeZone:[NSTimeZone timeZoneWithName:@"UTC"]
-															locale:nil];
+	NSDateFormatter *df = [self dateTimeFormatter];
+	NSString *formattedDate = [df stringFromDate:aDate];
+	
 	return [RedlandNode nodeWithLiteral:formattedDate
 							   language:nil
 								   type:[XMLSchemaNS URI:@"dateTime"]];
 }
 
 /*!
-	@abstract Creates and returns a RedlandNode of type resource with the given URL.
+	Creates and returns a RedlandNode of type resource with the given URL.
  */
 + (RedlandNode *)nodeWithURL:(NSURL *)aURL
 {
@@ -239,7 +239,6 @@
 - (NSDate *)dateTimeValue
 {
 	static RedlandURI *datatypeURI = nil;
-	static NSDateFormatter *dateTimeNodeFormatter = nil;
 	
 	if (datatypeURI == nil) {
 		datatypeURI = [XMLSchemaNS URI:@"dateTime"];
@@ -250,12 +249,8 @@
 	}
 	
 	// create a date from string
-	if (!dateTimeNodeFormatter) {
-		dateTimeNodeFormatter = [NSDateFormatter new];
-		[dateTimeNodeFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-		[dateTimeNodeFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-	}
-	return [dateTimeNodeFormatter dateFromString:[self literalValue]];
+	NSDateFormatter *df = [isa dateTimeFormatter];
+	return [df dateFromString:[self literalValue]];
 }
 
 
@@ -265,6 +260,24 @@
 - (RedlandNode *)nodeValue
 {
 	return self;
+}
+
+
+
+#pragma mark - Date and Time Utilities
+/**
+ *	@return NSDateFormatter that can convert dates into ISO date strings and vice versa
+ */
++ (NSDateFormatter *)dateTimeFormatter
+{
+	static NSDateFormatter *dateTimeNodeFormatter = nil;
+	if (!dateTimeNodeFormatter) {
+		dateTimeNodeFormatter = [NSDateFormatter new];
+		[dateTimeNodeFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+		[dateTimeNodeFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+	}
+	
+	return dateTimeNodeFormatter;
 }
 
 

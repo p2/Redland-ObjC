@@ -83,9 +83,9 @@
 	RedlandNode *hello = [RedlandNode nodeWithLiteralString:@"hello world" language:@"en"];
 	
 	RedlandStatement *sourceStatement = [RedlandStatement statementWithSubject:fooNode predicate:fooPredicate object:hello];
-	NSData *data = [NSArchiver archivedDataWithRootObject:sourceStatement];
+	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:sourceStatement];
 	STAssertNotNil(data, nil);
-	RedlandStatement *decodedStatement = [NSUnarchiver unarchiveObjectWithData:data];
+	RedlandStatement *decodedStatement = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 	STAssertNotNil(decodedStatement, nil);
 	STAssertEqualObjects(sourceStatement, decodedStatement, nil);
 }

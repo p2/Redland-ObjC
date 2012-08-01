@@ -11,9 +11,12 @@ import subprocess
 
 
 # URLs to the sources
-URL_RAPTOR = 'http://download.librdf.org/source/raptor2-2.0.8.tar.gz'
-URL_RASQAL = 'http://download.librdf.org/source/rasqal-0.9.29.tar.gz'
-URL_REDLAND = 'http://download.librdf.org/source/redland-1.0.15.tar.gz'
+SOURCES = [
+	'http://download.librdf.org/source/raptor2-2.0.8.tar.gz',
+	'http://download.librdf.org/source/rasqal-0.9.29.tar.gz',
+	'http://download.librdf.org/source/redland-1.0.15.tar.gz',
+#	'http://curl.haxx.se/download/curl-7.27.0.tar.gz',
+]
 
 # where to put the universal libraries
 UNIVERSAL = 'Universal'
@@ -30,10 +33,15 @@ CONFIG_NAME = 'pp-configure.sh'
 
 # config flags perf project per platform and/or architecture
 FLAGS = {
+	'raptor2-2.0.8': {
+		'*': ['--with-www=none'],
+	},
 	'redland-1.0.15': {
-		'iOS': ['--without-mysql', '--without-postgresql', '--without-virtuoso'],
-		'Mac': ['--without-mysql', '--without-postgresql', '--without-virtuoso'],
-	}
+		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb', '--with-xml-parser=libxml'],
+	},
+#	'curl-7.27.0': {
+#		'*': ['--without-ssl', '--without-libssh2', '--without-ca-bundle', '--without-ldap', '--disable-ldap'],
+#	},
 }
 
 
@@ -50,42 +58,31 @@ def main():
 		dirs.append('%s-%s' % (UNIVERSAL, platform))
 		archs = ARCHS[platform]
 		for arch in archs:
-			dirs.append('build-%s' % arch)
-			dirs.append('product-%s' % arch)
+			dirs.append('build-%s-%s' % (platform, arch))
+			dirs.append('product-%s-%s' % (platform, arch))
 	create_directories(dirs)
 	
-	# download all
-	raptorsrc = download(URL_RAPTOR, DOWNLOAD)
-	rasqalsrc = download(URL_RASQAL, DOWNLOAD)
-	rdfsrc = download(URL_REDLAND, DOWNLOAD)
-	
-	# unpack and build
-	platform_libs = {}
-	for platform in ARCHS.keys():
-		archs = ARCHS[platform]
-		for arch in archs:
-			build_dir = 'build-%s' % arch
-			product_dir = 'product-%s' % arch
-			
-			# raptor
-			raptordir, do_compile = unpack_into(raptorsrc, build_dir)
-			if do_compile:
-				compile(raptordir, product_dir, platform, arch, FLAGS)
-			
-			# rasqal
-			rasqaldir, do_compile = unpack_into(rasqalsrc, build_dir)
-			if do_compile:
-				compile(rasqaldir, product_dir, platform, arch, FLAGS)
-			
-			# librdf
-			rdfdir, do_compile = unpack_into(rdfsrc, build_dir)
-			if do_compile:
-				compile(rdfdir, product_dir, platform, arch, FLAGS)
-			
-			# remember platform directory
-			pf = platform_libs[platform] if platform in platform_libs else []
-			pf.append('%s/lib' % product_dir)
-			platform_libs[platform] = pf
+	# loop all sources
+	for url in SOURCES:
+		src = download(url, DOWNLOAD)
+		
+		# unpack and build
+		platform_libs = {}
+		for platform in ARCHS.keys():
+			archs = ARCHS[platform]
+			for arch in archs:
+				build_dir = 'build-%s-%s' % (platform, arch)
+				product_dir = 'product-%s-%s' % (platform, arch)
+				
+				# compile
+				directory, do_compile = unpack_into(src, build_dir)
+				if do_compile:
+					compile(directory, product_dir, platform, arch, FLAGS)
+				
+				# remember platform directory
+				pf = platform_libs[platform] if platform in platform_libs else []
+				pf.append('%s/lib' % product_dir)
+				platform_libs[platform] = pf
 	
 	# use lipo to create fat libraries
 	for lib_base in ['libraptor2', 'librasqal', 'librdf']:
@@ -101,17 +98,17 @@ def main():
 			if len(libs) > 1:
 				p = subprocess.call('lipo -create -output %s %s' % (target, ' '.join(libs)), shell=True)
 				if 0 != p:
-					print 'lipo failed to create the universal library for %s' % lib
-					sys.exit(1)
-			else:
+					print 'xx>  lipo failed to create the universal library for %s (%s)' % (platform, lib)
+					#sys.exit(1)
+			elif len(libs) > 0 and os.path.exists(libs[0]):
 				shutil.copy2(libs[0], target)
 		
 		# ultra-universal
 		lib = '%s.a' % lib_base
 		p = subprocess.call('lipo -create -output %s/%s product-*/lib/%s' % (UNIVERSAL, lib, lib), shell=True)
 		if 0 != p:
-			print 'lipo failed to create the universal library for %s' % lib
-			sys.exit(1)
+			print 'xx>  lipo failed to create the uber-universal library for %s' % lib
+			#sys.exit(1)
 	
 	# set install names
 	# install_name_tool -id @loader_path/Frameworks/librdf.dylib librdf.dylib
@@ -243,6 +240,8 @@ def compile(source, target, platform, arch, flag_mapping):
 
 	# find additional flags
 	poss_flags = flag_mapping[main] if main in flag_mapping else None
+	if poss_flags and '*' in poss_flags:
+		config.extend(poss_flags['*'])
 	if poss_flags and platform in poss_flags:
 		config.extend(poss_flags[platform])
 	if poss_flags and arch in poss_flags:
@@ -295,7 +294,7 @@ def apply_patch(patch, target_base):
 		shutil.copy2(patch, os.path.join(target_base, patch_name))
 		current_dir = os.getcwd()
 		os.chdir(target_base)
-		p = subprocess.call(['patch', '-f', '-s', '-i', patch_name])
+		p = subprocess.call(['patch', '-p1', '-f', '-s', '-i', patch_name])
 		os.chdir(current_dir)
 
 

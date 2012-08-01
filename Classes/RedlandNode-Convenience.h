@@ -59,6 +59,9 @@
 
 - (RedlandNode *)nodeValue;
 
++ (NSDateFormatter *)dateTimeFormatter;
+
+
 @end
 
 

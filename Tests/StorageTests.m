@@ -32,7 +32,7 @@
 {
     RedlandStorage *storage;
     
-    storage = [RedlandStorage storage];
+    storage = [RedlandStorage new];
     STAssertNotNil(storage, nil);
 }
 

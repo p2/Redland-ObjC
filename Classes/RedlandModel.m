@@ -42,7 +42,7 @@
 
 - (id)init
 {
-	return [self initWithStorage:[RedlandStorage storage]];
+	return [self initWithStorage:[RedlandStorage new]];
 }
 
 
