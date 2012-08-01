@@ -93,7 +93,6 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 - (void)dealloc
 {
-	DLog(@"DEALLOC %p", self);
 	[self unregisterInstance];
 }
 
@@ -136,8 +135,8 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 /*!
 	Removes the registration done by [RedlandNamespace registerInstance].
 	@discussion Does nothing if the receiver is not registered.
-	@attention Because "+namespaceWithShortName:" returns a strong reference under ARC, we have to query "GlobalNamespaceDict" directly instead of using it
-	since this method is called from within "dealloc".
+	@attention Because "+namespaceWithShortName:" returns a strong reference under ARC, we have to query "GlobalNamespaceDict" directly instead since
+	this method is called from within "dealloc".
  */
 - (void)unregisterInstance
 {

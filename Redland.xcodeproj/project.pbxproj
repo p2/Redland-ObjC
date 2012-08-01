@@ -30,15 +30,15 @@
 			name = Documentation;
 			productName = Documentation;
 		};
-		EE1DDDEC15BED96100882BDA /* Build C Library */ = {
+		EE1DDDEC15BED96100882BDA /* C Library */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = EE1DDDEF15BED96100882BDA /* Build configuration list for PBXAggregateTarget "Build C Library" */;
+			buildConfigurationList = EE1DDDEF15BED96100882BDA /* Build configuration list for PBXAggregateTarget "C Library" */;
 			buildPhases = (
 				EE1DDDF115BED97D00882BDA /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = "Build C Library";
+			name = "C Library";
 			productName = "Build C Library";
 		};
 /* End PBXAggregateTarget section */
@@ -424,7 +424,6 @@
 		EE1DDDF215BEDCC700882BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
-		EE555EEC15C8EC7400F26A1A /* libSystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libSystem.dylib; sourceTree = DEVELOPER_DIR; };
 		EEDE81B315BF375200AC2B64 /* libraptor2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libraptor2.a; sourceTree = "<group>"; };
 		EEDE81B415BF375200AC2B64 /* librasqal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librasqal.a; sourceTree = "<group>"; };
 		EEDE81B515BF375200AC2B64 /* librdf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librdf.a; sourceTree = "<group>"; };
@@ -512,7 +511,6 @@
 		0867D691FE84028FC02AAC07 /* Redland */ = {
 			isa = PBXGroup;
 			children = (
-				EE555EEC15C8EC7400F26A1A /* libSystem.dylib */,
 				EE1DDDF215BEDCC700882BDA /* README.md */,
 				EDF2FEA9071FE41900B18942 /* ChangeLog.txt */,
 				EDEDCDC80739718F006DB0D1 /* COMPILING.txt */,
@@ -1033,7 +1031,7 @@
 				EEE7B45D15C84978004D5A68 /* Tests iOS */,
 				EDEDCDFA07397483006DB0D1 /* Documentation */,
 				ED8215FE07397F4A001CC6CB /* Release */,
-				EE1DDDEC15BED96100882BDA /* Build C Library */,
+				EE1DDDEC15BED96100882BDA /* C Library */,
 			);
 		};
 /* End PBXProject section */
@@ -1652,7 +1650,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Redland-source/Universal\"",
@@ -1686,7 +1684,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Redland-source/Universal\"",
@@ -1713,7 +1711,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Redland-source/Universal\"",
@@ -1754,11 +1752,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "redland-iosTests/redland-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/Universal\"",
-					"\"$(SRCROOT)/Redland-source/Universal-Mac\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal/";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1794,11 +1788,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "redland-iosTests/redland-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/Universal\"",
-					"\"$(SRCROOT)/Redland-source/Universal-Mac\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal/";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1827,11 +1817,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "redland-iosTests/redland-iosTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Redland-source/Universal\"",
-					"\"$(SRCROOT)/Redland-source/Universal-Mac\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal/";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1893,7 +1879,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;
 		};
-		EE1DDDEF15BED96100882BDA /* Build configuration list for PBXAggregateTarget "Build C Library" */ = {
+		EE1DDDEF15BED96100882BDA /* Build configuration list for PBXAggregateTarget "C Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE1DDDED15BED96100882BDA /* Development */,

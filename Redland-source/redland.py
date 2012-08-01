@@ -8,9 +8,11 @@ import shutil
 import urllib2
 import tarfile
 import subprocess
+import glob
+import fileinput
 
 
-# URLs to the sources
+# URLs to the sources' tar.gz files
 SOURCES = [
 	'http://download.librdf.org/source/raptor2-2.0.8.tar.gz',
 	'http://download.librdf.org/source/rasqal-0.9.29.tar.gz',
@@ -28,21 +30,30 @@ DOWNLOAD = 'downloads'
 ARCHS = {'iOS': ['armv7'], 'Mac': ['i386', 'x86_64']}
 LIBEXT = {'iOS': 'a', 'Mac': 'dylib'}
 
-# name of custom configure scripts
+# name of custom configure scripts. If such a file is present it is copied to
+# the target directory and used instead of "./configure" (so don't name it
+# "configure"!
 CONFIG_NAME = 'pp-configure.sh'
 
-# config flags perf project per platform and/or architecture
+# configuration flags perf project per platform and/or architecture
+# this is a dictionary with the target directory as the first key and either
+# '*' or the platform or the architecture (or a mix thereof) as second level
+# key
 FLAGS = {
 	'raptor2-2.0.8': {
 		'*': ['--with-www=none'],
 	},
 	'redland-1.0.15': {
-		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb', '--with-xml-parser=libxml'],
+		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
 	},
 #	'curl-7.27.0': {
 #		'*': ['--without-ssl', '--without-libssh2', '--without-ca-bundle', '--without-ldap', '--disable-ldap'],
 #	},
 }
+
+# libtool sometimes doesn't play nice and puts the wrong file paths into its
+# "dependency_libs" setting in .la files. We can strip this line to help out.
+STRIP_DEP_LIBS = False
 
 
 ##
@@ -71,15 +82,16 @@ def main():
 		for platform in ARCHS.keys():
 			archs = ARCHS[platform]
 			for arch in archs:
+				print shell_color('-->  Handling %s for %s' % (arch, platform), 'green')
 				build_dir = 'build-%s-%s' % (platform, arch)
 				product_dir = 'product-%s-%s' % (platform, arch)
 				
-				# compile
+				# compile and install
 				directory, do_compile = unpack_into(src, build_dir)
 				if do_compile:
-					compile(directory, product_dir, platform, arch, FLAGS)
+					compile_and_install(directory, product_dir, platform, arch, FLAGS)
 				
-				# remember platform directory
+				# remember platform/lib directory
 				pf = platform_libs[platform] if platform in platform_libs else []
 				pf.append('%s/lib' % product_dir)
 				platform_libs[platform] = pf
@@ -98,7 +110,7 @@ def main():
 			if len(libs) > 1:
 				p = subprocess.call('lipo -create -output %s %s' % (target, ' '.join(libs)), shell=True)
 				if 0 != p:
-					print 'xx>  lipo failed to create the universal library for %s (%s)' % (platform, lib)
+					print shell_color('xx>  lipo failed to create the universal library for %s (%s)' % (platform, lib), 'red', True)
 					#sys.exit(1)
 			elif len(libs) > 0 and os.path.exists(libs[0]):
 				shutil.copy2(libs[0], target)
@@ -107,7 +119,7 @@ def main():
 		lib = '%s.a' % lib_base
 		p = subprocess.call('lipo -create -output %s/%s product-*/lib/%s' % (UNIVERSAL, lib, lib), shell=True)
 		if 0 != p:
-			print 'xx>  lipo failed to create the uber-universal library for %s' % lib
+			print shell_color('xx>  lipo failed to create the uber-universal library for %s' % lib, 'red', True)
 			#sys.exit(1)
 	
 	# set install names
@@ -141,7 +153,7 @@ def download(url, directory=None, filename=None):
 	# if it already exists, we're not going to do anything
 	path = os.path.join(directory, filename)
 	if os.path.exists(path):
-		print "%s has already been downloaded" % filename
+		print "->  %s has already been downloaded" % filename
 		return path
 	
 	# create url and file handles
@@ -151,7 +163,7 @@ def download(url, directory=None, filename=None):
 	
 	# start
 	filesize = int(meta.getheaders("Content-Length")[0])
-	print "Downloading %s (%s KB)" % (filename, filesize/1000)
+	print "->	Downloading %s (%s KB)" % (filename, filesize/1000)
 	
 	loaded = 0
 	blocksize = 8192
@@ -189,9 +201,9 @@ def unpack_into(archive, directory):
 	base = tar.getnames()[0]
 	target_dir = os.path.join(directory, base)
 	if os.access(target_dir, os.F_OK):
-		print "%s already exists, not unpacking %s" % (target_dir, os.path.split(archive)[1])
+		print "--->  %s already exists, skipping" % target_dir
 	else:
-		print "Unpacking %s" % archive
+		print "--->  Unpacking %s" % archive
 		tar.extractall(directory)
 		newly_unpacked = True
 	
@@ -201,12 +213,13 @@ def unpack_into(archive, directory):
 	return (target_dir, newly_unpacked)
 
 
-def compile(source, target, platform, arch, flag_mapping):
+def compile_and_install(source, target, platform, arch, flag_mapping):
 	"""Compiles the given source directories into the mapped target directories
 	
 	- source directory must be configure/make/make install-able
 	- target is the directory where the products will be installed
-	- platform directory is searched for 'pp-configure.sh' and patches
+	- platform directory is searched for 'CONFIG_NAME' files and patches with
+	  the same name as the source directory plus ".patch"
 	- arch is the architecture to build for
 	- flag_mapping may contain additional flags that will be applied when
 	  configuring
@@ -250,33 +263,76 @@ def compile(source, target, platform, arch, flag_mapping):
 	os.chdir(source)
 	
 	# configure
-	print "Configuring %s" % source
+	print "--->  Configuring %s" % source
 	c = subprocess.Popen(config, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
 	out = c.communicate()[0]
 	if 0 != c.returncode:
-		print "Failed, here's the config and output:\n----------\n%s" % ' '.join(config)
-		print "----------\n%s\n----------\n" % out
+		os.chdir(current_dir)
+		_compile_failed(source, config, out)
 		sys.exit(1)
 	
 	# make
-	print "Building %s" % source
+	print "--->  Building %s" % source
 	m = subprocess.Popen(['make'], stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
 	out = m.communicate()[0]
 	if 0 != m.returncode:
-		print "Failed, here's the config and output:\n----------\n%s" % ' '.join(config)
-		print "----------\n%s\n----------\n" % out
+		os.chdir(current_dir)
+		_compile_failed(source, config, out)
 		sys.exit(1)
 	
+	# remember which .la files are already in place
+	existing_las = []
+	if STRIP_DEP_LIBS:
+		existing_las = glob.glob('%s/lib/*.la' % abs_prefix)
+	
 	# make install
-	print "Installing %s" % source
+	print "--->  Installing %s" % source
 	i = subprocess.Popen(['make', 'install'], stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
 	out = i.communicate()[0]
 	if 0 != i.returncode:
-		print "Failed, here's the config and output:\n----------\n%s" % ' '.join(config)
-		print "----------\n%s\n----------\n" % out
+		os.chdir(current_dir)
+		_compile_failed(source, config, out)
 		sys.exit(1)
-
+	
+	# help libtool
+	if STRIP_DEP_LIBS:
+		new_las = glob.glob('%s/lib/*.la' % abs_prefix)
+		for la in new_las:
+			if not la in existing_las:
+				
+				# replace the dependencies for "dependency_libs" with nothing
+				for line in fileinput.input(la, inplace=1):
+					print "IMPLEMENT"
+					# like this: https://dev.openwrt.org/attachment/ticket/2233/glib2-dependencies.patch
+				#	if line.startswith('dependency_libs'):
+				#		print "dependency_libs=''",
+				#	else:
+				#		print line,
+	
 	os.chdir(current_dir)
+
+
+def _compile_failed(source_dir, config_command, output):
+	"""Prints the failed command and output and moves the source directory so it
+		will be picked up again on a re-run
+	"""
+	# log
+	print shell_color("Failed, here's the config and output:", 'red', True)
+	print "----------\n%s" % ' '.join(config_command)
+	print "----------\n%s\n----------\n" % output
+	
+	# clean up
+	p, d = os.path.split(source_dir)
+	source_moved = os.path.join(p, '%s-failed' % d)
+	if os.path.exists(source_moved):
+		try:
+			shutil.rmtree(source_moved)
+		except Exception, e:
+			print shell_color("Moving source directory to %s failed: %s" % (source_moved, e), 'red', True)
+	try:
+		os.rename(source_dir, source_moved)
+	except Exception, e:
+		print shell_color("Moving source directory to %s failed: %s" % (source_moved, e), 'red', True)
 
 
 def apply_patch(patch, target_base):
@@ -288,7 +344,7 @@ def apply_patch(patch, target_base):
 	
 	# does the patch have a target?
 	if patch_base == os.path.split(target_base)[1]:
-		print "Patching %s" % os.path.split(target_base)[1]
+		print "--->  Patching %s" % os.path.split(target_base)[1]
 		
 		# copy patch to target dir, apply patch and get out of there
 		shutil.copy2(patch, os.path.join(target_base, patch_name))
@@ -307,6 +363,37 @@ def create_directories(dirs):
 			os.mkdir(directory)
 		except OSError:
 			pass
+
+
+def shell_color(string, color, bold=False):
+	if not sys.stdout.isatty():
+		return string
+	
+	# stdout is a TTY, let's go
+	attr = []
+	if 'gray' == color:
+		attr.append('30')
+	elif 'red' == color:
+		attr.append('31')
+	elif 'green' == color:
+		attr.append('32')
+	elif 'yellow' == color:
+		attr.append('33')
+	elif 'blue' == color:
+		attr.append('34')
+	elif 'magenta' == color:
+		attr.append('35')
+	elif 'cyan' == color:
+		attr.append('36')
+	elif 'crimson' == color:
+		attr.append('38')
+	else:
+		attr.append('37')		# white
+	
+	if bold:
+		attr.append('1')
+	
+	return '\x1b[%sm%s\x1b[0m' % (';'.join(attr), string)
 
 
 ##

@@ -14,10 +14,10 @@
 #	you want to build for and then use `lipo` to combine the static libs. Some
 #	libraries may compile just fine if you specify multiple archs.
 #
-#	This script has last been tested with Xcode 4.5-DP3 on OS X 10.8 GM
+#	This script has last been tested with Xcode 4.4 on OS X 10.8
 #
 
-export SDKVER="6.0"
+export SDKVER="5.1"
 export IPHONEOS_DEPLOYMENT_TARGET="4.0"
 
 # extract ARCH and PREFIX
@@ -51,8 +51,13 @@ unset DYLD_FALLBACK_LIBRARY_PATH
 unset DYLD_FALLBACK_FRAMEWORK_PATH
 
 # determine SDK-root
-export BUILD_DARWIN_VER=`uname -r`
-export XCODE="$(xcode-select --print-path)"
+export HOST_DARWIN_VER=$(uname -r)
+export HOST_ARCH=$(uname -m)
+if [[ 'x' != ${DEVELOPER_DIR}x ]]; then
+	export XCODE=$DEVELOPER_DIR
+else
+	export XCODE="$(xcode-select --print-path)"
+fi
 export DEVROOT="$XCODE/Platforms/iPhoneOS.platform/Developer"
 
 if [ ! -d "$DEVROOT" ]; then
@@ -92,4 +97,4 @@ export AR="$DEVROOT/usr/bin/ar"
 export RANLIB="$DEVROOT/usr/bin/ranlib"
 
 # run ./configure
-./configure --prefix="$PREFIX" --build="x86_64-apple-darwin$BUILD_DARWIN_VER" --host="arm-apple-darwin" --enable-static --disable-shared ac_cv_file__dev_zero=no ac_cv_func_setpgrp_void=yes ${confopts[@]}
+./configure --prefix="$PREFIX" --build="${HOST_ARCH}-apple-darwin${HOST_DARWIN_VER}" --host="arm-apple-darwin" --enable-static --disable-shared ac_cv_file__dev_zero=no ac_cv_func_setpgrp_void=yes ${confopts[@]}
