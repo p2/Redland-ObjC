@@ -8,7 +8,7 @@ import shutil
 import urllib2
 import tarfile
 import subprocess
-import glob
+import re
 import fileinput
 
 
@@ -20,25 +20,34 @@ SOURCES = [
 #	'http://curl.haxx.se/download/curl-7.27.0.tar.gz',
 ]
 
-# where to put the universal libraries
+# where to put the universal libraries and downloads
 UNIVERSAL = 'Universal'
-
-# where to download to
 DOWNLOAD = 'downloads'
 
-# target architectures per platform and desired library extensions
-ARCHS = {'iOS': ['armv7'], 'Mac': ['i386', 'x86_64']}
-LIBEXT = {'iOS': 'a', 'Mac': 'dylib'}
+# SDK-version to use (e.g. 5.1 for iOS SDK 5.1). Can be 'None'
+SDK_VERSION = '5.1'
+
+# target architectures per platform
+# format:
+#	ARCHS{ platform: [ arch, ... ]}
+ARCHS = {'iOS': ['armv7'], 'Sim': ['i386'], 'Mac': ['i386', 'x86_64']}
+
+# desired library extensions
+# format:
+#	LIBEXT{ platform: extension }
+LIBEXT = {'iOS': 'a', 'Sim': 'a', 'Mac': 'dylib'}
 
 # name of custom configure scripts. If such a file is present it is copied to
 # the target directory and used instead of "./configure" (so don't name it
 # "configure"!
 CONFIG_NAME = 'pp-configure.sh'
 
-# configuration flags perf project per platform and/or architecture
-# this is a dictionary with the target directory as the first key and either
+# Configuration flags perf project per platform and/or architecture.
+# This is a dictionary with the target directory as the first key and either
 # '*' or the platform or the architecture (or a mix thereof) as second level
 # key
+# format:
+#	FLAGS{ module_name: { platform-or-*: [ flag, ... ]}}
 FLAGS = {
 	'raptor2-2.0.8': {
 		'*': ['--with-www=none'],
@@ -52,8 +61,24 @@ FLAGS = {
 }
 
 # libtool sometimes doesn't play nice and puts the wrong file paths into its
-# "dependency_libs" setting in .la files. We can strip this line to help out.
-STRIP_DEP_LIBS = False
+# "dependency_libs" setting in .la files. We can fix this here by regex wizardry
+# format:
+#	FIX_DEP_LIBS{ platform: { module_name: { file.la: (search, replacement) }}}
+FIX_DEP_LIBS = {
+	'iOS': {
+		'raptor2-2.0.8': {
+			'libraptor2.la': ('/usr/lib/libxml2.la', '-lxml2')		# SDK 6.0 does this correctly, but not 5.1
+		},
+	},
+	'Sim': {
+		'raptor2-2.0.8': {
+			'libraptor2.la': ('/usr/lib/libxml2.la', '-lxml2')
+		},
+	},
+}
+
+# used to keep track of the current building dir
+CURRENTLY_BUILDING = None
 
 
 ##
@@ -75,6 +100,7 @@ def main():
 	
 	# loop all sources
 	for url in SOURCES:
+		print shell_color('->  %s' % os.path.basename(url), 'magenta')
 		src = download(url, DOWNLOAD)
 		
 		# unpack and build
@@ -82,7 +108,7 @@ def main():
 		for platform in ARCHS.keys():
 			archs = ARCHS[platform]
 			for arch in archs:
-				print shell_color('-->  Handling %s for %s' % (arch, platform), 'green')
+				print shell_color('-->  %s: %s' % (platform, arch), 'green')
 				build_dir = 'build-%s-%s' % (platform, arch)
 				product_dir = 'product-%s-%s' % (platform, arch)
 				
@@ -97,6 +123,7 @@ def main():
 				platform_libs[platform] = pf
 	
 	# use lipo to create fat libraries
+	print shell_color('->  Creating universal libraries', 'magenta')
 	for lib_base in ['libraptor2', 'librasqal', 'librdf']:
 		
 		# per platform
@@ -115,17 +142,15 @@ def main():
 			elif len(libs) > 0 and os.path.exists(libs[0]):
 				shutil.copy2(libs[0], target)
 		
-		# ultra-universal
+		# iOS and Simulator universal
 		lib = '%s.a' % lib_base
-		p = subprocess.call('lipo -create -output %s/%s product-*/lib/%s' % (UNIVERSAL, lib, lib), shell=True)
+		p = subprocess.call('lipo -create -output %s/%s product-iOS-*/lib/%s product-Sim-*/lib/%s' % (UNIVERSAL, lib, lib, lib), shell=True)
 		if 0 != p:
 			print shell_color('xx>  lipo failed to create the uber-universal library for %s' % lib, 'red', True)
 			#sys.exit(1)
 	
 	# set install names
 	# install_name_tool -id @loader_path/Frameworks/librdf.dylib librdf.dylib
-
-
 
 
 ##
@@ -153,7 +178,7 @@ def download(url, directory=None, filename=None):
 	# if it already exists, we're not going to do anything
 	path = os.path.join(directory, filename)
 	if os.path.exists(path):
-		print "->  %s has already been downloaded" % filename
+		print "-->  %s has already been downloaded" % filename
 		return path
 	
 	# create url and file handles
@@ -163,7 +188,7 @@ def download(url, directory=None, filename=None):
 	
 	# start
 	filesize = int(meta.getheaders("Content-Length")[0])
-	print "->	Downloading %s (%s KB)" % (filename, filesize/1000)
+	print "-->  Downloading %s (%s KB)" % (filename, filesize / 1000)
 	
 	loaded = 0
 	blocksize = 8192
@@ -175,7 +200,7 @@ def download(url, directory=None, filename=None):
 		loaded += len(buffer)
 		filehandle.write(buffer)
 		status = r"%10d	 [%3.2f%%]" % (loaded, loaded * 100.0 / filesize)
-		status = status + chr(8)*(len(status)+1)
+		status = status + chr(8) * (len(status) + 1)
 		print status,
 	
 	# return filename
@@ -225,9 +250,11 @@ def compile_and_install(source, target, platform, arch, flag_mapping):
 	  configuring
 	"""
 	
+	global CURRENTLY_BUILDING
+	CURRENTLY_BUILDING = os.path.abspath(source)
 	current_dir = os.getcwd()
 	
-	parent, main = os.path.split(source)
+	parent, module_name = os.path.split(source)
 	abs_prefix = os.path.abspath(target)
 	
 	# apply patches and find the config script
@@ -250,9 +277,11 @@ def compile_and_install(source, target, platform, arch, flag_mapping):
 	# prepare to configure
 	config_name = './%s' % CONFIG_NAME if has_conf else './configure'
 	config = [config_name, '-arch', arch, '--prefix=%s' % abs_prefix]
-
+	if has_conf and SDK_VERSION:
+		config.extend(['-sdk', SDK_VERSION])
+	
 	# find additional flags
-	poss_flags = flag_mapping[main] if main in flag_mapping else None
+	poss_flags = flag_mapping[module_name] if module_name in flag_mapping else None
 	if poss_flags and '*' in poss_flags:
 		config.extend(poss_flags['*'])
 	if poss_flags and platform in poss_flags:
@@ -268,7 +297,7 @@ def compile_and_install(source, target, platform, arch, flag_mapping):
 	out = c.communicate()[0]
 	if 0 != c.returncode:
 		os.chdir(current_dir)
-		_compile_failed(source, config, out)
+		_compile_failed(config, out)
 		sys.exit(1)
 	
 	# make
@@ -277,13 +306,8 @@ def compile_and_install(source, target, platform, arch, flag_mapping):
 	out = m.communicate()[0]
 	if 0 != m.returncode:
 		os.chdir(current_dir)
-		_compile_failed(source, config, out)
+		_compile_failed(config, out)
 		sys.exit(1)
-	
-	# remember which .la files are already in place
-	existing_las = []
-	if STRIP_DEP_LIBS:
-		existing_las = glob.glob('%s/lib/*.la' % abs_prefix)
 	
 	# make install
 	print "--->  Installing %s" % source
@@ -291,48 +315,71 @@ def compile_and_install(source, target, platform, arch, flag_mapping):
 	out = i.communicate()[0]
 	if 0 != i.returncode:
 		os.chdir(current_dir)
-		_compile_failed(source, config, out)
+		_compile_failed(config, out)
 		sys.exit(1)
 	
-	# help libtool
-	if STRIP_DEP_LIBS:
-		new_las = glob.glob('%s/lib/*.la' % abs_prefix)
-		for la in new_las:
-			if not la in existing_las:
-				
-				# replace the dependencies for "dependency_libs" with nothing
-				for line in fileinput.input(la, inplace=1):
-					print "IMPLEMENT"
-					# like this: https://dev.openwrt.org/attachment/ticket/2233/glib2-dependencies.patch
-				#	if line.startswith('dependency_libs'):
-				#		print "dependency_libs=''",
-				#	else:
-				#		print line,
-	
 	os.chdir(current_dir)
+	CURRENTLY_BUILDING = None
+	
+	# help libtool by fixing dependency paths
+	if FIX_DEP_LIBS:
+		for fix_platform in FIX_DEP_LIBS:
+			if platform == fix_platform:
+				for fix_module in FIX_DEP_LIBS[platform]:
+					if module_name == fix_module:
+						fix_las = FIX_DEP_LIBS[platform][module_name]
+						
+						# loop the .la-files we need to fix
+						for fix_la in fix_las:
+							pat_from, pat_to = fix_las[fix_la]
+							
+							fix_path = os.path.join(target, 'lib')
+							fix = os.path.join(fix_path, fix_la)
+							
+							# edit in-place
+							if os.path.exists(fix):
+								print shell_color('--->  Fixing dependency_libs in %s' % fix, 'yellow')
+								
+								for line in fileinput.input(fix, inplace=1):
+									# like this: https://dev.openwrt.org/attachment/ticket/2233/glib2-dependencies.patch
+									if line.startswith('dependency_libs'):
+										print re.sub(pat_from, pat_to, line),
+									else:
+										print line,
+								
+							else:
+								print shell_color("I'm told to fix an .la file that does not exist: %s" % fix, 'red', True)
 
 
-def _compile_failed(source_dir, config_command, output):
-	"""Prints the failed command and output and moves the source directory so it
-		will be picked up again on a re-run
+def _compile_failed(config_command=[], message=None):
+	"""Prints the failed command and message and moves the source directory so
+		it will be picked up again on a re-run
 	"""
+	
 	# log
-	print shell_color("Failed, here's the config and output:", 'red', True)
-	print "----------\n%s" % ' '.join(config_command)
-	print "----------\n%s\n----------\n" % output
+	if config_command and len(config_command) > 0:
+		print shell_color("Failed, here's the config and output:", 'red', True)
+		print "----------\n%s" % ' '.join(config_command)
+	else:
+		print shell_color("Aborted", 'red', True)
+	if message:
+		print "----------\n%s\n----------\n" % message
 	
 	# clean up
-	p, d = os.path.split(source_dir)
-	source_moved = os.path.join(p, '%s-failed' % d)
-	if os.path.exists(source_moved):
+	global CURRENTLY_BUILDING
+	if CURRENTLY_BUILDING is not None:
+		p, d = os.path.split(CURRENTLY_BUILDING)
+		source_moved = os.path.join(p, '%s-failed' % d)
+		if os.path.exists(source_moved):
+			try:
+				shutil.rmtree(source_moved)
+			except Exception, e:
+				print shell_color("Removing old failed directory %s failed: %s" % (source_moved, e), 'red', True)
 		try:
-			shutil.rmtree(source_moved)
+			os.rename(CURRENTLY_BUILDING, source_moved)
 		except Exception, e:
 			print shell_color("Moving source directory to %s failed: %s" % (source_moved, e), 'red', True)
-	try:
-		os.rename(source_dir, source_moved)
-	except Exception, e:
-		print shell_color("Moving source directory to %s failed: %s" % (source_moved, e), 'red', True)
+		CURRENTLY_BUILDING = None
 
 
 def apply_patch(patch, target_base):
@@ -344,7 +391,7 @@ def apply_patch(patch, target_base):
 	
 	# does the patch have a target?
 	if patch_base == os.path.split(target_base)[1]:
-		print "--->  Patching %s" % os.path.split(target_base)[1]
+		print shell_color("--->  Patching %s" % os.path.basename(target_base), 'yellow')
 		
 		# copy patch to target dir, apply patch and get out of there
 		shutil.copy2(patch, os.path.join(target_base, patch_name))
@@ -400,6 +447,10 @@ def shell_color(string, color, bold=False):
 ##	did you really read down to here?
 ##
 if __name__ == "__main__":
-	main()
+	try:
+		main()
+	except KeyboardInterrupt:
+		_compile_failed()
+
 
 

@@ -7,6 +7,7 @@ archs=()
 confopts=()
 while [ $# -gt 0 ]; do
 	case ${1:0:9} in
+		-sdk)		echo 'Ignoring SDK';		shift 2;;
 		-arch)		archs+=("-arch $2");		shift 2;;
 		--prefix=)	PREFIX=${1:9};				shift 1;;
 		*)			confopts+=("$1");			shift 1;;

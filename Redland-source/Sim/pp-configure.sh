@@ -34,7 +34,7 @@ done
 
 ARCH=${archs[@]}
 if [[ 'x' = ${ARCH}x ]]; then
-	ARCH="-arch armv7"
+	ARCH="-arch i386"
 fi
 
 if [[ 'x' = ${PREFIX}x ]]; then
@@ -59,17 +59,17 @@ if [[ 'x' != ${DEVELOPER_DIR}x ]]; then
 else
 	export XCODE="$(xcode-select --print-path)"
 fi
-export DEVROOT="$XCODE/Platforms/iPhoneOS.platform/Developer"
+export DEVROOT="$XCODE/Platforms/iPhoneSimulator.platform/Developer"
 
 if [ ! -d "$DEVROOT" ]; then
-	echo "There is no iOS SDK at \"$DEVROOT\""
+	echo "There is no SDK at \"$DEVROOT\""
 	exit 1
 fi
 
-export SDKROOT="$DEVROOT/SDKs/iPhoneOS$SDKVER.sdk"
+export SDKROOT="$DEVROOT/SDKs/iPhoneSimulator$SDKVER.sdk"
 
 if [ ! -d "$SDKROOT" ] ; then
-	echo "The iPhone SDK could not be found. Directory \"$SDKROOT\" does not exist."
+	echo "The SDK could not be found. Directory \"$SDKROOT\" does not exist."
 	exit 1
 fi
 
@@ -85,7 +85,7 @@ export CXXFLAGS="$CFLAGS"
 export LDFLAGS="--sysroot='$SDKROOT' -isysroot='$SDKROOT' -L$SDKROOT/usr/lib/system -L$SDKROOT/usr/lib -L$DEVROOT/usr/lib -L$PREFIX/lib"
 
 # set paths
-export CC="$DEVROOT/usr/bin/cc"
+export CC="$DEVROOT/usr/bin/gcc"
 unset CPP					# configure uses "$CC -E" if CPP is not set, which is needed for many configure scripts. So, DON'T set CPP
 #export CPP="$DEVROOT/usr/bin/c++"
 #export CXX="$CPP"
