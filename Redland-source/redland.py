@@ -30,7 +30,7 @@ SDK_VERSION = '5.1'
 # target architectures per platform
 # format:
 #	ARCHS{ platform: [ arch, ... ]}
-ARCHS = {'iOS': ['armv7'], 'Sim': ['i386'], 'Mac': ['i386', 'x86_64']}
+ARCHS = {'iOS': ['armv6', 'armv7'], 'Sim': ['i386'], 'Mac': ['i386', 'x86_64']}
 
 # desired library extensions
 # format:
