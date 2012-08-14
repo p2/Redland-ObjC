@@ -111,6 +111,19 @@
 		EDBA0E4907379BDD00610CB1 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDBA0E4807379BDD00610CB1 /* NOTICE.txt */; };
 		EDBA0EB20737A89A00610CB1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED98645906FAF0D8009186B3 /* LICENSE.txt */; };
 		EE0CB64315BE4BF3004BB6C9 /* redland.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB63A15BE4AF7004BB6C9 /* redland.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144EE15DAEF1400DA9BA2 /* RedlandModel.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25D10688A7DF0039DA12 /* RedlandModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F015DAEFD400DA9BA2 /* RedlandWrappedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = ED699ECF06F9D3D600A624F7 /* RedlandWrappedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F115DAEFD400DA9BA2 /* RedlandWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D24900688A22D0039DA12 /* RedlandWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F215DAEFD400DA9BA2 /* RedlandURI.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D26C70688AD1F0039DA12 /* RedlandURI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F315DAEFD400DA9BA2 /* RedlandNode.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D26830688AC490039DA12 /* RedlandNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F415DAEFD400DA9BA2 /* RedlandStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D26A60688ACA20039DA12 /* RedlandStatement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F515DAEFD400DA9BA2 /* RedlandIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB09C9F0688CF300071464A /* RedlandIterator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F615DAEFD400DA9BA2 /* RedlandStream.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25F50688A8E80039DA12 /* RedlandStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F715DAEFD400DA9BA2 /* RedlandStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25500688A6350039DA12 /* RedlandStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F815DAEFD400DA9BA2 /* RedlandParser.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25B30688A75B0039DA12 /* RedlandParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144F915DAEFD400DA9BA2 /* RedlandSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D28330688B6CF0039DA12 /* RedlandSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144FA15DAEFD400DA9BA2 /* RedlandQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486C9306DA6F7900AA6058 /* RedlandQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE5144FB15DAEFD400DA9BA2 /* RedlandQueryResults.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486CEA06DA72DF00AA6058 /* RedlandQueryResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE555EDB15C86B5700F26A1A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
 		EE555EDC15C86B5900F26A1A /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		EE555EE315C873B000F26A1A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE555EE215C873B000F26A1A /* libz.dylib */; };
@@ -923,6 +936,19 @@
 				EE555EF215C8F00200F26A1A /* RedlandIteratorEnumerator.h in Headers */,
 				EE555EF315C8F00600F26A1A /* RedlandQueryResultsEnumerator.h in Headers */,
 				EE555EF415C8F00D00F26A1A /* RedlandNamespace.h in Headers */,
+				EE5144EE15DAEF1400DA9BA2 /* RedlandModel.h in Headers */,
+				EE5144F015DAEFD400DA9BA2 /* RedlandWrappedObject.h in Headers */,
+				EE5144F115DAEFD400DA9BA2 /* RedlandWorld.h in Headers */,
+				EE5144F215DAEFD400DA9BA2 /* RedlandURI.h in Headers */,
+				EE5144F315DAEFD400DA9BA2 /* RedlandNode.h in Headers */,
+				EE5144F415DAEFD400DA9BA2 /* RedlandStatement.h in Headers */,
+				EE5144F515DAEFD400DA9BA2 /* RedlandIterator.h in Headers */,
+				EE5144F615DAEFD400DA9BA2 /* RedlandStream.h in Headers */,
+				EE5144F715DAEFD400DA9BA2 /* RedlandStorage.h in Headers */,
+				EE5144F815DAEFD400DA9BA2 /* RedlandParser.h in Headers */,
+				EE5144F915DAEFD400DA9BA2 /* RedlandSerializer.h in Headers */,
+				EE5144FA15DAEFD400DA9BA2 /* RedlandQuery.h in Headers */,
+				EE5144FB15DAEFD400DA9BA2 /* RedlandQueryResults.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1272,7 +1298,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_CFLAGS = "-DIS_FRAMEWORK";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1307,7 +1333,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "";
+				OTHER_CFLAGS = "-DIS_FRAMEWORK";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1512,7 +1538,10 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "-DDEBUG";
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DIS_FRAMEWORK",
+				);
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (

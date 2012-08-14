@@ -199,8 +199,9 @@
 }
 
 /*!
+	If you just want the literal value, no matter what datatype, use <tt>literalValue</tt>.
+	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
 	@return the literal string value of the receiver.
-	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>. If you just want the literal value, no matter what datatype, user <tt>literalValue</tt>.
  */
 - (NSString *)stringValue
 {

@@ -63,11 +63,12 @@
  */
 - (RedlandStatement *)object
 {
-	librdf_statement *statement;
-	statement = librdf_stream_get_object(wrappedObject);
-	if (statement != NULL) {
-		statement = librdf_new_statement_from_statement(statement);
+	librdf_statement *statement = librdf_stream_get_object(wrappedObject);
+	if (!statement) {
+		return nil;
 	}
+	
+	statement = librdf_new_statement_from_statement(statement);
 	return [[RedlandStatement alloc] initWithWrappedObject:statement];
 }
 

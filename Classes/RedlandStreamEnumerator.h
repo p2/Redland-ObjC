@@ -39,19 +39,18 @@ typedef enum _RedlandStreamEnumeratorModifier {
 
 
 /*!
-	@class RedlandStreamEnumerator
-	@abstract Provides an NSEnumerator-based interface for RedlandStreams.
+	Provides an NSEnumerator-based interface for RedlandStreams.
 */
 @interface RedlandStreamEnumerator : NSEnumerator {
     RedlandStream *stream;
     BOOL firstIteration;
     RedlandStreamEnumeratorModifier modifier;
 }
+
 - (id)initWithRedlandStream:(RedlandStream *)aStream;
 - (id)initWithRedlandStream:(RedlandStream *)aStream modifier:(RedlandStreamEnumeratorModifier)aModifier;
-/*!
-	@method currentContext
-	@abstract Returns the context of the current statement.
-*/
+
 - (RedlandNode *)currentContext;
+
+
 @end

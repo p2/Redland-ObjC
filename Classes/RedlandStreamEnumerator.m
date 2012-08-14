@@ -35,8 +35,7 @@
     
 - (id)initWithRedlandStream:(RedlandStream *)aStream modifier:(RedlandStreamEnumeratorModifier)aModifier
 {
-    self = [super init];
-    if (self) {
+    if ((self = [super init])) {
         stream = aStream;
         firstIteration = YES;
         modifier = aModifier;
@@ -44,7 +43,9 @@
     return self;
 }
 
-
+/*!
+	Returns the context of the current statement.
+ */
 - (RedlandNode *)currentContext
 {
     NSAssert(firstIteration == NO, @"currentContext called before first object was fetched");
@@ -53,10 +54,12 @@
 
 - (id)nextObject
 {
-    if (!firstIteration)
+    if (!firstIteration) {
         [stream next];
-    else 
+	}
+    else {
         firstIteration = NO;
+	}
     
     RedlandStatement *nextStatement = [stream object];
     if (nextStatement) {
@@ -72,8 +75,9 @@
                 return [nextStatement copy];
         }
     }
-    else
-        return nil;
+    
+	return nil;
 }
+
 
 @end

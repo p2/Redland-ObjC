@@ -24,7 +24,11 @@
 
 
 #import <Foundation/Foundation.h>
-#import <Redland/redland.h>
+#ifdef IS_FRAMEWORK
+# import <Redland/redland.h>
+#else
+# import <redland.h>
+#endif
 #import "RedlandWrappedObject.h"
 
 @class RedlandStorage, RedlandStream, RedlandStatement, RedlandNode, RedlandIterator, RedlandIteratorEnumerator, RedlandStreamEnumerator;

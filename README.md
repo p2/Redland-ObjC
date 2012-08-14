@@ -8,7 +8,7 @@
     [~]  iOS unit tests succeed (1 exception remaining)
     [ ]  Deprecated librdf calls have been replaced
     [ ]  Mac framework has been used in a sample application
-    [ ]  iOS framework has been used in a sample app
+    [x]  iOS framework has been used in a sample app
 
 
 Redland Objective-C RDF Wrapper

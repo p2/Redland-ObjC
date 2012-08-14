@@ -23,13 +23,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Redland/redland.h>
+#ifdef IS_FRAMEWORK
+# import <Redland/redland.h>
+#else
+# import <redland.h>
+#endif
 #import "RedlandWrappedObject.h"
 
 /*!
 	A RedlandURI provides simple URI functionality like storage and comparison.
 	
-	This class wraps librdf_uri objects. As of this version, only the most basic librdf_uri functions of the Redland library are represented in these bindings. It is recommended to use Cocoa's NSURL class whenever possible. Instances of the RedlandURI class conform to the NSCopying and NSCoding protocols.
+	This class wraps librdf_uri objects. As of this version, only the most basic librdf_uri functions of the Redland library are represented in these bindings.
+	It is recommended to use Cocoa's NSURL class whenever possible. Instances of the RedlandURI class conform to the NSCopying and NSCoding protocols.
 */
 @interface RedlandURI : RedlandWrappedObject <NSCopying, NSCoding> 
 

@@ -41,8 +41,9 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 - (void)dealloc
 {
-    if (isWrappedObjectOwner)
+    if (isWrappedObjectOwner) {
         librdf_free_query_results(wrappedObject);
+	}
 }
 
 - (librdf_query_results *)wrappedQueryResults
