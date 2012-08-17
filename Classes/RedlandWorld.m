@@ -143,7 +143,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
  *  Sets the world feature identified by featureURI to a new value.
  *  @param featureValue A RedlandNode representing the new value
  *  @param featureURI An NSString or a RedlandURI instance
- *  @attention Raises a RedlandException is no such feature exists.
+ *  @warning Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {
@@ -178,7 +178,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
  *  Errors are collected until -[RedlandWorld handleStoredErrors] is called, which then throws an exception with all collected errors.
  *  
  *  @param aMessage A librdf_log_message pointer.
- *  @attention Behavior of this method is subject to change. Do not use.
+ *  @warning Behavior of this method is subject to change. Do not use.
  */
 - (int)handleLogMessage:(librdf_log_message *)aMessage
 {
@@ -200,7 +200,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 
 /**
  *  Checks if there are any collected errors, in which case it throws an exception with the error array inside userInfo dictionary.
- *  @attention Behavior of this method is subject to change. Do not use.
+ *  @warning Behavior of this method is subject to change. Do not use.
  */
 - (void)handleStoredErrors
 {

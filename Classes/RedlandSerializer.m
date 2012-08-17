@@ -63,7 +63,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Initializes a RedlandSerializer with the given name.
- *  @attention See the Redland...SerializerName constants for possible names.
+ *  @warning See the Redland...SerializerName constants for possible names.
  */
 - (id)initWithName:(NSString *)factoryName
 {
@@ -215,7 +215,7 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
  *  Sets the serializer feature identified by featureURI to a new value.
  *  @param featureValue A RedlandNode representing the new value
  *  @param featureURI An NSString or a RedlandURI instance
- *  @attention Raises a RedlandException is no such feature exists.
+ *  @warning Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {

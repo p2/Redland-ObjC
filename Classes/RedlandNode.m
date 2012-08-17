@@ -117,7 +117,7 @@
 
 /**
  *  Initializes a new RedlandLiteralNode, with either a language or a datatype URI.
-	
+ *  
  *  @param aString The literal string
  *  @param aLanguage The language of the literal string (ignored if typeURI is present)
  *  @param typeURI The datatype URI (sets aLanguage to nil if present)

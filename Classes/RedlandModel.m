@@ -115,7 +115,7 @@
 /**
  *  Returns the number of statements in the receiver.
  *  @return The number of statements in the model, or a negative value on failure.
- *  @attention Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
+ *  @warning Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
  */
 - (int)size
 {
@@ -127,7 +127,7 @@
 #pragma mark - Statement Handling
 /**
  *  Adds a single statement to the receiver.
-	Duplicate statements are ignored.
+ *  Duplicate statements are ignored.
  *  @param aStatement A complete statement (with non-nil subject, predicate, and object)
  */
 - (void)addStatement:(RedlandStatement *)aStatement
@@ -158,7 +158,7 @@
 
 /**
  *  Adds a stream of statements to the receiver.
-	Duplicate statements are ignored.
+ *  Duplicate statements are ignored.
  *  @param aStream A stream of complete statements
  */
 - (void)addStatementsFromStream:(RedlandStream *)aStream
@@ -209,7 +209,7 @@
 /**
  *  Returns YES if the receiver contains the given statement.
  *  @param aStatement A complete statement
- *  @attention May not work in all cases; use enumeratorOfStatementsLike: instead.
+ *  @warning May not work in all cases; use enumeratorOfStatementsLike: instead.
  */
 - (BOOL)containsStatement:(RedlandStatement *)aStatement
 {
@@ -483,7 +483,7 @@
  *  Sets the model feature identified by featureURI to a new value.
  *  @param featureValue A RedlandNode representing the new value
  *  @param featureURI An NSString or a RedlandURI instance
- *  @attention Raises a RedlandException is no such feature exists.
+ *  @warning Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {

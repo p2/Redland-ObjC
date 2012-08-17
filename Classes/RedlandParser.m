@@ -68,7 +68,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  Initializes a new RedlandParser of the given type.
- *  @attention See the Redland...ParserName constants for possible values.
+ *  @warning See the Redland...ParserName constants for possible values.
  */
 - (id)initWithName:(NSString *)aName
 {
@@ -214,7 +214,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
  *  Sets the parser feature identified by featureURI to a new value.
  *  @param featureValue A RedlandNode representing the new value
  *  @param featureURI An NSString or a RedlandURI instance
- *  @attention Raises a RedlandException is no such feature exists.
+ *  @warning Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {
@@ -250,7 +250,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
  *  Fetches data from the given URL using the Cocoa NSURL loading system, parses it with a parser deduced from the returned MIME type, and adds the statements
 	into the given context of the receiver.
 	
- *  @attention This is a nice and uncomplicated convenience function, but it will block until the data has been downloaded and parsed. If the parser type
+ *  @warning This is a nice and uncomplicated convenience function, but it will block until the data has been downloaded and parsed. If the parser type
 	cannot be guessed from the MIME type, an RDF/XML parser will be used.
  */
 - (void)loadURL:(NSURL *)aURL withContext:(RedlandNode *)context

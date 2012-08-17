@@ -33,7 +33,7 @@
 #pragma mark - Allocators
 /**
  *  Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
- *  @attention Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
+ *  @warning Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
  */
 + (RedlandNode *)nodeWithObject:(id)object
 {
@@ -121,7 +121,7 @@
 #pragma mark - Accessors
 /**
  *  @return the literal integer value of the receiver.
- *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
+ *  @warning Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
  */
 - (int)intValue
 {
@@ -139,7 +139,7 @@
 
 /**
  *  @return the literal float value of the receiver.
- *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+ *  @warning Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
  */
 - (float)floatValue
 {
@@ -157,7 +157,7 @@
 
 /**
  *  @return the literal double value of the receiver.
- *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+ *  @warning Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
  */
 - (double)doubleValue
 {
@@ -180,7 +180,7 @@
 
 /**
  *  @return the literal boolean value of the receiver.
- *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+ *  @warning Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
  */
 - (BOOL)boolValue
 {
@@ -200,7 +200,7 @@
 
 /**
  *  If you just want the literal value, no matter what datatype, use <tt>literalValue</tt>.
- *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
+ *  @warning Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
  *  @return the literal string value of the receiver.
  */
 - (NSString *)stringValue
@@ -235,7 +235,7 @@
 
 /**
  *  @return the literal dateTime value of the receiver.
- *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+ *  @warning Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
  */
 - (NSDate *)dateTimeValue
 {

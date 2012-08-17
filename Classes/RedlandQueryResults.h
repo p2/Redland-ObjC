@@ -41,7 +41,7 @@
 /**
  *  This class represents results from the execution of a RedlandQuery.
  *
- *  @attention Query results work almost like an enumerator. You can go through the results by invoking <tt>next</tt> and get the bindings for each result
+ *  @warning Query results work almost like an enumerator. You can go through the results by invoking <tt>next</tt> and get the bindings for each result
  *  through the various methods defined below. For simplicity, it is recommended that you use the <tt>resultEnumerator</tt> method to get a standard Cocoa
  *  NSEnumerator of the results.
  */

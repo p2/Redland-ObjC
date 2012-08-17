@@ -46,10 +46,10 @@
 
 /**
  *  The designated initializer, initializes a new RedlandStatement.
-	
-	Each parameter can be either be nil, of type RedlandNode, or of any other class that responds to the selector <tt>nodeValue</tt>. The Redland Objective-C
-	framework provides additional <tt>nodeValue</tt> methods for the core Cocoa classes NSString, NSNumber, NSURL, and NSDate.
-	
+ *
+ *  Each parameter can be either be nil, of type RedlandNode, or of any other class that responds to the selector <tt>nodeValue</tt>. The Redland Objective-C
+ *  framework provides additional <tt>nodeValue</tt> methods for the core Cocoa classes NSString, NSNumber, NSURL, and NSDate.
+ *  
  *  @param subjectNode An object representing the subject or source of the statement.
  *  @param predicateNode An object representing the predicate or arc of the statement.
  *  @param objectNode An object representing the object or target of the statement.
@@ -137,7 +137,7 @@
 #pragma mark - Comparing
 /**
  *  @param aStatement The statement to compare the receiver to.
- *  @attention All parts of aStatement which are non-nil must be equal to their counterparts in the receiver.
+ *  @warning All parts of aStatement which are non-nil must be equal to their counterparts in the receiver.
  *  @return Returns YES if the receiver matches aStatement.
  */
 - (BOOL)matchesPartialStatement:(RedlandStatement *)aStatement
@@ -253,7 +253,7 @@
 
 /**
  *  Prints a description of the receiver to standard error.
- *  @attention For debugging purposes.
+ *  @warning For debugging purposes.
  */
 - (void)print
 {

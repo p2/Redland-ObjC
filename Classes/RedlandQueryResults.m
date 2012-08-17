@@ -130,7 +130,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 /**
  *  @return Returns an RDF graph of the results.
- *  @attention The return value is only meaningful if this is an RDF graph query result.
+ *  @warning The return value is only meaningful if this is an RDF graph query result.
  */
 - (RedlandStream *)resultStream
 {
@@ -166,7 +166,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 /**
  *  @return Returns an enumerator over the query results.
- *  @attention This is the recommended way to evaluate query results.
+ *  @warning This is the recommended way to evaluate query results.
  */
 - (RedlandQueryResultsEnumerator *)resultEnumerator
 {
@@ -216,7 +216,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 /**
  *  Get boolean query result.
  *  @return Returns > 0 if true, 0 if false, < 0 on error or finished
- *  @attention The return value is only meaningful if this is a boolean query result.
+ *  @warning The return value is only meaningful if this is a boolean query result.
  */
 - (int)getBoolean
 {
