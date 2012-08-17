@@ -35,12 +35,13 @@
 
 
 /**
- *	A RedlandNode represents a single node in an RDF graph.
+ *  A RedlandNode represents a single node in an RDF graph.
  *
- *	The different node types are:
- *		* Resource: A node representing a resource which is identified by a URI.
- *		* Blank: A node which represents an anonymous resource. The node is identified by a blank node ID.
- *		* Literal: A node representing a literal value in form of a string.
+ *  The different node types are:
+ *  
+ *  - Resource: A node representing a resource which is identified by a URI.
+ *  - Blank: A node which represents an anonymous resource. The node is identified by a blank node ID.
+ *  - Literal: A node representing a literal value in form of a string.
  *
  */
 @interface RedlandNode : RedlandWrappedObject <NSCopying, NSCoding>

@@ -436,6 +436,7 @@
 		EE1DDDF215BEDCC700882BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		EEDE81B315BF375200AC2B64 /* libraptor2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libraptor2.a; sourceTree = "<group>"; };
 		EEDE81B415BF375200AC2B64 /* librasqal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librasqal.a; sourceTree = "<group>"; };
 		EEDE81B515BF375200AC2B64 /* librdf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librdf.a; sourceTree = "<group>"; };
@@ -443,9 +444,7 @@
 		EEDE81B815BF375F00AC2B64 /* librasqal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librasqal.dylib; sourceTree = "<group>"; };
 		EEDE81B915BF375F00AC2B64 /* librdf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librdf.dylib; sourceTree = "<group>"; };
 		EEE7B44E15C84978004D5A68 /* libredland-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libredland-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEE7B45415C84978004D5A68 /* redland-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "redland-ios-Prefix.pch"; sourceTree = "<group>"; };
 		EEE7B45E15C84978004D5A68 /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEE7B46915C84979004D5A68 /* redland-iosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "redland-iosTests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,14 +526,13 @@
 				EDF2FEA9071FE41900B18942 /* ChangeLog.txt */,
 				ED98645906FAF0D8009186B3 /* LICENSE.txt */,
 				EDBA0E4807379BDD00610CB1 /* NOTICE.txt */,
+				EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */,
 				ED699E3406F9CBBF00A624F7 /* Basic Wrapper Classes */,
 				08FB77AEFE84172EC02AAC07 /* Additional Classes */,
 				ED69A3BB06F9DCA400A624F7 /* Tests */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				EE74747115B90143004A456E /* Redland Source */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
-				EEE7B45215C84978004D5A68 /* Other Sources (redland-ios) */,
-				EEE7B46715C84979004D5A68 /* redland-iosTests */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -825,23 +823,6 @@
 			path = "Universal-Mac";
 			sourceTree = "<group>";
 		};
-		EEE7B45215C84978004D5A68 /* Other Sources (redland-ios) */ = {
-			isa = PBXGroup;
-			children = (
-				EEE7B45415C84978004D5A68 /* redland-ios-Prefix.pch */,
-			);
-			name = "Other Sources (redland-ios)";
-			path = "redland-ios";
-			sourceTree = "<group>";
-		};
-		EEE7B46715C84979004D5A68 /* redland-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				EEE7B46915C84979004D5A68 /* redland-iosTests-Info.plist */,
-			);
-			path = "redland-iosTests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1116,7 +1097,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/bin:/usr/bin:/usr/local/bin\nDOX=$(which doxygen)\nif [[ 'x' == ${DOX}x ]]; then\n    echo \"I can't find doxygen\"\n    exit 1\nfi\n\ndoxygen\ncd Docs/html\nmake install";
+			shellScript = "PATH=/bin:/usr/bin:/usr/local/bin\nDOX=$(which appledoc)\nif [[ 'x' == ${DOX}x ]]; then\n    echo \"I can't find appledoc, check the README on how to install it or adjust the PATH above\"\n    exit 1\nfi\n\nappledoc . && exit 0";
 		};
 		EE1DDDF115BED97D00882BDA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

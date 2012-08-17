@@ -36,7 +36,7 @@ typedef enum _RedlandStreamEnumeratorModifier {
 
 
 /**
- *	Provides an NSEnumerator-based interface for RedlandStreams.
+ *  Provides an NSEnumerator-based interface for RedlandStreams.
  */
 @interface RedlandStreamEnumerator : NSEnumerator {
     RedlandStream *stream;

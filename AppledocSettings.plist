@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>--output</key>
+	<string>Docs</string>
+	<key>--ignore</key>
+	<array>
+		<string>appledoc</string>
+		<string>English.lproj</string>
+		<string>Redland-source</string>
+		<string>Redland.xcodeproj</string>
+		<string>Tests</string>
+	</array>
+	<key>--project-name</key>
+	<string>Redland Objective-C Bindings</string>
+	<key>--project-company</key>
+	<string>Redland</string>
+	<key>--company-id</key>
+	<string>com.github.p2</string>
+	<key>--create-docset</key>
+	<true/>
+	<key>--install-docset</key>
+	<true/>
+	<key>--logformat</key>
+	<string>xcode</string>
+</dict>
+</plist>

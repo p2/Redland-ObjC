@@ -32,9 +32,9 @@
 
 
 /**
- *	A direct wrapper around librdf_iterator.
+ *  A direct wrapper around librdf_iterator.
  *
- *	Implementation of this class is subject to change. Do not use.
+ *  Implementation of this class is subject to change. Do not use.
  */
 @interface RedlandIterator : RedlandWrappedObject
 

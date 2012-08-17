@@ -43,8 +43,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 #pragma mark Init and Cleanup
 
-/*!
-	Returns an autoreleased RedlandSerializer initialized using initWithName:.
+/**
+ *  Returns an autoreleased RedlandSerializer initialized using initWithName:.
  */
 + (id)serializerWithName:(NSString *)factoryName
 {
@@ -52,8 +52,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	return [[self alloc] initWithName:factoryName];
 }
 
-/*!
-	Convenience method which returns an autoreleased RedlandSerializer initialized using initWithName:mimeType:typeURI:.
+/**
+ *  Convenience method which returns an autoreleased RedlandSerializer initialized using initWithName:mimeType:typeURI:.
  */
 + (id)serializerWithName:(NSString *)factoryName mimeType:(NSString *)mimeType typeURI:(RedlandURI *)typeURI
 {
@@ -61,9 +61,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	return [[self alloc] initWithName:factoryName mimeType:mimeType typeURI:typeURI];
 }
 
-/*!
-	Initializes a RedlandSerializer with the given name.
-	@attention See the Redland...SerializerName constants for possible names.
+/**
+ *  Initializes a RedlandSerializer with the given name.
+ *  @attention See the Redland...SerializerName constants for possible names.
  */
 - (id)initWithName:(NSString *)factoryName
 {
@@ -71,8 +71,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	return [self initWithName:factoryName mimeType:nil typeURI:nil];
 }
 
-/*!
-	Creates and returns a RedlandSerializer identified by either a name, a MIME type, or a type URI.
+/**
+ *  Creates and returns a RedlandSerializer identified by either a name, a MIME type, or a type URI.
  */
 - (id)initWithName:(NSString *)factoryName mimeType:(NSString *)mimeType typeURI:(RedlandURI *)typeURI
 {
@@ -93,8 +93,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 }
 
 
-/*!
-	Returns the underlying librdf_serializer of the receiver.
+/**
+ *  Returns the underlying librdf_serializer of the receiver.
  */
 - (librdf_serializer *)wrappedSerializer
 {
@@ -104,8 +104,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 
 #pragma mark - Serialization
-/*!
-	Serializes a model to a file with the specified name.
+/**
+ *  Serializes a model to a file with the specified name.
  */
 - (void)serializeModel:(RedlandModel *)aModel toFileName:(NSString *)fileName withBaseURI:(RedlandURI *)aURI
 {
@@ -124,8 +124,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	[[RedlandWorld defaultWorld] handleStoredErrors];
 }
 
-/*!
-	Serializes a model to a C file handle.
+/**
+ *  Serializes a model to a C file handle.
  */
 - (void)serializeModel:(RedlandModel *)aModel toFile:(FILE *)file withBaseURI:(RedlandURI *)aURI
 {
@@ -144,8 +144,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	[[RedlandWorld defaultWorld] handleStoredErrors];
 }
 
-/*!
-	Serializes a model to the given NSFileHandle.
+/**
+ *  Serializes a model to the given NSFileHandle.
  */
 - (void)serializeModel:(RedlandModel *)aModel toFileHandle:(NSFileHandle *)fileHandle withBaseURI:(RedlandURI *)aURI;
 {
@@ -173,8 +173,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	[[RedlandWorld defaultWorld] handleStoredErrors];
 }
 
-/*!
-	Sets a namespace/URI prefix mapping.
+/**
+ *  Sets a namespace/URI prefix mapping.
  */
 - (void)setPrefix:(NSString *)aPrefix forNamespaceURI:(RedlandURI *)uri
 {
@@ -192,9 +192,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 
 #pragma mark - Features
-/*!
-	Returns the value of the serializer feature identified by featureURI.
-	@param featureURI An NSString or a RedlandURI instance
+/**
+ *  Returns the value of the serializer feature identified by featureURI.
+ *  @param featureURI An NSString or a RedlandURI instance
  */
 - (RedlandNode *)valueOfFeature:(id)featureURI
 {
@@ -211,11 +211,11 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
-/*!
-	Sets the serializer feature identified by featureURI to a new value.
-	@param featureValue A RedlandNode representing the new value
-	@param featureURI An NSString or a RedlandURI instance
-	@attention Raises a RedlandException is no such feature exists.
+/**
+ *  Sets the serializer feature identified by featureURI to a new value.
+ *  @param featureValue A RedlandNode representing the new value
+ *  @param featureURI An NSString or a RedlandURI instance
+ *  @attention Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {
@@ -248,8 +248,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 @implementation RedlandSerializer (Convenience)
 
-/*!
-	Returns a serialized string representation of a model using the given base URI.
+/**
+ *  Returns a serialized string representation of a model using the given base URI.
  */
 - (NSString *)serializedStringFromModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
 {
@@ -262,8 +262,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 	return [[NSString alloc] initWithBytesNoCopy:result length:len encoding:NSUTF8StringEncoding freeWhenDone:YES];
 }
 
-/*!
-	Returns a serialized data representation of a model using the given base URI.
+/**
+ *  Returns a serialized data representation of a model using the given base URI.
  */
 - (NSData *)serializedDataFromModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
 {
@@ -282,8 +282,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 
 @implementation RedlandModel (SerializerConvenience)
-/*!
-	Returns an RDF/XML serialization of the receiver using the given base URI.
+/**
+ *  Returns an RDF/XML serialization of the receiver using the given base URI.
  */
 - (NSData *)serializedRDFXMLDataWithBaseURI:(RedlandURI *)baseURI
 {
@@ -296,8 +296,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 
 /**
- *	librdf_serializer_serialize_model_to_file() uses the UNIX conformance variant for fopen, "fopen$UNIX2003". This method maps those two functions.
- *	@todo Is there a cleaner solution to this?
+ *  librdf_serializer_serialize_model_to_file() uses the UNIX conformance variant for fopen, "fopen$UNIX2003". This method maps those two functions.
+ *  @todo Is there a cleaner solution to this?
  */
 FILE *fopen$UNIX2003( const char *filename, const char *mode )
 {
@@ -305,8 +305,8 @@ FILE *fopen$UNIX2003( const char *filename, const char *mode )
 }
 
 /**
- *	raptor_filename_iostream_write_bytes() uses the UNIX conformance variant for fwrite, "fwrite$UNIX2003". This method maps those two functions.
- *	@todo Is there a cleaner solution to this?
+ *  raptor_filename_iostream_write_bytes() uses the UNIX conformance variant for fwrite, "fwrite$UNIX2003". This method maps those two functions.
+ *  @todo Is there a cleaner solution to this?
  */
 size_t fwrite$UNIX2003( const void *a, size_t b, size_t c, FILE *d )
 {

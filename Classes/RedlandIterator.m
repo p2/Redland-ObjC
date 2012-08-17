@@ -60,11 +60,11 @@
 }
 
 
-/*!
-	librdf_iterator_next.
+/**
+ *  librdf_iterator_next.
 	
 	Note that the return value is the inverse of the underlying C function.
-	@result Returns YES if there is a next object.
+ *  @return Returns YES if there is a next object.
  */
 - (BOOL)next
 {

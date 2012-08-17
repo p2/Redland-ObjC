@@ -38,8 +38,8 @@
 
 
 #pragma mark - Walking
-/*!
-	Returns YES if there is a next statement.
+/**
+ *  Returns YES if there is a next statement.
 	Note that the return value is the inverse of the corresponding C library function, which returns zero on success.
  */
 - (BOOL)next
@@ -50,16 +50,16 @@
 
 
 #pragma mark - Accessors
-/*!
-	Returns the underlying librdf_stream pointer of the receiver.
+/**
+ *  Returns the underlying librdf_stream pointer of the receiver.
  */
 - (librdf_stream *)wrappedStream
 {
 	return wrappedObject;
 }
 
-/*!
-	Returns the current object on the stream.
+/**
+ *  Returns the current object on the stream.
  */
 - (RedlandStatement *)object
 {
@@ -72,8 +72,8 @@
 	return [[RedlandStatement alloc] initWithWrappedObject:statement];
 }
 
-/*!
-	Returns the context of the current object on the stream.
+/**
+ *  Returns the context of the current object on the stream.
  */
 - (RedlandNode *)context
 {
@@ -88,8 +88,8 @@
 
 
 #pragma mark - Utilities
-/*!
-	Prints out the stream to standard error.
+/**
+ *  Prints out the stream to standard error.
 	For debugging purposes.
  */
 - (void)print
@@ -97,8 +97,8 @@
 	librdf_stream_print(wrappedObject, stderr);
 }
 
-/*!
-	Returns a RedlandStreamEnumerator for the receiver.
+/**
+ *  Returns a RedlandStreamEnumerator for the receiver.
 	It is recommended that you use this enumerator interface instead of accessing the stream directly.
  */
 - (RedlandStreamEnumerator *)statementEnumerator

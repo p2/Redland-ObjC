@@ -34,10 +34,10 @@
 
 
 /**
- *	A RedlandStream represents a stream of statements.
+ *  A RedlandStream represents a stream of statements.
  *
- *	Streams are used as return values from parsers and query functions in the Redland library. It is recommended that you use the statementEnumerator function
- *	to access the stream, as it provides a more natural Cocoa interface using an NSEnumerator subclass.
+ *  Streams are used as return values from parsers and query functions in the Redland library. It is recommended that you use the statementEnumerator function
+ *  to access the stream, as it provides a more natural Cocoa interface using an NSEnumerator subclass.
  */
 
 @interface RedlandStream : RedlandWrappedObject

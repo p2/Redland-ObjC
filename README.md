@@ -39,15 +39,15 @@ Using the Framework
 Building the Documentation
 --------------------------
 
-The code is documented using [Doxygen]. If you want to compile the documentation, install doxygen (again, easiest through [Homebrew]) and run the "Documentation" target. Or you can perform it manually from the command line:
+The code is documented using [appledoc]. If you want to compile the documentation it's best if you grab appledoc from GitHub, build and install it and then run it against the code:
 
-    $ brew install doxygen
-	$ cd path/to/Redland-ObjC
-	$ doxygen
-	$ cd Docs/html
-	$ make install
+    $ git clone git://github.com/tomaz/appledoc.git
+    $ cd appledoc
+    $ ./install-appledoc.sh -b /usr/local/bin -t ~/Library/Application\ Support/appledoc
+    $ cd ..
+    $ appledoc .
 
-Doxygen should pick up the configuration file `Doxyfile` automatically. Edit that file to tweak how the documentation looks.
+Note that this assumes that you have write permissions for `/usr/local`, if not you may need to issue this command as root with `sudo`. The documentation is now available from within Xcode.
 
 
 [redland]: http://librdf.org/

@@ -35,7 +35,7 @@
 }
 
 /**
- *	The designated initializer
+ *  The designated initializer
  */
 - (id)initWithRedlandStream:(RedlandStream *)aStream modifier:(RedlandStreamEnumeratorModifier)aModifier
 {
@@ -47,8 +47,8 @@
     return self;
 }
 
-/*!
-	Returns the context of the current statement.
+/**
+ *  Returns the context of the current statement.
  */
 - (RedlandNode *)currentContext
 {

@@ -27,10 +27,10 @@
 
 @implementation RedlandWrappedObject
 
-/*!
-	The designated initializer.
+/**
+ *  The designated initializer.
 	Initialises the receiver to use the given pointer as its underlying wrapped object. The receiver is considered the owner of the object.
-	@param object The pointer to the librdf object
+ *  @param object The pointer to the librdf object
  */
 - (id)initWithWrappedObject:(void *)object
 {
@@ -38,10 +38,10 @@
 }
 
 
-/*!
-	Initialises the receiver to use the given pointer as its underlying wrapped object.
-	@param object The pointer to the librdf object
-	@param ownerFlag If TRUE, the receiver considers itself the owner of the underlying librdf object and will possibly free it when the receiver is deallocated.
+/**
+ *  Initialises the receiver to use the given pointer as its underlying wrapped object.
+ *  @param object The pointer to the librdf object
+ *  @param ownerFlag If TRUE, the receiver considers itself the owner of the underlying librdf object and will possibly free it when the receiver is deallocated.
  */
 - (id)initWithWrappedObject:(void *)object owner:(BOOL)ownerFlag
 {

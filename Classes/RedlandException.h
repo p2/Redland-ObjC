@@ -30,7 +30,7 @@ extern NSString * const RedlandErrorDomain;					///< The error domain of Redland
 
 
 /** 
- *	The class of all Redland exceptions.
+ *  The class of all Redland exceptions.
  */
 @interface RedlandException : NSException
 

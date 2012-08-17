@@ -32,8 +32,8 @@
 #import "RedlandModel.h"
 
 /**
- *	@header RedlandSerializer.h
- *	Defines the RedlandSerializer class and various serializer name constants.
+ *  @header RedlandSerializer.h
+ *  Defines the RedlandSerializer class and various serializer name constants.
  */
 @class RedlandURI;
 
@@ -44,7 +44,7 @@ extern NSString * const RedlandRSS10Serializer;						///< The name of the RSS 1.
 
 
 /**
- *	A serializer turns a RedlandModel into a serialized format like RDF/XML or NTriples. Wraps librdf_serializer.
+ *  A serializer turns a RedlandModel into a serialized format like RDF/XML or NTriples. Wraps librdf_serializer.
  */
 @interface RedlandSerializer : RedlandWrappedObject
 
@@ -70,7 +70,7 @@ extern NSString * const RedlandRSS10Serializer;						///< The name of the RSS 1.
 
 
 /**
- *	RedlandSerializer(Convenience)
+ *  RedlandSerializer(Convenience)
  */
 @interface RedlandSerializer (Convenience)
 
@@ -81,7 +81,7 @@ extern NSString * const RedlandRSS10Serializer;						///< The name of the RSS 1.
 
 
 /**
- *	RedlandModel(SerializerConvenience)
+ *  RedlandModel(SerializerConvenience)
  */
 @interface RedlandModel (SerializerConvenience)
 

@@ -37,27 +37,27 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 
 
 #pragma mark - Init and Cleanup
-/*!
-	Returns an autoreleased RedlandQuery initialized using initWithLanguageName:queryString:.
+/**
+ *  Returns an autoreleased RedlandQuery initialized using initWithLanguageName:queryString:.
  */
 + (id)queryWithLanguageName:(NSString *)langName queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
 	return [[self alloc] initWithLanguageName:langName queryString:queryString baseURI:baseURI];
 }
 
-/*!
-	Returns an autoreleased RedlandQuery initialized using initWithLanguageName:languageURI:queryString:.
+/**
+ *  Returns an autoreleased RedlandQuery initialized using initWithLanguageName:languageURI:queryString:.
  */
 + (id)queryWithLanguageName:(NSString *)langName languageURI:(RedlandURI *)langURI queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
 	return [[self alloc] initWithLanguageName:langName languageURI:langURI queryString:queryString baseURI:baseURI];
 }
 
-/*!
-	Initializes a RedlandQuery with the given language name and query string.
-	@param langName The only supported language name is currently the constant <tt>RedlandRDQLLanguageName</tt>.
-	@param queryString The query string in the given language
-	@param baseURI The base URI to use
+/**
+ *  Initializes a RedlandQuery with the given language name and query string.
+ *  @param langName The only supported language name is currently the constant <tt>RedlandRDQLLanguageName</tt>.
+ *  @param queryString The query string in the given language
+ *  @param baseURI The base URI to use
  */
 - (id)initWithLanguageName:(NSString *)langName queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
@@ -67,12 +67,12 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 	return [self initWithLanguageName:langName languageURI:nil queryString:queryString baseURI:baseURI];
 }
 
-/*!
-	Initializes a RedlandQuery with the given language name or URI and query string.
-	@param langName The only supported language name is currently the constant <tt>RedlandRDQLLanguageName</tt>.
-	@param langURI The URI identifying the requested query language
-	@param queryString The query string in the given language
-	@param baseURI The base uri to use
+/**
+ *  Initializes a RedlandQuery with the given language name or URI and query string.
+ *  @param langName The only supported language name is currently the constant <tt>RedlandRDQLLanguageName</tt>.
+ *  @param langURI The URI identifying the requested query language
+ *  @param queryString The query string in the given language
+ *  @param baseURI The base uri to use
  */
 - (id)initWithLanguageName:(NSString *)langName languageURI:(RedlandURI *)langURI queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
@@ -95,8 +95,8 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 	}
 }
 
-/*!
-	Returns the underlying librdf_query object of the receiver.
+/**
+ *  Returns the underlying librdf_query object of the receiver.
  */
 - (librdf_query *)wrappedQuery
 {
@@ -106,9 +106,9 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 
 
 #pragma mark - Query Execution
-/*!
-	Run the query on the given model.
-	@result A RedlandQueryResults object
+/**
+ *  Run the query on the given model.
+ *  @return A RedlandQueryResults object
  */
 - (RedlandQueryResults *)executeOnModel:(RedlandModel *)aModel
 {
@@ -122,38 +122,38 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 
 
 #pragma mark - KVC
-/*!
-	Get the query-specified limit on results.
-	@result integer >=0 if a limit is given, otherwise <0
+/**
+ *  Get the query-specified limit on results.
+ *  @return integer >=0 if a limit is given, otherwise <0
  */
 - (int)limit
 {
 	return librdf_query_get_limit(wrappedObject);
 }
 
-/*!
-	Set the query-specified limit on results.
+/**
+ *  Set the query-specified limit on results.
 	This is the limit given in the query on the number of results allowed.
-	@param newLimit the limit on results, >=0 to set a limit, <0 to have no limit
+ *  @param newLimit the limit on results, >=0 to set a limit, <0 to have no limit
  */
 - (void)setLimit:(int)newLimit
 {
 	librdf_query_set_limit(wrappedObject, newLimit);
 }
 
-/*!
-	Get the query-specified offset on results. This is the offset given in the query on the number of results allowed.
-	@result integer >=0 if a offset is given, otherwise <0
+/**
+ *  Get the query-specified offset on results. This is the offset given in the query on the number of results allowed.
+ *  @return integer >=0 if a offset is given, otherwise <0
  */
 - (int)offset
 {
 	return librdf_query_get_offset(wrappedObject);
 }
 
-/*!
-	Set the query-specified offset on results.
+/**
+ *  Set the query-specified offset on results.
 	This is the offset given in the query on the number of results allowed.
-	@param newOffset offset for results, >=0 to set an offset, <0 to have no offset
+ *  @param newOffset offset for results, >=0 to set an offset, <0 to have no offset
  */
 - (void)setOffset:(int)newOffset
 {
@@ -165,8 +165,8 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 
 
 /**
- *	Mapping from clock$UNIX2003() to clock()
- *	@todo There probably is a cleaner solution to this, but it's out of my league.
+ *  Mapping from clock$UNIX2003() to clock()
+ *  @todo There probably is a cleaner solution to this, but it's out of my league.
  */
 clock_t clock$UNIX2003(void)
 {

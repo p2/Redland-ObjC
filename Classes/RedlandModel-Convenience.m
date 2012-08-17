@@ -46,11 +46,11 @@
     return [[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream modifier:modifier];
 }
 
-/*!
-	Returns an enumerator of all statements in the receiver that match the given statement and context.
-	@param aStatement A (possibly partial) statement
-	@param contextNode The context
-	@result A RedlandStreamEnumerator of the matching statements
+/**
+ *  Returns an enumerator of all statements in the receiver that match the given statement and context.
+ *  @param aStatement A (possibly partial) statement
+ *  @param contextNode The context
+ *  @return A RedlandStreamEnumerator of the matching statements
  */
 - (RedlandStreamEnumerator *)enumeratorOfStatementsLike:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode
 {
@@ -59,10 +59,10 @@
     return [[RedlandStreamEnumerator alloc] initWithRedlandStream:resultStream];
 }
 
-/*!
-	Returns an enumerator of all statements in the receiver that match the given statement.
-	@param aStatement A (possibly partial) statement.
-	@result A RedlandStreamEnumerator of the matching statements
+/**
+ *  Returns an enumerator of all statements in the receiver that match the given statement.
+ *  @param aStatement A (possibly partial) statement.
+ *  @return A RedlandStreamEnumerator of the matching statements
  */
 - (RedlandStreamEnumerator *)enumeratorOfStatementsLike:(RedlandStatement *)aStatement
 {
@@ -74,8 +74,8 @@
 
 
 #pragma mark - Finding Sources
-/*!
-	Returns an enumerator of all sources in the receiver that have the given arcNode, targetNode, and contextNode.
+/**
+ *  Returns an enumerator of all sources in the receiver that have the given arcNode, targetNode, and contextNode.
  */
 - (NSEnumerator *)enumeratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -85,8 +85,8 @@
     return [self enumeratorOfStatementsLike:findStatement withContext:contextNode modifier:RedlandReturnSubjects];
 }
 
-/*!
-	Returns an enumerator of all sources in the receiver that have the given arcNode and targetNode.
+/**
+ *  Returns an enumerator of all sources in the receiver that have the given arcNode and targetNode.
  */
 - (NSEnumerator *)enumeratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode
 {
@@ -97,8 +97,8 @@
 
 
 #pragma mark - Finding Arcs
-/*!
-	Returns an enumerator of all arcs in the receiver with the given sourceNode, targetNode, and context.
+/**
+ *  Returns an enumerator of all arcs in the receiver with the given sourceNode, targetNode, and context.
  */
 - (NSEnumerator *)enumeratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -108,8 +108,8 @@
     return [self enumeratorOfStatementsLike:findStatement withContext:contextNode modifier:RedlandReturnPredicates];
 }
 
-/*!
-	Returns an enumerator of all arcs in the receiver with the given sourceNode and targetNode.
+/**
+ *  Returns an enumerator of all arcs in the receiver with the given sourceNode and targetNode.
  */
 - (NSEnumerator *)enumeratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode
 {
@@ -120,8 +120,8 @@
 
 
 #pragma mark - Finding Targets
-/*!
-	Returns an enumerator of all targets in the receiver with the given sourceNode, arcNode, and contextNode.
+/**
+ *  Returns an enumerator of all targets in the receiver with the given sourceNode, arcNode, and contextNode.
  */
 - (NSEnumerator *)enumeratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode context:(RedlandNode *)contextNode
 {
@@ -131,8 +131,8 @@
     return [self enumeratorOfStatementsLike:findStatement withContext:contextNode modifier:RedlandReturnObjects];
 }
 
-/*!
-	Returns an enumerator of all targets in the receiver with the given sourceNode and arcNode.
+/**
+ *  Returns an enumerator of all targets in the receiver with the given sourceNode and arcNode.
  */
 - (NSEnumerator *)enumeratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode
 {
@@ -143,8 +143,8 @@
 
 
 #pragma mark - Finding Arcs
-/*!
-	Returns an enumerator of all arcs going into targetNode in context contextNode.
+/**
+ *  Returns an enumerator of all arcs going into targetNode in context contextNode.
  */
 - (NSEnumerator *)enumeratorOfArcsIn:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -154,8 +154,8 @@
     return [self enumeratorOfStatementsLike:findStatement withContext:contextNode modifier:RedlandReturnPredicates];
 }
 
-/*!
-	Returns an enumerator of all arcs going into targetNode.
+/**
+ *  Returns an enumerator of all arcs going into targetNode.
  */
 - (NSEnumerator *)enumeratorOfArcsIn:(RedlandNode *)targetNode
 {
@@ -164,8 +164,8 @@
 }
 
 
-/*!
-	Returns an enumerator of all arcs coming out of sourceNode in context contextNode.
+/**
+ *  Returns an enumerator of all arcs coming out of sourceNode in context contextNode.
  */
 - (NSEnumerator *)enumeratorOfArcsOut:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -175,8 +175,8 @@
     return [self enumeratorOfStatementsLike:findStatement withContext:contextNode modifier:RedlandReturnPredicates];
 }
 
-/*!
-	Returns an enumerator of all arcs coming out of sourceNode.
+/**
+ *  Returns an enumerator of all arcs coming out of sourceNode.
  */
 - (NSEnumerator *)enumeratorOfArcsOut:(RedlandNode *)sourceNode
 {
@@ -187,8 +187,8 @@
 
 
 #pragma mark - Misc
-/*!
-	Returns an NSEnumerator of all contexts in the receiver.
+/**
+ *  Returns an NSEnumerator of all contexts in the receiver.
  */
 - (NSEnumerator *)contextEnumerator;
 {
@@ -196,17 +196,17 @@
     return [[RedlandIteratorEnumerator alloc] initWithRedlandIterator:iterator objectClass:[RedlandNode class]];
 }
 
-/*!
-	Returns an enumerator of all statements in the receiver.
+/**
+ *  Returns an enumerator of all statements in the receiver.
  */
 - (RedlandStreamEnumerator *)statementEnumerator
 {
     return [[RedlandStreamEnumerator alloc] initWithRedlandStream:[self statementStream]];
 }
 
-/*!
-	Returns an enumerator of all statements in the receiver with the given context.
-	@param contextNode The context
+/**
+ *  Returns an enumerator of all statements in the receiver with the given context.
+ *  @param contextNode The context
  */
 - (RedlandStreamEnumerator *)statementEnumeratorWithContext:(RedlandNode *)contextNode
 {

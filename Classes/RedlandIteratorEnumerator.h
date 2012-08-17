@@ -28,7 +28,7 @@
 
 
 /**
- *	An NSEnumerator subclass to enable fast enumeration over a Redland iterator
+ *  An NSEnumerator subclass to enable fast enumeration over a Redland iterator
  */
 @interface RedlandIteratorEnumerator : NSEnumerator {
     Class objectClass;

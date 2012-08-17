@@ -28,7 +28,7 @@
 
 
 /**
- *	Defines various convenience methods for RedlandNode objects.
+ *  Defines various convenience methods for RedlandNode objects.
  */
 @interface RedlandNode (Convenience)
 
@@ -61,7 +61,7 @@
 
 
 /**
- *	Convenience method for NSURL
+ *  Convenience method for NSURL
  */
 @interface NSURL (RedlandNodeConvenience)
 
@@ -71,7 +71,7 @@
 
 
 /**
- *	Convenience method for NSNumber
+ *  Convenience method for NSNumber
  */
 @interface NSNumber (RedlandNodeConvenience)
 
@@ -81,7 +81,7 @@
 
 
 /**
- *	Convenience method for NSString
+ *  Convenience method for NSString
  */
 @interface NSString (RedlandNodeConvenience)
 
@@ -91,7 +91,7 @@
 
 
 /**
- *	Convenience method for NSDate
+ *  Convenience method for NSDate
  */
 @interface NSDate (RedlandNodeConvenience)
 
@@ -101,7 +101,7 @@
 
 
 /**
- *	Convenience method for RedlandURI
+ *  Convenience method for RedlandURI
  */
 @interface RedlandURI (RedlandNodeConvenience)
 

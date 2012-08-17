@@ -28,7 +28,7 @@
 
 
 /**
- *	An NSEnumerator subclass to enable fast-enumeration over a collection.
+ *  An NSEnumerator subclass to enable fast-enumeration over a collection.
  */
 @interface RedlandCollectionEnumerator : NSEnumerator {
     RedlandModel *model;										///< The model to iterate over

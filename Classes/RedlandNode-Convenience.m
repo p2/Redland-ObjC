@@ -31,9 +31,9 @@
 
 
 #pragma mark - Allocators
-/*!
-	Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
-	@attention Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
+/**
+ *  Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
+ *  @attention Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
  */
 + (RedlandNode *)nodeWithObject:(id)object
 {
@@ -45,8 +45,8 @@
 									  userInfo:nil];
 }
 
-/*!
-	Creates and returns a typed literal RedlandNode with the given int value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#int</tt>.
+/**
+ *  Creates and returns a typed literal RedlandNode with the given int value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#int</tt>.
  */
 + (RedlandNode *)nodeWithLiteralInt:(int)anInt
 {
@@ -55,8 +55,8 @@
 								   type:[XMLSchemaNS URI:@"int"]];
 }
 
-/*!
-	Creates and returns a typed literal RedlandNode with the given float value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+/**
+ *  Creates and returns a typed literal RedlandNode with the given float value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
  */
 + (RedlandNode *)nodeWithLiteralFloat:(float)aFloat
 {
@@ -65,8 +65,8 @@
 								   type:[XMLSchemaNS URI:@"float"]];
 }
 
-/*!
-	Creates and returns a typed literal RedlandNode with the given double value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+/**
+ *  Creates and returns a typed literal RedlandNode with the given double value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
  */
 + (RedlandNode *)nodeWithLiteralDouble:(double)aDouble
 {
@@ -75,8 +75,8 @@
 								   type:[XMLSchemaNS URI:@"double"]];
 }
 
-/*!
-	Creates and returns a typed literal RedlandNode with the given boolean value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+/**
+ *  Creates and returns a typed literal RedlandNode with the given boolean value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
  */
 + (RedlandNode *)nodeWithLiteralBool:(BOOL)aBool
 {
@@ -85,8 +85,8 @@
 								   type:[XMLSchemaNS URI:@"boolean"]];
 }
 
-/*!
-	Creates and returns a typed literal RedlandNode with the given string value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
+/**
+ *  Creates and returns a typed literal RedlandNode with the given string value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
  */
 + (RedlandNode *)nodeWithLiteralString:(NSString *)aString language:(NSString *)aLanguage
 {
@@ -95,8 +95,8 @@
 								   type:[XMLSchemaNS URI:@"string"]];
 }
 
-/*!
-	Creates and returns a typed literal RedlandNode with the given NSDate value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+/**
+ *  Creates and returns a typed literal RedlandNode with the given NSDate value and a datatype URI of <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
  */
 + (RedlandNode *)nodeWithLiteralDateTime:(NSDate *)aDate
 {
@@ -108,8 +108,8 @@
 								   type:[XMLSchemaNS URI:@"dateTime"]];
 }
 
-/*!
-	Creates and returns a RedlandNode of type resource with the given URL.
+/**
+ *  Creates and returns a RedlandNode of type resource with the given URL.
  */
 + (RedlandNode *)nodeWithURL:(NSURL *)aURL
 {
@@ -119,9 +119,9 @@
 
 
 #pragma mark - Accessors
-/*!
-	@return the literal integer value of the receiver.
-	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
+/**
+ *  @return the literal integer value of the receiver.
+ *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
  */
 - (int)intValue
 {
@@ -137,9 +137,9 @@
 	return [[self literalValue] intValue];
 }
 
-/*!
-	@return the literal float value of the receiver.
-	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+/**
+ *  @return the literal float value of the receiver.
+ *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
  */
 - (float)floatValue
 {
@@ -155,9 +155,9 @@
 	return [[self literalValue] floatValue];
 }
 
-/*!
-	@return the literal double value of the receiver.
-	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+/**
+ *  @return the literal double value of the receiver.
+ *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
  */
 - (double)doubleValue
 {
@@ -178,9 +178,9 @@
 	return [[self literalValue] doubleValue];
 }
 
-/*!
-	@return the literal boolean value of the receiver.
-	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+/**
+ *  @return the literal boolean value of the receiver.
+ *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
  */
 - (BOOL)boolValue
 {
@@ -198,10 +198,10 @@
 	return [stringValue isEqualToString:@"true"] || [stringValue isEqualToString:@"1"];
 }
 
-/*!
-	If you just want the literal value, no matter what datatype, use <tt>literalValue</tt>.
-	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
-	@return the literal string value of the receiver.
+/**
+ *  If you just want the literal value, no matter what datatype, use <tt>literalValue</tt>.
+ *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#string</tt>.
+ *  @return the literal string value of the receiver.
  */
 - (NSString *)stringValue
 {
@@ -217,25 +217,25 @@
 	return [self literalValue];
 }
 
-/*!
-	@return the URI of the receiver (which must be a resource node) as an NSURL.
+/**
+ *  @return the URI of the receiver (which must be a resource node) as an NSURL.
  */
 - (NSURL *)URLValue
 {
 	return [[self URIValue] URLValue];
 }
 
-/*!
-	@return the URI of the receiver (which must be a resource node) as a string value.
+/**
+ *  @return the URI of the receiver (which must be a resource node) as a string value.
  */
 - (NSString *)URIStringValue
 {
 	return [[self URIValue] stringValue];
 }
 
-/*!
-	@return the literal dateTime value of the receiver.
-	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+/**
+ *  @return the literal dateTime value of the receiver.
+ *  @attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
  */
 - (NSDate *)dateTimeValue
 {
@@ -255,8 +255,8 @@
 }
 
 
-/*!
-	@return the receiver.
+/**
+ *  @return the receiver.
  */
 - (RedlandNode *)nodeValue
 {
@@ -267,7 +267,7 @@
 
 #pragma mark - Date and Time Utilities
 /**
- *	@return NSDateFormatter that can convert dates into ISO date strings and vice versa
+ *  @return NSDateFormatter that can convert dates into ISO date strings and vice versa
  */
 + (NSDateFormatter *)dateTimeFormatter
 {

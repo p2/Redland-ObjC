@@ -45,10 +45,10 @@ extern RedlandNamespace *DublinCoreNS;
 
 
 /**
- *	Convenience class for generating namespaced nodes, URIs, and strings.
+ *  Convenience class for generating namespaced nodes, URIs, and strings.
  *
- *	Instances of RedlandNamespace are helper objects which make it very easy to create RedlandNodes, RedlandURIs, NSStrings, or NSURLs with a common namespace
- *	prefix. Please note that this class is still experimental and its API is subject to change.
+ *  Instances of RedlandNamespace are helper objects which make it very easy to create RedlandNodes, RedlandURIs, NSStrings, or NSURLs with a common namespace
+ *  prefix. Please note that this class is still experimental and its API is subject to change.
  */
 @interface RedlandNamespace : NSObject <NSCopying>
 
@@ -82,7 +82,7 @@ extern RedlandNamespace *DublinCoreNS;
 
 
 /**
- *	A category to add convenience methods to the Redland serializer.
+ *  A category to add convenience methods to the Redland serializer.
  */
 @interface RedlandSerializer (NamespaceConvenience)
 

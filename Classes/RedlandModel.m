@@ -52,9 +52,9 @@
 }
 
 
-/*!
-	Initialises a new RedlandModel using the given storage.
-	@param aStorage The storage to use for the new model
+/**
+ *  Initialises a new RedlandModel using the given storage.
+ *  @param aStorage The storage to use for the new model
  */
 - (id)initWithStorage:(RedlandStorage *)aStorage
 {
@@ -79,16 +79,16 @@
 	}
 }
 
-/*!
-	Returns the underlying librdf_model pointer of the receiver.
+/**
+ *  Returns the underlying librdf_model pointer of the receiver.
  */
 - (librdf_model *)wrappedModel
 {
 	return wrappedObject;
 }
 
-/*!
-	Returns the underlying RedlandStorage of the receiver.
+/**
+ *  Returns the underlying RedlandStorage of the receiver.
  */
 - (RedlandStorage *)storage
 {
@@ -96,26 +96,26 @@
 	return [[RedlandStorage alloc] initWithWrappedObject:storage owner:NO];
 }
 
-/*!
-	Dumps the contents of the receiver to standard error (for debugging purposes).
+/**
+ *  Dumps the contents of the receiver to standard error (for debugging purposes).
  */
 - (void)print
 {
 	librdf_model_print(wrappedObject, stderr);
 }
 
-/*!
-	Synchronises the model to the model implementation.
+/**
+ *  Synchronises the model to the model implementation.
  */
 - (void)sync
 {
 	librdf_model_sync(wrappedObject);
 }
 
-/*!
-	Returns the number of statements in the receiver.
-	@result The number of statements in the model, or a negative value on failure.
-	@attention Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
+/**
+ *  Returns the number of statements in the receiver.
+ *  @return The number of statements in the model, or a negative value on failure.
+ *  @attention Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
  */
 - (int)size
 {
@@ -125,10 +125,10 @@
 
 
 #pragma mark - Statement Handling
-/*!
-	Adds a single statement to the receiver.
+/**
+ *  Adds a single statement to the receiver.
 	Duplicate statements are ignored.
-	@param aStatement A complete statement (with non-nil subject, predicate, and object)
+ *  @param aStatement A complete statement (with non-nil subject, predicate, and object)
  */
 - (void)addStatement:(RedlandStatement *)aStatement
 {
@@ -156,10 +156,10 @@
 	}
 }
 
-/*!
-	Adds a stream of statements to the receiver.
+/**
+ *  Adds a stream of statements to the receiver.
 	Duplicate statements are ignored.
-	@param aStream A stream of complete statements
+ *  @param aStream A stream of complete statements
  */
 - (void)addStatementsFromStream:(RedlandStream *)aStream
 {
@@ -171,10 +171,10 @@
 	}
 }
 
-/*!
-	Adds a single statement to the receiver with the given context.
-	@param aStatement A complete statement
-	@param contextNode The context to associate this statement with
+/**
+ *  Adds a single statement to the receiver with the given context.
+ *  @param aStatement A complete statement
+ *  @param contextNode The context to associate this statement with
  */
 - (void)addStatement:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode
 {
@@ -191,10 +191,10 @@
 	}
 }
 
-/*!
-	Adds a stream of statements to the receiver in the given context.
-	@param aStream A stream of complete statements
-	@param contextNode The context to associate each statement with
+/**
+ *  Adds a stream of statements to the receiver in the given context.
+ *  @param aStream A stream of complete statements
+ *  @param contextNode The context to associate each statement with
  */
 - (void)addStatementsFromStream:(RedlandStream *)aStream withContext:(RedlandNode *)contextNode
 {
@@ -206,10 +206,10 @@
 	}
 }
 
-/*!
-	Returns YES if the receiver contains the given statement.
-	@param aStatement A complete statement
-	@attention May not work in all cases; use enumeratorOfStatementsLike: instead.
+/**
+ *  Returns YES if the receiver contains the given statement.
+ *  @param aStatement A complete statement
+ *  @attention May not work in all cases; use enumeratorOfStatementsLike: instead.
  */
 - (BOOL)containsStatement:(RedlandStatement *)aStatement
 {
@@ -217,10 +217,10 @@
 	return librdf_model_contains_statement(wrappedObject, [aStatement wrappedStatement]);
 }
 
-/*!
-	Removes a single statement from the receiver.
-	@param aStatement A complete statement
-	@result YES on success
+/**
+ *  Removes a single statement from the receiver.
+ *  @param aStatement A complete statement
+ *  @return YES on success
  */
 - (BOOL)removeStatement:(RedlandStatement *)aStatement
 {
@@ -229,11 +229,11 @@
 	return (0 == librdf_model_remove_statement(wrappedObject, [aStatement wrappedStatement]));
 }
 
-/*!
-	Removes a single statement with the given context from the receiver.
-	@param aStatement A complete statement
-	@param contextNode The context of the statement to remove
-	@result YES on success
+/**
+ *  Removes a single statement with the given context from the receiver.
+ *  @param aStatement A complete statement
+ *  @param contextNode The context of the statement to remove
+ *  @return YES on success
  */
 - (BOOL)removeStatement:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode
 {
@@ -245,9 +245,9 @@
 	return (0 == result);
 }
 
-/*!
-	Removes all statements with the given context from the receiver.
-	@param contextNode The context of the statements to remove
+/**
+ *  Removes all statements with the given context from the receiver.
+ *  @param contextNode The context of the statements to remove
  */
 - (void)removeAllStatementsWithContext:(RedlandNode *)contextNode
 {
@@ -262,9 +262,9 @@
 
 
 #pragma mark - Stream Retrieval
-/*!
-	Returns a RedlandStream of all statements matching the given statement.
-	@param aStatement A (possibly partial) statement
+/**
+ *  Returns a RedlandStream of all statements matching the given statement.
+ *  @param aStatement A (possibly partial) statement
  */
 - (RedlandStream *)streamOfStatementsLike:(RedlandStatement *)aStatement
 {
@@ -274,10 +274,10 @@
 	return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
-/*!
-	Returns a RedlandStream of statements matching the given statement and context.
-	@param aStatement A (possibly partial) statement
-	@param contextNode The context
+/**
+ *  Returns a RedlandStream of statements matching the given statement and context.
+ *  @param aStatement A (possibly partial) statement
+ *  @param contextNode The context
  */
 - (RedlandStream *)streamOfStatementsLike:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode
 {
@@ -289,9 +289,9 @@
 	return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
-/*!
-	Returns a stream of all statements with the given context.
-	@param contextNode The context to stream
+/**
+ *  Returns a stream of all statements with the given context.
+ *  @param contextNode The context to stream
  */
 - (RedlandStream *)streamOfAllStatementsWithContext:(RedlandNode *)contextNode
 {
@@ -357,10 +357,10 @@
 
 
 #pragma mark - Sources, Arcs and Targets
-/*!
-	Returns one matching source in the receiver for the given arcNode and targetNode.
-	@param arcNode The arc (or predicate)
-	@param targetNode The target (or object)
+/**
+ *  Returns one matching source in the receiver for the given arcNode and targetNode.
+ *  @param arcNode The arc (or predicate)
+ *  @param targetNode The target (or object)
  */
 - (RedlandNode *)sourceWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode
 {
@@ -374,10 +374,10 @@
 	return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
-/*!
-	Returns one matching arc in the receiver for the given sourceNode and targetNode.
-	@param sourceNode The source (or subject)
-	@param targetNode The target (or object)
+/**
+ *  Returns one matching arc in the receiver for the given sourceNode and targetNode.
+ *  @param sourceNode The source (or subject)
+ *  @param targetNode The target (or object)
  */
 - (RedlandNode *)arcWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode
 {
@@ -391,10 +391,10 @@
 	return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
-/*!
-	Returns one matching target in the receiver for the given sourceNode and arcNode.
-	@param sourceNode The source (or subject)
-	@param arcNode The arc (or predicate)
+/**
+ *  Returns one matching target in the receiver for the given sourceNode and arcNode.
+ *  @param sourceNode The source (or subject)
+ *  @param arcNode The arc (or predicate)
  */
 - (RedlandNode *)targetWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode
 {
@@ -409,10 +409,10 @@
 }
 
 
-/*!
-	Returns YES if targetNode has at least one incoming arc arcNode.
-	@param targetNode
-	@param arcNode The arc (or predicate)
+/**
+ *  Returns YES if targetNode has at least one incoming arc arcNode.
+ *  @param targetNode The node to query
+ *  @param arcNode The arc (or predicate)
  */
 - (BOOL)node:(RedlandNode *)targetNode hasIncomingArc:(RedlandNode *)arcNode
 {
@@ -422,10 +422,10 @@
 	return librdf_model_has_arc_in(wrappedObject, [targetNode wrappedNode], [arcNode wrappedNode]);
 }
 
-/*!
-	Returns YES if sourceNode has at least one outgoing arc arcNode.
-	@param sourceNode
-	@param arcNode The arc (or predicate)
+/**
+ *  Returns YES if sourceNode has at least one outgoing arc arcNode.
+ *  @param sourceNode The node to query
+ *  @param arcNode The arc (or predicate)
  */
 - (BOOL)node:(RedlandNode *)sourceNode hasOutgoingArc:(RedlandNode *)arcNode
 {
@@ -438,8 +438,8 @@
 
 
 #pragma mark - Stream and Context
-/*!
-	Returns a stream of all statements in the receiver.
+/**
+ *  Returns a stream of all statements in the receiver.
  */
 - (RedlandStream *)statementStream
 {
@@ -447,10 +447,10 @@
 	return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
-/*!
-	Check for a context in the model.
-	@param contextNode A RedlandNode representing the context
-	@result YES if the model does contain the specified context
+/**
+ *  Check for a context in the model.
+ *  @param contextNode A RedlandNode representing the context
+ *  @return YES if the model does contain the specified context
  */
 - (BOOL)containsContext:(RedlandNode *)contextNode
 {
@@ -460,9 +460,9 @@
 
 
 #pragma mark - Features
-/*!
-	Returns the value of the model feature identified by featureURI.
-	@param featureURI An NSString or a RedlandURI instance
+/**
+ *  Returns the value of the model feature identified by featureURI.
+ *  @param featureURI An NSString or a RedlandURI instance
  */
 - (RedlandNode *)valueOfFeature:(id)featureURI
 {
@@ -479,11 +479,11 @@
 	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
-/*!
-	Sets the model feature identified by featureURI to a new value.
-	@param featureValue A RedlandNode representing the new value
-	@param featureURI An NSString or a RedlandURI instance
-	@attention Raises a RedlandException is no such feature exists.
+/**
+ *  Sets the model feature identified by featureURI to a new value.
+ *  @param featureValue A RedlandNode representing the new value
+ *  @param featureURI An NSString or a RedlandURI instance
+ *  @attention Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {

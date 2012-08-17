@@ -36,23 +36,23 @@
 
 
 #pragma mark - Init and Cleanup
-/*!
-	Convenience method which returns an autoreleased statement initialized using the designated initializer.
+/**
+ *  Convenience method which returns an autoreleased statement initialized using the designated initializer.
  */
 + (RedlandStatement *)statementWithSubject:(id)subjectNode predicate:(id)predicateNode object:(id)objectNode
 {
 	return [[self alloc] initWithSubject:subjectNode predicate:predicateNode object:objectNode];
 }
 
-/*!
-	The designated initializer, initializes a new RedlandStatement.
+/**
+ *  The designated initializer, initializes a new RedlandStatement.
 	
 	Each parameter can be either be nil, of type RedlandNode, or of any other class that responds to the selector <tt>nodeValue</tt>. The Redland Objective-C
 	framework provides additional <tt>nodeValue</tt> methods for the core Cocoa classes NSString, NSNumber, NSURL, and NSDate.
 	
-	@param subjectNode An object representing the subject or source of the statement.
-	@param predicateNode An object representing the predicate or arc of the statement.
-	@param objectNode An object representing the object or target of the statement.
+ *  @param subjectNode An object representing the subject or source of the statement.
+ *  @param predicateNode An object representing the predicate or arc of the statement.
+ *  @param objectNode An object representing the object or target of the statement.
  */
 - (id)initWithSubject:(id)subjectNode predicate:(id)predicateNode object:(id)objectNode
 {
@@ -88,8 +88,8 @@
 
 #pragma mark - Accessors
 
-/*!
-	@return Returns the underlying librdf_statement pointer of the receiver.
+/**
+ *  @return Returns the underlying librdf_statement pointer of the receiver.
  */
 - (librdf_statement *)wrappedStatement
 {
@@ -251,9 +251,9 @@
 	return [[NSString alloc] initWithBytesNoCopy:statement_string length:strlen((char *)statement_string) encoding:NSUTF8StringEncoding freeWhenDone:YES];
 }
 
-/*!
-	Prints a description of the receiver to standard error.
-	@attention For debugging purposes.
+/**
+ *  Prints a description of the receiver to standard error.
+ *  @attention For debugging purposes.
  */
 - (void)print
 {

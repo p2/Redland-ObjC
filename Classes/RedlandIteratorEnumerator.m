@@ -32,7 +32,7 @@
 
 
 /**
- *	Desginated initializer
+ *  Desginated initializer
  */
 - (id)initWithRedlandIterator:(RedlandIterator *)anIterator objectClass:(Class)aClass
 {

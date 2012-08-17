@@ -40,20 +40,20 @@
 @implementation RedlandNode
 
 #pragma mark - Convenience Initializers
-/*!
-	@param aString The literal string
-	@return a RedlandLiteralNode with the given string value. No language or datatype are specified.
+/**
+ *  @param aString The literal string
+ *  @return a RedlandLiteralNode with the given string value. No language or datatype are specified.
  */
 + (id)nodeWithLiteral:(NSString *)aString
 {
 	return [[self alloc] initWithLiteral:aString language:nil isXML:NO];
 }
 
-/*!
-	@param aString The literal string
-	@param aLanguage The language of the literal string (will be nil if xmLFlag is YES)
-	@param xmlFlag If YES, the node is marked as containing well-formed XML data and aLanguage is being ignored
-	@return a RedlandLiteralNode containing a literal with an an optional language and XML flag.
+/**
+ *  @param aString The literal string
+ *  @param aLanguage The language of the literal string (will be nil if xmLFlag is YES)
+ *  @param xmlFlag If YES, the node is marked as containing well-formed XML data and aLanguage is being ignored
+ *  @return a RedlandLiteralNode containing a literal with an an optional language and XML flag.
  */
 + (id)nodeWithLiteral:(NSString *)aString language:(NSString *)aLanguage isXML:(BOOL)xmlFlag
 {
@@ -66,17 +66,17 @@
 }
 
 
-/*!
-	@return an autoreleased RedlandResourceNode representing a resource with the given URI.
+/**
+ *  @return an autoreleased RedlandResourceNode representing a resource with the given URI.
  */
 + (id)nodeWithURI:(RedlandURI *)aURI
 {
 	return [[self alloc] initWithURI:aURI];
 }
 
-/*!
-	@param aString The URI as a string value.
-	@return a RedlandResourceNode representing a resource with the given URI.
+/**
+ *  @param aString The URI as a string value.
+ *  @return a RedlandResourceNode representing a resource with the given URI.
  */
 + (id)nodeWithURIString:(NSString *)aString
 {
@@ -84,8 +84,8 @@
 }
 
 
-/*!
-	@return an autoreleased RedlandNode with the specified node ID.
+/**
+ *  @return an autoreleased RedlandNode with the specified node ID.
  */
 + (id)nodeWithBlankID:(NSString *)anID
 {
@@ -95,11 +95,11 @@
 
 
 #pragma mark - Init and Cleanup
-/*!
-	Initializes a new RedlandLiteralNode containing a literal with an optional language and XML flag.
-	@param aString The literal string
-	@param aLanguage The language of the literal string (will be nil if xmLFlag is YES)
-	@param xmlFlag If YES, the node is marked as containing well-formed XML data and aLanguage is being ignored
+/**
+ *  Initializes a new RedlandLiteralNode containing a literal with an optional language and XML flag.
+ *  @param aString The literal string
+ *  @param aLanguage The language of the literal string (will be nil if xmLFlag is YES)
+ *  @param xmlFlag If YES, the node is marked as containing well-formed XML data and aLanguage is being ignored
  */
 - (id)initWithLiteral:(NSString *)aString language:(NSString *)aLanguage isXML:(BOOL)xmlFlag
 {
@@ -115,12 +115,12 @@
 	return [self initWithWrappedObject:newNode];
 }
 
-/*!
-	Initializes a new RedlandLiteralNode, with either a language or a datatype URI.
+/**
+ *  Initializes a new RedlandLiteralNode, with either a language or a datatype URI.
 	
-	@param aString The literal string
-	@param aLanguage The language of the literal string (ignored if typeURI is present)
-	@param typeURI The datatype URI (sets aLanguage to nil if present)
+ *  @param aString The literal string
+ *  @param aLanguage The language of the literal string (ignored if typeURI is present)
+ *  @param typeURI The datatype URI (sets aLanguage to nil if present)
  */
 - (id)initWithLiteral:(NSString *)aString language:(NSString *)aLanguage type:(RedlandURI *)typeURI
 {
@@ -136,9 +136,9 @@
 	return [self initWithWrappedObject:newNode];
 }
 
-/*!
-	Initializes a new RedlandResourceNode representing a resource with the given URI.
-	@param aString The URI as a string value.
+/**
+ *  Initializes a new RedlandResourceNode representing a resource with the given URI.
+ *  @param aString The URI as a string value.
  */
 - (id)initWithURIString:(NSString *)aString
 {
@@ -152,9 +152,9 @@
 	return [self initWithWrappedObject:newNode];
 }
 
-/*!
-	Initializes a blank RedlandNode with the specified node ID.
-	@param anID The blank node ID. If nil, a new ID is generated.
+/**
+ *  Initializes a blank RedlandNode with the specified node ID.
+ *  @param anID The blank node ID. If nil, a new ID is generated.
  */
 - (id)initWithBlankID:(NSString *)anID
 {
@@ -166,9 +166,9 @@
 	return [self initWithWrappedObject:newNode];
 }
 
-/*!
-	Initializes a RedlandResourceNode representing a resource with the given URI.
-	@param aURI The URI as a RedlandURI.
+/**
+ *  Initializes a RedlandResourceNode representing a resource with the given URI.
+ *  @param aURI The URI as a RedlandURI.
  */
 - (id)initWithURI:(RedlandURI *)aURI
 {
@@ -286,9 +286,9 @@
 
 
 #pragma mark - Comparing Nodes
-/*!
-	@param otherNode The node to compare the receiver to
-	@return YES if the receiver is equal to otherNode.
+/**
+ *  @param otherNode The node to compare the receiver to
+ *  @return YES if the receiver is equal to otherNode.
  */
 - (BOOL)isEqualToNode:(RedlandNode *)otherNode
 {
@@ -359,58 +359,58 @@
 
 
 #pragma mark - Accessors
-/*!
-	@return the underlying librdf_node object of the receiver.
+/**
+ *  @return the underlying librdf_node object of the receiver.
  */
 - (librdf_node *)wrappedNode
 {
 	return wrappedObject;
 }
 
-/*!
-	Returns the node type of the receiver.
-	@result Possible values include LIBRDF_NODE_TYPE_RESOURCE, LIBRDF_NODE_TYPE_LITERAL, and LIBRDF_NODE_TYPE_BLANK.
+/**
+ *  Returns the node type of the receiver.
+ *  @return Possible values include LIBRDF_NODE_TYPE_RESOURCE, LIBRDF_NODE_TYPE_LITERAL, and LIBRDF_NODE_TYPE_BLANK.
  */
 - (librdf_node_type)type
 {
 	return librdf_node_get_type(wrappedObject);
 }
 
-/*!
-	@return YES if the receiver is a literal node
+/**
+ *  @return YES if the receiver is a literal node
  */
 - (BOOL)isLiteral
 {
 	return librdf_node_is_literal(wrappedObject);
 }
 
-/*!
-	@return YES if the receiver is a resource (i.e. if it has a URI)
+/**
+ *  @return YES if the receiver is a resource (i.e. if it has a URI)
  */
 - (BOOL)isResource
 {
 	return librdf_node_is_resource(wrappedObject);
 }
 
-/*!
-	@return YES if the receiver is a blank node.
+/**
+ *  @return YES if the receiver is a blank node.
  */
 - (BOOL)isBlank
 {
 	return librdf_node_is_blank(wrappedObject);
 }
 
-/*!
-	@return YES if the receiver is a literal node and contains well-formed XML data.
+/**
+ *  @return YES if the receiver is a literal node and contains well-formed XML data.
  */
 - (BOOL)isXML
 {
 	return librdf_node_get_literal_value_is_wf_xml(wrappedObject);
 }
 
-/*!
-	Hello World
-	@return the literal value of the receiver (literal nudes only).
+/**
+ *  Hello World
+ *  @return the literal value of the receiver (literal nudes only).
  */
 - (NSString *)literalValue
 {
@@ -421,8 +421,8 @@
 	return [[NSString alloc] initWithBytes:literal_value length:length encoding:NSUTF8StringEncoding];
 }
 
-/*!
-	@return the resource of the receiver as an RedlandURI object (resource nodes only).
+/**
+ *  @return the resource of the receiver as an RedlandURI object (resource nodes only).
  */
 - (RedlandURI *)URIValue
 {
@@ -434,8 +434,8 @@
 	return [[RedlandURI alloc] initWithWrappedObject:uri_value];
 }
 
-/*!
-	@return the blank node ID of the receiver (blank nodes only).
+/**
+ *  @return the blank node ID of the receiver (blank nodes only).
  */
 - (NSString *)blankID
 {
@@ -443,16 +443,16 @@
 	return [[NSString alloc] initWithUTF8String:blank_id];
 }
 
-/*!
-	@return the ordinal value of the reciever (for rdf:li nodes).
+/**
+ *  @return the ordinal value of the reciever (for rdf:li nodes).
  */
 - (int)ordinalValue
 {
 	return librdf_node_get_li_ordinal(wrappedObject);
 }
 
-/*!
-	@return the literal datatype URI of the receiver (literal nodes only).
+/**
+ *  @return the literal datatype URI of the receiver (literal nodes only).
  */
 - (RedlandURI *)literalDataType
 {
@@ -465,8 +465,8 @@
 	else return nil;
 }
 
-/*!
-	@return the XML language of the receiver (literal nodes only).
+/**
+ *  @return the XML language of the receiver (literal nodes only).
  */
 - (NSString *)literalLanguage
 {

@@ -26,9 +26,9 @@
 
 
 /**
- *	The abstract base class for all wrapped Redland objects.
+ *  The abstract base class for all wrapped Redland objects.
  *
- *	Every object in this framework which maps directly to one of the underlying librdf pseudoclasses is implemented as a subclass of RedlandWrappedObject.
+ *  Every object in this framework which maps directly to one of the underlying librdf pseudoclasses is implemented as a subclass of RedlandWrappedObject.
  */
 @interface RedlandWrappedObject : NSObject {
     void *wrappedObject;									///< The redland lib C struct that's being wrapped by instances of this class

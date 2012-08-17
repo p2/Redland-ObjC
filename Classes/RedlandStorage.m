@@ -27,19 +27,19 @@
 
 @implementation RedlandStorage
 
-/*!
-	Initializes a new in-memory, context-enabled hash storage.
+/**
+ *  Initializes a new in-memory, context-enabled hash storage.
  */
 - (id)init
 {
 	return [self initWithFactoryName:@"hashes" identifier:nil options:@"hash-type='memory', contexts='yes'"];
 }
 
-/*!
-	The designated initializer, initialises a new RedlandStorage.
-	@param factoryName Name of the storage factory
-	@param anIdentifier Storage identifier (may be used as a file name)
-	@param someOptions Storage options (see the Redland C documentation for possible values)
+/**
+ *  The designated initializer, initialises a new RedlandStorage.
+ *  @param factoryName Name of the storage factory
+ *  @param anIdentifier Storage identifier (may be used as a file name)
+ *  @param someOptions Storage options (see the Redland C documentation for possible values)
  */
 - (id)initWithFactoryName:(NSString *)factoryName identifier:(NSString *)anIdentifier options:(NSString *)someOptions
 {
@@ -75,8 +75,8 @@
 	}
 }
 
-/*!
-	Returns the underlying librdf_storage pointer of the receiver.
+/**
+ *  Returns the underlying librdf_storage pointer of the receiver.
  */
 - (librdf_storage *)wrappedStorage
 {

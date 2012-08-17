@@ -34,10 +34,10 @@
 
 
 /**
- *	Global context for all Redland functions.
+ *  Global context for all Redland functions.
  *
- *	Wraps librdf_world objects. This framework takes care of creating a RedlandWorld instance for you. There is currently no way to create an instance manually
- *	in this version of the framework, and all operations currently use the default instance.
+ *  Wraps librdf_world objects. This framework takes care of creating a RedlandWorld instance for you. There is currently no way to create an instance manually
+ *  in this version of the framework, and all operations currently use the default instance.
  */
 @interface RedlandWorld : RedlandWrappedObject
 

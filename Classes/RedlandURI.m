@@ -29,7 +29,7 @@
 
 #pragma mark - Init and Cleanup
 /**
- *	@return a new RedlandURI instance initialized from an NSString.
+ *  @return a new RedlandURI instance initialized from an NSString.
  */
 + (RedlandURI *)URIWithString:(NSString *)aString
 {
@@ -37,7 +37,7 @@
 }
 
 /**
- *	@return a new RedlandURI instance initialized from the absoluteString of the given NSURL.
+ *  @return a new RedlandURI instance initialized from the absoluteString of the given NSURL.
  */
 + (RedlandURI *)URIWithURL:(NSURL *)aURL
 {
@@ -46,7 +46,7 @@
 
 
 /**
- *	Initializes the receiver from an NSString; the designated initializer.
+ *  Initializes the receiver from an NSString; the designated initializer.
  */
 - (id)initWithString:(NSString *)aString
 {
@@ -67,7 +67,7 @@
 }
 
 /**
- *	Initializes the receiver with the absolute string of a URL.
+ *  Initializes the receiver with the absolute string of a URL.
  */
 - (id)initWithURL:(NSURL *)aURL
 {
@@ -132,7 +132,7 @@
 }
 
 /**
- *	Returns the underlying librdf_uri pointer of the receiver.
+ *  Returns the underlying librdf_uri pointer of the receiver.
  */
 - (librdf_uri *)wrappedURI
 {
@@ -140,7 +140,7 @@
 }
 
 /**
- *	Returns the URI of the receiver as an NSString.
+ *  Returns the URI of the receiver as an NSString.
  */
 - (NSString *)stringValue
 {
@@ -150,7 +150,7 @@
 }
 
 /**
- *	Returns the URI of the receiver as an NSURL.
+ *  Returns the URI of the receiver as an NSURL.
  */
 - (NSURL *)URLValue
 {
@@ -163,7 +163,7 @@
 }
 
 /**
- *	Returns YES if otherURI is equal to the receiver.
+ *  Returns YES if otherURI is equal to the receiver.
  */
 - (BOOL)isEqualToURI:(RedlandURI *)otherURI
 {
@@ -174,7 +174,7 @@
 }
 
 /**
- *	Overridden to return [self isEqualToURI:otherObject] if otherObject is also a kind of RedlandURI; in all other cases, NO is returned.
+ *  Overridden to return [self isEqualToURI:otherObject] if otherObject is also a kind of RedlandURI; in all other cases, NO is returned.
  */
 - (BOOL)isEqual:(id)otherObject
 {

@@ -32,7 +32,7 @@
 
 
 /**
- *	Convenience method for the designated initializer
+ *  Convenience method for the designated initializer
  */
 + (id)enumeratorWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode
 {
@@ -41,7 +41,7 @@
 
 
 /**
- *	Designated initializer
+ *  Designated initializer
  */
 - (id)initWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode
 {
@@ -60,7 +60,7 @@
 }
 
 /**
- *	Retrieve the next object
+ *  Retrieve the next object
  */
 - (id)nextObject
 {

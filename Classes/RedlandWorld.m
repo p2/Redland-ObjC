@@ -59,8 +59,8 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
     [RedlandNamespace initGlobalNamespaces];
 }
 
-/*!
-	Returns the default RedlandWorld instance.
+/**
+ *  Returns the default RedlandWorld instance.
  */
 + (RedlandWorld *)defaultWorld
 {
@@ -89,16 +89,16 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 
 
 #pragma mark - Accessors
-/*!
-	Returns the underlying librdf_world pointer of the default RedlandWorld instance.
+/**
+ *  Returns the underlying librdf_world pointer of the default RedlandWorld instance.
  */
 + (librdf_world *)defaultWrappedWorld
 {
     return [[self defaultWorld] wrappedWorld];
 }
 
-/*!
-	Returns the underlying librdf_world pointer of the receiver.
+/**
+ *  Returns the underlying librdf_world pointer of the receiver.
  */
 - (librdf_world *)wrappedWorld
 {
@@ -118,9 +118,9 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 
 
 #pragma mark - Features
-/*!
-	Returns the value of the world feature identified by featureURI.
-	@param featureURI An NSString or a RedlandURI instance
+/**
+ *  Returns the value of the world feature identified by featureURI.
+ *  @param featureURI An NSString or a RedlandURI instance
  */
 - (RedlandNode *)valueOfFeature:(id)featureURI
 {
@@ -139,11 +139,11 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 	return [[RedlandNode alloc] initWithWrappedObject:feature_value];
 }
 
-/*!
-	Sets the world feature identified by featureURI to a new value.
-	@param featureValue A RedlandNode representing the new value
-	@param featureURI An NSString or a RedlandURI instance
-	@attention Raises a RedlandException is no such feature exists.
+/**
+ *  Sets the world feature identified by featureURI to a new value.
+ *  @param featureValue A RedlandNode representing the new value
+ *  @param featureURI An NSString or a RedlandURI instance
+ *  @attention Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {
@@ -174,11 +174,11 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 
 #pragma mark - Error Handling
 /**
- *	Adds an librdf_log_message to the internal storedErrors array.
- *	Errors are collected until -[RedlandWorld handleStoredErrors] is called, which then throws an exception with all collected errors.
- *	
- *	@param aMessage A librdf_log_message pointer.
- *	@attention Behavior of this method is subject to change. Do not use.
+ *  Adds an librdf_log_message to the internal storedErrors array.
+ *  Errors are collected until -[RedlandWorld handleStoredErrors] is called, which then throws an exception with all collected errors.
+ *  
+ *  @param aMessage A librdf_log_message pointer.
+ *  @attention Behavior of this method is subject to change. Do not use.
  */
 - (int)handleLogMessage:(librdf_log_message *)aMessage
 {
@@ -199,8 +199,8 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 }
 
 /**
- *	Checks if there are any collected errors, in which case it throws an exception with the error array inside userInfo dictionary.
- *	@attention Behavior of this method is subject to change. Do not use.
+ *  Checks if there are any collected errors, in which case it throws an exception with the error array inside userInfo dictionary.
+ *  @attention Behavior of this method is subject to change. Do not use.
  */
 - (void)handleStoredErrors
 {

@@ -34,10 +34,10 @@
 @class RedlandStorage, RedlandStream, RedlandStatement, RedlandNode, RedlandIterator, RedlandIteratorEnumerator, RedlandStreamEnumerator;
 
 /**
- *	This class provides the RDF model support.
+ *  This class provides the RDF model support.
  *
- *	A model is a set of statements (duplicates are not allowed, except in separate Redland contexts). Models can have statements added and removed, be queried
- *	and stored which is implemented by the RedlandStorage class. Wraps librdf_model.
+ *  A model is a set of statements (duplicates are not allowed, except in separate Redland contexts). Models can have statements added and removed, be queried
+ *  and stored which is implemented by the RedlandStorage class. Wraps librdf_model.
  */
 @interface RedlandModel : RedlandWrappedObject
 
