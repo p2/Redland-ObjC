@@ -30,11 +30,11 @@
 #endif
 #import "RedlandWrappedObject.h"
 
-/*!
-	This class provides storage for RDF models either in memory or persistant storage.
-	
-	The interface of this class is currently incomplete, as most methods are simply duplicates of the RedlandModel methods. If direct manipulation of the
-	storage is necessary, you can use the standard C API on the underlying librdf_storage instead.
+/**
+ *	This class provides storage for RDF models either in memory or persistant storage.
+ *
+ *	The interface of this class is currently incomplete, as most methods are simply duplicates of the RedlandModel methods. If direct manipulation of the
+ *	storage is necessary, you can use the standard C API on the underlying librdf_storage instead.
  */
 @interface RedlandStorage : RedlandWrappedObject
 

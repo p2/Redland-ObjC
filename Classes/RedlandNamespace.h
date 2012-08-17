@@ -22,11 +22,6 @@
 //  the most recent version, see <http://librdf.org/>.
 //
 
-/*!
-	@header RedlandNamespace.h
-	Defines the RedlandNamespace class and global variables for some predefined namespaces.
-*/
-
 #import <Foundation/Foundation.h>
 #import "RedlandSerializer.h"
 
@@ -48,12 +43,13 @@ extern RedlandNamespace *XMLSchemaNS;
 extern RedlandNamespace *RedlandDublinCoreNS;
 extern RedlandNamespace *DublinCoreNS;
 
-/*!
-	Convenience class for generating namespaced nodes, URIs, and strings.
-	
-	Instances of RedlandNamespace are helper objects which make it very easy to create RedlandNodes, RedlandURIs, NSStrings, or NSURLs with a common namespace
-	prefix. Please note that this class is still experimental and its API is subject to change.
-*/
+
+/**
+ *	Convenience class for generating namespaced nodes, URIs, and strings.
+ *
+ *	Instances of RedlandNamespace are helper objects which make it very easy to create RedlandNodes, RedlandURIs, NSStrings, or NSURLs with a common namespace
+ *	prefix. Please note that this class is still experimental and its API is subject to change.
+ */
 @interface RedlandNamespace : NSObject <NSCopying>
 
 @property (nonatomic, copy) NSString *prefix;						///< The namespace prefix of the receiver
@@ -85,6 +81,9 @@ extern RedlandNamespace *DublinCoreNS;
 @end
 
 
+/**
+ *	A category to add convenience methods to the Redland serializer.
+ */
 @interface RedlandSerializer (NamespaceConvenience)
 
 - (void)addNamespace:(RedlandNamespace *)aNamespace;

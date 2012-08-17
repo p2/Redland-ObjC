@@ -50,9 +50,9 @@
 	Each parameter can be either be nil, of type RedlandNode, or of any other class that responds to the selector <tt>nodeValue</tt>. The Redland Objective-C
 	framework provides additional <tt>nodeValue</tt> methods for the core Cocoa classes NSString, NSNumber, NSURL, and NSDate.
 	
-	@param subject An object representing the subject or source of the statement.
-	@param predicate An object representing the predicate or arc of the statement.
-	@param object An object representing the object or target of the statement.
+	@param subjectNode An object representing the subject or source of the statement.
+	@param predicateNode An object representing the predicate or arc of the statement.
+	@param objectNode An object representing the object or target of the statement.
  */
 - (id)initWithSubject:(id)subjectNode predicate:(id)predicateNode object:(id)objectNode
 {
@@ -89,8 +89,7 @@
 #pragma mark - Accessors
 
 /*!
- @method wrappedStatement
- @abstract Returns the underlying librdf_statement pointer of the receiver.
+	@return Returns the underlying librdf_statement pointer of the receiver.
  */
 - (librdf_statement *)wrappedStatement
 {
@@ -139,7 +138,7 @@
 /*!
  Returns YES if the receiver matches aStatement.
  @param aStatement The statement to compare the receiver to.
- @discussion All parts of aStatement which are non-nil must be equal to their counterparts in the receiver.
+ @attention All parts of aStatement which are non-nil must be equal to their counterparts in the receiver.
  */
 - (BOOL)matchesPartialStatement:(RedlandStatement *)aStatement
 {
@@ -254,7 +253,7 @@
 
 /*!
 	Prints a description of the receiver to standard error.
-	@discussion For debugging purposes.
+	@attention For debugging purposes.
  */
 - (void)print
 {

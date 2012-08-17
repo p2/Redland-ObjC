@@ -4,6 +4,7 @@
 //  $Id: RedlandCollectionEnumerator.m 4 2004-09-25 15:49:17Z kianga $
 //
 //  Copyright 2004 Rene Puls <http://purl.org/net/kianga/>
+//	Copyright 2012 Pascal Pfiffner <http://www.chip.org/>
 //
 //  This file is available under the following three licenses:
 //   1. GNU Lesser General Public License (LGPL), version 2.1
@@ -15,7 +16,7 @@
 //  for the complete terms and further details.
 //
 //  The most recent version of this software can be found here:
-//  <http://purl.org/net/kianga/latest/redland-objc>
+//  <https://github.com/p2/Redland-ObjC>
 //
 //  For information about the Redland RDF Application Framework, including
 //  the most recent version, see <http://librdf.org/>.
@@ -29,14 +30,22 @@
 
 @implementation RedlandCollectionEnumerator
 
+
+/**
+ *	Convenience method for the designated initializer
+ */
 + (id)enumeratorWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode
 {
-    return [[[self alloc] initWithModel:aModel collectionNode:collectionNode] autorelease];
+    return [[self alloc] initWithModel:aModel collectionNode:collectionNode];
 }
 
+
+/**
+ *	Designated initializer
+ */
 - (id)initWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode
 {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         model = [aModel retain];
         currentNode = [collectionNode retain];
     }
@@ -50,6 +59,9 @@
     [super dealloc];
 }
 
+/**
+ *	Retrieve the next object
+ */
 - (id)nextObject
 {
     RedlandNode *value;
@@ -73,5 +85,6 @@
     }
     else return nil;
 }
+
 
 @end

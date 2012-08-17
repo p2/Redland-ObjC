@@ -32,12 +32,12 @@
 
 @class RedlandNode;
 
-/*! 
-	A RedlandStatement represents a single statement or assertion in an RDF graph.
-	
-	Each statement consists of a subject, a predicate and an object, which are all of the class RedlandNode. Wraps librdf_statement. Instances of
-	RedlandStatement conform to the NSCopying and NSCoding protocols.
-*/
+/** 
+ *	A RedlandStatement represents a single statement or assertion in an RDF graph.
+ *
+ *	Each statement consists of a subject, a predicate and an object, which are all of the class RedlandNode. Wraps librdf_statement. Instances of
+ *	RedlandStatement conform to the NSCopying and NSCoding protocols.
+ */
 @interface RedlandStatement : RedlandWrappedObject <NSCopying, NSCoding>
 
 @property (nonatomic, readonly, strong) RedlandNode *subject;			///< The subject, may be nil

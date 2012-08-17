@@ -36,8 +36,8 @@ extern NSString * const RedlandSPARQLLanguageName;				///< The name of the SPARQ
 @class RedlandURI, RedlandQueryResults, RedlandModel;
 
 
-/*!
-	This class provides query language support for RDF models.
+/**
+ *	This class provides query language support for RDF models.
  */
 @interface RedlandQuery : RedlandWrappedObject
 

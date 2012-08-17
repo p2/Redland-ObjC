@@ -121,7 +121,7 @@
 #pragma mark - Accessors
 /*!
 	@return the literal integer value of the receiver.
-	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
+	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#int</tt>. (Note: This method should probably allow other integer-compatible datatypes as well...)
  */
 - (int)intValue
 {
@@ -139,7 +139,7 @@
 
 /*!
 	@return the literal float value of the receiver.
-	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
+	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#float</tt>.
  */
 - (float)floatValue
 {
@@ -157,7 +157,7 @@
 
 /*!
 	@return the literal double value of the receiver.
-	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
+	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#double</tt>.
  */
 - (double)doubleValue
 {
@@ -180,7 +180,7 @@
 
 /*!
 	@return the literal boolean value of the receiver.
-	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
+	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#boolean</tt>.
  */
 - (BOOL)boolValue
 {
@@ -235,7 +235,7 @@
 
 /*!
 	@return the literal dateTime value of the receiver.
-	@discussion Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
+	@attention Raises a RedlandException if the datatype URI is not <tt>http://www.w3.org/2001/XMLSchema#dateTime</tt>.
  */
 - (NSDate *)dateTimeValue
 {

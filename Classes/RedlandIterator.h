@@ -30,12 +30,12 @@
 #endif
 #import "RedlandWrappedObject.h"
 
-/*!
-	A direct wrapper around librdf_iterator.
-	
-	Implementation of this class is subject to change. Do not use.
-*/
 
+/**
+ *	A direct wrapper around librdf_iterator.
+ *
+ *	Implementation of this class is subject to change. Do not use.
+ */
 @interface RedlandIterator : RedlandWrappedObject
 
 - (librdf_iterator *)wrappedIterator;

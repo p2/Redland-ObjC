@@ -57,6 +57,7 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 	Initializes a RedlandQuery with the given language name and query string.
 	@param langName The only supported language name is currently the constant <tt>RedlandRDQLLanguageName</tt>.
 	@param queryString The query string in the given language
+	@param baseURI The base URI to use
  */
 - (id)initWithLanguageName:(NSString *)langName queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {
@@ -69,8 +70,9 @@ NSString * const RedlandSPARQLLanguageName = @"sparql";
 /*!
 	Initializes a RedlandQuery with the given language name or URI and query string.
 	@param langName The only supported language name is currently the constant <tt>RedlandRDQLLanguageName</tt>.
-	@param uri The URI identifying the requested query language
+	@param langURI The URI identifying the requested query language
 	@param queryString The query string in the given language
+	@param baseURI The base uri to use
  */
 - (id)initWithLanguageName:(NSString *)langName languageURI:(RedlandURI *)langURI queryString:(NSString *)queryString baseURI:(RedlandURI *)baseURI;
 {

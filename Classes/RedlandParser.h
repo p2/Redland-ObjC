@@ -50,9 +50,9 @@ extern NSString * const RedlandWarnOtherParseTypesFeature;
 extern NSString * const RedlandCheckRDFIDFeature;
 extern NSString * const RedlandRelativeURIsFeature;
 
-/*! 
-	This class parses various RDF serializations (RDF/XML, NTriples, Turtle) into either a RedlandStream or directly into a RedlandModel. Wraps librdf_parser.
-*/
+/** 
+ *	This class parses various RDF serializations (RDF/XML, NTriples, Turtle) into either a RedlandStream or directly into a RedlandModel, wraps librdf_parser.
+ */
 @interface RedlandParser : RedlandWrappedObject
 
 + (RedlandParser *)parserWithName:(NSString *)aName;
@@ -76,7 +76,9 @@ extern NSString * const RedlandRelativeURIsFeature;
 @end
 
 
-/*! @category RedlandModel(ParserConvenience) */
+/**
+ *	Category to add convenience parsing methods to RedlandModel.
+ */
 @interface RedlandModel (ParserConvenience)
 
 - (void)loadURL:(NSURL *)aURL withContext:(RedlandNode *)context;

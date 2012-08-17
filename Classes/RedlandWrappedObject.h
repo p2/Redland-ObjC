@@ -25,15 +25,14 @@
 #import <Foundation/Foundation.h>
 
 
-/*!
-	RedlandWrappedObject
-	The abstract base class for all wrapped Redland objects.
-	
-	Every object in this framework which maps directly to one of the underlying librdf pseudoclasses is implemented as a subclass of RedlandWrappedObject.
-*/
+/**
+ *	The abstract base class for all wrapped Redland objects.
+ *
+ *	Every object in this framework which maps directly to one of the underlying librdf pseudoclasses is implemented as a subclass of RedlandWrappedObject.
+ */
 @interface RedlandWrappedObject : NSObject {
-    void *wrappedObject;
-    BOOL isWrappedObjectOwner;
+    void *wrappedObject;									///< The redland lib C struct that's being wrapped by instances of this class
+    BOOL isWrappedObjectOwner;								///< Whether the instance is the owner of and thus must free the wrapped object
 }
 
 

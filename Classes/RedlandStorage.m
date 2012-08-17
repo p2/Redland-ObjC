@@ -39,7 +39,7 @@
 	The designated initializer, initialises a new RedlandStorage.
 	@param factoryName Name of the storage factory
 	@param anIdentifier Storage identifier (may be used as a file name)
-	@param options Storage options (see the Redland C documentation for possible values)
+	@param someOptions Storage options (see the Redland C documentation for possible values)
  */
 - (id)initWithFactoryName:(NSString *)factoryName identifier:(NSString *)anIdentifier options:(NSString *)someOptions
 {

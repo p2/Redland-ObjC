@@ -1116,7 +1116,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "REDLAND_DOC_DIR=\"$SYMROOT/RedlandDocumentation\"\necho \"Generating documentation...\"\nheaderdoc2html -o \"$REDLAND_DOC_DIR\" \"$SRCROOT\"\necho \"Gathering...\"\ngatherheaderdoc \"$REDLAND_DOC_DIR\"\nexit 0\n";
+			shellScript = "PATH=/bin:/usr/bin:/usr/local/bin\nDOX=$(which doxygen)\nif [[ 'x' == ${DOX}x ]]; then\n    echo \"I can't find doxygen\"\n    exit 1\nfi\n\ndoxygen\ncd Docs/html\nmake install";
 		};
 		EE1DDDF115BED97D00882BDA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

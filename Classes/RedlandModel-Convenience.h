@@ -27,10 +27,10 @@
 
 @class RedlandNode, RedlandStatement, RedlandStreamEnumerator, RedlandIteratorEnumerator, RedlandURI;
 
-/*! 
-	@category RedlandModel(Convenience)
-	@abstract Convenience methods for the RedlandModel class.
-*/
+/** 
+ *	@category RedlandModel(Convenience)
+ *	@abstract Convenience methods for the RedlandModel class.
+ */
 @interface RedlandModel (Convenience)
 
 - (RedlandStreamEnumerator *)enumeratorOfStatementsLike:(RedlandStatement *)aStatement;

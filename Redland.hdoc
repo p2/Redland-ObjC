@@ -1,8 +1,0 @@
-/*!
-@framework Redland
-@abstract Redland RDF Application Framework (Objective-C Bindings)
-@discussion
-These are Objective-C/Cocoa bindings for the Redland library, which is a set of 
-free software packages that provide support for the Resource Description 
-Framework (RDF).
-*/

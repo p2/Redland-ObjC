@@ -4,6 +4,7 @@
 //  $Id: RedlandQueryResults.m 4 2004-09-25 15:49:17Z kianga $
 //
 //  Copyright 2004 Rene Puls <http://purl.org/net/kianga/>
+//	Copyright 2012 Pascal Pfiffner <http://www.chip.org/>
 //
 //  This file is available under the following three licenses:
 //   1. GNU Lesser General Public License (LGPL), version 2.1
@@ -15,7 +16,7 @@
 //  for the complete terms and further details.
 //
 //  The most recent version of this software can be found here:
-//  <http://purl.org/net/kianga/latest/redland-objc>
+//  <https://github.com/p2/Redland-ObjC>
 //
 //  For information about the Redland RDF Application Framework, including
 //  the most recent version, see <http://librdf.org/>.
@@ -46,75 +47,111 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 	}
 }
 
+/*!
+	@return Returns the underlying librdf_query_results object of the receiver.
+ */
 - (librdf_query_results *)wrappedQueryResults
 {
 	return wrappedObject;
 }
 
+
+
+#pragma mark - Advancing
+/*!
+	@return Returns the number of bindings so far
+ */
 - (int)count
 {
     return librdf_query_results_get_count(wrappedObject);
 }
 
+/*!
+	Advances to the next result.
+	@return Returns YES if there is a next result, otherwise NO.
+ */
 - (BOOL)next
 {
     return librdf_query_results_next(wrappedObject) == 0;
 }
 
+/*!
+	@return Returns YES if the query results are exhausted.
+ */
 - (BOOL)finished
 {
     return librdf_query_results_finished(wrappedObject);
 }
 
-- (RedlandNode *)valueOfBindingAtIndex:(int)offset
+
+
+#pragma mark - Values
+/*!
+ @return Returns the current value of the binding with the given name.
+ */
+- (RedlandNode *)valueOfBinding:(NSString *)aName
 {
-    librdf_node *value;
-    value = librdf_query_results_get_binding_value(wrappedObject, offset);
-	if (value)
+	NSParameterAssert(aName != nil);
+    librdf_node *value = librdf_query_results_get_binding_value_by_name(wrappedObject, [aName UTF8String]);
+	if (value) {
 		value = librdf_new_node_from_node(value);
+	}
     return [[RedlandNode alloc] initWithWrappedObject:value];
 }
 
+/*!
+	@return Returns the current value of the binding at the given index.
+ */
+- (RedlandNode *)valueOfBindingAtIndex:(int)offset
+{
+    librdf_node * = librdf_query_results_get_binding_value(wrappedObject, offset);
+	if (value) {
+		value = librdf_new_node_from_node(value);
+	}
+    return [[RedlandNode alloc] initWithWrappedObject:value];
+}
+
+/*!
+	@return Returns the name of the binding at the given index.
+ */
 - (NSString *)nameOfBindingAtIndex:(int)offset
 {
-    char const *name;
-    name = librdf_query_results_get_binding_name(wrappedObject, offset);
+    char const *name = librdf_query_results_get_binding_name(wrappedObject, offset);
     return [[NSString alloc] initWithUTF8String:name];
 }
 
-- (RedlandNode *)valueOfBinding:(NSString *)aName
-{
-    librdf_node *value;
-	NSParameterAssert(aName != nil);
-    value = librdf_query_results_get_binding_value_by_name(wrappedObject, [aName UTF8String]);
-	if (value)
-		value = librdf_new_node_from_node(value);
-    return [[RedlandNode alloc] initWithWrappedObject:value];
-}
-
+/*!
+	@return Returns the number of bindings of the receiver.
+ */
 - (int)countOfBindings
 {
     return librdf_query_results_get_bindings_count(wrappedObject);
 }
 
-- (RedlandStream *)stream
+/*!
+	@return Returns an RDF graph of the results.
+	@attention The return value is only meaningful if this is an RDF graph query result.
+ */
+- (RedlandStream *)resultStream
 {
-    librdf_stream *stream;
-    stream = librdf_query_results_as_stream(wrappedObject);
-    return [[RedlandStream alloc] initWithWrappedObject:stream];
+	librdf_stream *stream = librdf_query_results_as_stream(wrappedObject);
+	return [[RedlandStream alloc] initWithWrappedObject:stream];
 }
 
+/*!
+	@return Returns a dictionary of the current result bindings.
+ */
 - (NSDictionary *)bindings
 {
     const char **names = NULL;  
     librdf_node **values;
     NSMutableDictionary *bindings = [NSMutableDictionary new];
     int bindingsCount = [self countOfBindings];
-    int i;
+    int i = 0;
     
     values = malloc(sizeof(librdf_node *) * bindingsCount);
     librdf_query_results_get_bindings(wrappedObject, &names, values);
-    for (i=0; i<bindingsCount; i++) {
+    for (; i<bindingsCount; i++) {
         librdf_node *node;
         id object = [NSNull null];
         if (values[i]) {
@@ -127,53 +164,64 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
     return bindings;
 }
 
+/*!
+	@return Returns an enumerator over the query results.
+	@attention This is the recommended way to evaluate query results.
+ */
 - (RedlandQueryResultsEnumerator *)resultEnumerator
 {
     return [[RedlandQueryResultsEnumerator alloc] initWithResults:self];
 }
 
+/*!
+	Turns query results into a string in the specified format.
+ */
 - (NSString *)stringRepresentationWithFormat:(RedlandURI *)formatURI baseURI:(RedlandURI *)baseURI
 {
-	unsigned char *output;
-	size_t output_size; 
-
 	NSParameterAssert(formatURI != nil);
 	
-	output = librdf_query_results_to_counted_string(wrappedObject, [formatURI wrappedURI], [baseURI wrappedURI], &output_size);
+	size_t output_size;
+	unsigned char *output = librdf_query_results_to_counted_string(wrappedObject, [formatURI wrappedURI], [baseURI wrappedURI], &output_size);
 	if (output != NULL) {
 		return [[NSString alloc] initWithBytesNoCopy:output length:output_size encoding:NSUTF8StringEncoding freeWhenDone:YES];
 	}
-	else {
-		return nil;
-	}
+	
+	return nil;
 }
 
+/*!
+	@return Returns YES if the query results are in variable bindings format.
+ */
 - (BOOL)isBindings
 {
 	return librdf_query_results_is_bindings(wrappedObject) != 0;
 }
 
+/*!
+	@return Returns YES if the query results are in boolean format.
+ */
 - (BOOL)isBoolean
 {
 	return librdf_query_results_is_boolean(wrappedObject) != 0;
 }
 
+/*!
+	@return Returns YES if the query results are in graph format.
+ */
 - (BOOL)isGraph
 {
 	return librdf_query_results_is_graph(wrappedObject) != 0;
 }
 
+/*!
+	Get boolean query result.
+	@result Returns > 0 if true, 0 if false, < 0 on error or finished
+	@attention The return value is only meaningful if this is a boolean query result.
+ */
 - (int)getBoolean
 {
 	return librdf_query_results_get_boolean(wrappedObject);
 }
 
-- (RedlandStream *)resultStream
-{
-	librdf_stream *stream;
-	
-	stream = librdf_query_results_as_stream(wrappedObject);
-	return [[RedlandStream alloc] initWithWrappedObject:stream owner:NO];
-}
 
 @end

@@ -33,10 +33,12 @@
 @class RedlandNode;
 
 
-/*!
-	Global context for all Redland functions.
-	Wraps librdf_world objects. This framework takes care of creating a RedlandWorld instance for you. There is currently no way to create an instance manually in this version of the framework, and all operations currently use the default instance.
-*/
+/**
+ *	Global context for all Redland functions.
+ *
+ *	Wraps librdf_world objects. This framework takes care of creating a RedlandWorld instance for you. There is currently no way to create an instance manually
+ *	in this version of the framework, and all operations currently use the default instance.
+ */
 @interface RedlandWorld : RedlandWrappedObject
 
 @property (nonatomic, assign) BOOL logsErrors;				///< If YES, the receiver will log all Redland errors to the console (in addition to generating exceptions, where appropriate). NO by default.

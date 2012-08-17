@@ -97,8 +97,7 @@
 }
 
 /*!
-	Dumps the contents of the receiver to standard error.
-	@discussion For debugging purposes.
+	Dumps the contents of the receiver to standard error (for debugging purposes).
  */
 - (void)print
 {
@@ -116,7 +115,7 @@
 /*!
 	Returns the number of statements in the receiver.
 	@result The number of statements in the model, or a negative value on failure.
-	@discussion Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
+	@attention Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
  */
 - (int)size
 {
@@ -210,7 +209,7 @@
 /*!
 	Returns YES if the receiver contains the given statement.
 	@param aStatement A complete statement
-	@discussion May not work in all cases; use enumeratorOfStatementsLike: instead.
+	@attention May not work in all cases; use enumeratorOfStatementsLike: instead.
  */
 - (BOOL)containsStatement:(RedlandStatement *)aStatement
 {
@@ -412,6 +411,7 @@
 
 /*!
 	Returns YES if targetNode has at least one incoming arc arcNode.
+	@param targetNode
 	@param arcNode The arc (or predicate)
  */
 - (BOOL)node:(RedlandNode *)targetNode hasIncomingArc:(RedlandNode *)arcNode
@@ -424,6 +424,7 @@
 
 /*!
 	Returns YES if sourceNode has at least one outgoing arc arcNode.
+	@param sourceNode
 	@param arcNode The arc (or predicate)
  */
 - (BOOL)node:(RedlandNode *)sourceNode hasOutgoingArc:(RedlandNode *)arcNode
@@ -448,7 +449,7 @@
 
 /*!
 	Check for a context in the model.
-	@param aContext A RedlandNode representing the context
+	@param contextNode A RedlandNode representing the context
 	@result YES if the model does contain the specified context
  */
 - (BOOL)containsContext:(RedlandNode *)contextNode
@@ -482,7 +483,7 @@
 	Sets the model feature identified by featureURI to a new value.
 	@param featureValue A RedlandNode representing the new value
 	@param featureURI An NSString or a RedlandURI instance
-	@discussion Raises a RedlandException is no such feature exists.
+	@attention Raises a RedlandException is no such feature exists.
  */
 - (void)setValue:(RedlandNode *)featureValue ofFeature:(id)featureURI
 {

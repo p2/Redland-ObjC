@@ -22,18 +22,14 @@
 //  the most recent version, see <http://librdf.org/>.
 //
 
-/*!
-	@header RedlandNode-Convenience.h
-	Defines convenience methods for the RedlandNode class.
-*/
-
 #import <Foundation/Foundation.h>
 #import "RedlandNode.h"
 #import "RedlandURI.h"
 
-/*!
-	Defines various convenience methods for RedlandNode objects.
-*/
+
+/**
+ *	Defines various convenience methods for RedlandNode objects.
+ */
 @interface RedlandNode (Convenience)
 
 + (RedlandNode *)nodeWithURL:(NSURL *)aURL;
@@ -64,22 +60,51 @@
 @end
 
 
+/**
+ *	Convenience method for NSURL
+ */
 @interface NSURL (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue;
+
 @end
 
+
+/**
+ *	Convenience method for NSNumber
+ */
 @interface NSNumber (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue;
+
 @end
 
+
+/**
+ *	Convenience method for NSString
+ */
 @interface NSString (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue;
+
 @end
 
+
+/**
+ *	Convenience method for NSDate
+ */
 @interface NSDate (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue;
+
 @end
 
+
+/**
+ *	Convenience method for RedlandURI
+ */
 @interface RedlandURI (RedlandNodeConvenience)
+
 - (RedlandNode *)nodeValue;
+
 @end

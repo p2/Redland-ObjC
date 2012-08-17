@@ -70,7 +70,7 @@ extern NSString * const RedlandRSS10Serializer;						///< The name of the RSS 1.
 
 
 /**
- *	@category RedlandSerializer(Convenience)
+ *	RedlandSerializer(Convenience)
  */
 @interface RedlandSerializer (Convenience)
 
@@ -81,7 +81,7 @@ extern NSString * const RedlandRSS10Serializer;						///< The name of the RSS 1.
 
 
 /**
- *	@category RedlandModel(SerializerConvenience)
+ *	RedlandModel(SerializerConvenience)
  */
 @interface RedlandModel (SerializerConvenience)
 

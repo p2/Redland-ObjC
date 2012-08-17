@@ -290,12 +290,12 @@
 	@param otherNode The node to compare the receiver to
 	@return YES if the receiver is equal to otherNode.
  */
-- (BOOL)isEqualToNode:(RedlandNode *)aNode
+- (BOOL)isEqualToNode:(RedlandNode *)otherNode
 {
-	if (aNode == nil) {
+	if (otherNode == nil) {
 		return NO;
 	}
-	return (0 != librdf_node_equals(wrappedObject, [aNode wrappedNode]));
+	return (0 != librdf_node_equals(wrappedObject, [otherNode wrappedNode]));
 }
 
 - (BOOL)isEqual:(id)otherNode
@@ -409,7 +409,8 @@
 }
 
 /*!
-	@return the literal value of the receiver (literal nodes only).
+	Hello World
+	@return the literal value of the receiver (literal nudes only).
  */
 - (NSString *)literalValue
 {
