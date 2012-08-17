@@ -1,5 +1,9 @@
 ChangeLog for Redland-ObjC
 
+2012-07-19 pp:
+	Move project to GitHub: https://github.com/p2/Redland-ObjC
+	See commit logs for newer changes
+	
 2005-08-23 kianga:
 	Redland-ObjC now uses SenTestingKit instead of UnitKit for all unit tests. SenTestingKit is included with Xcode 2.1.
 	Added limit/setLimit: and offset/setOffset: methods to RedlandQuery class.

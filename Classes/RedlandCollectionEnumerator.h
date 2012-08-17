@@ -29,6 +29,8 @@
     RedlandModel *model;
     RedlandNode *currentNode;
 }
+
 + (id)enumeratorWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode;
 - (id)initWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode;
+
 @end

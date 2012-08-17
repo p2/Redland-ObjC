@@ -156,30 +156,34 @@ def main():
 ##
 ##	functions
 ##
-def download(url, directory=None, filename=None):
+def download(url, directory=None, filename=None, force=False, nostatus=False):
 	"""Downloads a URL to a file with the same name, unless overridden
 	
 	Returns the path to the file downloaded
 	
-	Will NOT download the file if it exists at target directory and filename
+	Will NOT download the file if it exists at target directory and filename,
+	unless force is True
 	"""
 	
 	# can we write te the directory?
 	if directory is None:
 		abspath = os.path.abspath(__file__)
-		directory, foo = os.path.split(abspath)
+		directory = os.path.dirname(abspath)
 
 	if not os.access(directory, os.W_OK):
 		raise Exception("Can't write to %s" % directory)
 	
 	if filename is None:
-		filename = url.split('/')[-1]
+		filename = os.path.basename(url)
 	
 	# if it already exists, we're not going to do anything
 	path = os.path.join(directory, filename)
 	if os.path.exists(path):
-		print "-->  %s has already been downloaded" % filename
-		return path
+		if force:
+			os.remove(path)
+		else:
+			print "-->  %s has already been downloaded" % filename
+			return path
 	
 	# create url and file handles
 	urlhandle = urllib2.urlopen(url)
@@ -199,9 +203,14 @@ def download(url, directory=None, filename=None):
 		
 		loaded += len(buffer)
 		filehandle.write(buffer)
-		status = r"%10d	 [%3.2f%%]" % (loaded, loaded * 100.0 / filesize)
-		status = status + chr(8) * (len(status) + 1)
-		print status,
+		
+		if not nostatus:
+			status = r"%10d	 [%3.2f%%]" % (loaded, loaded * 100.0 / filesize)
+			status = status + chr(8) * (len(status) + 1)
+			print status,
+	
+	if not nostatus:
+		print
 	
 	# return filename
 	filehandle.close()

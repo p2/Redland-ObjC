@@ -32,8 +32,7 @@
 #import "RedlandURI.h"
 
 /*!
-	@category RedlandNode(Convenience)
-	@abstract Defines various convenience methods for RedlandNode objects.
+	Defines various convenience methods for RedlandNode objects.
 */
 @interface RedlandNode (Convenience)
 

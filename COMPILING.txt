@@ -1,9 +1,0 @@
-Compile Notes
-=============
-
-The Redland Objective-C bindings are developed and tested with Xcode 2.1 under Mac OS X 10.4. The Redland C library and headers must be installed on your system prior to compiling these bindings.
-
-Before compiling, be sure to tell Xcode where it can find the Redland library and its headers:
-
-1. Open the Xcode Preferences -> Source Trees.
-2. Add a new path with the setting name "REDLAND_PREFIX", the display name "Redland Prefix", and the path set to the prefix directory of your Redland installation. (In my case, this is "/usr/local/redland", but the default when configuring the Redland source is "/usr/local".)

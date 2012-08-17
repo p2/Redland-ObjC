@@ -31,4 +31,5 @@
     BOOL firstIteration;
 }
 - (id)initWithRedlandIterator:(RedlandIterator *)anIterator objectClass:(Class)objectClass;
+
 @end

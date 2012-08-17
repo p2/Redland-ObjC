@@ -40,6 +40,12 @@
 @implementation RedlandModel
 
 
++ (id)modelWithStorage:(RedlandStorage *)aStorage
+{
+	return [[self alloc] initWithStorage:aStorage];
+}
+
+
 - (id)init
 {
 	return [self initWithStorage:[RedlandStorage new]];

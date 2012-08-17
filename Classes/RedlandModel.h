@@ -42,6 +42,7 @@
 @interface RedlandModel : RedlandWrappedObject
 
 
++ (id)modelWithStorage:(RedlandStorage *)aStorage;
 - (id)initWithStorage:(RedlandStorage *)aStorage;
 
 - (librdf_model *)wrappedModel;

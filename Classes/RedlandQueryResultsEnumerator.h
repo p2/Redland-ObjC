@@ -29,5 +29,7 @@
     RedlandQueryResults *results;
     BOOL firstIteration;
 }
+
 - (id)initWithResults:(RedlandQueryResults *)results;
+
 @end

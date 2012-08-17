@@ -30,6 +30,8 @@
     RedlandNode *containerNode;
     NSEnumerator *arcEnumerator;
 }
+
 + (id)enumeratorWithModel:(RedlandModel *)aModel containerNode:(RedlandNode *)containerNode;
 - (id)initWithModel:(RedlandModel *)aModel containerNode:(RedlandNode *)containerNode;
+
 @end
