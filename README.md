@@ -47,6 +47,8 @@ The code is documented using [appledoc]. If you want to compile the documentatio
     $ cd ..
     $ appledoc .
 
+> NOTE: appledoc currently does not support the `///<` token, so some property documentations are shifted and thus off!
+
 Note that this assumes that you have write permissions for `/usr/local`, if not you may need to issue this command as root with `sudo`. The documentation is now available from within Xcode.
 
 
@@ -54,4 +56,4 @@ Note that this assumes that you have write permissions for `/usr/local`, if not 
 [raptor2]: http://librdf.org/raptor/
 [rasqal]: http://librdf.org/rasqal/
 [homebrew]: http://mxcl.github.com/homebrew/
-[doxygen]: http://www.stack.nl/~dimitri/doxygen/
+[appledoc]: http://gentlebytes.com/appledoc/

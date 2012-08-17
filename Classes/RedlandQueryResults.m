@@ -86,8 +86,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 
 #pragma mark - Values
-/*!
- @return Returns the current value of the binding with the given name.
+/**
+ *  @return Returns the current value of the binding with the given name.
  */
 - (RedlandNode *)valueOfBinding:(NSString *)aName
 {
@@ -104,7 +104,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
  */
 - (RedlandNode *)valueOfBindingAtIndex:(int)offset
 {
-    librdf_node * = librdf_query_results_get_binding_value(wrappedObject, offset);
+    librdf_node *value = librdf_query_results_get_binding_value(wrappedObject, offset);
 	if (value) {
 		value = librdf_new_node_from_node(value);
 	}

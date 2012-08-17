@@ -124,8 +124,8 @@
 	return [[RedlandNode alloc] initWithWrappedObject:node];
 }
 
-/*!
- Returns YES if the receiver has all non-nil subject, predicate, and object parts.
+/**
+ *  @return Returns YES if the receiver has all non-nil subject, predicate, and object parts.
  */
 - (BOOL)isComplete
 {
@@ -135,10 +135,10 @@
 
 
 #pragma mark - Comparing
-/*!
- Returns YES if the receiver matches aStatement.
- @param aStatement The statement to compare the receiver to.
- @attention All parts of aStatement which are non-nil must be equal to their counterparts in the receiver.
+/**
+ *  @param aStatement The statement to compare the receiver to.
+ *  @attention All parts of aStatement which are non-nil must be equal to their counterparts in the receiver.
+ *  @return Returns YES if the receiver matches aStatement.
  */
 - (BOOL)matchesPartialStatement:(RedlandStatement *)aStatement
 {
