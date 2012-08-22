@@ -58,13 +58,11 @@
  */
 - (id)initWithStorage:(RedlandStorage *)aStorage
 {
-	librdf_model *model;
-	
 	NSParameterAssert(aStorage != nil);
-	
-	model = librdf_new_model([RedlandWorld defaultWrappedWorld],
-							 [aStorage wrappedStorage],
-							 NULL);
+
+	librdf_model *model = librdf_new_model([RedlandWorld defaultWrappedWorld],
+										   [aStorage wrappedStorage],
+										   NULL);
 	self = [super initWithWrappedObject:model];
 	if (self == nil) {
 		librdf_free_model(model);

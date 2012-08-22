@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EE1DDDEC15BED96100882BDA"
-               BuildableName = "C Library"
-               BlueprintName = "C Library"
+               BuildableName = "Redland C Library"
+               BlueprintName = "Redland C Library"
                ReferencedContainer = "container:Redland.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -38,7 +38,6 @@
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      enableOpenGLFrameCaptureMode = "0"
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>

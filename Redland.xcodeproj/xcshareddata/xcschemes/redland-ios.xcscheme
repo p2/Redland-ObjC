@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEE7B45D15C84978004D5A68"
-               BuildableName = "Tests iOS.octest"
-               BlueprintName = "Tests iOS"
+               BuildableName = "Redland Tests iOS.octest"
+               BlueprintName = "Redland Tests iOS"
                ReferencedContainer = "container:Redland.xcodeproj">
             </BuildableReference>
          </TestableReference>
