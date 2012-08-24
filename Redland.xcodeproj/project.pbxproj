@@ -258,6 +258,13 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Redland;
 		};
+		EEE4620D15E8100100CCF120 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE1DDDEC15BED96100882BDA;
+			remoteInfo = "Redland C Library";
+		};
 		EEE7B46415C84979004D5A68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -983,6 +990,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EEE4620E15E8100100CCF120 /* PBXTargetDependency */,
 			);
 			name = "redland-ios";
 			productName = "redland-ios";
@@ -1231,6 +1239,11 @@
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* Redland */;
 			targetProxy = EE7474B115B9159D004A456E /* PBXContainerItemProxy */;
+		};
+		EEE4620E15E8100100CCF120 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE1DDDEC15BED96100882BDA /* Redland C Library */;
+			targetProxy = EEE4620D15E8100100CCF120 /* PBXContainerItemProxy */;
 		};
 		EEE7B46515C84979004D5A68 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
