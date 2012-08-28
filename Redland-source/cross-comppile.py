@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 #
+#	This script downloads and cross-compiles C-sources prepared with GNU
+#	Autoconf for the configured platforms on a Mac with Xcode installed.
+#
+#	It is configured to cross-compile the Redland RDF libraries but can be re-
+#	purposed to cross-compile any C-source. Use 'iOS', 'Sim' and 'Mac' as
+#	platform identifiers.
 #
 
 import os
@@ -11,26 +17,54 @@ import subprocess
 import re
 import fileinput
 
+##
+##	Configure. Create your own file 'cross-comppile-config.py' to override these
+##
 
 # URLs to the sources' tar.gz files
-SOURCES = [
-	'http://download.librdf.org/source/raptor2-2.0.8.tar.gz',
-	'http://download.librdf.org/source/rasqal-0.9.29.tar.gz',
-	'http://download.librdf.org/source/redland-1.0.15.tar.gz',
-#	'http://curl.haxx.se/download/curl-7.27.0.tar.gz',
-]
+#
+# format:
+#	['http://domain.com/dl/file.tar.gz']
+SOURCES = []
+
+# Configuration flags per project per platform and/or architecture.
+# This is a dictionary with the target directory as the first key and either
+# '*' or the platform or the architecture (or a mix thereof) as second level
+#
+# format:
+#	FLAGS{ 'module name': { 'platform or *': [ '--flag', ... ]}}
+FLAGS = {}
+
+# libtool sometimes doesn't play nice and puts the wrong file paths into its
+# "dependency_libs" setting in .la files. We can fix this here by regex wizardry,
+# "search-expr" and "replacement-expr" will be fed into re.sub().
+#
+# format:
+#	FIX_DEP_LIBS{ 'platform': { 'module name': { 'file.la': ('search-expr', 'replacement-expr') }}}
+FIX_DEP_LIBS = {}
+
+# libraries that should be glued into a universal library. You need to know
+# the built library names (w/o extension).
+#
+# format:
+#	['library.a', 'cool.a']
+MAKE_UNIVERSAL = []
 
 # where to put the universal libraries and downloads
 UNIVERSAL = 'Universal'
 DOWNLOAD = 'downloads'
 
 # SDK-version to use (e.g. 5.1 for iOS SDK 5.1). Can be 'None'
-SDK_VERSION = '5.1'
+SDK_VERSION = None
 
 # target architectures per platform
 # format:
 #	ARCHS{ platform: [ arch, ... ]}
-ARCHS = {'iOS': ['armv6', 'armv7'], 'Sim': ['i386'], 'Mac': ['i386', 'x86_64']}
+ARCHS = {
+	'iOS': ['armv6', 'armv7'],
+	'Sim': ['i386'],
+	'Mac': ['i386', 'x86_64']
+}
 
 # desired library extensions
 # format:
@@ -42,43 +76,14 @@ LIBEXT = {'iOS': 'a', 'Sim': 'a', 'Mac': 'dylib'}
 # "configure"!
 CONFIG_NAME = 'pp-configure.sh'
 
-# Configuration flags perf project per platform and/or architecture.
-# This is a dictionary with the target directory as the first key and either
-# '*' or the platform or the architecture (or a mix thereof) as second level
-# key
-# format:
-#	FLAGS{ module_name: { platform-or-*: [ flag, ... ]}}
-FLAGS = {
-	'raptor2-2.0.8': {
-		'*': ['--with-www=none'],
-	},
-	'redland-1.0.15': {
-		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
-	},
-#	'curl-7.27.0': {
-#		'*': ['--without-ssl', '--without-libssh2', '--without-ca-bundle', '--without-ldap', '--disable-ldap'],
-#	},
-}
-
-# libtool sometimes doesn't play nice and puts the wrong file paths into its
-# "dependency_libs" setting in .la files. We can fix this here by regex wizardry
-# format:
-#	FIX_DEP_LIBS{ platform: { module_name: { file.la: (search, replacement) }}}
-FIX_DEP_LIBS = {
-	'iOS': {
-		'raptor2-2.0.8': {
-			'libraptor2.la': ('/usr/lib/libxml2.la', '-lxml2')		# SDK 6.0 does this correctly, but not 5.1
-		},
-	},
-	'Sim': {
-		'raptor2-2.0.8': {
-			'libraptor2.la': ('/usr/lib/libxml2.la', '-lxml2')
-		},
-	},
-}
+# link our platform shortnames to the SDK directory names used by Xcode
+PLATFORM_NAMES = {'iOS': 'iPhoneOS', 'Sim': 'iPhoneSimulator'}
 
 # used to keep track of the current building dir
 CURRENTLY_BUILDING = None
+
+# ok, import overrides from the config file
+execfile('cross-comppile-config.py')
 
 
 ##
@@ -98,56 +103,64 @@ def main():
 			dirs.append('product-%s-%s' % (platform, arch))
 	create_directories(dirs)
 	
+	platform_libs = {}
+	
 	# loop all sources
-	for url in SOURCES:
-		print shell_color('->  %s' % os.path.basename(url), 'magenta')
-		src = download(url, DOWNLOAD)
-		
-		# unpack and build
-		platform_libs = {}
-		for platform in ARCHS.keys():
-			archs = ARCHS[platform]
-			for arch in archs:
-				print shell_color('-->  %s: %s' % (platform, arch), 'green')
-				build_dir = 'build-%s-%s' % (platform, arch)
-				product_dir = 'product-%s-%s' % (platform, arch)
-				
-				# compile and install
-				directory, do_compile = unpack_into(src, build_dir)
-				if do_compile:
-					compile_and_install(directory, product_dir, platform, arch, FLAGS)
-				
-				# remember platform/lib directory
-				pf = platform_libs[platform] if platform in platform_libs else []
-				pf.append('%s/lib' % product_dir)
-				platform_libs[platform] = pf
+	if len(SOURCES) > 0:
+		for url in SOURCES:
+			print shell_color('->  %s' % os.path.basename(url), 'magenta')
+			src = download(url, DOWNLOAD)
+			
+			# unpack and build
+			for platform in ARCHS.keys():
+				archs = ARCHS[platform]
+				for arch in archs:
+					print shell_color('-->  %s: %s' % (platform, arch), 'green')
+					build_dir = 'build-%s-%s' % (platform, arch)
+					product_dir = 'product-%s-%s' % (platform, arch)
+					
+					# compile and install
+					directory, do_compile = unpack_into(src, build_dir)
+					if do_compile:
+						compile_and_install(directory, product_dir, platform, arch, FLAGS)
+					
+					# remember platform/lib directory
+					pf = platform_libs[platform] if platform in platform_libs else []
+					product_lib = '%s/lib' % product_dir
+					if product_lib not in pf:
+						pf.append(product_lib)
+						platform_libs[platform] = pf
+	else:
+		_compile_failed(None, 'No sources are configured (SOURCES is empty)')
+		sys.exit(1)
 	
 	# use lipo to create fat libraries
-	print shell_color('->  Creating universal libraries', 'magenta')
-	for lib_base in ['libraptor2', 'librasqal', 'librdf']:
-		
-		# per platform
-		for platform in platform_libs:
-			lib_ext = LIBEXT[platform] if platform in LIBEXT else 'a'
-			lib = '%s.%s' % (lib_base, lib_ext)
+	if len(MAKE_UNIVERSAL) > 0:
+		print shell_color('->  Creating universal libraries', 'magenta')
+		for lib_base in MAKE_UNIVERSAL:
 			
-			target = '%s-%s/%s' % (UNIVERSAL, platform, lib)
-			pf = platform_libs[platform]
-			libs = [foo + '/%s' % lib for foo in pf]
-			if len(libs) > 1:
-				p = subprocess.call('lipo -create -output %s %s' % (target, ' '.join(libs)), shell=True)
-				if 0 != p:
-					print shell_color('xx>  lipo failed to create the universal library for %s (%s)' % (platform, lib), 'red', True)
-					#sys.exit(1)
-			elif len(libs) > 0 and os.path.exists(libs[0]):
-				shutil.copy2(libs[0], target)
-		
-		# iOS and Simulator universal
-		lib = '%s.a' % lib_base
-		p = subprocess.call('lipo -create -output %s/%s product-iOS-*/lib/%s product-Sim-*/lib/%s' % (UNIVERSAL, lib, lib, lib), shell=True)
-		if 0 != p:
-			print shell_color('xx>  lipo failed to create the uber-universal library for %s' % lib, 'red', True)
-			#sys.exit(1)
+			# per platform
+			for platform in platform_libs:
+				lib_ext = LIBEXT[platform] if platform in LIBEXT else 'a'
+				lib = '%s.%s' % (lib_base, lib_ext)
+				
+				target = '%s-%s/%s' % (UNIVERSAL, platform, lib)
+				pf = platform_libs[platform]
+				libs = [foo + '/%s' % lib for foo in pf]
+				if len(libs) > 1:
+					p = subprocess.call('lipo -create -output %s %s' % (target, ' '.join(libs)), shell=True)
+					if 0 != p:
+						print shell_color('xx>  lipo failed to create the universal library for %s (%s)' % (platform, lib), 'red', True)
+						#sys.exit(1)
+				elif len(libs) > 0 and os.path.exists(libs[0]):
+					shutil.copy2(libs[0], target)
+			
+			# iOS and Simulator universal
+			lib = '%s.a' % lib_base
+			p = subprocess.call('lipo -create -output %s/%s product-iOS-*/lib/%s product-Sim-*/lib/%s' % (UNIVERSAL, lib, lib, lib), shell=True)
+			if 0 != p:
+				print shell_color('xx>  lipo failed to create the uber-universal library for %s' % lib, 'red', True)
+				#sys.exit(1)
 	
 	# set install names
 	# install_name_tool -id @loader_path/Frameworks/librdf.dylib librdf.dylib
@@ -288,6 +301,8 @@ def compile_and_install(source, target, platform, arch, flag_mapping):
 	config = [config_name, '-arch', arch, '--prefix=%s' % abs_prefix]
 	if has_conf and SDK_VERSION:
 		config.extend(['-sdk', SDK_VERSION])
+	if has_conf and platform in PLATFORM_NAMES:
+		config.extend(['-platform', PLATFORM_NAMES[platform]])
 	
 	# find additional flags
 	poss_flags = flag_mapping[module_name] if module_name in flag_mapping else None

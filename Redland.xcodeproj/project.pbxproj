@@ -387,7 +387,7 @@
 		EDF2FEA9071FE41900B18942 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
 		EE0CB61A15BDD0AD004BB6C9 /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
 		EE0CB61B15BDD0AD004BB6C9 /* rasqal-0.9.29.patch */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rasqal-0.9.29.patch"; sourceTree = "<group>"; };
-		EE0CB61C15BDD0AD004BB6C9 /* redland.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = redland.py; sourceTree = "<group>"; };
+		EE0CB61C15BDD0AD004BB6C9 /* cross-comppile.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-comppile.py"; sourceTree = "<group>"; };
 		EE0CB62615BE4AF7004BB6C9 /* librdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = librdf.h; sourceTree = "<group>"; };
 		EE0CB62715BE4AF7004BB6C9 /* rdf_concepts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdf_concepts.h; sourceTree = "<group>"; };
 		EE0CB62815BE4AF7004BB6C9 /* rdf_digest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdf_digest.h; sourceTree = "<group>"; };
@@ -442,6 +442,7 @@
 		EE1DDDF215BEDCC700882BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		EE7DF2C615ED5C9C00D328C1 /* cross-comppile-config.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-comppile-config.py"; sourceTree = "<group>"; };
 		EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		EEDE81B315BF375200AC2B64 /* libraptor2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libraptor2.a; sourceTree = "<group>"; };
 		EEDE81B415BF375200AC2B64 /* librasqal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librasqal.a; sourceTree = "<group>"; };
@@ -766,7 +767,8 @@
 		EE74747115B90143004A456E /* Redland Source */ = {
 			isa = PBXGroup;
 			children = (
-				EE0CB61C15BDD0AD004BB6C9 /* redland.py */,
+				EE0CB61C15BDD0AD004BB6C9 /* cross-comppile.py */,
+				EE7DF2C615ED5C9C00D328C1 /* cross-comppile-config.py */,
 				EE0CB62015BDD17A004BB6C9 /* Universal */,
 				EEDE81B215BF375200AC2B64 /* Universal-iOS */,
 				EEDE81B615BF375F00AC2B64 /* Universal-Mac */,
@@ -1116,7 +1118,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./redland.py";
+			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./cross-comppile.py";
 		};
 		EEE7B45C15C84978004D5A68 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
