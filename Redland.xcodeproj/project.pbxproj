@@ -1118,7 +1118,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./cross-comppile.py";
+			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./cross-compile.py";
 		};
 		EEE7B45C15C84978004D5A68 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
