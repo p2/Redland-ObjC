@@ -1,5 +1,5 @@
 ##
-##	Configuration file for the cross-comppile.py script for Redland
+##	Configuration file for the cross-compile.py script for Redland
 ##
 
 SOURCES = [

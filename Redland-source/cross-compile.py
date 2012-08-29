@@ -18,7 +18,7 @@ import re
 import fileinput
 
 ##
-##	Configure. Create your own file 'cross-comppile-config.py' to override these
+##	Configure. Create your own file 'cross-compile-config.py' to override these
 ##
 
 # URLs to the sources' tar.gz files
@@ -83,7 +83,7 @@ PLATFORM_NAMES = {'iOS': 'iPhoneOS', 'Sim': 'iPhoneSimulator'}
 CURRENTLY_BUILDING = None
 
 # ok, import overrides from the config file
-execfile('cross-comppile-config.py')
+execfile('cross-compile-config.py')
 
 
 ##
