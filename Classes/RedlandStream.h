@@ -48,8 +48,6 @@
 - (RedlandStatement *)object;
 - (RedlandNode *)context;
 
-- (void)print;
-
 - (RedlandStreamEnumerator *)statementEnumerator;
 
 

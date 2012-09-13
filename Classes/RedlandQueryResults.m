@@ -181,7 +181,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 	NSParameterAssert(formatURI != nil);
 	
 	size_t output_size;
-	unsigned char *output = librdf_query_results_to_counted_string(wrappedObject, [formatURI wrappedURI], [baseURI wrappedURI], &output_size);
+	unsigned char *output = librdf_query_results_to_counted_string2(wrappedObject, NULL, NULL, [formatURI wrappedURI], [baseURI wrappedURI], &output_size);
 	if (output != NULL) {
 		return [[NSString alloc] initWithBytesNoCopy:output length:output_size encoding:NSUTF8StringEncoding freeWhenDone:YES];
 	}

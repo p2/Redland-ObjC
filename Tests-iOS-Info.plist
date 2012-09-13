@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Tests</string>
+	<string>Tests-iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.github.p2.redland-tests</string>
+	<string>com.github.p2.redland-ios-tests</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>

@@ -247,17 +247,25 @@
 #pragma mark - Descriptions
 - (NSString *)description
 {
-	unsigned char *statement_string = librdf_statement_to_string(wrappedObject);
-	return [[NSString alloc] initWithBytesNoCopy:statement_string length:strlen((char *)statement_string) encoding:NSUTF8StringEncoding freeWhenDone:YES];
-}
-
-/**
- *  Prints a description of the receiver to standard error.
- *  @warning For debugging purposes.
- */
-- (void)print
-{
-	librdf_statement_print(wrappedObject, stderr);
+	librdf_statement *stmt = wrappedObject;
+	unsigned char *outString;
+	
+	// write to a stream
+	raptor_iostream *stream = raptor_new_iostream_to_string(stmt->world, (void**)&outString, NULL, malloc);
+	int ret = librdf_statement_write(stmt, stream);
+	raptor_free_iostream(stream);
+	if (0 != ret) {
+		raptor_free_memory(outString);
+		outString = NULL;
+	}
+	
+	// return as NSString
+	if (outString) {
+		return [NSString stringWithCString:(const char *)outString encoding:NSUTF8StringEncoding];
+	}
+	
+	DLog(@"xxx>  FAILED to write to librdf_statement");
+	return [super description];
 }
 
 

@@ -111,6 +111,17 @@
 		EDBA0E4907379BDD00610CB1 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = EDBA0E4807379BDD00610CB1 /* NOTICE.txt */; };
 		EDBA0EB20737A89A00610CB1 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = ED98645906FAF0D8009186B3 /* LICENSE.txt */; };
 		EE0CB64315BE4BF3004BB6C9 /* redland.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB63A15BE4AF7004BB6C9 /* redland.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE205F241602910A0020752E /* WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A43B06F9E54B00A624F7 /* WorldTests.m */; };
+		EE205F251602910A0020752E /* URITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A3C106F9DCBA00A624F7 /* URITests.m */; };
+		EE205F261602910A0020752E /* NodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A49406F9EAF700A624F7 /* NodeTests.m */; };
+		EE205F271602910A0020752E /* StatementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A5A306FA1ADA00A624F7 /* StatementTests.m */; };
+		EE205F281602910A0020752E /* StorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A67006FA28D400A624F7 /* StorageTests.m */; };
+		EE205F291602910A0020752E /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98630406FAE443009186B3 /* ModelTests.m */; };
+		EE205F2A1602910A0020752E /* ParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9863F606FAEA05009186B3 /* ParserTests.m */; };
+		EE205F2B1602910A0020752E /* SerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98643906FAF064009186B3 /* SerializerTests.m */; };
+		EE205F2C1602910A0020752E /* QueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98651B06FB12E6009186B3 /* QueryTests.m */; };
+		EE205F2D1602910A0020752E /* NamespaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A52B06F9F35E00A624F7 /* NamespaceTests.m */; };
+		EE205F2E1602917C0020752E /* libredland-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE7B44E15C84978004D5A68 /* libredland-ios.a */; };
 		EE5144EE15DAEF1400DA9BA2 /* RedlandModel.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D25D10688A7DF0039DA12 /* RedlandModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE5144F015DAEFD400DA9BA2 /* RedlandWrappedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = ED699ECF06F9D3D600A624F7 /* RedlandWrappedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE5144F115DAEFD400DA9BA2 /* RedlandWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D24900688A22D0039DA12 /* RedlandWorld.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -198,16 +209,6 @@
 		EEE7B48A15C849B3004D5A68 /* RedlandIteratorEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */; };
 		EEE7B48B15C849B3004D5A68 /* RedlandQueryResultsEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */; };
 		EEE7B48C15C849B3004D5A68 /* RedlandNamespace.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAC63820694506E007A085A /* RedlandNamespace.m */; };
-		EEE7B48D15C849BA004D5A68 /* WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A43B06F9E54B00A624F7 /* WorldTests.m */; };
-		EEE7B48E15C849BA004D5A68 /* URITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A3C106F9DCBA00A624F7 /* URITests.m */; };
-		EEE7B48F15C849BA004D5A68 /* NodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A49406F9EAF700A624F7 /* NodeTests.m */; };
-		EEE7B49015C849BA004D5A68 /* StatementTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A5A306FA1ADA00A624F7 /* StatementTests.m */; };
-		EEE7B49115C849BA004D5A68 /* StorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A67006FA28D400A624F7 /* StorageTests.m */; };
-		EEE7B49215C849BA004D5A68 /* ModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98630406FAE443009186B3 /* ModelTests.m */; };
-		EEE7B49315C849BA004D5A68 /* ParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED9863F606FAEA05009186B3 /* ParserTests.m */; };
-		EEE7B49415C849BA004D5A68 /* SerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98643906FAF064009186B3 /* SerializerTests.m */; };
-		EEE7B49515C849BA004D5A68 /* QueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98651B06FB12E6009186B3 /* QueryTests.m */; };
-		EEE7B49615C849BA004D5A68 /* NamespaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A52B06F9F35E00A624F7 /* NamespaceTests.m */; };
 		EEE7B49D15C84F61004D5A68 /* redland.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB66315BE5CC1004BB6C9 /* redland.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE7B49E15C84F63004D5A68 /* librdf.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB64A15BE5CC1004BB6C9 /* librdf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE7B49F15C84F6A004D5A68 /* raptor.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB64C15BE5CC1004BB6C9 /* raptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -233,7 +234,6 @@
 		EEE7B4B315C84F86004D5A68 /* rdf_uri.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB66115BE5CC1004BB6C9 /* rdf_uri.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE7B4B415C84F86004D5A68 /* rdf_utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = EE0CB66215BE5CC1004BB6C9 /* rdf_utf8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEE7B4B615C85A2E004D5A68 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB8108BB596300ACF14F /* SenTestingKit.framework */; };
-		EEE7B4B715C85C98004D5A68 /* libredland-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE7B44E15C84978004D5A68 /* libredland-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -441,6 +441,7 @@
 		EE0CB66315BE5CC1004BB6C9 /* redland.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = redland.h; sourceTree = "<group>"; };
 		EE1DDDF215BEDCC700882BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
+		EE205F2F160291DD0020752E /* Tests-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-iOS-Info.plist"; sourceTree = "<group>"; };
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 		EE7DF2C615ED5C9C00D328C1 /* cross-compile-config.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile-config.py"; sourceTree = "<group>"; };
 		EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
@@ -451,7 +452,7 @@
 		EEDE81B815BF375F00AC2B64 /* librasqal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librasqal.dylib; sourceTree = "<group>"; };
 		EEDE81B915BF375F00AC2B64 /* librdf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = librdf.dylib; sourceTree = "<group>"; };
 		EEE7B44E15C84978004D5A68 /* libredland-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libredland-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEE7B45E15C84978004D5A68 /* Tests iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Tests iOS.octest"; path = "Redland Tests iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEE7B45E15C84978004D5A68 /* Tests-iOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests-iOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,7 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE555EE315C873B000F26A1A /* libz.dylib in Frameworks */,
-				EEE7B4B715C85C98004D5A68 /* libredland-ios.a in Frameworks */,
+				EE205F2E1602917C0020752E /* libredland-ios.a in Frameworks */,
 				EEE7B4B615C85A2E004D5A68 /* SenTestingKit.framework in Frameworks */,
 				EEC9C56815CB051200B7C568 /* libraptor2.a in Frameworks */,
 				EEC9C56915CB051500B7C568 /* librasqal.a in Frameworks */,
@@ -521,7 +522,7 @@
 				ED8214C707397B78001CC6CB /* RedlandDocumentation */,
 				ED48EB5008BB557A00ACF14F /* Tests.octest */,
 				EEE7B44E15C84978004D5A68 /* libredland-ios.a */,
-				EEE7B45E15C84978004D5A68 /* Tests iOS.octest */,
+				EEE7B45E15C84978004D5A68 /* Tests-iOS.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -533,7 +534,6 @@
 				EDF2FEA9071FE41900B18942 /* ChangeLog.txt */,
 				ED98645906FAF0D8009186B3 /* LICENSE.txt */,
 				EDBA0E4807379BDD00610CB1 /* NOTICE.txt */,
-				EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */,
 				ED699E3406F9CBBF00A624F7 /* Basic Wrapper Classes */,
 				08FB77AEFE84172EC02AAC07 /* Additional Classes */,
 				ED69A3BB06F9DCA400A624F7 /* Tests */,
@@ -569,7 +569,9 @@
 				ED98662B06FB3D05009186B3 /* rdf-schema.rdf */,
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
 				ED48EB4208BB554300ACF14F /* Tests-Info.plist */,
+				EE205F2F160291DD0020752E /* Tests-iOS-Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */,
 			);
 			name = Resources;
 			sourceTree = SOURCE_ROOT;
@@ -999,9 +1001,9 @@
 			productReference = EEE7B44E15C84978004D5A68 /* libredland-ios.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		EEE7B45D15C84978004D5A68 /* Redland Tests iOS */ = {
+		EEE7B45D15C84978004D5A68 /* Tests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEE7B47715C84979004D5A68 /* Build configuration list for PBXNativeTarget "Redland Tests iOS" */;
+			buildConfigurationList = EEE7B47715C84979004D5A68 /* Build configuration list for PBXNativeTarget "Tests-iOS" */;
 			buildPhases = (
 				EEE7B45B15C84978004D5A68 /* Resources */,
 				EEE7B45915C84978004D5A68 /* Sources */,
@@ -1013,9 +1015,9 @@
 			dependencies = (
 				EEE7B46515C84979004D5A68 /* PBXTargetDependency */,
 			);
-			name = "Redland Tests iOS";
+			name = "Tests-iOS";
 			productName = "redland-iosTests";
-			productReference = EEE7B45E15C84978004D5A68 /* Tests iOS.octest */;
+			productReference = EEE7B45E15C84978004D5A68 /* Tests-iOS.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1041,7 +1043,7 @@
 				8DC2EF4F0486A6940098B216 /* Redland */,
 				ED48EB4F08BB557A00ACF14F /* Tests */,
 				EEE7B44D15C84978004D5A68 /* redland-ios */,
-				EEE7B45D15C84978004D5A68 /* Redland Tests iOS */,
+				EEE7B45D15C84978004D5A68 /* Tests-iOS */,
 				EDEDCDFA07397483006DB0D1 /* Redland Documentation */,
 				ED8215FE07397F4A001CC6CB /* Release */,
 				EE1DDDEC15BED96100882BDA /* Redland C Library */,
@@ -1211,16 +1213,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE7B48D15C849BA004D5A68 /* WorldTests.m in Sources */,
-				EEE7B48E15C849BA004D5A68 /* URITests.m in Sources */,
-				EEE7B48F15C849BA004D5A68 /* NodeTests.m in Sources */,
-				EEE7B49015C849BA004D5A68 /* StatementTests.m in Sources */,
-				EEE7B49115C849BA004D5A68 /* StorageTests.m in Sources */,
-				EEE7B49215C849BA004D5A68 /* ModelTests.m in Sources */,
-				EEE7B49315C849BA004D5A68 /* ParserTests.m in Sources */,
-				EEE7B49415C849BA004D5A68 /* SerializerTests.m in Sources */,
-				EEE7B49515C849BA004D5A68 /* QueryTests.m in Sources */,
-				EEE7B49615C849BA004D5A68 /* NamespaceTests.m in Sources */,
+				EE205F241602910A0020752E /* WorldTests.m in Sources */,
+				EE205F251602910A0020752E /* URITests.m in Sources */,
+				EE205F261602910A0020752E /* NodeTests.m in Sources */,
+				EE205F271602910A0020752E /* StatementTests.m in Sources */,
+				EE205F281602910A0020752E /* StorageTests.m in Sources */,
+				EE205F291602910A0020752E /* ModelTests.m in Sources */,
+				EE205F2A1602910A0020752E /* ParserTests.m in Sources */,
+				EE205F2B1602910A0020752E /* SerializerTests.m in Sources */,
+				EE205F2C1602910A0020752E /* QueryTests.m in Sources */,
+				EE205F2D1602910A0020752E /* NamespaceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1762,7 +1764,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "redland-ios/redland-ios-Prefix.pch";
+				GCC_PREFIX_HEADER = Redland_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1771,7 +1773,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "redland-iosTests/redland-iosTests-Info.plist";
+				INFOPLIST_FILE = "Tests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal/";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1798,7 +1800,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "redland-ios/redland-ios-Prefix.pch";
+				GCC_PREFIX_HEADER = Redland_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1807,7 +1809,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "redland-iosTests/redland-iosTests-Info.plist";
+				INFOPLIST_FILE = "Tests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal/";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1832,11 +1834,11 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "redland-ios/redland-ios-Prefix.pch";
+				GCC_PREFIX_HEADER = Redland_Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "redland-iosTests/redland-iosTests-Info.plist";
+				INFOPLIST_FILE = "Tests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal/";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1920,7 +1922,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;
 		};
-		EEE7B47715C84979004D5A68 /* Build configuration list for PBXNativeTarget "Redland Tests iOS" */ = {
+		EEE7B47715C84979004D5A68 /* Build configuration list for PBXNativeTarget "Tests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEE7B47315C84979004D5A68 /* Development */,

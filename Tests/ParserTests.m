@@ -95,15 +95,10 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 
 - (void)testParseError
 {
-	// librdf_parser_parse_string_as_stream crashes on iPhone Simulator??
-#if TARGET_IPHONE_SIMULATOR
-#warning Check why this crashes on iPhone Simulator
-#else
 	NSString *string = @"This is NOT RDF/XML.";
 	RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
 	
 	STAssertThrowsSpecific([parser parseString:string asStreamWithBaseURI:[RedlandURI URIWithString:@"http://foo/"]], RedlandException, nil);
-#endif
 }
 
 - (void)testSetFeature

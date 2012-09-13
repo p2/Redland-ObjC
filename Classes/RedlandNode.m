@@ -263,24 +263,25 @@
 
 - (NSString *)description
 {
-	NSString *desc = nil;
-	char *outString;
-	size_t length;
-	raptor_world *world = raptor_new_world();
-	raptor_iostream *stream = raptor_new_iostream_to_string(world, (void **)&outString, &length, NULL);
-	if (0 == librdf_node_write(wrappedObject, stream) && length > 0) {
-		DLog(@"--->  %s", outString);
-		desc = [NSString stringWithCString:(const char *)outString encoding:NSUTF8StringEncoding];
-	}
-	else {
-		DLog(@"xxx>  FAILED to write to librdf_node");
-		desc = [super description];
-	}
+	librdf_node *node = wrappedObject;
+	unsigned char *outString;
 	
+	// write to a stream
+	raptor_iostream *stream = raptor_new_iostream_to_string(node->world, (void**)&outString, NULL, malloc);
+	int ret = librdf_node_write(node, stream);
 	raptor_free_iostream(stream);
-	raptor_free_world(world);
+	if (0 != ret) {
+		raptor_free_memory(outString);
+		outString = NULL;
+	}
 	
-	return desc;
+	// return as NSString
+	if (outString) {
+		return [NSString stringWithCString:(const char *)outString encoding:NSUTF8StringEncoding];
+	}
+	
+	DLog(@"xxx>  FAILED to write to librdf_node, node type: %d", node->type);
+	return [super description];
 }
 
 

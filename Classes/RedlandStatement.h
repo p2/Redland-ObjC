@@ -53,7 +53,5 @@
 - (BOOL)matchesPartialStatement:(RedlandStatement *)aStatement;
 - (BOOL)isComplete;
 
-- (void)print;
-
 
 @end

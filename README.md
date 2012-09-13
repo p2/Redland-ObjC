@@ -1,12 +1,10 @@
-    The project is heavily WIP!
-    
     STATUS:
     [x]  C libraries cross-compile successfully (armv6, armv7)
     [x]  Mac build succeeds
     [x]  Mac unit tests succeed
     [x]  iOS build succeeds
-    [~]  iOS unit tests succeed (1 exception remaining)
-    [ ]  Deprecated librdf calls have been replaced
+    [x]  iOS unit tests succeed
+    [x]  Deprecated librdf calls have been replaced
     [ ]  Mac framework has been used in a sample application
     [x]  iOS framework has been used in a sample app
 
@@ -20,10 +18,10 @@ This projects is a resurrection of Rene Puls' Objective-C wrapper for the [Redla
 Building the C libraries
 ------------------------
 
-There is a Python-script that downloads and (cross-)compiles [raptor2], [rasqal] and [librdf][redland], the components you need. The script needs you to have Xcode 4.4 or 4.5 and the iOS SDK 5.1 installed, and make sure you install the command line tools from within Xcode. Then just choose the **Build C Library** target and hit **Run**. Alternatively, open the Terminal and execute the script manually:
+There is a Python-script that downloads and (cross-)compiles [raptor2], [rasqal] and [librdf][redland], the components you need. The script needs you to have Xcode 4.4 or 4.5 and the iOS SDK 5.1 or later installed, and make sure you install the command line tools from within Xcode. Then just choose the **Redland C Library** target and hit **Run**. Alternatively, open the Terminal and execute the script manually:
 
     $ cd Redland-ObjC/Redland-source
-    $ ./redland.py
+    $ ./cross-compile.py
 
 Compiling requires `pkg-config` which you can most easily install via [Homebrew][]:
 

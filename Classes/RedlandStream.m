@@ -89,15 +89,6 @@
 
 #pragma mark - Utilities
 /**
- *  Prints out the stream to standard error.
-	For debugging purposes.
- */
-- (void)print
-{
-	librdf_stream_print(wrappedObject, stderr);
-}
-
-/**
  *  Returns a RedlandStreamEnumerator for the receiver.
 	It is recommended that you use this enumerator interface instead of accessing the stream directly.
  */

@@ -47,7 +47,6 @@
 
 - (librdf_model *)wrappedModel;
 
-- (void)print;
 - (int)size;
 - (void)sync;
 

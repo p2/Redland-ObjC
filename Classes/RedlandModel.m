@@ -95,14 +95,6 @@
 }
 
 /**
- *  Dumps the contents of the receiver to standard error (for debugging purposes).
- */
-- (void)print
-{
-	librdf_model_print(wrappedObject, stderr);
-}
-
-/**
  *  Synchronises the model to the model implementation.
  */
 - (void)sync
