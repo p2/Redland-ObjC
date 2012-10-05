@@ -9,6 +9,12 @@ SOURCES = [
 #	'http://curl.haxx.se/download/curl-7.27.0.tar.gz',
 ]
 
+ARCHS = {
+	'iOS': ['armv7', 'armv7s'],
+	'Sim': ['i386'],
+	'Mac': ['i386', 'x86_64']
+}
+
 FLAGS = {
 	'raptor2-2.0.8': {
 		'*': ['--with-www=none'],

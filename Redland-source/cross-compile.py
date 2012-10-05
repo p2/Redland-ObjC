@@ -27,6 +27,11 @@ import fileinput
 #	['http://domain.com/dl/file.tar.gz']
 SOURCES = []
 
+# target architectures per platform
+# format:
+#	ARCHS{ platform: [ arch, ... ]}
+ARCHS = {}
+
 # Configuration flags per project per platform and/or architecture.
 # This is a dictionary with the target directory as the first key and either
 # '*' or the platform or the architecture (or a mix thereof) as second level
@@ -56,15 +61,6 @@ DOWNLOAD = 'downloads'
 
 # SDK-version to use (e.g. 5.1 for iOS SDK 5.1). Can be 'None'
 SDK_VERSION = None
-
-# target architectures per platform
-# format:
-#	ARCHS{ platform: [ arch, ... ]}
-ARCHS = {
-	'iOS': ['armv6', 'armv7'],
-	'Sim': ['i386'],
-	'Mac': ['i386', 'x86_64']
-}
 
 # desired library extensions
 # format:
