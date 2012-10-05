@@ -24,11 +24,7 @@
 
 
 #import <Foundation/Foundation.h>
-#ifdef IS_FRAMEWORK
-# import <Redland/redland.h>
-#else
-# import <redland.h>
-#endif
+#import <redland.h>
 #import "RedlandWrappedObject.h"
 
 @class RedlandURI;

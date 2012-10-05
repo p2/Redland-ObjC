@@ -177,9 +177,6 @@
 		EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
 		EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
 		EEBFED8C15C0A9B600E352C7 /* Redland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
-		EEBFED8D15C0A9DB00E352C7 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
-		EEBFED8E15C0A9DD00E352C7 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
-		EEBFED8F15C0A9DF00E352C7 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
 		EEBFED9015C0ADBD00E352C7 /* Redland.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
 		EEC9C56715CADED300B7C568 /* librdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64915BE5CB4004BB6C9 /* librdf.a */; };
 		EEC9C56815CB051200B7C568 /* libraptor2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64715BE5CB4004BB6C9 /* libraptor2.a */; };
@@ -484,9 +481,6 @@
 				ED48EBA208BB5A2C00ACF14F /* Cocoa.framework in Frameworks */,
 				ED48EBA308BB5A2D00ACF14F /* AppKit.framework in Frameworks */,
 				EEBFED8C15C0A9B600E352C7 /* Redland.framework in Frameworks */,
-				EEBFED8D15C0A9DB00E352C7 /* libraptor2.dylib in Frameworks */,
-				EEBFED8E15C0A9DD00E352C7 /* librasqal.dylib in Frameworks */,
-				EEBFED8F15C0A9DF00E352C7 /* librdf.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,7 +1286,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "-DIS_FRAMEWORK";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1327,7 +1321,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = "-DIS_FRAMEWORK";
+				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1532,10 +1526,7 @@
 				INSTALL_PATH = "@rpath";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
 				MACH_O_TYPE = mh_dylib;
-				OTHER_CFLAGS = (
-					"-DDEBUG",
-					"-DIS_FRAMEWORK",
-				);
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Redland;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
