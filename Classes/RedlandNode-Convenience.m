@@ -250,7 +250,7 @@
 	}
 	
 	// create a date from string
-	NSDateFormatter *df = [isa dateTimeFormatter];
+	NSDateFormatter *df = [[self class] dateTimeFormatter];
 	return [df dateFromString:[self literalValue]];
 }
 

@@ -68,7 +68,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
     RedlandURI *testURI = [RedlandURI URIWithString:RDFXMLTestDataLocation];
     RedlandStream *stream;
     NSArray *allStatements;
-	NSBundle *bundle = [NSBundle bundleForClass:isa];
+	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *path = [bundle pathForResource:@"rdf-syntax" ofType:@"rdf"];
 	NSData *data = [NSData dataWithContentsOfFile:path];
     
@@ -84,7 +84,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 - (void)testConvenience
 {
     RedlandModel *model = [RedlandModel new];
-    NSBundle *bundle = [NSBundle bundleForClass:isa];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *path = [bundle pathForResource:@"rdf-syntax" ofType:@"rdf"];
     NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
     

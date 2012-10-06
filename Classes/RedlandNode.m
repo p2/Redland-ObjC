@@ -188,7 +188,7 @@
 		DLog(@"Failed to init rdf_node");
 		return nil;
 	}
-	return [[isa alloc] initWithWrappedObject:copy];
+	return [[[self class] alloc] initWithWrappedObject:copy];
 }
 
 - (void)dealloc
@@ -301,7 +301,7 @@
 
 - (BOOL)isEqual:(id)otherNode
 {
-	if ([otherNode isKindOfClass:isa]) {
+	if ([otherNode isKindOfClass:[self class]]) {
 		return [self isEqualToNode:otherNode];
 	}
 	return NO;

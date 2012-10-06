@@ -85,7 +85,7 @@
 - (id)copyWithZone:(NSZone *)aZone
 {
 	librdf_uri *copy = librdf_new_uri_from_uri(wrappedObject);
-	return [[isa alloc] initWithWrappedObject:copy];
+	return [[[self class] alloc] initWithWrappedObject:copy];
 }
 
 
@@ -178,7 +178,7 @@
  */
 - (BOOL)isEqual:(id)otherObject
 {
-	if ([otherObject isKindOfClass:isa]) {
+	if ([otherObject isKindOfClass:[self class]]) {
 		return [self isEqualToURI:otherObject];
 	}
 	return NO;

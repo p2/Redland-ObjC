@@ -98,7 +98,7 @@ static NSMutableDictionary *GlobalNamespaceDict = nil;
 
 - (id)copyWithZone:(NSZone *)aZone
 {
-    return [[isa allocWithZone:aZone] initWithPrefix:_prefix shortName:_shortName];
+    return [[[self class] allocWithZone:aZone] initWithPrefix:_prefix shortName:_shortName];
 }
 
 - (NSUInteger)hash

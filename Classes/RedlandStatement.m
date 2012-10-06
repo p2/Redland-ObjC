@@ -174,7 +174,7 @@
 {
 	librdf_statement *copy;
 	copy = librdf_new_statement_from_statement(wrappedObject);
-	return [[isa alloc] initWithWrappedObject:copy];
+	return [[[self class] alloc] initWithWrappedObject:copy];
 }
 
 
