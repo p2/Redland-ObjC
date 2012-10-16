@@ -181,6 +181,7 @@
 		EEC9C56715CADED300B7C568 /* librdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64915BE5CB4004BB6C9 /* librdf.a */; };
 		EEC9C56815CB051200B7C568 /* libraptor2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64715BE5CB4004BB6C9 /* libraptor2.a */; };
 		EEC9C56915CB051500B7C568 /* librasqal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64815BE5CB4004BB6C9 /* librasqal.a */; };
+		EEDD45FA162E14EF00ECA308 /* Redland-ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EEDE81BE15BF38C800AC2B64 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
 		EEDE81BF15BF38C800AC2B64 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
 		EEDE81C015BF38C800AC2B64 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
@@ -365,13 +366,13 @@
 		ED98630406FAE443009186B3 /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
 		ED9863F506FAEA05009186B3 /* ParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserTests.h; sourceTree = "<group>"; };
 		ED9863F606FAEA05009186B3 /* ParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParserTests.m; sourceTree = "<group>"; };
-		ED98642206FAEE3C009186B3 /* rdf-syntax.rdf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "rdf-syntax.rdf"; sourceTree = "<group>"; };
+		ED98642206FAEE3C009186B3 /* rdf-syntax.rdf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = "rdf-syntax.rdf"; path = "Resources/rdf-syntax.rdf"; sourceTree = "<group>"; };
 		ED98643806FAF064009186B3 /* SerializerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerializerTests.h; sourceTree = "<group>"; };
 		ED98643906FAF064009186B3 /* SerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerializerTests.m; sourceTree = "<group>"; };
 		ED98645906FAF0D8009186B3 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		ED98651A06FB12E6009186B3 /* QueryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryTests.h; sourceTree = "<group>"; };
 		ED98651B06FB12E6009186B3 /* QueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryTests.m; sourceTree = "<group>"; };
-		ED98662B06FB3D05009186B3 /* rdf-schema.rdf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = "rdf-schema.rdf"; sourceTree = "<group>"; };
+		ED98662B06FB3D05009186B3 /* rdf-schema.rdf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = "rdf-schema.rdf"; path = "Resources/rdf-schema.rdf"; sourceTree = "<group>"; };
 		EDAC616406943C75007A085A /* RedlandStreamEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandStreamEnumerator.h; sourceTree = "<group>"; };
 		EDAC616506943C75007A085A /* RedlandStreamEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandStreamEnumerator.m; sourceTree = "<group>"; };
 		EDAC63810694506E007A085A /* RedlandNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandNamespace.h; sourceTree = "<group>"; };
@@ -381,7 +382,6 @@
 		EDB09D2A0688D50F0071464A /* RedlandIteratorEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandIteratorEnumerator.h; sourceTree = "<group>"; };
 		EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandIteratorEnumerator.m; sourceTree = "<group>"; };
 		EDBA0E4807379BDD00610CB1 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
-		EDF2FEA9071FE41900B18942 /* ChangeLog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog.txt; sourceTree = "<group>"; };
 		EE0CB61A15BDD0AD004BB6C9 /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
 		EE0CB61B15BDD0AD004BB6C9 /* rasqal-0.9.29.patch */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rasqal-0.9.29.patch"; sourceTree = "<group>"; };
 		EE0CB61C15BDD0AD004BB6C9 /* cross-compile.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile.py"; sourceTree = "<group>"; };
@@ -525,22 +525,22 @@
 			isa = PBXGroup;
 			children = (
 				EE1DDDF215BEDCC700882BDA /* README.md */,
-				EDF2FEA9071FE41900B18942 /* ChangeLog.txt */,
 				ED98645906FAF0D8009186B3 /* LICENSE.txt */,
 				EDBA0E4807379BDD00610CB1 /* NOTICE.txt */,
+				ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */,
 				ED699E3406F9CBBF00A624F7 /* Basic Wrapper Classes */,
 				08FB77AEFE84172EC02AAC07 /* Additional Classes */,
 				ED69A3BB06F9DCA400A624F7 /* Tests */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				EE74747115B90143004A456E /* Redland Source */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
-				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = Redland;
 			sourceTree = "<group>";
 		};
-		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED48EB8108BB596300ACF14F /* SenTestingKit.framework */,
@@ -553,7 +553,7 @@
 				ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */,
 				EE555EE215C873B000F26A1A /* libz.dylib */,
 			);
-			name = "External Frameworks and Libraries";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		089C1665FE841158C02AAC07 /* Resources */ = {
@@ -600,7 +600,6 @@
 			isa = PBXGroup;
 			children = (
 				32DBCF5E0370ADEE00C91783 /* Redland_Prefix.pch */,
-				ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -931,6 +930,7 @@
 				EE5144F915DAEFD400DA9BA2 /* RedlandSerializer.h in Headers */,
 				EE5144FA15DAEFD400DA9BA2 /* RedlandQuery.h in Headers */,
 				EE5144FB15DAEFD400DA9BA2 /* RedlandQueryResults.h in Headers */,
+				EEDD45FA162E14EF00ECA308 /* Redland-ObjC.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1766,7 +1766,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Tests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Redland-source/Universal\"";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1802,7 +1802,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Tests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Redland-source/Universal\"";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1831,7 +1831,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Tests-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Redland-source/Universal\"";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

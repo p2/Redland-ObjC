@@ -3,6 +3,7 @@
 //  $Id: Redland-ObjC.h 319 2004-11-03 21:29:55Z kianga $
 //
 //  Copyright 2004 Rene Puls <http://purl.org/net/kianga/>
+//	Copyright 2012 Pascal Pfiffner <http://www.chip.org/>
 //
 //  This file is available under the following three licenses:
 //   1. GNU Lesser General Public License (LGPL), version 2.1
@@ -14,32 +15,36 @@
 //  for the complete terms and further details.
 //
 //  The most recent version of this software can be found here:
-//  <http://purl.org/net/kianga/latest/redland-objc>
+//  <https://github.com/p2/Redland-ObjC>
 //
 //  For information about the Redland RDF Application Framework, including
 //  the most recent version, see <http://librdf.org/>.
 //
 
-#define LIBRDF_OBJC_FRAMEWORK
+/**
+ *  Header file to be included in projects utilizing Redland.
+ *
+ *  This header file should include all headers a framework user might want to use.
+ */
 
-#import <Redland/redland.h>
-#import <Redland/RedlandException.h>
-#import <Redland/RedlandIterator.h>
-#import <Redland/RedlandIteratorEnumerator.h>
-#import <Redland/RedlandModel.h>
-#import <Redland/RedlandModel-Convenience.h>
-#import <Redland/RedlandNamespace.h>
-#import <Redland/RedlandNode.h>
-#import <Redland/RedlandNode-Convenience.h>
-#import <Redland/RedlandParser.h>
-#import <Redland/RedlandQuery.h>
-#import <Redland/RedlandQueryResults.h>
-#import <Redland/RedlandQueryResultsEnumerator.h>
-#import <Redland/RedlandSerializer.h>
-#import <Redland/RedlandStatement.h>
-#import <Redland/RedlandStorage.h>
-#import <Redland/RedlandStream.h>
-#import <Redland/RedlandStreamEnumerator.h>
-#import <Redland/RedlandURI.h>
-#import <Redland/RedlandWorld.h>
-#import <Redland/RedlandWrappedObject.h>
+#import <redland.h>
+#import <RedlandException.h>
+#import <RedlandIterator.h>
+#import <RedlandIteratorEnumerator.h>
+#import <RedlandModel.h>
+#import <RedlandModel-Convenience.h>
+#import <RedlandNamespace.h>
+#import <RedlandNode.h>
+#import <RedlandNode-Convenience.h>
+#import <RedlandParser.h>
+#import <RedlandQuery.h>
+#import <RedlandQueryResults.h>
+#import <RedlandQueryResultsEnumerator.h>
+#import <RedlandSerializer.h>
+#import <RedlandStatement.h>
+#import <RedlandStorage.h>
+#import <RedlandStream.h>
+#import <RedlandStreamEnumerator.h>
+#import <RedlandURI.h>
+#import <RedlandWorld.h>
+#import <RedlandWrappedObject.h>
