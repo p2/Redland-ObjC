@@ -92,7 +92,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 - (RedlandNode *)valueOfBinding:(NSString *)aName
 {
 	NSParameterAssert(aName != nil);
-    librdf_node *value = librdf_query_results_get_binding_value_by_name(wrappedObject, [aName UTF8String]);
+    librdf_node *value = librdf_query_results_get_binding_value_by_name(wrappedObject,
+                                                                        [aName UTF8String]);
 	if (value) {
 		value = librdf_new_node_from_node(value);
 	}
@@ -176,17 +177,86 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 /**
  *  Turns query results into a string in the specified format.
  */
-- (NSString *)stringRepresentationWithFormat:(RedlandURI *)formatURI baseURI:(RedlandURI *)baseURI
+- (NSString *)stringRepresentationWithFormat:(RedlandURI *)formatURI
+                                     baseURI:(RedlandURI *)baseURI
 {
 	NSParameterAssert(formatURI != nil);
-	
-	size_t output_size;
-	unsigned char *output = librdf_query_results_to_counted_string2(wrappedObject, NULL, NULL, [formatURI wrappedURI], [baseURI wrappedURI], &output_size);
+	return [self stringRepresentationWithName:nil
+                                     mimeType:nil
+                                       format:formatURI
+                                      baseURI:baseURI];
+}
+
+/**
+ *  Turns query results into a string in the specified name.
+ */
+- (NSString *)stringRepresentationWithName:(NSString *)name
+                                   baseURI:(RedlandURI *)baseURI
+{
+	NSParameterAssert(name != nil);
+    return [self stringRepresentationWithName:name
+                                     mimeType:nil   
+                                       format:nil
+                                      baseURI:baseURI];
+
+}
+
+/**
+ *  Turns query results into a string in the specified mimeType.
+ */
+- (NSString *)stringRepresentationWithMimeType:(NSString *)mimeType
+                                       baseURI:(RedlandURI *)baseURI
+{
+	NSParameterAssert(mimeType != nil);
+    return [self stringRepresentationWithName:nil
+                                     mimeType:mimeType
+                                       format:nil
+                                      baseURI:baseURI];
+    
+}
+
+- (NSString *)stringRepresentationWithName:(NSString *)name
+                                  mimeType:(NSString *)mimeType
+                                    format:(RedlandURI *)formatURI
+                                   baseURI:(RedlandURI *)baseURI
+{
+    NSParameterAssert(!(name == nil && formatURI == nil && mimeType == nil));
+    const char *nname = NULL;
+    if (name != nil) {
+        nname = [name UTF8String];
+    }
+    
+    const char *nmimeType = NULL;
+    if (name != nil) {
+        nmimeType = [mimeType UTF8String];
+    }
+    
+    librdf_uri *nformatURI = NULL;
+    if(formatURI != nil){
+        nformatURI = [formatURI wrappedURI];
+    }
+    
+    librdf_uri *nbaseURI = NULL;
+    if(baseURI != nil){
+        nbaseURI = [baseURI wrappedURI];
+    }
+    
+    size_t output_size;
+	unsigned char *output = librdf_query_results_to_counted_string2(wrappedObject,
+                                                                    nname,
+                                                                    nmimeType,
+                                                                    nformatURI,
+                                                                    nbaseURI,
+                                                                    &output_size);
 	if (output != NULL) {
-		return [[NSString alloc] initWithBytesNoCopy:output length:output_size encoding:NSUTF8StringEncoding freeWhenDone:YES];
+		return [[NSString alloc] initWithBytesNoCopy:output
+                                              length:output_size
+                                            encoding:NSUTF8StringEncoding
+                                        freeWhenDone:YES];
 	}
 	
 	return nil;
+
 }
 
 /**
