@@ -411,10 +411,14 @@
 
 /**
  *  Hello World
- *  @return the literal value of the receiver (literal nudes only).
+ *  @return the literal value of the receiver (literal nodes only).
  */
 - (NSString *)literalValue
 {
+	if (![self isLiteral]) {
+		return nil;
+	}
+	
 	size_t length;
 	unsigned char *literal_value;
 	
@@ -427,6 +431,10 @@
  */
 - (RedlandURI *)URIValue
 {
+	if (![self isResource]) {
+		return nil;
+	}
+	
 	librdf_uri *uri_value;
 	uri_value = librdf_node_get_uri(wrappedObject);
 	if (uri_value != NULL) {
@@ -463,7 +471,7 @@
 		uri_value = librdf_new_uri_from_uri(uri_value);
 		return [[RedlandURI alloc] initWithWrappedObject:uri_value];
 	}
-	else return nil;
+	return nil;
 }
 
 /**
