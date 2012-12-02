@@ -143,6 +143,8 @@ RedlandStatement *statement = [RedlandStatement statementWithSubject:subject
 RedlandStreamEnumerator *query = [model enumeratorOfStatementsLike:statement];
 
 RedlandStatement *rslt = [query nextObject];
+// be aware that if literalValue can only be used on literal nodes.
+// object is the object-node of the RedlandStatement that is returned by the query.
 NSString *creator = [rslt.object literalValue];
 NSLog(@"Creator: %@", creator);
 ```
