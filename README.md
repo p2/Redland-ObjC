@@ -106,7 +106,7 @@ NSString *rdfString = [[NSString alloc] initWithContentsOfFile:rdfPath
                                                       encoding:NSUTF8StringEncoding
                                                          error:nil];
 RedlandParser *parser = [RedlandParser parserWithName:RedlandRDFXMLParserName];
-RedlandURI *uri = [RedlandURI URIWithString:@"http://www.smartplatforms.org/terms#"];
+RedlandURI *uri = [RedlandURI URIWithString:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#"];
 RedlandModel *model = [RedlandModel new];
 
 // parse
@@ -117,19 +117,38 @@ RedlandModel *model = [RedlandModel new];
 	NSLog(@"Failed to parse RDF: %@", [exception reason]);
 }
 ```
+example.rdf:
+```xml
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="http://www.w3.org/2001/08/rdf-test/">
+    <dc:creator>Jan Grant</dc:creator>
+    <dc:creator>Dave Beckett</dc:creator>
+    <dc:publisher>
+      <rdf:Description>
+        <dc:title>World Wide Web Consortium</dc:title>
+        <dc:source rdf:resource="http://www.w3.org/"/>
+      </rdf:Description>
+    </dc:publisher>
+  </rdf:Description>
+</rdf:RDF>
+```
 
-Here's how you would query this model for a the ZIP of an address:
+Here's how you would query this model for one of the creators of rdf-test:
 
 ```objective-c
-RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://www.w3.org/2006/vcard/ns#postal-code"];
-RedlandStatement *statement = [RedlandStatement statementWithSubject:model
+RedlandNode *subject = [RedlandNode nodeWithURIString:@"http://www.w3.org/2001/08/rdf-test/"];
+RedlandNode *predicate = [RedlandNode nodeWithURIString:@"http://purl.org/dc/elements/1.1/creator"];
+RedlandStatement *statement = [RedlandStatement statementWithSubject:subject
                                                            predicate:predicate
                                                               object:nil];
 RedlandStreamEnumerator *query = [model enumeratorOfStatementsLike:statement];
 
 RedlandStatement *rslt = [query nextObject];
-NSString *postalCode = [rslt.object literalValue];
-NSLog(@"Postal code: %@", postalCode);
+// be aware that if literalValue can only be used on literal nodes.
+// object is the object-node of the RedlandStatement that is returned by the query.
+NSString *creator = [rslt.object literalValue];
+NSLog(@"Creator: %@", creator);
 ```
 
 I've made a [simple demo app for iOS](https://github.com/p2/RedlandDemo) if you want to see it in action. The demo app contains the framework as a submodule, so just clone the demo repository and hit `Run`.
