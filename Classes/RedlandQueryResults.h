@@ -60,6 +60,8 @@
 - (RedlandQueryResultsEnumerator *)resultEnumerator;
 
 - (NSString *)stringRepresentationWithFormat:(RedlandURI *)formatURI baseURI:(RedlandURI *)baseURI;
+- (NSString *)stringRepresentationWithName:(NSString *)name baseURI:(RedlandURI *)baseURI;
+- (NSString *)stringRepresentationWithMimeType:(NSString *)MimeType baseURI:(RedlandURI *)baseURI;
 
 - (BOOL)isBindings;
 - (BOOL)isBoolean;
