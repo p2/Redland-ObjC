@@ -70,21 +70,23 @@ Then, in your app's **Build Settings**, you need to adjust a few things:
 
 ### For iOS Apps ###
 
+In your app's **Build Phases** under **Link Binary with Libraries**, add these libraries by clicking the [+] button:
+
+* `libredland-ios.a`
+  
+  > After you've added this lib and build your app, Xcode will automatically build the Redland-ObjC project first. As noted above, this will take a few minutes the first time it happens because Xcode cross-compiles the redland C libraries for the first time.
+
+* `libxml2.dylib`
+* `libsqlite3.dylib` (if you use storage)
+
+Now you need to give Xcode some more hints so it can compile your app
+
 * Add this path to your **Header Search Paths**:
   * `"$(BUILT_PRODUCTS_DIR)"` with _recursive_ enabled
-
-* Add this path to your **Library Search Paths**:
-  * `"$(SRCROOT)/Redland-ObjC/Redland-source/Universal"`. The libraries there will be built for `armv7`, `armv7s` and `i386` architectures, so this is perfect for iOS apps. If you know what you do you may use the other _Universal-_ directories as you see fit.
 
 * Add this to **Other Linker Flags**:
   * `-ObjC`. This makes sure categories used in the framework are being correctly loaded. If you forget this flag, your app will crash as soon as you try to use a class method on a Redland object.
 
-Now Xcode knows where to find the Redland headers and libraries, so tell the linker which libraries it needs to link. In your app's **Build Phases** under **Link Binary with Libraries**, add these libraries:
-
-* `libredland-ios.a` This library should show up by clicking the [+] button under your Workspace.
-  > After you've added this lib and build your app, Xcode will automatically build the Redland-ObjC project first. As noted above, this will take a few minutes the first time it happens because Xcode cross-compiles the C libraries.
-* `libraptor2.a`, `librasqal.a` and `librdf.a`. You can drag these three from the file organizer under _Redland Source_ » _Universal_ into the area.
-* `libxml2.dylib`
 
 ### For Mac Apps ###
 

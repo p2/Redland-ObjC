@@ -176,15 +176,15 @@
 		EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
 		EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
+		EE7B1867166BB33A00AAA8A7 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
+		EE7B1868166BB33C00AAA8A7 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
+		EE7B1869166BB33E00AAA8A7 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
+		EEB65C7C166BB18000ADFF79 /* libraptor2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64715BE5CB4004BB6C9 /* libraptor2.a */; };
+		EEB65C7D166BB18300ADFF79 /* librasqal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64815BE5CB4004BB6C9 /* librasqal.a */; };
+		EEB65C7E166BB18C00ADFF79 /* librdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64915BE5CB4004BB6C9 /* librdf.a */; };
 		EEBFED8C15C0A9B600E352C7 /* Redland.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
 		EEBFED9015C0ADBD00E352C7 /* Redland.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Redland.framework */; };
-		EEC9C56715CADED300B7C568 /* librdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64915BE5CB4004BB6C9 /* librdf.a */; };
-		EEC9C56815CB051200B7C568 /* libraptor2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64715BE5CB4004BB6C9 /* libraptor2.a */; };
-		EEC9C56915CB051500B7C568 /* librasqal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64815BE5CB4004BB6C9 /* librasqal.a */; };
 		EEDD45FA162E14EF00ECA308 /* Redland-ObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEDE81BE15BF38C800AC2B64 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
-		EEDE81BF15BF38C800AC2B64 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
-		EEDE81C015BF38C800AC2B64 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
 		EEDE81C715BF4D9D00AC2B64 /* libraptor2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
 		EEDE81C815BF4D9F00AC2B64 /* librasqal.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
 		EEDE81C915BF4DA100AC2B64 /* librdf.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
@@ -462,9 +462,9 @@
 				EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */,
 				EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */,
 				EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */,
-				EEDE81BE15BF38C800AC2B64 /* libraptor2.dylib in Frameworks */,
-				EEDE81BF15BF38C800AC2B64 /* librasqal.dylib in Frameworks */,
-				EEDE81C015BF38C800AC2B64 /* librdf.dylib in Frameworks */,
+				EE7B1867166BB33A00AAA8A7 /* libraptor2.dylib in Frameworks */,
+				EE7B1868166BB33C00AAA8A7 /* librasqal.dylib in Frameworks */,
+				EE7B1869166BB33E00AAA8A7 /* librdf.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +488,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB65C7C166BB18000ADFF79 /* libraptor2.a in Frameworks */,
+				EEB65C7D166BB18300ADFF79 /* librasqal.a in Frameworks */,
+				EEB65C7E166BB18C00ADFF79 /* librdf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,9 +501,6 @@
 				EE555EE315C873B000F26A1A /* libz.dylib in Frameworks */,
 				EE205F2E1602917C0020752E /* libredland-ios.a in Frameworks */,
 				EEE7B4B615C85A2E004D5A68 /* SenTestingKit.framework in Frameworks */,
-				EEC9C56815CB051200B7C568 /* libraptor2.a in Frameworks */,
-				EEC9C56915CB051500B7C568 /* librasqal.a in Frameworks */,
-				EEC9C56715CADED300B7C568 /* librdf.a in Frameworks */,
 				EE555EDB15C86B5700F26A1A /* libxml2.dylib in Frameworks */,
 				EE555EDC15C86B5900F26A1A /* libxslt.1.dylib in Frameworks */,
 			);
@@ -1265,7 +1265,7 @@
 		ED48EB2408BB53BE00ACF14F /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1284,7 +1284,7 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Redland-source/Universal-Mac\"/**";
 				MACH_O_TYPE = mh_dylib;
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Redland;
@@ -1319,7 +1319,7 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Redland-source/Universal-Mac\"/**";
 				MACH_O_TYPE = mh_dylib;
 				OTHER_CFLAGS = "";
 				PRODUCT_NAME = Redland;
@@ -1505,7 +1505,7 @@
 		EE14DAB015C70ED7003B9373 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1524,7 +1524,7 @@
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Redland-source/Universal-Mac/**";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/Redland-source/Universal-Mac\"/**";
 				MACH_O_TYPE = mh_dylib;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Redland;
