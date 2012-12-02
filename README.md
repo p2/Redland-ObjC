@@ -92,13 +92,15 @@ Now you need to give Xcode some more hints so it can compile your app
 
 [coming…]
 
-### Using Redland Objects ###
+
+Using Redland Objects
+---------------------
 
 In whichever class you use the Redland-ObjC objects, you need to include our header:
 
     #import <Redland-ObjC.h>
 
-Here's an example on how you would parse RDF+XML contained in a file `example.xml` from your bundle:
+Here's an example on how you would parse RDF+XML contained in a file `example.xml` in your bundle:
 
 ```objective-c
 NSString *rdfPath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"xml"];
@@ -117,7 +119,8 @@ RedlandModel *model = [RedlandModel new];
 	NSLog(@"Failed to parse RDF: %@", [exception reason]);
 }
 ```
-example.rdf:
+
+example.xml:
 ```xml
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:dc="http://purl.org/dc/elements/1.1/">
