@@ -132,7 +132,7 @@ NSString *postalCode = [rslt.object literalValue];
 NSLog(@"Postal code: %@", postalCode);
 ```
 
-More examples to follow. Hopefully.
+I've made a [simple demo app for iOS](https://github.com/p2/RedlandDemo) if you want to see it in action. The demo app contains the framework as a submodule, so just clone the demo repository and hit `Run`.
 
 
 Building the Documentation
