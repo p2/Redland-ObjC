@@ -79,13 +79,21 @@ In your app's **Build Phases** under **Link Binary with Libraries**, add these l
 * `libxml2.dylib`
 * `libsqlite3.dylib` (if you use storage)
 
-Now you need to give Xcode some more hints so it can compile your app
+Now you need to give Xcode some more hints so it can compile your app:
 
 * Add this path to your **Header Search Paths**:
-  * `"$(BUILT_PRODUCTS_DIR)"` with _recursive_ enabled
+
+    `"$(PROJECT_DIR)/.."` with _recursive_ enabled  
+    This should point to the directory where Redland-ObjC resides, I'm assuming here it's in the same parent directory as your app.
+
+* Add this path to **Library Search Paths**:
+
+    `"$(TARGET_BUILD_DIR)"`
 
 * Add this to **Other Linker Flags**:
-  * `-ObjC`. This makes sure categories used in the framework are being correctly loaded. If you forget this flag, your app will crash as soon as you try to use a class method on a Redland object.
+ 
+    `-ObjC`  
+    This makes sure categories used in the framework are being correctly loaded. If you forget this flag, your app will crash as soon as you try to use a class method on a Redland object.
 
 
 ### For Mac Apps ###
