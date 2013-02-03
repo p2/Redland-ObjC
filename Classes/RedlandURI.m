@@ -29,6 +29,8 @@
 
 #pragma mark - Init and Cleanup
 /**
+ *  Convenience allocator.
+ *  @param aString An URI-string
  *  @return a new RedlandURI instance initialized from an NSString.
  */
 + (RedlandURI *)URIWithString:(NSString *)aString
@@ -37,6 +39,8 @@
 }
 
 /**
+ *  Convenience allocator.
+ *  @param aURL The URL to use as an NSURL object
  *  @return a new RedlandURI instance initialized from the absoluteString of the given NSURL.
  */
 + (RedlandURI *)URIWithURL:(NSURL *)aURL
@@ -47,6 +51,7 @@
 
 /**
  *  Initializes the receiver from an NSString; the designated initializer.
+ *  @param aString An URI-string
  */
 - (id)initWithString:(NSString *)aString
 {
@@ -68,6 +73,7 @@
 
 /**
  *  Initializes the receiver with the absolute string of a URL.
+ *  @param aURL An URL
  */
 - (id)initWithURL:(NSURL *)aURL
 {
@@ -164,17 +170,22 @@
 
 /**
  *  Returns YES if otherURI is equal to the receiver.
+ *  @param otherURI The other instance to compare to
  */
 - (BOOL)isEqualToURI:(RedlandURI *)otherURI
 {
 	if (!otherURI) {
 		return NO;
 	}
+	if (self == otherURI) {
+		return YES;
+	}
 	return librdf_uri_equals(wrappedObject, [otherURI wrappedURI]);
 }
 
 /**
- *  Overridden to return [self isEqualToURI:otherObject] if otherObject is also a kind of RedlandURI; in all other cases, NO is returned.
+ *  Overridden to return `isEqualToURI:` if otherObject is also a kind of RedlandURI; in all other cases, NO is returned.
+ *  @param otherObject The object to compare against
  */
 - (BOOL)isEqual:(id)otherObject
 {

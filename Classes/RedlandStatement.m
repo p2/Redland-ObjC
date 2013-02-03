@@ -38,6 +38,9 @@
 #pragma mark - Init and Cleanup
 /**
  *  Convenience method which returns an autoreleased statement initialized using the designated initializer.
+ *  @param subjectNode The subject for the statement
+ *  @param predicateNode The predicate
+ *  @param objectNode The object
  */
 + (RedlandStatement *)statementWithSubject:(id)subjectNode predicate:(id)predicateNode object:(id)objectNode
 {

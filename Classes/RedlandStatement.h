@@ -36,9 +36,20 @@
  */
 @interface RedlandStatement : RedlandWrappedObject <NSCopying, NSCoding>
 
-@property (nonatomic, readonly, strong) RedlandNode *subject;			///< The subject, may be nil
-@property (nonatomic, readonly, strong) RedlandNode *predicate;			///< The predicate, may be nil
-@property (nonatomic, readonly, strong) RedlandNode *object;			///< The object, may be nil
+/**
+ *  The subject, may be nil.
+ */
+@property (nonatomic, readonly, strong) RedlandNode *subject;
+
+/**
+ *  The predicate, may be nil.
+ */
+@property (nonatomic, readonly, strong) RedlandNode *predicate;
+
+/**
+ *  The object, may be nil.
+ */
+@property (nonatomic, readonly, strong) RedlandNode *object;
 
 + (RedlandStatement *)statementWithSubject:(id)subject predicate:(id)predicate object:(id)object;
 

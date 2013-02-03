@@ -35,7 +35,9 @@
 }
 
 /**
- *  The designated initializer
+ *  The designated initializer.
+ *  @param aStream The stream to enumerate over
+ *  @param aModifier The modifier that determines over which parts of the stream the receiver iterates
  */
 - (id)initWithRedlandStream:(RedlandStream *)aStream modifier:(RedlandStreamEnumeratorModifier)aModifier
 {

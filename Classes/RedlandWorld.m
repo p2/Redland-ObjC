@@ -40,8 +40,8 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
 
 @interface RedlandWorld ()
 
-@property (nonatomic, copy) NSError *lastError;							///< Most recent error
-@property (nonatomic, strong) NSMutableArray *storedErrors;				///< All so far unhandled errors
+@property (nonatomic, copy) NSError *lastError;							//< Most recent error
+@property (nonatomic, strong) NSMutableArray *storedErrors;				//< All so far unhandled errors
 
 @end
 

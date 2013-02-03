@@ -160,14 +160,14 @@ I've made a [simple demo app for iOS](https://github.com/p2/RedlandDemo) if you 
 Building the Documentation
 --------------------------
 
-The code is documented using [appledoc]. This allows you to integrate the documentation right into Xcode, meaning you can then `ALT` + click Redland classes and methods to see what they do.  
-If you want to compile the documentation, it's best if you grab appledoc from GitHub, build and install it and then run it against the code:
+The code is documented using [appledoc]. This allows you to integrate the documentation right into Xcode, meaning you can then `ALT` - click Redland classes and methods to see what they do.  
+If you want to compile the documentation, it's best if you grab appledoc from GitHub directly:
 
     $ git clone git://github.com/tomaz/appledoc.git
     $ cd appledoc
     $ ./install-appledoc.sh -b /usr/local/bin -t ~/Library/Application\ Support/appledoc
-    $ cd ..
-    $ appledoc .
+
+Afterwards just select the **Redland Documentation** target in Xcode and hit `CMD` + `B`. This will build and install the documentation.
 
 > NOTE: appledoc currently does not support the `///<` token, so some property documentations are shifted and thus off!
 
