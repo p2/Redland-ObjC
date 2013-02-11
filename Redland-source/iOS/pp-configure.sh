@@ -17,7 +17,7 @@
 #	This script has last been tested with Xcode 4.4 and 4.5-DP4 on OS X 10.8
 #
 
-export IPHONEOS_DEPLOYMENT_TARGET="4.0"
+export IPHONEOS_DEPLOYMENT_TARGET="4.3"
 
 # extract command line arguments
 archs=()

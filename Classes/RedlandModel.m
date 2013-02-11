@@ -126,23 +126,15 @@
 	NSParameterAssert(aStatement != nil);
 	statement = librdf_new_statement_from_statement([aStatement wrappedStatement]);
 	if (statement == NULL) {
-		NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:
-								   aStatement, @"statement",
-								   self, @"model",
-								   nil];
 		@throw [RedlandException exceptionWithName:RedlandExceptionName
 											reason:@"unable to copy statement"
-										  userInfo:errorDict];
+										  userInfo:@{ @"statement": aStatement, @"model": self }];
 	}
 	if (librdf_model_add_statement(wrappedObject, statement) != 0) {
 		librdf_free_statement(statement);
-		NSDictionary *errorDict = [NSDictionary dictionaryWithObjectsAndKeys:
-								   aStatement, @"statement",
-								   self, @"model",
-								   nil];
 		@throw [RedlandException exceptionWithName:RedlandExceptionName
 											reason:@"librdf_model_add_statement failed"
-										  userInfo:errorDict];
+										  userInfo:@{ @"statement": aStatement, @"model": self }];
 	}
 }
 

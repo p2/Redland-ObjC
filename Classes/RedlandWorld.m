@@ -214,7 +214,7 @@ static int redland_log_handler(void *user_data, librdf_log_message *message)
     errorArray = [[NSArray alloc] initWithArray:_storedErrors];
     exception = [RedlandException exceptionWithName:RedlandExceptionName
                                              reason:@"Redland Exception"
-                                           userInfo:[NSDictionary dictionaryWithObject:errorArray forKey:@"storedErrors"]];
+                                           userInfo:@{ @"storedErrors": errorArray }];
     [_storedErrors removeAllObjects];
     [exception raise];
 }
