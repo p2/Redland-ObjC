@@ -1,14 +1,3 @@
-    STATUS:
-    [x]  C libraries cross-compile successfully (armv6, armv7)
-    [x]  Mac build succeeds
-    [x]  Mac unit tests succeed
-    [x]  iOS build succeeds
-    [x]  iOS unit tests succeed
-    [x]  Deprecated librdf calls have been replaced
-    [ ]  Mac framework has been used in a sample application
-    [x]  iOS framework has been used in a sample app
-
-
 Redland Objective-C RDF Wrapper
 ===============================
 
@@ -40,22 +29,25 @@ Now whenever there has been an update to the framework and you want to get the l
 Building the C libraries
 ------------------------
 
-> **Note:** When building the C libraries with Xcode, the progress bar will appear stalled while saying _Running 1 of 1 custom shell scripts_, which can take a few minutes. Just be patient, the compilation will go through or abort with an error.
+> **Note:** When building the C libraries with Xcode, the progress bar will appear stalled while saying _Running 1 of 1 custom shell scripts_, which can take some minutes. Just be patient, the compilation will go through or abort with an error.
 
-The first time you build the framework, the C libraries will automatically be built, so you need not worry about this. But for the curious mind:
+The first time you build the framework, the C libraries will automatically be built, so you need not worry about this. Compiling requires `pkg-config` which you can most easily install via [Homebrew]:
 
-There is a Python-script that downloads and (cross-)compiles [raptor2], [rasqal] and [librdf], the components you need. The script needs you to have Xcode 4.5 and the iOS SDK 5.1 or later installed. Make sure you install the command line tools from within Xcode. Then just choose the **Redland C Library** target and hit **Run**. Alternatively, open the Terminal and execute the script manually:
+    $ brew install pkg-config
+
+
+### How cross compiling works
+
+There is a Python-script that downloads and (cross-)compiles libxml2, [raptor2], [rasqal] and [librdf], the components you need. The script needs you to have Xcode 4.5 and the iOS SDK 5.1 or later installed. Make sure you have installed the command line tools, you do that from within Xcode » Preferences » Downloads » Components.
+
+Just choose the **Redland C Library** target and hit **Run**. Alternatively, open the Terminal and execute the script manually:
 
     $ cd Redland-ObjC/Redland-source
     $ ./cross-compile.py
 
-Compiling requires `pkg-config` which you can most easily install via [Homebrew]:
+This will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py` if you dare.
 
-    $ brew install pkg-config
-
-As of Xcode 4.6, this will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py`.
-
-It will also download and build **libxml2** version 2.7.8 because pkg-config and the system-supplied lxml don't play together very well. We can't use version 2.9.0 because that version contains a bug and is not compile-able on OS X.
+The process will also download and build **libxml2** version 2.7.8 despite it being included in OS X. This is done because pkg-config and the system-supplied lxml don't play together very well. We can't use version libxml 2.9.0 because that version contains a bug and is not compile-able on OS X.
 
 [raptor2]: http://librdf.org/raptor/
 [rasqal]: http://librdf.org/rasqal/
@@ -83,16 +75,17 @@ In your app's **Build Phases** under **Link Binary with Libraries**, add these l
 
 Now you need to give Xcode some more hints so it can compile your app
 
-* Add this path to your **Header Search Paths**:
-  * `"$(BUILT_PRODUCTS_DIR)"` with _recursive_ enabled
+#### Add this path to your `Header Search Paths` and `User Header Search Paths`:
 
-* Add this to **Other Linker Flags**:
-  * `-ObjC`. This makes sure categories used in the framework are being correctly loaded. If you forget this flag, your app will crash as soon as you try to use a class method on a Redland object.
+`"$(PROJECT_DIR)"` with _recursive_ enabled.  
 
+> This assumes that the `Redland-ObjC` directory is inside your app directory, adjust as needed.
 
-### For Mac Apps ###
+#### Add this to `Other Linker Flags`:
 
-[coming…]
+`-ObjC`  
+
+> This makes sure categories used in the framework are being correctly loaded. If you forget this flag, your app will crash as soon as you try to use a class method on a Redland object.
 
 
 Using Redland Objects
