@@ -53,7 +53,9 @@ Compiling requires `pkg-config` which you can most easily install via [Homebrew]
 
     $ brew install pkg-config
 
-As of Xcode 4.5, this will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py`.
+As of Xcode 4.6, this will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py`.
+
+It will also download and build **libxml2** version 2.7.8 because pkg-config and the system-supplied lxml don't play together very well. We can't use version 2.9.0 because that version contains a bug and is not compile-able on OS X.
 
 [raptor2]: http://librdf.org/raptor/
 [rasqal]: http://librdf.org/rasqal/

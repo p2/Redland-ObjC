@@ -3,10 +3,10 @@
 ##
 
 SOURCES = [
-	'http://download.librdf.org/source/raptor2-2.0.8.tar.gz',
+	'ftp://xmlsoft.org/libxml2/libxml2-sources-2.7.8.tar.gz',
+	'http://download.librdf.org/source/raptor2-2.0.9.tar.gz',
 	'http://download.librdf.org/source/rasqal-0.9.30.tar.gz',
 	'http://download.librdf.org/source/redland-1.0.16.tar.gz',
-#	'http://curl.haxx.se/download/curl-7.27.0.tar.gz',
 ]
 
 ARCHS = {
@@ -16,15 +16,12 @@ ARCHS = {
 }
 
 FLAGS = {
-	'raptor2-2.0.8': {
+	'raptor2-2.0.9': {
 		'*': ['--with-www=none'],
 	},
 	'redland-1.0.16': {
 		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
 	},
-#	'curl-7.27.0': {
-#		'*': ['--without-ssl', '--without-libssh2', '--without-ca-bundle', '--without-ldap', '--disable-ldap'],
-#	},
 }
 
 FIX_DEP_LIBS = {
