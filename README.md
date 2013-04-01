@@ -45,7 +45,7 @@ Just choose the **Redland C Library** target and hit **Run**. Alternatively, ope
     $ cd Redland-ObjC/Redland-source
     $ ./cross-compile.py
 
-This will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py` if you dare.
+This will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py` if you dare. The script will only build the missing C libraries, if you want to force a new build run the target **Redland PURGE C Library** or run the script `Redland-source/start-over.sh`.
 
 The process will also download and build **libxml2** version 2.7.8 despite it being included in OS X. This is done because pkg-config and the system-supplied lxml don't play together very well. We can't use version libxml 2.9.0 because that version contains a bug and is not compile-able on OS X.
 

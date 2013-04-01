@@ -41,6 +41,17 @@
 			name = "Redland C Library";
 			productName = "Build C Library";
 		};
+		EE3F18A217093D5C0016B7EB /* Redland PURGE C Library */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EE3F18A317093D5C0016B7EB /* Build configuration list for PBXAggregateTarget "Redland PURGE C Library" */;
+			buildPhases = (
+				EE3F18A717093D620016B7EB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Redland PURGE C Library";
+			productName = "Redland PURGE C Library";
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -1020,7 +1031,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = ED48EB3308BB53BE00ACF14F /* Build configuration list for PBXProject "Redland" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1041,6 +1052,7 @@
 				EDEDCDFA07397483006DB0D1 /* Redland Documentation */,
 				ED8215FE07397F4A001CC6CB /* Release */,
 				EE1DDDEC15BED96100882BDA /* Redland C Library */,
+				EE3F18A217093D5C0016B7EB /* Redland PURGE C Library */,
 			);
 		};
 /* End PBXProject section */
@@ -1115,6 +1127,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./cross-compile.py";
+		};
+		EE3F18A717093D620016B7EB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd $SRCROOT/Redland-source\n./start-over.sh";
 		};
 		EEE7B45C15C84978004D5A68 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1642,6 +1667,30 @@
 			};
 			name = Deployment;
 		};
+		EE3F18A417093D5C0016B7EB /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Development;
+		};
+		EE3F18A517093D5C0016B7EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EE3F18A617093D5C0016B7EB /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Deployment;
+		};
 		EEE7B47015C84979004D5A68 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1902,6 +1951,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Development;
+		};
+		EE3F18A317093D5C0016B7EB /* Build configuration list for PBXAggregateTarget "Redland PURGE C Library" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE3F18A417093D5C0016B7EB /* Development */,
+				EE3F18A517093D5C0016B7EB /* Debug */,
+				EE3F18A617093D5C0016B7EB /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		EEE7B47615C84979004D5A68 /* Build configuration list for PBXNativeTarget "redland-ios" */ = {
 			isa = XCConfigurationList;
