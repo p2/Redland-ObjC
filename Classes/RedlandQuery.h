@@ -26,7 +26,7 @@
 #import <redland.h>
 #import "RedlandWrappedObject.h"
 
-extern NSString * const RedlandRDQLLanguageName;				///< The name of the RDQL query language
+extern NSString * const RedlandRDQLLanguageName;				///< The name of the RDQL query language (no longer supported as of Jan 2013!)
 extern NSString * const RedlandSPARQLLanguageName;				///< The name of the SPARQL query language
 
 @class RedlandURI, RedlandQueryResults, RedlandModel;

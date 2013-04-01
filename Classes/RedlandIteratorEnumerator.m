@@ -32,7 +32,9 @@
 
 
 /**
- *  Desginated initializer
+ *  Desginated initializer.
+ *  @param anIterator The iterator to enumerate over
+ *  @param aClass The class of the objects we should be iterating over
  */
 - (id)initWithRedlandIterator:(RedlandIterator *)anIterator objectClass:(Class)aClass
 {

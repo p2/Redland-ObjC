@@ -36,7 +36,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 
 @implementation QueryTests
 
-+ (void)initialize
++ (void)setUp
 {
     if (RDFXMLTestData == nil) {
         NSBundle *bundle = [NSBundle bundleForClass:self];
@@ -66,7 +66,7 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 	NSString *queryString = @"This is not a valid query.";
 	RedlandQuery *query;
 	
-	query = [RedlandQuery queryWithLanguageName:RedlandRDQLLanguageName
+	query = [RedlandQuery queryWithLanguageName:RedlandSPARQLLanguageName
 									queryString:queryString baseURI:nil];
 	STAssertThrowsSpecific([query executeOnModel:model], RedlandException, nil);
 }
@@ -80,8 +80,8 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
     
 	STAssertTrue([model size] > 0, nil);
 	
-    queryString = @"SELECT ?s ?p ?o WHERE (?s ?p ?o)";
-    STAssertNoThrow(query = [RedlandQuery queryWithLanguageName:RedlandRDQLLanguageName queryString:queryString baseURI:nil], nil);
+    queryString = @"SELECT ?s ?p ?o WHERE { ?s ?p ?o }";
+    STAssertNoThrow(query = [RedlandQuery queryWithLanguageName:RedlandSPARQLLanguageName queryString:queryString baseURI:nil], nil);
     STAssertNotNil(query, nil);
     STAssertNoThrow(results = [query executeOnModel:model], nil);
     STAssertNotNil(results, nil);
@@ -101,8 +101,8 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
     
 	STAssertTrue([model size] > 0, nil);
 	
-    queryString = @"SELECT ?s ?o WHERE (?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ?o)";
-    STAssertNoThrow(query = [RedlandQuery queryWithLanguageName:RedlandRDQLLanguageName queryString:queryString baseURI:nil], nil);
+    queryString = @"SELECT ?s ?o WHERE { ?s a ?o }";
+    STAssertNoThrow(query = [RedlandQuery queryWithLanguageName:RedlandSPARQLLanguageName queryString:queryString baseURI:nil], nil);
     STAssertNotNil(query, nil);
     STAssertNoThrow(results = [query executeOnModel:model], nil);
     STAssertNotNil(results, nil);
@@ -112,5 +112,6 @@ static NSString * const RDFXMLTestDataLocation = @"http://www.w3.org/1999/02/22-
 		STAssertTrue([allResults count] > 0, nil);
 	}
 }
+
 
 @end

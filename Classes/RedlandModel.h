@@ -65,12 +65,12 @@
 - (RedlandStream *)streamOfStatementsLike:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode;
 - (RedlandStream *)streamOfAllStatementsWithContext:(RedlandNode *)contextNode;
 
-- (RedlandIterator *)iteratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode;			///< Use -[RedlandModel enumeratorOfSourcesWithArc:target:] instead.
-- (RedlandIterator *)iteratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode;		///< Use -[RedlandModel enumeratorOfArcsWithSource:target:] instead.
-- (RedlandIterator *)iteratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode;			///< Use -[RedlandModel enumeratorOfTargetsWithSource:arc:] instead.
-- (RedlandIterator *)iteratorOfArcsIn:(RedlandNode *)targetNode;												///< Use -[RedlandModel enumeratorOfArcsIn:] instead.
-- (RedlandIterator *)iteratorOfArcsOut:(RedlandNode *)sourceNode;												///< Use -[RedlandModel enumeratorOfArcsOut:] instead.
-- (RedlandIterator *)contextIterator;																			///< Use -[RedlandModel contextEnumerator] instead.
+- (RedlandIterator *)iteratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode;			//< Use -[RedlandModel enumeratorOfSourcesWithArc:target:] instead.
+- (RedlandIterator *)iteratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode;		//< Use -[RedlandModel enumeratorOfArcsWithSource:target:] instead.
+- (RedlandIterator *)iteratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode;			//< Use -[RedlandModel enumeratorOfTargetsWithSource:arc:] instead.
+- (RedlandIterator *)iteratorOfArcsIn:(RedlandNode *)targetNode;												//< Use -[RedlandModel enumeratorOfArcsIn:] instead.
+- (RedlandIterator *)iteratorOfArcsOut:(RedlandNode *)sourceNode;												//< Use -[RedlandModel enumeratorOfArcsOut:] instead.
+- (RedlandIterator *)contextIterator;																			//< Use -[RedlandModel contextEnumerator] instead.
 
 - (RedlandNode *)sourceWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode;
 - (RedlandNode *)arcWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode;

@@ -29,7 +29,8 @@
 
 /**
  *  The designated initializer.
-	Initialises the receiver to use the given pointer as its underlying wrapped object. The receiver is considered the owner of the object.
+ *
+ *  Initialises the receiver to use the given pointer as its underlying wrapped object. The receiver is considered the owner of the object.
  *  @param object The pointer to the librdf object
  */
 - (id)initWithWrappedObject:(void *)object

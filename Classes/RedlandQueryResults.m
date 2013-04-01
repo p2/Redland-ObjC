@@ -28,7 +28,7 @@
 #import "RedlandQueryResultsEnumerator.h"
 #import "RedlandURI.h"
 
-/*! SPARQL Variable Binding Results XML Format (see http://www.w3.org/TR/2004/WD-rdf-sparql-XMLres-20041221/) */
+/* SPARQL Variable Binding Results XML Format (see http://www.w3.org/TR/2004/WD-rdf-sparql-XMLres-20041221/) */
 RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 @implementation RedlandQueryResults

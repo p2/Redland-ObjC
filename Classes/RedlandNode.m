@@ -68,6 +68,7 @@
 
 /**
  *  @return an autoreleased RedlandResourceNode representing a resource with the given URI.
+ *  @param aURI The URI as a RedlandURI.
  */
 + (id)nodeWithURI:(RedlandURI *)aURI
 {
@@ -85,6 +86,7 @@
 
 
 /**
+ *  @param anID The blank node ID. If nil, a new ID is generated.
  *  @return an autoreleased RedlandNode with the specified node ID.
  */
 + (id)nodeWithBlankID:(NSString *)anID

@@ -25,7 +25,7 @@
 
 #import "RedlandModel.h"
 
-@class RedlandNode, RedlandStatement, RedlandStreamEnumerator, RedlandIteratorEnumerator, RedlandURI;
+@class RedlandNode, RedlandStatement, RedlandStreamEnumerator;
 
 
 @interface RedlandModel (Convenience)
