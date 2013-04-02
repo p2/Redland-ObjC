@@ -77,11 +77,7 @@ Now you need to give Xcode some more hints so it can compile your app
 
 #### Add this path to your `Header Search Paths` and `User Header Search Paths`:
 
-`"$(PROJECT_DIR)"` with _recursive_ enabled.
-
-#### Add this path to `Library Search Paths`:
-
-`"$(TARGET_BUILD_DIR)"`
+`"$(PROJECT_DIR)"` with _recursive_ enabled.  
 
 > This assumes that the `Redland-ObjC` directory is inside your app directory, adjust as needed.
 
