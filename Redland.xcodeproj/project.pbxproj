@@ -394,7 +394,6 @@
 		EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandIteratorEnumerator.m; sourceTree = "<group>"; };
 		EDBA0E4807379BDD00610CB1 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
 		EE0CB61A15BDD0AD004BB6C9 /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
-		EE0CB61B15BDD0AD004BB6C9 /* rasqal-0.9.29.patch */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rasqal-0.9.29.patch"; sourceTree = "<group>"; };
 		EE0CB61C15BDD0AD004BB6C9 /* cross-compile.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile.py"; sourceTree = "<group>"; };
 		EE0CB62615BE4AF7004BB6C9 /* librdf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = librdf.h; sourceTree = "<group>"; };
 		EE0CB62715BE4AF7004BB6C9 /* rdf_concepts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rdf_concepts.h; sourceTree = "<group>"; };
@@ -680,7 +679,6 @@
 			isa = PBXGroup;
 			children = (
 				EE0CB61A15BDD0AD004BB6C9 /* pp-configure.sh */,
-				EE0CB61B15BDD0AD004BB6C9 /* rasqal-0.9.29.patch */,
 				EE0CB61F15BDD128004BB6C9 /* Headers */,
 			);
 			path = iOS;
@@ -1960,6 +1958,7 @@
 				EE3F18A617093D5C0016B7EB /* Deployment */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
 		};
 		EEE7B47615C84979004D5A68 /* Build configuration list for PBXNativeTarget "redland-ios" */ = {
 			isa = XCConfigurationList;
