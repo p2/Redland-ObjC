@@ -60,6 +60,9 @@
 
 - (BOOL)containsContext:(RedlandNode *)contextNode;
 
+- (RedlandModel *)submodelForSubject:(RedlandNode *)aSubject;
+- (NSArray *)statementsLike:(RedlandStatement *)aStatement withDescendants:(BOOL)recursive;
+
 - (RedlandStream *)statementStream;
 - (RedlandStream *)streamOfStatementsLike:(RedlandStatement *)aStatement;
 - (RedlandStream *)streamOfStatementsLike:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode;

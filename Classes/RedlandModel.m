@@ -105,7 +105,8 @@
 /**
  *  Returns the number of statements in the receiver.
  *  @return The number of statements in the model, or a negative value on failure.
- *  @warning Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually.
+ *  @warning Not all stores support this function. If you absolutely need an accurate size, you can enumerate the statements manually. Also, for submodels
+ *  with the same store this still returns the size of the parent model.
  */
 - (int)size
 {
@@ -239,6 +240,64 @@
 											reason:@"librdf_model_context_remove_statements failed"
 										  userInfo:nil];
 	}
+}
+
+
+
+#pragma mark - Model Handling
+/**
+ *  Creates a sub-model from triples found in the receiver that relate to the given subject node.
+ *  @param aSubject The subject node for which to retrieve triples
+ *  @return A RedlandModel instance or nil if no subject was provided
+ */
+- (RedlandModel *)submodelForSubject:(RedlandNode *)aSubject
+{
+	if (!aSubject) {
+		return nil;
+	}
+	
+	RedlandModel *submodel = [RedlandModel modelWithStorage:[RedlandStorage new]];
+	RedlandStatement *query = [RedlandStatement statementWithSubject:aSubject predicate:nil object:nil];
+	for (RedlandStatement *statement in [self statementsLike:query withDescendants:YES]) {
+		[submodel addStatement:statement];
+	}
+	
+	return submodel;
+}
+
+/**
+ *  Returns all statements in the receiver that match the given statement, recursively if desired.
+ *
+ *  This method allows for recursive retrieval, i.e. it also returns nodes that as subject have the object of previously found triples.
+ *  @param aStatement The statement/triple to match against
+ *  @param descendants BOOL on whether to also retrieve descendant nodes
+ *  @return An array full of matching RedlandStatement instances or nil if no statement was provided
+ */
+- (NSArray *)statementsLike:(RedlandStatement *)aStatement withDescendants:(BOOL)descendants
+{
+	if (!aStatement) {
+		return nil;
+	}
+	
+	RedlandStreamEnumerator *query = [self enumeratorOfStatementsLike:aStatement];
+	
+	// retrieve all statements
+	NSMutableArray *arr = [NSMutableArray array];
+	RedlandStatement *rslt = nil;
+	while ((rslt = [query nextObject])) {
+		[arr addObject:rslt];
+		
+		// recurse
+		if (descendants && rslt.object) {
+			RedlandStatement *substatement = [RedlandStatement statementWithSubject:rslt.object predicate:nil object:nil];
+			NSArray *rec = [self statementsLike:substatement withDescendants:YES];
+			if ([rec count] > 0) {
+				[arr addObjectsFromArray:rec];
+			}
+		}
+	}
+	
+	return [arr copy];
 }
 
 

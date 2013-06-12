@@ -32,6 +32,7 @@
  */
 @interface RedlandNode (Convenience)
 
++ (RedlandNode *)typeNode;
 + (RedlandNode *)nodeWithURL:(NSURL *)aURL;
 + (RedlandNode *)nodeWithLiteralInt:(int)anInt;
 + (RedlandNode *)nodeWithLiteralFloat:(float)aFloat;

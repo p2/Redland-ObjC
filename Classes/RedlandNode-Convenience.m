@@ -32,6 +32,14 @@
 
 #pragma mark - Allocators
 /**
+ *  A node representing the type, i.e. "a" or "rdf:type" or "http://www.w3.org/1999/02/22-rdf-syntax-ns#type".
+ */
++ (RedlandNode *)typeNode
+{
+	return [RedlandNode nodeWithURIString:@"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"];
+}
+
+/**
  *  Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
  *  @warning Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
  */

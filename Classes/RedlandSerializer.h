@@ -40,7 +40,9 @@ extern NSString * const RedlandRSS10Serializer;						///< The name of the RSS 1.
 
 
 /**
- *  A serializer turns a RedlandModel into a serialized format like RDF/XML or NTriples. Wraps librdf_serializer.
+ *  A serializer turns a RedlandModel into a serialized format like RDF/XML or NTriples.
+ *
+ *  Wraps librdf_serializer. It seems you should use a new serializer for every model that you want to serialize because of namespace caching.
  */
 @interface RedlandSerializer : RedlandWrappedObject
 
