@@ -4,6 +4,8 @@ Redland Objective-C RDF Wrapper
 This projects is a resurrection of Rene Puls' Objective-C wrapper for the [Redland C libraries][librdf] for **Mac**, with the addition of a static library
 target suitable for **iOS**. The code now requires **Automatic Reference Counting** (ARC) to be enabled.
 
+The **documentation** is now available at [http://p2.github.io/Redland-ObjC/]()
+
 [git]: http://git-scm.com
 
 
@@ -110,7 +112,6 @@ For this reason all iOS header files in the framework are on project level only.
 project directory instead, as instructed above.
 
 
-
 Using Redland Objects
 ---------------------
 
@@ -179,7 +180,7 @@ so just clone the demo repository and hit `Run`.
 Building the Documentation
 --------------------------
 
-The code is documented using [appledoc]. This allows you to integrate the documentation right into Xcode, meaning you can then `ALT` - click Redland classes
+The code is documented using [appledoc] and available on [http://p2.github.io/Redland-ObjC/](). Appledoc allows you to integrate the documentation right into Xcode, meaning you can then `ALT` - click Redland classes
 and methods to see what they do.  
 If you want to compile the documentation, it's best if you grab appledoc from GitHub directly:
 
@@ -187,11 +188,13 @@ If you want to compile the documentation, it's best if you grab appledoc from Gi
     $ cd appledoc
     $ ./install-appledoc.sh -b /usr/local/bin -t ~/Library/Application\ Support/appledoc
 
-Afterwards just select the **Redland Documentation** target in Xcode and hit `CMD` + `B`. This will build and install the documentation.
+> Note that this assumes that you have write permissions for `/usr/local`, if not you may need to issue this command as root with `sudo`.
+
+Afterwards just select the **Redland Documentation** target in Xcode and hit `CMD` + `B`. This will build and install the documentation, after which it will be available from within Xcode. To build manually you do:
+
+    $ appledoc .
 
 > NOTE: appledoc currently does not support the `///<` token, so some property documentations are shifted and thus off!
 
-Note that this assumes that you have write permissions for `/usr/local`, if not you may need to issue this command as root with `sudo`. The documentation is
-now available from within Xcode.
 
 [appledoc]: http://gentlebytes.com/appledoc/
