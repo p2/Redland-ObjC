@@ -76,6 +76,10 @@
 #pragma mark - Finding Sources
 /**
  *  Returns an enumerator of all sources in the receiver that have the given arcNode, targetNode, and contextNode.
+ *  @param arcNode The node to use as arc/predicate
+ *  @param targetNode The node to use as target/object
+ *  @param contextNode The node to use as context
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -87,6 +91,9 @@
 
 /**
  *  Returns an enumerator of all sources in the receiver that have the given arcNode and targetNode.
+ *  @param arcNode The node to use as arc/predicate
+ *  @param targetNode The node to use as target/object
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfSourcesWithArc:(RedlandNode *)arcNode target:(RedlandNode *)targetNode
 {
@@ -99,6 +106,10 @@
 #pragma mark - Finding Arcs
 /**
  *  Returns an enumerator of all arcs in the receiver with the given sourceNode, targetNode, and context.
+ *  @param sourceNode The node to use as source/subject
+ *  @param targetNode The node to use as target/object
+ *  @param contextNode The node to use as context
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -110,6 +121,9 @@
 
 /**
  *  Returns an enumerator of all arcs in the receiver with the given sourceNode and targetNode.
+ *  @param sourceNode The node to use as source/subject
+ *  @param targetNode The node to use as target/object
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfArcsWithSource:(RedlandNode *)sourceNode target:(RedlandNode *)targetNode
 {
@@ -122,6 +136,10 @@
 #pragma mark - Finding Targets
 /**
  *  Returns an enumerator of all targets in the receiver with the given sourceNode, arcNode, and contextNode.
+ *  @param sourceNode The node to use as source/subject
+ *  @param arcNode The node to use as arc/predicate
+ *  @param contextNode The node to use as context
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode context:(RedlandNode *)contextNode
 {
@@ -133,6 +151,9 @@
 
 /**
  *  Returns an enumerator of all targets in the receiver with the given sourceNode and arcNode.
+ *  @param sourceNode The node to use as source/subject
+ *  @param arcNode The node to use as arc/predicate
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfTargetsWithSource:(RedlandNode *)sourceNode arc:(RedlandNode *)arcNode
 {
@@ -145,6 +166,9 @@
 #pragma mark - Finding Arcs
 /**
  *  Returns an enumerator of all arcs going into targetNode in context contextNode.
+ *  @param targetNode The node to use as target/object
+ *  @param contextNode The node to use as context
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfArcsIn:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -156,6 +180,8 @@
 
 /**
  *  Returns an enumerator of all arcs going into targetNode.
+ *  @param targetNode The node to use as target/object
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfArcsIn:(RedlandNode *)targetNode
 {
@@ -166,6 +192,9 @@
 
 /**
  *  Returns an enumerator of all arcs coming out of sourceNode in context contextNode.
+ *  @param targetNode The node to use as subject (!)
+ *  @param contextNode The node to use as context
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)enumeratorOfArcsOut:(RedlandNode *)targetNode context:(RedlandNode *)contextNode
 {
@@ -189,6 +218,7 @@
 #pragma mark - Misc
 /**
  *  Returns an NSEnumerator of all contexts in the receiver.
+ *  @return An NSEnumerator
  */
 - (NSEnumerator *)contextEnumerator;
 {

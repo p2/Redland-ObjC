@@ -87,7 +87,9 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 #pragma mark - Values
 /**
- *  @return Returns the current value of the binding with the given name.
+ *  Returns the current value of the binding with the given name.
+ *  @param aName NSString
+ *  @return A RedlandNode object
  */
 - (RedlandNode *)valueOfBinding:(NSString *)aName
 {
@@ -101,7 +103,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns the current value of the binding at the given index.
+ *  Returns the current value of the binding at the given index.
+ *  @return A RedlandNode object
  */
 - (RedlandNode *)valueOfBindingAtIndex:(int)offset
 {
@@ -113,7 +116,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns the name of the binding at the given index.
+ *  Returns the name of the binding at the given index.
+ *  @return An NSString instance
  */
 - (NSString *)nameOfBindingAtIndex:(int)offset
 {
@@ -122,7 +126,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns the number of bindings of the receiver.
+ *  Returns the number of bindings of the receiver.
+ *  @return An int
  */
 - (int)countOfBindings
 {
@@ -130,8 +135,9 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns an RDF graph of the results.
+ *  Returns an RDF graph of the results.
  *  @warning The return value is only meaningful if this is an RDF graph query result.
+ *  @return A RedlandStream
  */
 - (RedlandStream *)resultStream
 {
@@ -140,7 +146,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns a dictionary of the current result bindings.
+ *  Returns a dictionary of the current result bindings.
+ *  @return An NSDictionary
  */
 - (NSDictionary *)bindings
 {
@@ -166,8 +173,9 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns an enumerator over the query results.
+ *  Returns an enumerator over the query results.
  *  @warning This is the recommended way to evaluate query results.
+ *  @return A RedlandQueryResultsEnumerator
  */
 - (RedlandQueryResultsEnumerator *)resultEnumerator
 {
@@ -176,6 +184,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 /**
  *  Turns query results into a string in the specified format.
+ *  @return An NSString instance
  */
 - (NSString *)stringRepresentationWithFormat:(RedlandURI *)formatURI
                                      baseURI:(RedlandURI *)baseURI
@@ -189,6 +198,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 /**
  *  Turns query results into a string in the specified name.
+ *  @return An NSString instance
  */
 - (NSString *)stringRepresentationWithName:(NSString *)name
                                    baseURI:(RedlandURI *)baseURI
@@ -203,6 +213,7 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 
 /**
  *  Turns query results into a string in the specified mimeType.
+ *  @return An NSString instance
  */
 - (NSString *)stringRepresentationWithMimeType:(NSString *)mimeType
                                        baseURI:(RedlandURI *)baseURI
@@ -260,7 +271,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns YES if the query results are in variable bindings format.
+ *  Returns YES if the query results are in variable bindings format.
+ *  @return A BOOL
  */
 - (BOOL)isBindings
 {
@@ -268,7 +280,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns YES if the query results are in boolean format.
+ *  Returns YES if the query results are in boolean format.
+ *  @return A BOOL
  */
 - (BOOL)isBoolean
 {
@@ -276,7 +289,8 @@ RedlandURI * RedlandSPARQLVariableBindingResultsXMLFormat = nil;
 }
 
 /**
- *  @return Returns YES if the query results are in graph format.
+ *  Returns YES if the query results are in graph format.
+ *  @return A BOOL
  */
 - (BOOL)isGraph
 {

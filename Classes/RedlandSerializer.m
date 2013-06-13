@@ -45,6 +45,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Returns an autoreleased RedlandSerializer initialized using initWithName:.
+ *  @param factoryName The name for the serializer; use one of our Redland...SerializerName constants
+ *  @return A new RedlandSerializer instance
  */
 + (id)serializerWithName:(NSString *)factoryName
 {
@@ -54,6 +56,10 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Convenience method which returns an autoreleased RedlandSerializer initialized using initWithName:mimeType:typeURI:.
+ *  @param factoryName The name for the serializer; use one of our Redland...SerializerName constants
+ *  @param mimeType The mime-type the serializer should produce
+ *  @param typeURI type URI for the type of serialization
+ *  @return A new RedlandSerializer instance
  */
 + (id)serializerWithName:(NSString *)factoryName mimeType:(NSString *)mimeType typeURI:(RedlandURI *)typeURI
 {
@@ -63,7 +69,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Initializes a RedlandSerializer with the given name.
- *  @warning See the Redland...SerializerName constants for possible names.
+ *  @param factoryName The name for the serializer; use one of our Redland...SerializerName constants
+ *  @return A new RedlandSerializer instance
  */
 - (id)initWithName:(NSString *)factoryName
 {
@@ -73,15 +80,18 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Creates and returns a RedlandSerializer identified by either a name, a MIME type, or a type URI.
+ *  @param factoryName The name for the serializer; use one of our Redland...SerializerName constants
+ *  @param mimeType The mime-type the serializer should produce
+ *  @param typeURI type URI for the type of serialization
+ *  @return A new RedlandSerializer instance
  */
 - (id)initWithName:(NSString *)factoryName mimeType:(NSString *)mimeType typeURI:(RedlandURI *)typeURI
 {
-	librdf_serializer *serializer;
 	NSParameterAssert(factoryName != nil || mimeType != nil || typeURI != nil);
-	serializer = librdf_new_serializer([RedlandWorld defaultWrappedWorld],
-									   [factoryName UTF8String],
-									   [mimeType UTF8String],
-									   [typeURI wrappedURI]);
+	librdf_serializer *serializer = librdf_new_serializer([RedlandWorld defaultWrappedWorld],
+														  [factoryName UTF8String],
+														  [mimeType UTF8String],
+														  [typeURI wrappedURI]);
 	return [self initWithWrappedObject:serializer];
 }
 
@@ -106,6 +116,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 #pragma mark - Serialization
 /**
  *  Serializes a model to a file with the specified name.
+ *  @param aModel The model (RedlandModel instance) to serialize
+ *  @param fileName the filename to write to as NSString
+ *  @param aURI The base-URI to use as RedlandURI
  */
 - (void)serializeModel:(RedlandModel *)aModel toFileName:(NSString *)fileName withBaseURI:(RedlandURI *)aURI
 {
@@ -126,6 +139,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Serializes a model to a C file handle.
+ *  @param aModel The model (RedlandModel instance) to serialize
+ *  @param file the C file handle
+ *  @param aURI The base-URI to use as RedlandURI
  */
 - (void)serializeModel:(RedlandModel *)aModel toFile:(FILE *)file withBaseURI:(RedlandURI *)aURI
 {
@@ -146,6 +162,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Serializes a model to the given NSFileHandle.
+ *  @param aModel The model (RedlandModel instance) to serialize
+ *  @param fileHandle the filehandle as NSFileHandle to write to
+ *  @param aURI The base-URI to use as RedlandURI
  */
 - (void)serializeModel:(RedlandModel *)aModel toFileHandle:(NSFileHandle *)fileHandle withBaseURI:(RedlandURI *)aURI;
 {
@@ -175,6 +194,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Sets a namespace/URI prefix mapping.
+ *  @param aPrefix The prefix as NSString
+ *  @param uri The namespace URI as RedlandURI
  */
 - (void)setPrefix:(NSString *)aPrefix forNamespaceURI:(RedlandURI *)uri
 {
@@ -250,6 +271,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Returns a serialized string representation of a model using the given base URI.
+ *  @param aModel The model (RedlandModel instance) to serialize
+ *  @param baseURI The base-URI to use as RedlandURI
+ *  @return An NSString
  */
 - (NSString *)serializedStringFromModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
 {
@@ -264,6 +288,9 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 
 /**
  *  Returns a serialized data representation of a model using the given base URI.
+ *  @param aModel The model (RedlandModel instance) to serialize
+ *  @param baseURI The base-URI to use as RedlandURI
+ *  @return NSData
  */
 - (NSData *)serializedDataFromModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
 {
@@ -284,6 +311,8 @@ NSString * const RedlandRSS10Serializer = @"rss-1.0";
 @implementation RedlandModel (SerializerConvenience)
 /**
  *  Returns an RDF/XML serialization of the receiver using the given base URI.
+ *  @param baseURI The base-URI to use as RedlandURI
+ *  @return NSData
  */
 - (NSData *)serializedRDFXMLDataWithBaseURI:(RedlandURI *)baseURI
 {

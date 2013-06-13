@@ -52,6 +52,8 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  Returns an autoreleased RedlandParser of the given type.
+ *  @param aName The name of the parser to use; use one of the constants
+ *  @return A new RedlandParser instance
  */
 + (RedlandParser *)parserWithName:(NSString *)aName
 {
@@ -60,6 +62,10 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  Returns an autoreleased RedlandParser initialized using initWithName:mimeType:syntaxURI:.
+ *  @param aName The name of the parser to use; use one of the constants
+ *  @param mimeType The mime-type the parser should produce
+ *  @param uri The syntax-URI the parser should use; see our constants
+ *  @return A new RedlandParser instance
  */
 + (RedlandParser *)parserWithName:(NSString *)aName mimeType:(NSString *)mimeType syntaxURI:(RedlandURI *)uri
 {
@@ -68,7 +74,8 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  Initializes a new RedlandParser of the given type.
- *  @warning See the Redland...ParserName constants for possible values.
+ *  @param aName The name of the parser to use; use one of the constants
+ *  @return A new RedlandParser instance
  */
 - (id)initWithName:(NSString *)aName
 {
@@ -77,9 +84,13 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  The designated initializer.
-	
-	Returns a new RedlandParser which can be identified either by name (see the Redland...ParserName constants), mimeType (e.g. "application/rdf+xml"), or by
-	syntaxURI.
+ *
+ *  Returns a new RedlandParser which can be identified either by name (see the Redland...ParserName constants), mimeType (e.g. "application/rdf+xml"), or by
+ *  syntaxURI. Defaults to a RDF+XML parser.
+ *  @param aName The name of the parser to use; use one of the constants
+ *  @param mimeType The mime-type the parser should produce
+ *  @param uri The syntax-URI the parser should use; see our constants
+ *  @return A new RedlandParser instance
  */
 - (id)initWithName:(NSString *)aName mimeType:(NSString *)mimeType syntaxURI:(RedlandURI *)uri
 {
@@ -104,6 +115,7 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  Returns the underlying librdf_parser object of the receiver.
+ *  @return A librdf_parser struct
  */
 - (librdf_parser *)wrappedParser
 {
@@ -114,11 +126,18 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 #pragma mark - Parsing
 /**
- *  Tries to parse the specified string into aModel using baseURI as the base URI. Raises a RedlandException if there is a parse error.
+ *  Tries to parse the specified string into aModel using baseURI as the base URI.
+ *  @warning Raises a RedlandException if there is a parse error or if "aModel" or "uri" is missing.
+ *  @param aString The string to parse
+ *  @param aModel The model to parse into; required
+ *  @param uri The base URI
  */
 - (void)parseString:(NSString *)aString intoModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)uri
 {
-	NSParameterAssert(aString != nil);
+	if ([aString length] < 1) {
+		return;
+	}
+	
 	NSParameterAssert(aModel != nil);
 	NSParameterAssert(uri != nil);
 	
@@ -135,12 +154,18 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 }
 
 /**
- *  Tries to parse the specified string using baseURI as the base URI and returns a RedlandStream of statements. Raises a RedlandException if there is a parse
-	error.
+ *  Tries to parse the specified string using baseURI as the base URI and returns a RedlandStream of statements.
+ *  @warning Raises a RedlandException if there is a parse error.
+ *  @param aString The string to parse
+ *  @param uri The base URI
+ *  @return A RedlandStream instance
  */
 - (RedlandStream *)parseString:(NSString *)aString asStreamWithBaseURI:(RedlandURI *)uri
 {
-	NSParameterAssert(aString != nil);
+	if ([aString length] < 1) {
+		return nil;
+	}
+	
 	NSParameterAssert(uri != nil);
 	
 	librdf_stream *stream = librdf_parser_parse_string_as_stream(wrappedObject,
@@ -151,7 +176,11 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 }
 
 /**
- *  Tries to parse data into a model using the given base URI. Raises a RedlandException if there is a parse error.
+ *  Tries to parse data into a model using the given base URI.
+ *  @warning Raises a RedlandException if there is a parse error.
+ *  @param data The data to parse as NSData
+ *  @param aModel The model to parse into; required
+ *  @param baseURI The base URI
  */
 - (void)parseData:(NSData *)data intoModel:(RedlandModel *)aModel withBaseURI:(RedlandURI *)baseURI
 {
@@ -173,7 +202,10 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 }
 
 /**
- *  Tries to parse data using the given base URI and returns a RedlandStream of statements. Raises a RedlandException if there is a parse error.
+ *  Tries to parse data using the given base URI and returns a RedlandStream of statements.
+ *  @warning Raises a RedlandException if there is a parse error.
+ *  @param data The data to parse as NSData
+ *  @param baseURI The base URI
  */
 - (RedlandStream *)parseData:(NSData *)data asStreamWithBaseURI:(RedlandURI *)baseURI
 {
@@ -248,10 +280,11 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 
 /**
  *  Fetches data from the given URL using the Cocoa NSURL loading system, parses it with a parser deduced from the returned MIME type, and adds the statements
-	into the given context of the receiver.
-	
- *  @warning This is a nice and uncomplicated convenience function, but it will block until the data has been downloaded and parsed. If the parser type
-	cannot be guessed from the MIME type, an RDF/XML parser will be used.
+ *  into the given context of the receiver.
+ *  @warning This is a nice and uncomplicated convenience function, but it will block until the data has been downloaded and parsed. If the parser type cannot
+ *  be guessed from the MIME type, an RDF/XML parser will be used.
+ *  @param aURL The NSURL to load
+ *  @param context an optional context
  */
 - (void)loadURL:(NSURL *)aURL withContext:(RedlandNode *)context
 {

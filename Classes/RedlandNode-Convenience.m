@@ -40,8 +40,8 @@
 }
 
 /**
- *  Creates and returns a RedlandNode by sending <tt>nodeValue</tt> to the given object.
- *  @warning Raises a RedlandException if the object does not respond to the <tt>nodeValue</tt> selector.
+ *  Creates and returns a RedlandNode by sending `nodeValue` to the given object.
+ *  @warning Raises a RedlandException if the object does not respond to the `nodeValue` selector.
  */
 + (RedlandNode *)nodeWithObject:(id)object
 {

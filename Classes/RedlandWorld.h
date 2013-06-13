@@ -37,7 +37,8 @@
  */
 @interface RedlandWorld : RedlandWrappedObject
 
-@property (nonatomic, assign) BOOL logsErrors;				///< If YES, the receiver will log all Redland errors to the console (in addition to generating exceptions, where appropriate). NO by default.
+/// If YES, the receiver will log all Redland errors to the console (in addition to generating exceptions, where appropriate). NO by default.
+@property (nonatomic, assign) BOOL logsErrors;
 
 + (RedlandWorld *)defaultWorld;
 + (librdf_world *)defaultWrappedWorld;

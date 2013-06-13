@@ -41,7 +41,9 @@
 
 
 /**
- *  Designated initializer
+ *  Designated initializer.
+ *  @param aModel The model
+ *  @param collectionNode The node
  */
 - (id)initWithModel:(RedlandModel *)aModel collectionNode:(RedlandNode *)collectionNode
 {
