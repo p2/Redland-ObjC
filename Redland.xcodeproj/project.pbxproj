@@ -325,12 +325,12 @@
 		ED3B0AE906E62D5D001E4C72 /* RedlandCollectionEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandCollectionEnumerator.m; sourceTree = "<group>"; };
 		ED3B0B1D06E6364B001E4C72 /* RedlandContainerEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandContainerEnumerator.h; sourceTree = "<group>"; };
 		ED3B0B1E06E6364B001E4C72 /* RedlandContainerEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandContainerEnumerator.m; sourceTree = "<group>"; };
-		ED486C9306DA6F7900AA6058 /* RedlandQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandQuery.h; sourceTree = "<group>"; };
-		ED486C9406DA6F7900AA6058 /* RedlandQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandQuery.m; sourceTree = "<group>"; };
-		ED486CEA06DA72DF00AA6058 /* RedlandQueryResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandQueryResults.h; sourceTree = "<group>"; };
-		ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandQueryResults.m; sourceTree = "<group>"; };
-		ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandQueryResultsEnumerator.h; sourceTree = "<group>"; };
-		ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandQueryResultsEnumerator.m; sourceTree = "<group>"; };
+		ED486C9306DA6F7900AA6058 /* RedlandQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandQuery.h; path = Classes/RedlandQuery.h; sourceTree = "<group>"; };
+		ED486C9406DA6F7900AA6058 /* RedlandQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandQuery.m; path = Classes/RedlandQuery.m; sourceTree = "<group>"; };
+		ED486CEA06DA72DF00AA6058 /* RedlandQueryResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandQueryResults.h; path = Classes/RedlandQueryResults.h; sourceTree = "<group>"; };
+		ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandQueryResults.m; path = Classes/RedlandQueryResults.m; sourceTree = "<group>"; };
+		ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandQueryResultsEnumerator.h; path = Classes/RedlandQueryResultsEnumerator.h; sourceTree = "<group>"; };
+		ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandQueryResultsEnumerator.m; path = Classes/RedlandQueryResultsEnumerator.m; sourceTree = "<group>"; };
 		ED48EB4208BB554300ACF14F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		ED48EB5008BB557A00ACF14F /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.1.dylib; path = /usr/lib/libxslt.1.dylib; sourceTree = "<absolute>"; };
@@ -358,12 +358,12 @@
 		ED8D251B0688A36D0039DA12 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
 		ED8D25500688A6350039DA12 /* RedlandStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandStorage.h; sourceTree = "<group>"; };
 		ED8D25510688A6350039DA12 /* RedlandStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandStorage.m; sourceTree = "<group>"; };
-		ED8D25B30688A75B0039DA12 /* RedlandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandParser.h; sourceTree = "<group>"; };
-		ED8D25B40688A75B0039DA12 /* RedlandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandParser.m; sourceTree = "<group>"; };
+		ED8D25B30688A75B0039DA12 /* RedlandParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandParser.h; path = Classes/RedlandParser.h; sourceTree = "<group>"; };
+		ED8D25B40688A75B0039DA12 /* RedlandParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandParser.m; path = Classes/RedlandParser.m; sourceTree = "<group>"; };
 		ED8D25D10688A7DF0039DA12 /* RedlandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandModel.h; sourceTree = "<group>"; };
 		ED8D25D20688A7DF0039DA12 /* RedlandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandModel.m; sourceTree = "<group>"; };
-		ED8D25F50688A8E80039DA12 /* RedlandStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandStream.h; sourceTree = "<group>"; };
-		ED8D25F60688A8E80039DA12 /* RedlandStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandStream.m; sourceTree = "<group>"; };
+		ED8D25F50688A8E80039DA12 /* RedlandStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandStream.h; path = Classes/RedlandStream.h; sourceTree = "<group>"; };
+		ED8D25F60688A8E80039DA12 /* RedlandStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandStream.m; path = Classes/RedlandStream.m; sourceTree = "<group>"; };
 		ED8D26830688AC490039DA12 /* RedlandNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandNode.h; sourceTree = "<group>"; };
 		ED8D26840688AC490039DA12 /* RedlandNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandNode.m; sourceTree = "<group>"; };
 		ED8D26A60688ACA20039DA12 /* RedlandStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandStatement.h; sourceTree = "<group>"; };
@@ -371,8 +371,8 @@
 		ED8D26C70688AD1F0039DA12 /* RedlandURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandURI.h; sourceTree = "<group>"; };
 		ED8D26C80688AD1F0039DA12 /* RedlandURI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandURI.m; sourceTree = "<group>"; };
 		ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Redland-ObjC.h"; sourceTree = "<group>"; };
-		ED8D28330688B6CF0039DA12 /* RedlandSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandSerializer.h; sourceTree = "<group>"; };
-		ED8D28340688B6CF0039DA12 /* RedlandSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandSerializer.m; sourceTree = "<group>"; };
+		ED8D28330688B6CF0039DA12 /* RedlandSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandSerializer.h; path = Classes/RedlandSerializer.h; sourceTree = "<group>"; };
+		ED8D28340688B6CF0039DA12 /* RedlandSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandSerializer.m; path = Classes/RedlandSerializer.m; sourceTree = "<group>"; };
 		ED98630306FAE443009186B3 /* ModelTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelTests.h; sourceTree = "<group>"; };
 		ED98630406FAE443009186B3 /* ModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelTests.m; sourceTree = "<group>"; };
 		ED9863F506FAEA05009186B3 /* ParserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParserTests.h; sourceTree = "<group>"; };
@@ -384,14 +384,14 @@
 		ED98651A06FB12E6009186B3 /* QueryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryTests.h; sourceTree = "<group>"; };
 		ED98651B06FB12E6009186B3 /* QueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryTests.m; sourceTree = "<group>"; };
 		ED98662B06FB3D05009186B3 /* rdf-schema.rdf */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; name = "rdf-schema.rdf"; path = "Resources/rdf-schema.rdf"; sourceTree = "<group>"; };
-		EDAC616406943C75007A085A /* RedlandStreamEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandStreamEnumerator.h; sourceTree = "<group>"; };
-		EDAC616506943C75007A085A /* RedlandStreamEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandStreamEnumerator.m; sourceTree = "<group>"; };
+		EDAC616406943C75007A085A /* RedlandStreamEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandStreamEnumerator.h; path = Classes/RedlandStreamEnumerator.h; sourceTree = "<group>"; };
+		EDAC616506943C75007A085A /* RedlandStreamEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandStreamEnumerator.m; path = Classes/RedlandStreamEnumerator.m; sourceTree = "<group>"; };
 		EDAC63810694506E007A085A /* RedlandNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandNamespace.h; sourceTree = "<group>"; };
 		EDAC63820694506E007A085A /* RedlandNamespace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandNamespace.m; sourceTree = "<group>"; };
-		EDB09C9F0688CF300071464A /* RedlandIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandIterator.h; sourceTree = "<group>"; };
-		EDB09CA00688CF300071464A /* RedlandIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandIterator.m; sourceTree = "<group>"; };
-		EDB09D2A0688D50F0071464A /* RedlandIteratorEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedlandIteratorEnumerator.h; sourceTree = "<group>"; };
-		EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedlandIteratorEnumerator.m; sourceTree = "<group>"; };
+		EDB09C9F0688CF300071464A /* RedlandIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandIterator.h; path = Classes/RedlandIterator.h; sourceTree = "<group>"; };
+		EDB09CA00688CF300071464A /* RedlandIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandIterator.m; path = Classes/RedlandIterator.m; sourceTree = "<group>"; };
+		EDB09D2A0688D50F0071464A /* RedlandIteratorEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedlandIteratorEnumerator.h; path = Classes/RedlandIteratorEnumerator.h; sourceTree = "<group>"; };
+		EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedlandIteratorEnumerator.m; path = Classes/RedlandIteratorEnumerator.m; sourceTree = "<group>"; };
 		EDBA0E4807379BDD00610CB1 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
 		EE0CB61A15BDD0AD004BB6C9 /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
 		EE0CB61C15BDD0AD004BB6C9 /* cross-compile.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile.py"; sourceTree = "<group>"; };
@@ -539,7 +539,11 @@
 				EDBA0E4807379BDD00610CB1 /* NOTICE.txt */,
 				ED8D271A0688AEEE0039DA12 /* Redland-ObjC.h */,
 				ED699E3406F9CBBF00A624F7 /* Basic Wrapper Classes */,
-				08FB77AEFE84172EC02AAC07 /* Additional Classes */,
+				EE348522176A0699006CF966 /* Parsing and Serialization */,
+				EE34851F176A05D8006CF966 /* Triple Handling */,
+				EE348520176A0634006CF966 /* Enumeration */,
+				EE348521176A065B006CF966 /* SPARQL */,
+				08FB77AEFE84172EC02AAC07 /* Unused Classes */,
 				ED69A3BB06F9DCA400A624F7 /* Tests */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				EE74747115B90143004A456E /* Redland Source */,
@@ -580,29 +584,15 @@
 			name = Resources;
 			sourceTree = SOURCE_ROOT;
 		};
-		08FB77AEFE84172EC02AAC07 /* Additional Classes */ = {
+		08FB77AEFE84172EC02AAC07 /* Unused Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ED11265C069DD654006F17FD /* RedlandException.h */,
-				ED11265D069DD654006F17FD /* RedlandException.m */,
-				ED3B0A6606E621FC001E4C72 /* RedlandModel-Convenience.h */,
-				ED3B0A6706E621FC001E4C72 /* RedlandModel-Convenience.m */,
-				ED69A49906F9EB8200A624F7 /* RedlandNode-Convenience.h */,
-				ED69A49A06F9EB8200A624F7 /* RedlandNode-Convenience.m */,
-				EDAC616406943C75007A085A /* RedlandStreamEnumerator.h */,
-				EDAC616506943C75007A085A /* RedlandStreamEnumerator.m */,
-				EDB09D2A0688D50F0071464A /* RedlandIteratorEnumerator.h */,
-				EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */,
-				ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */,
-				ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */,
 				ED3B0AE806E62D5D001E4C72 /* RedlandCollectionEnumerator.h */,
 				ED3B0AE906E62D5D001E4C72 /* RedlandCollectionEnumerator.m */,
 				ED3B0B1D06E6364B001E4C72 /* RedlandContainerEnumerator.h */,
 				ED3B0B1E06E6364B001E4C72 /* RedlandContainerEnumerator.m */,
-				EDAC63810694506E007A085A /* RedlandNamespace.h */,
-				EDAC63820694506E007A085A /* RedlandNamespace.m */,
 			);
-			name = "Additional Classes";
+			name = "Unused Classes";
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -621,28 +611,14 @@
 				ED699ED006F9D3D600A624F7 /* RedlandWrappedObject.m */,
 				ED8D24900688A22D0039DA12 /* RedlandWorld.h */,
 				ED8D24910688A22D0039DA12 /* RedlandWorld.m */,
+				EDAC63810694506E007A085A /* RedlandNamespace.h */,
+				EDAC63820694506E007A085A /* RedlandNamespace.m */,
 				ED8D26C70688AD1F0039DA12 /* RedlandURI.h */,
 				ED8D26C80688AD1F0039DA12 /* RedlandURI.m */,
-				ED8D26830688AC490039DA12 /* RedlandNode.h */,
-				ED8D26840688AC490039DA12 /* RedlandNode.m */,
-				ED8D26A60688ACA20039DA12 /* RedlandStatement.h */,
-				ED8D26A70688ACA20039DA12 /* RedlandStatement.m */,
-				EDB09C9F0688CF300071464A /* RedlandIterator.h */,
-				EDB09CA00688CF300071464A /* RedlandIterator.m */,
-				ED8D25F50688A8E80039DA12 /* RedlandStream.h */,
-				ED8D25F60688A8E80039DA12 /* RedlandStream.m */,
 				ED8D25500688A6350039DA12 /* RedlandStorage.h */,
 				ED8D25510688A6350039DA12 /* RedlandStorage.m */,
-				ED8D25D10688A7DF0039DA12 /* RedlandModel.h */,
-				ED8D25D20688A7DF0039DA12 /* RedlandModel.m */,
-				ED8D25B30688A75B0039DA12 /* RedlandParser.h */,
-				ED8D25B40688A75B0039DA12 /* RedlandParser.m */,
-				ED8D28330688B6CF0039DA12 /* RedlandSerializer.h */,
-				ED8D28340688B6CF0039DA12 /* RedlandSerializer.m */,
-				ED486C9306DA6F7900AA6058 /* RedlandQuery.h */,
-				ED486C9406DA6F7900AA6058 /* RedlandQuery.m */,
-				ED486CEA06DA72DF00AA6058 /* RedlandQueryResults.h */,
-				ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */,
+				ED11265C069DD654006F17FD /* RedlandException.h */,
+				ED11265D069DD654006F17FD /* RedlandException.m */,
 			);
 			name = "Basic Wrapper Classes";
 			path = Classes;
@@ -766,6 +742,63 @@
 				EE0CB64F15BE5CC1004BB6C9 /* rasqal.h */,
 			);
 			path = rasqal;
+			sourceTree = "<group>";
+		};
+		EE34851F176A05D8006CF966 /* Triple Handling */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D25D10688A7DF0039DA12 /* RedlandModel.h */,
+				ED8D25D20688A7DF0039DA12 /* RedlandModel.m */,
+				ED3B0A6606E621FC001E4C72 /* RedlandModel-Convenience.h */,
+				ED3B0A6706E621FC001E4C72 /* RedlandModel-Convenience.m */,
+				ED8D26A60688ACA20039DA12 /* RedlandStatement.h */,
+				ED8D26A70688ACA20039DA12 /* RedlandStatement.m */,
+				ED8D26830688AC490039DA12 /* RedlandNode.h */,
+				ED8D26840688AC490039DA12 /* RedlandNode.m */,
+				ED69A49906F9EB8200A624F7 /* RedlandNode-Convenience.h */,
+				ED69A49A06F9EB8200A624F7 /* RedlandNode-Convenience.m */,
+			);
+			name = "Triple Handling";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EE348520176A0634006CF966 /* Enumeration */ = {
+			isa = PBXGroup;
+			children = (
+				EDB09C9F0688CF300071464A /* RedlandIterator.h */,
+				EDB09CA00688CF300071464A /* RedlandIterator.m */,
+				EDB09D2A0688D50F0071464A /* RedlandIteratorEnumerator.h */,
+				EDB09D2B0688D50F0071464A /* RedlandIteratorEnumerator.m */,
+				ED8D25F50688A8E80039DA12 /* RedlandStream.h */,
+				ED8D25F60688A8E80039DA12 /* RedlandStream.m */,
+				EDAC616406943C75007A085A /* RedlandStreamEnumerator.h */,
+				EDAC616506943C75007A085A /* RedlandStreamEnumerator.m */,
+			);
+			name = Enumeration;
+			sourceTree = "<group>";
+		};
+		EE348521176A065B006CF966 /* SPARQL */ = {
+			isa = PBXGroup;
+			children = (
+				ED486C9306DA6F7900AA6058 /* RedlandQuery.h */,
+				ED486C9406DA6F7900AA6058 /* RedlandQuery.m */,
+				ED486CEA06DA72DF00AA6058 /* RedlandQueryResults.h */,
+				ED486CEB06DA72DF00AA6058 /* RedlandQueryResults.m */,
+				ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */,
+				ED486DF506DA80D500AA6058 /* RedlandQueryResultsEnumerator.m */,
+			);
+			name = SPARQL;
+			sourceTree = "<group>";
+		};
+		EE348522176A0699006CF966 /* Parsing and Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D25B30688A75B0039DA12 /* RedlandParser.h */,
+				ED8D25B40688A75B0039DA12 /* RedlandParser.m */,
+				ED8D28330688B6CF0039DA12 /* RedlandSerializer.h */,
+				ED8D28340688B6CF0039DA12 /* RedlandSerializer.m */,
+			);
+			name = "Parsing and Serialization";
 			sourceTree = "<group>";
 		};
 		EE74747115B90143004A456E /* Redland Source */ = {

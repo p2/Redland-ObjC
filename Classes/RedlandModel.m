@@ -208,7 +208,6 @@
 - (BOOL)removeStatement:(RedlandStatement *)aStatement
 {
 	NSParameterAssert(aStatement != nil);
-	
 	return (0 == librdf_model_remove_statement(wrappedObject, [aStatement wrappedStatement]));
 }
 
@@ -264,6 +263,59 @@
 	
 	return submodel;
 }
+
+/**
+ *  Add a submodel to the receiver.
+ *
+ *  @warning Redland has a function "librdf_model_add_submodel", however it is labelled with a "FIXME: Not tested" and I was having trouble getting it to work
+ *  properly. For this reason this method currently simply adds the statements/triples found in the submodel to the model. This will fail if any statement
+ *  already exists in the model (but it will not raise an exception).
+ *  @param submodel The submodel to add to the model, must not be nil
+ *  @return A BOOL whether the action was successful
+ */
+- (BOOL)addSubmodel:(RedlandModel *)submodel
+{
+	NSParameterAssert(submodel != nil);
+//	return (0 == librdf_model_add_submodel(wrappedObject, [submodel wrappedModel]));
+	
+	librdf_model_transaction_start(wrappedObject);
+	for (RedlandStatement *stmt in [submodel statementEnumerator]) {
+		if (0 != librdf_model_add_statement(wrappedObject, [stmt wrappedStatement])) {
+			librdf_model_transaction_rollback(wrappedObject);
+			return NO;
+		}
+	}
+	
+	librdf_model_transaction_commit(wrappedObject);
+	return YES;
+}
+
+/**
+ *  Remove a submodel from the receiver.
+ *
+ *  @warning Redland has a function "librdf_model_remove_submodel", however it is labelled with a "FIXME: Not tested" and I was having trouble getting it to
+ *  work properly. For this reason this method currently simply removes the statements/triples found in the submodel from the model. This will fail if any
+ *  statement fails to be removed from the model (but it will not raise an exception).
+ *  @param submodel The submodel to remove from the model, must not be nil
+ *  @return A BOOL whether the action was successful
+ */
+- (BOOL)removeSubmodel:(RedlandModel *)submodel
+{
+	NSParameterAssert(submodel != nil);
+//	return (0 == librdf_model_remove_submodel(wrappedObject, [submodel wrappedModel]));
+	
+	librdf_model_transaction_start(wrappedObject);
+	for (RedlandStatement *stmt in [submodel statementEnumerator]) {
+		if (0 != librdf_model_remove_statement(wrappedObject, [stmt wrappedStatement])) {
+			librdf_model_transaction_rollback(wrappedObject);
+			return NO;
+		}
+	}
+	
+	librdf_model_transaction_commit(wrappedObject);
+	return YES;
+}
+
 
 /**
  *  Returns all statements in the receiver that match the given statement, recursively if desired.

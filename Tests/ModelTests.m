@@ -24,26 +24,25 @@
 
 #import "ModelTests.h"
 
-#import "RedlandModel.h"
+#import "RedlandModel-Convenience.h"
 #import "RedlandNode-Convenience.h"
 #import "RedlandStatement.h"
+#import "RedlandStreamEnumerator.h"
 
 @implementation ModelTests
 
 - (void)testSimple
 {
-    RedlandModel *model;
-    RedlandStatement *testStatement;
     RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
     RedlandNode *predicate = [RedlandNode nodeWithURIString:@"foo:bar"];
     RedlandNode *object = [RedlandNode nodeWithLiteral:@"test"];
     
-    model = [RedlandModel new];
+    RedlandModel *model = [RedlandModel new];
     STAssertNotNil(model, nil);
     
-    testStatement = [RedlandStatement statementWithSubject:subject
-                                                 predicate:predicate
-                                                    object:object];
+    RedlandStatement *testStatement = [RedlandStatement statementWithSubject:subject
+																   predicate:predicate
+																	  object:object];
     STAssertNoThrow([model addStatement:testStatement], nil);
     STAssertEquals(1, [model size], nil);
     STAssertTrue([model containsStatement:testStatement], nil);
@@ -56,19 +55,54 @@
     STAssertFalse([model containsStatement:testStatement], nil);
 }
 
+- (void)testSubmodel
+{
+	RedlandNode *content = [RedlandNode nodeWithURIString:@"http://smartplatforms.org/terms#Content"];
+	
+	RedlandStatement *main = [RedlandStatement statementWithSubject:[RedlandNode nodeWithBlankID:@"foo"]
+														  predicate:[RedlandNode typeNode]
+															 object:content];
+	RedlandStatement *sub1 = [RedlandStatement statementWithSubject:content
+														  predicate:[RedlandNode nodeWithURIString:@"http://smartplatforms.org/terms#encoding"]
+															 object:[RedlandNode nodeWithLiteral:@"UTF-8"]];
+	RedlandStatement *sub2 = [RedlandStatement statementWithSubject:content
+														  predicate:[RedlandNode nodeWithURIString:@"http://purl.org/dc/terms/date"]
+															 object:[RedlandNode nodeWithLiteral:@"2013-06-12"]];
+	
+	// create the model
+	RedlandModel *model = [RedlandModel new];
+	STAssertNoThrow([model addStatement:main], nil);
+	STAssertNoThrow([model addStatement:sub1], nil);
+	STAssertNoThrow([model addStatement:sub2], nil);
+    STAssertEquals(3, [model size], nil);
+	
+	RedlandModel *submodel = [model submodelForSubject:content];
+	STAssertEquals(2, [submodel size], nil);
+	for (RedlandStatement *statement in [submodel statementEnumerator]) {
+		STAssertTrue([model containsStatement:statement], nil);
+	}
+	
+	// removing and re-adding
+	STAssertTrue([model removeSubmodel:submodel], nil);
+	STAssertEquals(1, [model size], nil);
+	
+	STAssertTrue([model addSubmodel:submodel], nil);
+	STAssertEquals(3, [model size], nil);
+}
+
 - (void)testContextAddStatementBug
 {
-	RedlandModel *model;
     RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
     RedlandNode *predicate = [RedlandNode nodeWithURIString:@"foo:bar"];
     RedlandNode *object = [RedlandNode nodeWithLiteral:@"test"];
 	RedlandStatement *statement;
 
-	model = [RedlandModel new];
+	RedlandModel *model = [RedlandModel new];
     statement = [RedlandStatement statementWithSubject:subject
 											 predicate:predicate
 												object:object];
 	STAssertNoThrow([model addStatement:statement withContext:nil], nil);
 }
+
 
 @end

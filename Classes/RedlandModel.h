@@ -61,6 +61,8 @@
 - (BOOL)containsContext:(RedlandNode *)contextNode;
 
 - (RedlandModel *)submodelForSubject:(RedlandNode *)aSubject;
+- (BOOL)addSubmodel:(RedlandModel *)submodel;
+- (BOOL)removeSubmodel:(RedlandModel *)submodel;
 - (NSArray *)statementsLike:(RedlandStatement *)aStatement withDescendants:(BOOL)recursive;
 
 - (RedlandStream *)statementStream;
