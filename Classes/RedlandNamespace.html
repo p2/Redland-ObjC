@@ -1,0 +1,1267 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>RedlandNamespace Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Redland Objective-C Bindings </a></h1>
+				<a id="developerHome" href="../index.html">Redland</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">RedlandNamespace Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/shortName">&nbsp;&nbsp;&nbsp;&nbsp;shortName</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/initGlobalNamespaces">&nbsp;&nbsp;&nbsp;&nbsp;+ initGlobalNamespaces</option>
+	
+	<option value="//api/name/namespaceWithShortName:">&nbsp;&nbsp;&nbsp;&nbsp;+ namespaceWithShortName:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/URI:">&nbsp;&nbsp;&nbsp;&nbsp;- URI:</option>
+	
+	<option value="//api/name/URL:">&nbsp;&nbsp;&nbsp;&nbsp;- URL:</option>
+	
+	<option value="//api/name/containsNode:">&nbsp;&nbsp;&nbsp;&nbsp;- containsNode:</option>
+	
+	<option value="//api/name/containsURI:">&nbsp;&nbsp;&nbsp;&nbsp;- containsURI:</option>
+	
+	<option value="//api/name/containsURIString:">&nbsp;&nbsp;&nbsp;&nbsp;- containsURIString:</option>
+	
+	<option value="//api/name/initWithPrefix:shortName:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithPrefix:shortName:</option>
+	
+	<option value="//api/name/localNameOfNode:">&nbsp;&nbsp;&nbsp;&nbsp;- localNameOfNode:</option>
+	
+	<option value="//api/name/localNameOfURI:">&nbsp;&nbsp;&nbsp;&nbsp;- localNameOfURI:</option>
+	
+	<option value="//api/name/localNameOfURIString:">&nbsp;&nbsp;&nbsp;&nbsp;- localNameOfURIString:</option>
+	
+	<option value="//api/name/node:">&nbsp;&nbsp;&nbsp;&nbsp;- node:</option>
+	
+	<option value="//api/name/registerInstance">&nbsp;&nbsp;&nbsp;&nbsp;- registerInstance</option>
+	
+	<option value="//api/name/string:">&nbsp;&nbsp;&nbsp;&nbsp;- string:</option>
+	
+	<option value="//api/name/unregisterInstance">&nbsp;&nbsp;&nbsp;&nbsp;- unregisterInstance</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shortName">shortName</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initGlobalNamespaces">initGlobalNamespaces</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/namespaceWithShortName:">namespaceWithShortName:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URI:">URI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/URL:">URL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsNode:">containsNode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsURI:">containsURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsURIString:">containsURIString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithPrefix:shortName:">initWithPrefix:shortName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localNameOfNode:">localNameOfNode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localNameOfURI:">localNameOfURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/localNameOfURIString:">localNameOfURIString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/node:">node:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerInstance">registerInstance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/string:">string:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unregisterInstance">unregisterInstance</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="RedlandNamespace Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">RedlandNamespace Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCopying</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">RedlandNamespace.h<br />RedlandNamespace.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Convenience class for generating namespaced nodes, URIs, and strings.</p>
+
+<p>Instances of RedlandNamespace are helper objects which make it very easy to create RedlandNodes, RedlandURIs, NSStrings, or NSURLs with a common namespace
+prefix. Please note that this class is still experimental and its API is subject to change.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shortName">&nbsp;&nbsp;shortName</a></code>
+		<span class="tooltip"><p>&lt; The namespace prefix of the receiver</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initGlobalNamespaces">+&nbsp;initGlobalNamespaces</a></code>
+		<span class="tooltip"><p>&lt; The <a href="#//api/name/shortName">shortName</a> of the receiver</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/namespaceWithShortName:">+&nbsp;namespaceWithShortName:</a></code>
+		<span class="tooltip"><p>Returns a pre-registered instance with the given short name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithPrefix:shortName:">&ndash;&nbsp;initWithPrefix:shortName:</a></code>
+		<span class="tooltip"><p>Initialises the receiver with a given URI prefix and short name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerInstance">&ndash;&nbsp;registerInstance</a></code>
+		<span class="tooltip"><p>Registers the current instance so it can be retrieved by calling <a href="#//api/name/namespaceWithShortName:">[RedlandNamespace namespaceWithShortName:]</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unregisterInstance">&ndash;&nbsp;unregisterInstance</a></code>
+		<span class="tooltip"><p>Removes the registration done by <a href="#//api/name/registerInstance">[RedlandNamespace registerInstance]</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/node:">&ndash;&nbsp;node:</a></code>
+		<span class="tooltip"><p>Returns a new <a href="../Classes/RedlandNode.html">RedlandNode</a> of type resource whose URI value is the given suffix appended to the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/URI:">&ndash;&nbsp;URI:</a></code>
+		<span class="tooltip"><p>Returns a new <a href="../Classes/RedlandURI.html">RedlandURI</a> by appending the given suffix to the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/URL:">&ndash;&nbsp;URL:</a></code>
+		<span class="tooltip"><p>Returns a new NSURL by appending the given suffix to the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/string:">&ndash;&nbsp;string:</a></code>
+		<span class="tooltip"><p>Returns a new NSString by appending the given suffix to the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containsURIString:">&ndash;&nbsp;containsURIString:</a></code>
+		<span class="tooltip"><p>Returns YES if the given NSString begins with the same prefix as the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containsNode:">&ndash;&nbsp;containsNode:</a></code>
+		<span class="tooltip"><p>Returns YES if the resource URI of the given <a href="../Classes/RedlandNode.html">RedlandNode</a> begins with the same prefix as the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containsURI:">&ndash;&nbsp;containsURI:</a></code>
+		<span class="tooltip"><p>Returns YES if the given <a href="../Classes/RedlandURI.html">RedlandURI</a> begins with the same prefix as the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localNameOfURIString:">&ndash;&nbsp;localNameOfURIString:</a></code>
+		<span class="tooltip"><p>Returns the local name of the given string in the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localNameOfNode:">&ndash;&nbsp;localNameOfNode:</a></code>
+		<span class="tooltip"><p>Returns the local name of the given <a href="../Classes/RedlandNode.html">RedlandNode</a> in the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/localNameOfURI:">&ndash;&nbsp;localNameOfURI:</a></code>
+		<span class="tooltip"><p>Returns the local name of the given <a href="../Classes/RedlandURI.html">RedlandURI</a> in the receiver&rsquo;s namespace.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/shortName" title="shortName"></a>
+	<h3 class="subsubtitle method-title">shortName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>&lt; The namespace prefix of the receiver</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *shortName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>&lt; The namespace prefix of the receiver</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initGlobalNamespaces" title="initGlobalNamespaces"></a>
+	<h3 class="subsubtitle method-title">initGlobalNamespaces</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>&lt; The <a href="#//api/name/shortName">shortName</a> of the receiver</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)initGlobalNamespaces</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>&lt; The <a href="#//api/name/shortName">shortName</a> of the receiver</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/namespaceWithShortName:" title="namespaceWithShortName:"></a>
+	<h3 class="subsubtitle method-title">namespaceWithShortName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a pre-registered instance with the given short name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (RedlandNamespace *)namespaceWithShortName:(NSString *)<em>aName</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a pre-registered instance with the given short name.</p><div class="warning"><p><strong>Warning:</strong> This method allows you to retrieve previously registered namespace instances by their short name. For example, if you call
+[RDFSyntaxNS registerInstance], you can then get this instance by calling: [RedlandNamespace namespaceWithShortName:\@&ldquo;rdf&rdquo;].</p></div><div class="warning"><p><strong>Warning:</strong> Under ARC, this method returns a strong reference.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/URI:" title="URI:"></a>
+	<h3 class="subsubtitle method-title">URI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new <a href="../Classes/RedlandURI.html">RedlandURI</a> by appending the given suffix to the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandURI *)URI:(NSString *)<em>suffix</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>suffix</em></dt>
+			<dd><p>The string to append to the receiver&rsquo;s namespace prefix</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created <a href="../Classes/RedlandURI.html">RedlandURI</a> instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new <a href="../Classes/RedlandURI.html">RedlandURI</a> by appending the given suffix to the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/URL:" title="URL:"></a>
+	<h3 class="subsubtitle method-title">URL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSURL by appending the given suffix to the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURL *)URL:(NSString *)<em>suffix</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>suffix</em></dt>
+			<dd><p>The string to append to the receiver&rsquo;s namespace prefix</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created NSURL instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSURL by appending the given suffix to the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/containsNode:" title="containsNode:"></a>
+	<h3 class="subsubtitle method-title">containsNode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the resource URI of the given <a href="../Classes/RedlandNode.html">RedlandNode</a> begins with the same prefix as the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)containsNode:(RedlandNode *)<em>node</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the node is a resource node and the prefixes are equal, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the resource URI of the given <a href="../Classes/RedlandNode.html">RedlandNode</a> begins with the same prefix as the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/containsURI:" title="containsURI:"></a>
+	<h3 class="subsubtitle method-title">containsURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the given <a href="../Classes/RedlandURI.html">RedlandURI</a> begins with the same prefix as the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)containsURI:(RedlandURI *)<em>aURI</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the prefixes are equal, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the given <a href="../Classes/RedlandURI.html">RedlandURI</a> begins with the same prefix as the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/containsURIString:" title="containsURIString:"></a>
+	<h3 class="subsubtitle method-title">containsURIString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the given NSString begins with the same prefix as the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)containsURIString:(NSString *)<em>qName</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the prefixes are equal, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the given NSString begins with the same prefix as the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithPrefix:shortName:" title="initWithPrefix:shortName:"></a>
+	<h3 class="subsubtitle method-title">initWithPrefix:shortName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialises the receiver with a given URI prefix and short name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithPrefix:(NSString *)<em>aPrefix</em> shortName:(NSString *)<em>aName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aPrefix</em></dt>
+			<dd><p>The URI prefix string which will be prepended to objects created by the new instance, e.g. <tt><a href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a></tt></p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aName</em></dt>
+			<dd><p>The short name for this namespace, e.g. <tt>dc</tt></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly initialised instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initialises the receiver with a given URI prefix and short name.</p><div class="warning"><p><strong>Warning:</strong> The <a href="#//api/name/shortName">shortName</a> is currently not used, but may be used later to provide automatic shortening of URIs.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localNameOfNode:" title="localNameOfNode:"></a>
+	<h3 class="subsubtitle method-title">localNameOfNode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the local name of the given <a href="../Classes/RedlandNode.html">RedlandNode</a> in the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)localNameOfNode:(RedlandNode *)<em>aNode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aNode</em></dt>
+			<dd><p>A <a href="../Classes/RedlandNode.html">RedlandNode</a> of type resource</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string generated by stripping the receiver&rsquo;s namespace prefix from the beginning of aNode&rsquo;s resource URI. If the node&rsquo;s resource URI does not
+begin with the same prefix as the receiver, or if the node is not of type resource, nil is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the local name of the given <a href="../Classes/RedlandNode.html">RedlandNode</a> in the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localNameOfURI:" title="localNameOfURI:"></a>
+	<h3 class="subsubtitle method-title">localNameOfURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the local name of the given <a href="../Classes/RedlandURI.html">RedlandURI</a> in the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)localNameOfURI:(RedlandURI *)<em>aURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aURI</em></dt>
+			<dd><p>A <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string generated by stripping the receiver&rsquo;s namespace prefix from the beginning of aURI. If the URI does not begin with the same prefix as the
+receiver, nil is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the local name of the given <a href="../Classes/RedlandURI.html">RedlandURI</a> in the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/localNameOfURIString:" title="localNameOfURIString:"></a>
+	<h3 class="subsubtitle method-title">localNameOfURIString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the local name of the given string in the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)localNameOfURIString:(NSString *)<em>qName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>qName</em></dt>
+			<dd><p>A URI string</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string generated by stripping the receiver&rsquo;s namespace prefix from the beginning of aString. If the string does not begin with the same prefix as
+the receiver, nil is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the local name of the given string in the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/node:" title="node:"></a>
+	<h3 class="subsubtitle method-title">node:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new <a href="../Classes/RedlandNode.html">RedlandNode</a> of type resource whose URI value is the given suffix appended to the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandNode *)node:(NSString *)<em>suffix</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>suffix</em></dt>
+			<dd><p>The string to append to the receiver&rsquo;s namespace prefix</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created <a href="../Classes/RedlandNode.html">RedlandNode</a> instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new <a href="../Classes/RedlandNode.html">RedlandNode</a> of type resource whose URI value is the given suffix appended to the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerInstance" title="registerInstance"></a>
+	<h3 class="subsubtitle method-title">registerInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Registers the current instance so it can be retrieved by calling <a href="#//api/name/namespaceWithShortName:">[RedlandNamespace namespaceWithShortName:]</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)registerInstance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Registers the current instance so it can be retrieved by calling <a href="#//api/name/namespaceWithShortName:">[RedlandNamespace namespaceWithShortName:]</a>.</p><div class="warning"><p><strong>Warning:</strong> Raises an exception if there is already an instance registered for the receiver&rsquo;s <a href="#//api/name/shortName">shortName</a>. The receiver automatically unregisters itself when it is deallocated.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/string:" title="string:"></a>
+	<h3 class="subsubtitle method-title">string:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSString by appending the given suffix to the receiver&rsquo;s namespace.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)string:(NSString *)<em>suffix</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>suffix</em></dt>
+			<dd><p>The string to append to the receiver&rsquo;s namespace prefix</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created NSString instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSString by appending the given suffix to the receiver&rsquo;s namespace.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unregisterInstance" title="unregisterInstance"></a>
+	<h3 class="subsubtitle method-title">unregisterInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the registration done by <a href="#//api/name/registerInstance">[RedlandNamespace registerInstance]</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unregisterInstance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes the registration done by <a href="#//api/name/registerInstance">[RedlandNamespace registerInstance]</a>.</p><div class="warning"><p><strong>Warning:</strong> Does nothing if the receiver is not registered.</p></div><div class="warning"><p><strong>Warning:</strong> Because &ldquo;+namespaceWithShortName:&rdquo; returns a strong reference under ARC, we have to query &ldquo;GlobalNamespaceDict&rdquo; directly instead since
+this method is called from within &ldquo;dealloc&rdquo;.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Redland. All rights reserved. (Last updated: 2013-06-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1245 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>RedlandSerializer Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Redland Objective-C Bindings </a></h1>
+				<a id="developerHome" href="../index.html">Redland</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">RedlandSerializer Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/serializerWithName:">&nbsp;&nbsp;&nbsp;&nbsp;+ serializerWithName:</option>
+	
+	<option value="//api/name/serializerWithName:mimeType:typeURI:">&nbsp;&nbsp;&nbsp;&nbsp;+ serializerWithName:mimeType:typeURI:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addNamespace:">&nbsp;&nbsp;&nbsp;&nbsp;- addNamespace:</option>
+	
+	<option value="//api/name/initWithName:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:</option>
+	
+	<option value="//api/name/initWithName:mimeType:typeURI:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:mimeType:typeURI:</option>
+	
+	<option value="//api/name/serializeModel:toFile:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- serializeModel:toFile:withBaseURI:</option>
+	
+	<option value="//api/name/serializeModel:toFileHandle:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- serializeModel:toFileHandle:withBaseURI:</option>
+	
+	<option value="//api/name/serializeModel:toFileName:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- serializeModel:toFileName:withBaseURI:</option>
+	
+	<option value="//api/name/serializedDataFromModel:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- serializedDataFromModel:withBaseURI:</option>
+	
+	<option value="//api/name/serializedStringFromModel:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- serializedStringFromModel:withBaseURI:</option>
+	
+	<option value="//api/name/setPrefix:forNamespaceURI:">&nbsp;&nbsp;&nbsp;&nbsp;- setPrefix:forNamespaceURI:</option>
+	
+	<option value="//api/name/setValue:ofFeature:">&nbsp;&nbsp;&nbsp;&nbsp;- setValue:ofFeature:</option>
+	
+	<option value="//api/name/valueOfFeature:">&nbsp;&nbsp;&nbsp;&nbsp;- valueOfFeature:</option>
+	
+	<option value="//api/name/wrappedSerializer">&nbsp;&nbsp;&nbsp;&nbsp;- wrappedSerializer</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Convenience Methods">Convenience Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_NamespaceConvenience Methods">NamespaceConvenience Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializerWithName:">serializerWithName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializerWithName:mimeType:typeURI:">serializerWithName:mimeType:typeURI:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addNamespace:">addNamespace:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:">initWithName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:mimeType:typeURI:">initWithName:mimeType:typeURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializeModel:toFile:withBaseURI:">serializeModel:toFile:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializeModel:toFileHandle:withBaseURI:">serializeModel:toFileHandle:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializeModel:toFileName:withBaseURI:">serializeModel:toFileName:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializedDataFromModel:withBaseURI:">serializedDataFromModel:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serializedStringFromModel:withBaseURI:">serializedStringFromModel:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPrefix:forNamespaceURI:">setPrefix:forNamespaceURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setValue:ofFeature:">setValue:ofFeature:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueOfFeature:">valueOfFeature:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wrappedSerializer">wrappedSerializer</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="RedlandSerializer Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">RedlandSerializer Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/RedlandWrappedObject.html">RedlandWrappedObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">RedlandSerializer.h<br />RedlandSerializer.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A serializer turns a <a href="../Classes/RedlandModel.html">RedlandModel</a> into a serialized format like RDF/XML or NTriples.</p>
+
+<p>Wraps librdf_serializer. It seems you should use a new serializer for every model that you want to serialize because of namespace caching.</p>
+
+<p>RedlandSerializer(Convenience)</p>
+
+<p>A category to add convenience methods to the Redland serializer.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializerWithName:">+&nbsp;serializerWithName:</a></code>
+		<span class="tooltip"><p>Returns an autoreleased RedlandSerializer initialized using <a href="#//api/name/initWithName:">initWithName:</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializerWithName:mimeType:typeURI:">+&nbsp;serializerWithName:mimeType:typeURI:</a></code>
+		<span class="tooltip"><p>Convenience method which returns an autoreleased RedlandSerializer initialized using <a href="#//api/name/initWithName:mimeType:typeURI:">initWithName:mimeType:typeURI:</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithName:">&ndash;&nbsp;initWithName:</a></code>
+		<span class="tooltip"><p>Initializes a RedlandSerializer with the given name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithName:mimeType:typeURI:">&ndash;&nbsp;initWithName:mimeType:typeURI:</a></code>
+		<span class="tooltip"><p>Creates and returns a RedlandSerializer identified by either a name, a MIME type, or a type URI.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wrappedSerializer">&ndash;&nbsp;wrappedSerializer</a></code>
+		<span class="tooltip"><p>Returns the underlying librdf_serializer of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializeModel:toFileName:withBaseURI:">&ndash;&nbsp;serializeModel:toFileName:withBaseURI:</a></code>
+		<span class="tooltip"><p>Serializes a model to a file with the specified name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializeModel:toFile:withBaseURI:">&ndash;&nbsp;serializeModel:toFile:withBaseURI:</a></code>
+		<span class="tooltip"><p>Serializes a model to a C file handle.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializeModel:toFileHandle:withBaseURI:">&ndash;&nbsp;serializeModel:toFileHandle:withBaseURI:</a></code>
+		<span class="tooltip"><p>Serializes a model to the given NSFileHandle.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPrefix:forNamespaceURI:">&ndash;&nbsp;setPrefix:forNamespaceURI:</a></code>
+		<span class="tooltip"><p>Sets a namespace/URI prefix mapping.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueOfFeature:">&ndash;&nbsp;valueOfFeature:</a></code>
+		<span class="tooltip"><p>Returns the value of the serializer feature identified by featureURI.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setValue:ofFeature:">&ndash;&nbsp;setValue:ofFeature:</a></code>
+		<span class="tooltip"><p>Sets the serializer feature identified by featureURI to a new value.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Convenience Methods" name="task_Convenience Methods"></a>
+						<h3 class="subsubtitle task-title">Convenience Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializedStringFromModel:withBaseURI:">&ndash;&nbsp;serializedStringFromModel:withBaseURI:</a></code>
+		<span class="tooltip"><p>Returns a serialized string representation of a model using the given base URI.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializedDataFromModel:withBaseURI:">&ndash;&nbsp;serializedDataFromModel:withBaseURI:</a></code>
+		<span class="tooltip"><p>Returns a serialized data representation of a model using the given base URI.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="NamespaceConvenience Methods" name="task_NamespaceConvenience Methods"></a>
+						<h3 class="subsubtitle task-title">NamespaceConvenience Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addNamespace:">&ndash;&nbsp;addNamespace:</a></code>
+		<span class="tooltip"><p>Adds the URI-to-prefix mapping of the specified namespace to the receiver.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/serializerWithName:" title="serializerWithName:"></a>
+	<h3 class="subsubtitle method-title">serializerWithName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an autoreleased RedlandSerializer initialized using <a href="#//api/name/initWithName:">initWithName:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)serializerWithName:(NSString *)<em>factoryName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>factoryName</em></dt>
+			<dd><p>The name for the serializer; use one of our Redland&hellip;SerializerName constants</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandSerializer instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an autoreleased RedlandSerializer initialized using <a href="#//api/name/initWithName:">initWithName:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serializerWithName:mimeType:typeURI:" title="serializerWithName:mimeType:typeURI:"></a>
+	<h3 class="subsubtitle method-title">serializerWithName:mimeType:typeURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method which returns an autoreleased RedlandSerializer initialized using <a href="#//api/name/initWithName:mimeType:typeURI:">initWithName:mimeType:typeURI:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)serializerWithName:(NSString *)<em>factoryName</em> mimeType:(NSString *)<em>mimeType</em> typeURI:(RedlandURI *)<em>typeURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>factoryName</em></dt>
+			<dd><p>The name for the serializer; use one of our Redland&hellip;SerializerName constants</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mimeType</em></dt>
+			<dd><p>The mime-type the serializer should produce</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>typeURI</em></dt>
+			<dd><p>type URI for the type of serialization</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandSerializer instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convenience method which returns an autoreleased RedlandSerializer initialized using <a href="#//api/name/initWithName:mimeType:typeURI:">initWithName:mimeType:typeURI:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addNamespace:" title="addNamespace:"></a>
+	<h3 class="subsubtitle method-title">addNamespace:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds the URI-to-prefix mapping of the specified namespace to the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addNamespace:(RedlandNamespace *)<em>aNamespace</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds the URI-to-prefix mapping of the specified namespace to the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandNamespace.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithName:" title="initWithName:"></a>
+	<h3 class="subsubtitle method-title">initWithName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a RedlandSerializer with the given name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>factoryName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>factoryName</em></dt>
+			<dd><p>The name for the serializer; use one of our Redland&hellip;SerializerName constants</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandSerializer instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a RedlandSerializer with the given name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithName:mimeType:typeURI:" title="initWithName:mimeType:typeURI:"></a>
+	<h3 class="subsubtitle method-title">initWithName:mimeType:typeURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a RedlandSerializer identified by either a name, a MIME type, or a type URI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>factoryName</em> mimeType:(NSString *)<em>mimeType</em> typeURI:(RedlandURI *)<em>typeURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>factoryName</em></dt>
+			<dd><p>The name for the serializer; use one of our Redland&hellip;SerializerName constants</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mimeType</em></dt>
+			<dd><p>The mime-type the serializer should produce</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>typeURI</em></dt>
+			<dd><p>type URI for the type of serialization</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandSerializer instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates and returns a RedlandSerializer identified by either a name, a MIME type, or a type URI.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serializeModel:toFile:withBaseURI:" title="serializeModel:toFile:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">serializeModel:toFile:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Serializes a model to a C file handle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)serializeModel:(RedlandModel *)<em>aModel</em> toFile:(FILE *)<em>file</em> withBaseURI:(RedlandURI *)<em>aURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model (<a href="../Classes/RedlandModel.html">RedlandModel</a> instance) to serialize</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>file</em></dt>
+			<dd><p>the C file handle</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aURI</em></dt>
+			<dd><p>The base-URI to use as <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Serializes a model to a C file handle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serializeModel:toFileHandle:withBaseURI:" title="serializeModel:toFileHandle:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">serializeModel:toFileHandle:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Serializes a model to the given NSFileHandle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)serializeModel:(RedlandModel *)<em>aModel</em> toFileHandle:(NSFileHandle *)<em>fileHandle</em> withBaseURI:(RedlandURI *)<em>aURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model (<a href="../Classes/RedlandModel.html">RedlandModel</a> instance) to serialize</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileHandle</em></dt>
+			<dd><p>the filehandle as NSFileHandle to write to</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aURI</em></dt>
+			<dd><p>The base-URI to use as <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Serializes a model to the given NSFileHandle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serializeModel:toFileName:withBaseURI:" title="serializeModel:toFileName:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">serializeModel:toFileName:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Serializes a model to a file with the specified name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)serializeModel:(RedlandModel *)<em>aModel</em> toFileName:(NSString *)<em>fileName</em> withBaseURI:(RedlandURI *)<em>aURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model (<a href="../Classes/RedlandModel.html">RedlandModel</a> instance) to serialize</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileName</em></dt>
+			<dd><p>the filename to write to as NSString</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aURI</em></dt>
+			<dd><p>The base-URI to use as <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Serializes a model to a file with the specified name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serializedDataFromModel:withBaseURI:" title="serializedDataFromModel:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">serializedDataFromModel:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a serialized data representation of a model using the given base URI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSData *)serializedDataFromModel:(RedlandModel *)<em>aModel</em> withBaseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model (<a href="../Classes/RedlandModel.html">RedlandModel</a> instance) to serialize</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>baseURI</em></dt>
+			<dd><p>The base-URI to use as <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSData</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a serialized data representation of a model using the given base URI.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serializedStringFromModel:withBaseURI:" title="serializedStringFromModel:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">serializedStringFromModel:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a serialized string representation of a model using the given base URI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)serializedStringFromModel:(RedlandModel *)<em>aModel</em> withBaseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model (<a href="../Classes/RedlandModel.html">RedlandModel</a> instance) to serialize</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>baseURI</em></dt>
+			<dd><p>The base-URI to use as <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSString</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a serialized string representation of a model using the given base URI.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPrefix:forNamespaceURI:" title="setPrefix:forNamespaceURI:"></a>
+	<h3 class="subsubtitle method-title">setPrefix:forNamespaceURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a namespace/URI prefix mapping.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPrefix:(NSString *)<em>aPrefix</em> forNamespaceURI:(RedlandURI *)<em>uri</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aPrefix</em></dt>
+			<dd><p>The prefix as NSString</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uri</em></dt>
+			<dd><p>The namespace URI as <a href="../Classes/RedlandURI.html">RedlandURI</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets a namespace/URI prefix mapping.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setValue:ofFeature:" title="setValue:ofFeature:"></a>
+	<h3 class="subsubtitle method-title">setValue:ofFeature:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the serializer feature identified by featureURI to a new value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setValue:(RedlandNode *)<em>featureValue</em> ofFeature:(id)<em>featureURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>featureValue</em></dt>
+			<dd><p>A <a href="../Classes/RedlandNode.html">RedlandNode</a> representing the new value</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>featureURI</em></dt>
+			<dd><p>An NSString or a <a href="../Classes/RedlandURI.html">RedlandURI</a> instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the serializer feature identified by featureURI to a new value.</p><div class="warning"><p><strong>Warning:</strong> Raises a <a href="../Classes/RedlandException.html">RedlandException</a> is no such feature exists.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueOfFeature:" title="valueOfFeature:"></a>
+	<h3 class="subsubtitle method-title">valueOfFeature:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the serializer feature identified by featureURI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandNode *)valueOfFeature:(id)<em>featureURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>featureURI</em></dt>
+			<dd><p>An NSString or a <a href="../Classes/RedlandURI.html">RedlandURI</a> instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the value of the serializer feature identified by featureURI.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wrappedSerializer" title="wrappedSerializer"></a>
+	<h3 class="subsubtitle method-title">wrappedSerializer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the underlying librdf_serializer of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (librdf_serializer *)wrappedSerializer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the underlying librdf_serializer of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandSerializer.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Redland. All rights reserved. (Last updated: 2013-06-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

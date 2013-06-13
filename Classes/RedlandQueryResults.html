@@ -1,0 +1,1281 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>RedlandQueryResults Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Redland Objective-C Bindings </a></h1>
+				<a id="developerHome" href="../index.html">Redland</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">RedlandQueryResults Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/bindings">&nbsp;&nbsp;&nbsp;&nbsp;- bindings</option>
+	
+	<option value="//api/name/count">&nbsp;&nbsp;&nbsp;&nbsp;- count</option>
+	
+	<option value="//api/name/countOfBindings">&nbsp;&nbsp;&nbsp;&nbsp;- countOfBindings</option>
+	
+	<option value="//api/name/finished">&nbsp;&nbsp;&nbsp;&nbsp;- finished</option>
+	
+	<option value="//api/name/getBoolean">&nbsp;&nbsp;&nbsp;&nbsp;- getBoolean</option>
+	
+	<option value="//api/name/isBindings">&nbsp;&nbsp;&nbsp;&nbsp;- isBindings</option>
+	
+	<option value="//api/name/isBoolean">&nbsp;&nbsp;&nbsp;&nbsp;- isBoolean</option>
+	
+	<option value="//api/name/isGraph">&nbsp;&nbsp;&nbsp;&nbsp;- isGraph</option>
+	
+	<option value="//api/name/nameOfBindingAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- nameOfBindingAtIndex:</option>
+	
+	<option value="//api/name/next">&nbsp;&nbsp;&nbsp;&nbsp;- next</option>
+	
+	<option value="//api/name/resultEnumerator">&nbsp;&nbsp;&nbsp;&nbsp;- resultEnumerator</option>
+	
+	<option value="//api/name/resultStream">&nbsp;&nbsp;&nbsp;&nbsp;- resultStream</option>
+	
+	<option value="//api/name/stringRepresentationWithFormat:baseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- stringRepresentationWithFormat:baseURI:</option>
+	
+	<option value="//api/name/stringRepresentationWithMimeType:baseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- stringRepresentationWithMimeType:baseURI:</option>
+	
+	<option value="//api/name/stringRepresentationWithName:baseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- stringRepresentationWithName:baseURI:</option>
+	
+	<option value="//api/name/valueOfBinding:">&nbsp;&nbsp;&nbsp;&nbsp;- valueOfBinding:</option>
+	
+	<option value="//api/name/valueOfBindingAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- valueOfBindingAtIndex:</option>
+	
+	<option value="//api/name/wrappedQueryResults">&nbsp;&nbsp;&nbsp;&nbsp;- wrappedQueryResults</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bindings">bindings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/count">count</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countOfBindings">countOfBindings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/finished">finished</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getBoolean">getBoolean</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isBindings">isBindings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isBoolean">isBoolean</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isGraph">isGraph</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nameOfBindingAtIndex:">nameOfBindingAtIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/next">next</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resultEnumerator">resultEnumerator</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resultStream">resultStream</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringRepresentationWithFormat:baseURI:">stringRepresentationWithFormat:baseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringRepresentationWithMimeType:baseURI:">stringRepresentationWithMimeType:baseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringRepresentationWithName:baseURI:">stringRepresentationWithName:baseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueOfBinding:">valueOfBinding:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueOfBindingAtIndex:">valueOfBindingAtIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wrappedQueryResults">wrappedQueryResults</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="RedlandQueryResults Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">RedlandQueryResults Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/RedlandWrappedObject.html">RedlandWrappedObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">RedlandQueryResults.h<br />RedlandQueryResults.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class represents results from the execution of a <a href="../Classes/RedlandQuery.html">RedlandQuery</a>.</p><div class="warning"><p><strong>Warning:</strong> Query results work almost like an enumerator. You can go through the results by invoking <tt>next</tt> and get the <a href="#//api/name/bindings">bindings</a> for each result
+through the various methods defined below. For simplicity, it is recommended that you use the <tt>resultEnumerator</tt> method to get a standard Cocoa
+NSEnumerator of the results.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wrappedQueryResults">&ndash;&nbsp;wrappedQueryResults</a></code>
+		<span class="tooltip"><p>Returns the underlying librdf_query_results object of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/count">&ndash;&nbsp;count</a></code>
+		<span class="tooltip"><p>Returns the number of <a href="#//api/name/bindings">bindings</a> so far</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/next">&ndash;&nbsp;next</a></code>
+		<span class="tooltip"><p>Advances to the next result.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/finished">&ndash;&nbsp;finished</a></code>
+		<span class="tooltip"><p>Returns YES if the query results are exhausted.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bindings">&ndash;&nbsp;bindings</a></code>
+		<span class="tooltip"><p>Returns a dictionary of the current result bindings.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countOfBindings">&ndash;&nbsp;countOfBindings</a></code>
+		<span class="tooltip"><p>Returns the number of <a href="#//api/name/bindings">bindings</a> of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueOfBinding:">&ndash;&nbsp;valueOfBinding:</a></code>
+		<span class="tooltip"><p>Returns the current value of the binding with the given name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueOfBindingAtIndex:">&ndash;&nbsp;valueOfBindingAtIndex:</a></code>
+		<span class="tooltip"><p>Returns the current value of the binding at the given index.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/nameOfBindingAtIndex:">&ndash;&nbsp;nameOfBindingAtIndex:</a></code>
+		<span class="tooltip"><p>Returns the name of the binding at the given index.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resultStream">&ndash;&nbsp;resultStream</a></code>
+		<span class="tooltip"><p>Returns an RDF graph of the results.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resultEnumerator">&ndash;&nbsp;resultEnumerator</a></code>
+		<span class="tooltip"><p>Returns an enumerator over the query results.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringRepresentationWithFormat:baseURI:">&ndash;&nbsp;stringRepresentationWithFormat:baseURI:</a></code>
+		<span class="tooltip"><p>Turns query results into a string in the specified format.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringRepresentationWithName:baseURI:">&ndash;&nbsp;stringRepresentationWithName:baseURI:</a></code>
+		<span class="tooltip"><p>Turns query results into a string in the specified name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringRepresentationWithMimeType:baseURI:">&ndash;&nbsp;stringRepresentationWithMimeType:baseURI:</a></code>
+		<span class="tooltip"><p>Turns query results into a string in the specified mimeType.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isBindings">&ndash;&nbsp;isBindings</a></code>
+		<span class="tooltip"><p>Returns YES if the query results are in variable <a href="#//api/name/bindings">bindings</a> format.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isBoolean">&ndash;&nbsp;isBoolean</a></code>
+		<span class="tooltip"><p>Returns YES if the query results are in boolean format.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isGraph">&ndash;&nbsp;isGraph</a></code>
+		<span class="tooltip"><p>Returns YES if the query results are in graph format.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getBoolean">&ndash;&nbsp;getBoolean</a></code>
+		<span class="tooltip"><p>Get boolean query result.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/bindings" title="bindings"></a>
+	<h3 class="subsubtitle method-title">bindings</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a dictionary of the current result bindings.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)bindings</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSDictionary</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a dictionary of the current result bindings.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/count" title="count"></a>
+	<h3 class="subsubtitle method-title">count</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of <a href="#//api/name/bindings">bindings</a> so far</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)count</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the number of <a href="#//api/name/bindings">bindings</a> so far</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countOfBindings" title="countOfBindings"></a>
+	<h3 class="subsubtitle method-title">countOfBindings</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of <a href="#//api/name/bindings">bindings</a> of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)countOfBindings</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An int</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the number of <a href="#//api/name/bindings">bindings</a> of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/finished" title="finished"></a>
+	<h3 class="subsubtitle method-title">finished</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the query results are exhausted.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)finished</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns YES if the query results are exhausted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getBoolean" title="getBoolean"></a>
+	<h3 class="subsubtitle method-title">getBoolean</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get boolean query result.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (int)getBoolean</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns > 0 if true, 0 if false, &lt; 0 on error or <a href="#//api/name/finished">finished</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get boolean query result.</p><div class="warning"><p><strong>Warning:</strong> The return value is only meaningful if this is a boolean query result.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isBindings" title="isBindings"></a>
+	<h3 class="subsubtitle method-title">isBindings</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the query results are in variable <a href="#//api/name/bindings">bindings</a> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isBindings</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A BOOL</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the query results are in variable <a href="#//api/name/bindings">bindings</a> format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isBoolean" title="isBoolean"></a>
+	<h3 class="subsubtitle method-title">isBoolean</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the query results are in boolean format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isBoolean</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A BOOL</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the query results are in boolean format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isGraph" title="isGraph"></a>
+	<h3 class="subsubtitle method-title">isGraph</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES if the query results are in graph format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isGraph</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A BOOL</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES if the query results are in graph format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/nameOfBindingAtIndex:" title="nameOfBindingAtIndex:"></a>
+	<h3 class="subsubtitle method-title">nameOfBindingAtIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of the binding at the given index.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)nameOfBindingAtIndex:(int)<em>offset</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSString instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the name of the binding at the given index.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/next" title="next"></a>
+	<h3 class="subsubtitle method-title">next</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Advances to the next result.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)next</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns YES if there is a next result, otherwise NO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Advances to the next result.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resultEnumerator" title="resultEnumerator"></a>
+	<h3 class="subsubtitle method-title">resultEnumerator</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an enumerator over the query results.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandQueryResultsEnumerator *)resultEnumerator</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="../Classes/RedlandQueryResultsEnumerator.html">RedlandQueryResultsEnumerator</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an enumerator over the query results.</p><div class="warning"><p><strong>Warning:</strong> This is the recommended way to evaluate query results.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resultStream" title="resultStream"></a>
+	<h3 class="subsubtitle method-title">resultStream</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an RDF graph of the results.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandStream *)resultStream</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="../Classes/RedlandStream.html">RedlandStream</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an RDF graph of the results.</p><div class="warning"><p><strong>Warning:</strong> The return value is only meaningful if this is an RDF graph query result.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringRepresentationWithFormat:baseURI:" title="stringRepresentationWithFormat:baseURI:"></a>
+	<h3 class="subsubtitle method-title">stringRepresentationWithFormat:baseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns query results into a string in the specified format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringRepresentationWithFormat:(RedlandURI *)<em>formatURI</em> baseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSString instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Turns query results into a string in the specified format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringRepresentationWithMimeType:baseURI:" title="stringRepresentationWithMimeType:baseURI:"></a>
+	<h3 class="subsubtitle method-title">stringRepresentationWithMimeType:baseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns query results into a string in the specified mimeType.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringRepresentationWithMimeType:(NSString *)<em>mimeType</em> baseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSString instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Turns query results into a string in the specified mimeType.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringRepresentationWithName:baseURI:" title="stringRepresentationWithName:baseURI:"></a>
+	<h3 class="subsubtitle method-title">stringRepresentationWithName:baseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns query results into a string in the specified name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringRepresentationWithName:(NSString *)<em>name</em> baseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSString instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Turns query results into a string in the specified name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueOfBinding:" title="valueOfBinding:"></a>
+	<h3 class="subsubtitle method-title">valueOfBinding:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current value of the binding with the given name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandNode *)valueOfBinding:(NSString *)<em>aName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aName</em></dt>
+			<dd><p>NSString</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="../Classes/RedlandNode.html">RedlandNode</a> object</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current value of the binding with the given name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueOfBindingAtIndex:" title="valueOfBindingAtIndex:"></a>
+	<h3 class="subsubtitle method-title">valueOfBindingAtIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current value of the binding at the given index.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandNode *)valueOfBindingAtIndex:(int)<em>offset</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="../Classes/RedlandNode.html">RedlandNode</a> object</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current value of the binding at the given index.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wrappedQueryResults" title="wrappedQueryResults"></a>
+	<h3 class="subsubtitle method-title">wrappedQueryResults</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the underlying librdf_query_results object of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (librdf_query_results *)wrappedQueryResults</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the underlying librdf_query_results object of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandQueryResults.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Redland. All rights reserved. (Last updated: 2013-06-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

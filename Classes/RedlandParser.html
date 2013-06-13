@@ -1,0 +1,1031 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>RedlandParser Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Redland Objective-C Bindings </a></h1>
+				<a id="developerHome" href="../index.html">Redland</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">RedlandParser Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/parserWithName:">&nbsp;&nbsp;&nbsp;&nbsp;+ parserWithName:</option>
+	
+	<option value="//api/name/parserWithName:mimeType:syntaxURI:">&nbsp;&nbsp;&nbsp;&nbsp;+ parserWithName:mimeType:syntaxURI:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithName:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:</option>
+	
+	<option value="//api/name/initWithName:mimeType:syntaxURI:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:mimeType:syntaxURI:</option>
+	
+	<option value="//api/name/parseData:asStreamWithBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- parseData:asStreamWithBaseURI:</option>
+	
+	<option value="//api/name/parseData:intoModel:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- parseData:intoModel:withBaseURI:</option>
+	
+	<option value="//api/name/parseString:asStreamWithBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- parseString:asStreamWithBaseURI:</option>
+	
+	<option value="//api/name/parseString:intoModel:withBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- parseString:intoModel:withBaseURI:</option>
+	
+	<option value="//api/name/setValue:ofFeature:">&nbsp;&nbsp;&nbsp;&nbsp;- setValue:ofFeature:</option>
+	
+	<option value="//api/name/valueOfFeature:">&nbsp;&nbsp;&nbsp;&nbsp;- valueOfFeature:</option>
+	
+	<option value="//api/name/wrappedParser">&nbsp;&nbsp;&nbsp;&nbsp;- wrappedParser</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parserWithName:">parserWithName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parserWithName:mimeType:syntaxURI:">parserWithName:mimeType:syntaxURI:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:">initWithName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:mimeType:syntaxURI:">initWithName:mimeType:syntaxURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseData:asStreamWithBaseURI:">parseData:asStreamWithBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseData:intoModel:withBaseURI:">parseData:intoModel:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseString:asStreamWithBaseURI:">parseString:asStreamWithBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseString:intoModel:withBaseURI:">parseString:intoModel:withBaseURI:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setValue:ofFeature:">setValue:ofFeature:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueOfFeature:">valueOfFeature:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wrappedParser">wrappedParser</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="RedlandParser Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">RedlandParser Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/RedlandWrappedObject.html">RedlandWrappedObject</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">RedlandParser.h<br />RedlandParser.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class parses various RDF serializations (RDF/XML, NTriples, Turtle) into either a <a href="../Classes/RedlandStream.html">RedlandStream</a> or directly into a <a href="../Classes/RedlandModel.html">RedlandModel</a>, wraps librdf_parser.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parserWithName:">+&nbsp;parserWithName:</a></code>
+		<span class="tooltip"><p>Returns an autoreleased RedlandParser of the given type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parserWithName:mimeType:syntaxURI:">+&nbsp;parserWithName:mimeType:syntaxURI:</a></code>
+		<span class="tooltip"><p>Returns an autoreleased RedlandParser initialized using <a href="#//api/name/initWithName:mimeType:syntaxURI:">initWithName:mimeType:syntaxURI:</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithName:">&ndash;&nbsp;initWithName:</a></code>
+		<span class="tooltip"><p>Initializes a new RedlandParser of the given type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithName:mimeType:syntaxURI:">&ndash;&nbsp;initWithName:mimeType:syntaxURI:</a></code>
+		<span class="tooltip"><p>The designated initializer.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wrappedParser">&ndash;&nbsp;wrappedParser</a></code>
+		<span class="tooltip"><p>Returns the underlying librdf_parser object of the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseData:intoModel:withBaseURI:">&ndash;&nbsp;parseData:intoModel:withBaseURI:</a></code>
+		<span class="tooltip"><p>Tries to parse data into a model using the given base URI.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseData:asStreamWithBaseURI:">&ndash;&nbsp;parseData:asStreamWithBaseURI:</a></code>
+		<span class="tooltip"><p>Tries to parse data using the given base URI and returns a <a href="../Classes/RedlandStream.html">RedlandStream</a> of statements.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseString:intoModel:withBaseURI:">&ndash;&nbsp;parseString:intoModel:withBaseURI:</a></code>
+		<span class="tooltip"><p>Tries to parse the specified string into aModel using baseURI as the base URI.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseString:asStreamWithBaseURI:">&ndash;&nbsp;parseString:asStreamWithBaseURI:</a></code>
+		<span class="tooltip"><p>Tries to parse the specified string using baseURI as the base URI and returns a <a href="../Classes/RedlandStream.html">RedlandStream</a> of statements.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueOfFeature:">&ndash;&nbsp;valueOfFeature:</a></code>
+		<span class="tooltip"><p>Returns the value of the parser feature identified by featureURI.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setValue:ofFeature:">&ndash;&nbsp;setValue:ofFeature:</a></code>
+		<span class="tooltip"><p>Sets the parser feature identified by featureURI to a new value.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/parserWithName:" title="parserWithName:"></a>
+	<h3 class="subsubtitle method-title">parserWithName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an autoreleased RedlandParser of the given type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (RedlandParser *)parserWithName:(NSString *)<em>aName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aName</em></dt>
+			<dd><p>The name of the parser to use; use one of the constants</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandParser instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an autoreleased RedlandParser of the given type.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parserWithName:mimeType:syntaxURI:" title="parserWithName:mimeType:syntaxURI:"></a>
+	<h3 class="subsubtitle method-title">parserWithName:mimeType:syntaxURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an autoreleased RedlandParser initialized using <a href="#//api/name/initWithName:mimeType:syntaxURI:">initWithName:mimeType:syntaxURI:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (RedlandParser *)parserWithName:(NSString *)<em>aName</em> mimeType:(NSString *)<em>mimeType</em> syntaxURI:(RedlandURI *)<em>uri</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aName</em></dt>
+			<dd><p>The name of the parser to use; use one of the constants</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mimeType</em></dt>
+			<dd><p>The mime-type the parser should produce</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uri</em></dt>
+			<dd><p>The syntax-URI the parser should use; see our constants</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandParser instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an autoreleased RedlandParser initialized using <a href="#//api/name/initWithName:mimeType:syntaxURI:">initWithName:mimeType:syntaxURI:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithName:" title="initWithName:"></a>
+	<h3 class="subsubtitle method-title">initWithName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a new RedlandParser of the given type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>aName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aName</em></dt>
+			<dd><p>The name of the parser to use; use one of the constants</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandParser instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a new RedlandParser of the given type.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithName:mimeType:syntaxURI:" title="initWithName:mimeType:syntaxURI:"></a>
+	<h3 class="subsubtitle method-title">initWithName:mimeType:syntaxURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The designated initializer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>aName</em> mimeType:(NSString *)<em>mimeType</em> syntaxURI:(RedlandURI *)<em>uri</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aName</em></dt>
+			<dd><p>The name of the parser to use; use one of the constants</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mimeType</em></dt>
+			<dd><p>The mime-type the parser should produce</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uri</em></dt>
+			<dd><p>The syntax-URI the parser should use; see our constants</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new RedlandParser instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The designated initializer.</p>
+
+<p>Returns a new RedlandParser which can be identified either by name (see the Redland&hellip;ParserName constants), mimeType (e.g. &ldquo;application/rdf+xml&rdquo;), or by
+syntaxURI. Defaults to a RDF+XML parser.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseData:asStreamWithBaseURI:" title="parseData:asStreamWithBaseURI:"></a>
+	<h3 class="subsubtitle method-title">parseData:asStreamWithBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tries to parse data using the given base URI and returns a <a href="../Classes/RedlandStream.html">RedlandStream</a> of statements.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandStream *)parseData:(NSData *)<em>data</em> asStreamWithBaseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The data to parse as NSData</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>baseURI</em></dt>
+			<dd><p>The base URI</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tries to parse data using the given base URI and returns a <a href="../Classes/RedlandStream.html">RedlandStream</a> of statements.</p><div class="warning"><p><strong>Warning:</strong> Raises a <a href="../Classes/RedlandException.html">RedlandException</a> if there is a parse error.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseData:intoModel:withBaseURI:" title="parseData:intoModel:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">parseData:intoModel:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tries to parse data into a model using the given base URI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)parseData:(NSData *)<em>data</em> intoModel:(RedlandModel *)<em>aModel</em> withBaseURI:(RedlandURI *)<em>baseURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The data to parse as NSData</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model to parse into; required</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>baseURI</em></dt>
+			<dd><p>The base URI</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tries to parse data into a model using the given base URI.</p><div class="warning"><p><strong>Warning:</strong> Raises a <a href="../Classes/RedlandException.html">RedlandException</a> if there is a parse error.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseString:asStreamWithBaseURI:" title="parseString:asStreamWithBaseURI:"></a>
+	<h3 class="subsubtitle method-title">parseString:asStreamWithBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tries to parse the specified string using baseURI as the base URI and returns a <a href="../Classes/RedlandStream.html">RedlandStream</a> of statements.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandStream *)parseString:(NSString *)<em>aString</em> asStreamWithBaseURI:(RedlandURI *)<em>uri</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aString</em></dt>
+			<dd><p>The string to parse</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uri</em></dt>
+			<dd><p>The base URI</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <a href="../Classes/RedlandStream.html">RedlandStream</a> instance</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tries to parse the specified string using baseURI as the base URI and returns a <a href="../Classes/RedlandStream.html">RedlandStream</a> of statements.</p><div class="warning"><p><strong>Warning:</strong> Raises a <a href="../Classes/RedlandException.html">RedlandException</a> if there is a parse error.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseString:intoModel:withBaseURI:" title="parseString:intoModel:withBaseURI:"></a>
+	<h3 class="subsubtitle method-title">parseString:intoModel:withBaseURI:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tries to parse the specified string into aModel using baseURI as the base URI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)parseString:(NSString *)<em>aString</em> intoModel:(RedlandModel *)<em>aModel</em> withBaseURI:(RedlandURI *)<em>uri</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aString</em></dt>
+			<dd><p>The string to parse</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aModel</em></dt>
+			<dd><p>The model to parse into; required</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uri</em></dt>
+			<dd><p>The base URI</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tries to parse the specified string into aModel using baseURI as the base URI.</p><div class="warning"><p><strong>Warning:</strong> Raises a <a href="../Classes/RedlandException.html">RedlandException</a> if there is a parse error or if &ldquo;aModel&rdquo; or &ldquo;uri&rdquo; is missing.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setValue:ofFeature:" title="setValue:ofFeature:"></a>
+	<h3 class="subsubtitle method-title">setValue:ofFeature:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the parser feature identified by featureURI to a new value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setValue:(RedlandNode *)<em>featureValue</em> ofFeature:(id)<em>featureURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>featureValue</em></dt>
+			<dd><p>A <a href="../Classes/RedlandNode.html">RedlandNode</a> representing the new value</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>featureURI</em></dt>
+			<dd><p>An NSString or a <a href="../Classes/RedlandURI.html">RedlandURI</a> instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the parser feature identified by featureURI to a new value.</p><div class="warning"><p><strong>Warning:</strong> Raises a <a href="../Classes/RedlandException.html">RedlandException</a> is no such feature exists.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueOfFeature:" title="valueOfFeature:"></a>
+	<h3 class="subsubtitle method-title">valueOfFeature:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the parser feature identified by featureURI.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (RedlandNode *)valueOfFeature:(id)<em>featureURI</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>featureURI</em></dt>
+			<dd><p>An NSString or a <a href="../Classes/RedlandURI.html">RedlandURI</a> instance</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the value of the parser feature identified by featureURI.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wrappedParser" title="wrappedParser"></a>
+	<h3 class="subsubtitle method-title">wrappedParser</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the underlying librdf_parser object of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (librdf_parser *)wrappedParser</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A librdf_parser struct</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the underlying librdf_parser object of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandParser.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Redland. All rights reserved. (Last updated: 2013-06-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
