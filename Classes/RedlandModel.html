@@ -100,6 +100,8 @@
 	
 	<option value="//api/name/removeStatement:withContext:">&nbsp;&nbsp;&nbsp;&nbsp;- removeStatement:withContext:</option>
 	
+	<option value="//api/name/removeStatementsLike:">&nbsp;&nbsp;&nbsp;&nbsp;- removeStatementsLike:</option>
+	
 	<option value="//api/name/removeSubmodel:">&nbsp;&nbsp;&nbsp;&nbsp;- removeSubmodel:</option>
 	
 	<option value="//api/name/serializedRDFXMLDataWithBaseURI:">&nbsp;&nbsp;&nbsp;&nbsp;- serializedRDFXMLDataWithBaseURI:</option>
@@ -152,11 +154,11 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SerializerConvenience Methods">SerializerConvenience Methods</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Convenience Methods">Convenience Methods</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_ParserConvenience Methods">ParserConvenience Methods</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SerializerConvenience Methods">SerializerConvenience Methods</a></span></li>
 	
 </ul></li>
 
@@ -225,6 +227,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeStatement:">removeStatement:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeStatement:withContext:">removeStatement:withContext:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeStatementsLike:">removeStatementsLike:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeSubmodel:">removeSubmodel:</a></span></li>
 	
@@ -304,9 +308,9 @@
 <p>A model is a set of statements (duplicates are not allowed, except in separate Redland contexts). Models can have statements added and removed, be queried
 and stored which is implemented by the <a href="../Classes/RedlandStorage.html">RedlandStorage</a> class. Wraps librdf_model.</p>
 
-<p>Category to add convenience parsing methods to RedlandModel.</p>
-
 <p>RedlandModel(SerializerConvenience)</p>
+
+<p>Category to add convenience parsing methods to RedlandModel.</p>
 					</div>
 					
 					
@@ -405,6 +409,13 @@ Duplicate statements are ignored.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeStatement:withContext:">&ndash;&nbsp;removeStatement:withContext:</a></code>
 		<span class="tooltip"><p>Removes a single statement with the given context from the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeStatementsLike:">&ndash;&nbsp;removeStatementsLike:</a></code>
+		<span class="tooltip"><p>Removes all statements matching the given statement.</p></span>
 	</span>
 	
 	
@@ -524,6 +535,21 @@ Duplicate statements are ignored.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/setValue:ofFeature:">&ndash;&nbsp;setValue:ofFeature:</a></code>
 		<span class="tooltip"><p>Sets the model feature identified by featureURI to a new value.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="SerializerConvenience Methods" name="task_SerializerConvenience Methods"></a>
+						<h3 class="subsubtitle task-title">SerializerConvenience Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serializedRDFXMLDataWithBaseURI:">&ndash;&nbsp;serializedRDFXMLDataWithBaseURI:</a></code>
+		<span class="tooltip"><p>Returns an RDF/XML serialization of the receiver using the given base URI.</p></span>
 	</span>
 	
 	
@@ -653,21 +679,6 @@ Duplicate statements are ignored.</p></span>
 		<code><a href="#//api/name/loadURL:withContext:">&ndash;&nbsp;loadURL:withContext:</a></code>
 		<span class="tooltip"><p>Fetches data from the given URL using the Cocoa NSURL loading system, parses it with a parser deduced from the returned MIME type, and adds the statements
 into the given context of the receiver.</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="SerializerConvenience Methods" name="task_SerializerConvenience Methods"></a>
-						<h3 class="subsubtitle task-title">SerializerConvenience Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/serializedRDFXMLDataWithBaseURI:">&ndash;&nbsp;serializedRDFXMLDataWithBaseURI:</a></code>
-		<span class="tooltip"><p>Returns an RDF/XML serialization of the receiver using the given base URI.</p></span>
 	</span>
 	
 	
@@ -2281,6 +2292,59 @@ be guessed from the MIME type, an RDF/XML parser will be used.</p></div>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/removeStatementsLike:" title="removeStatementsLike:"></a>
+	<h3 class="subsubtitle method-title">removeStatementsLike:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes all statements matching the given statement.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeStatementsLike:(RedlandStatement *)<em>aStatement</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>aStatement</em></dt>
+			<dd><p>The <a href="../Classes/RedlandStatement.html">RedlandStatement</a> to find matches for</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Removes all statements matching the given statement.</p>
+
+<p>At least one of the statement&rsquo;s subject, predicate or object must be set.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RedlandModel.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/removeSubmodel:" title="removeSubmodel:"></a>
 	<h3 class="subsubtitle method-title">removeSubmodel:</h3>
 	
@@ -3206,7 +3270,7 @@ with the same store this still returns the size of the parent model.</p></div>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Redland. All rights reserved. (Last updated: 2013-06-13)</span><br />
+						<p><span class="copyright">&copy; 2013 Redland. All rights reserved. (Last updated: 2013-06-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
