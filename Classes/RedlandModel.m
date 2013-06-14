@@ -228,6 +228,22 @@
 }
 
 /**
+ *  Removes all statements matching the given statement.
+ *
+ *  At least one of the statement's subject, predicate or object must be set.
+ *  @param aStatement The RedlandStatement to find matches for
+ */
+- (void)removeStatementsLike:(RedlandStatement *)aStatement
+{
+	NSParameterAssert(aStatement.subject != nil || aStatement.predicate != nil || aStatement.object != nil);
+	
+	RedlandStream *stream = [self streamOfStatementsLike:aStatement];
+	for (RedlandStatement *stmt in [stream statementEnumerator]) {
+		[self removeStatement:stmt];
+	}
+}
+
+/**
  *  Removes all statements with the given context from the receiver.
  *  @param contextNode The context of the statements to remove
  */
@@ -243,7 +259,7 @@
 
 
 
-#pragma mark - Model Handling
+#pragma mark - Submodel Handling
 /**
  *  Creates a sub-model from triples found in the receiver that relate to the given subject node.
  *  @param aSubject The subject node for which to retrieve triples

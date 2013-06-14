@@ -36,6 +36,7 @@
     RedlandNode *subject = [RedlandNode nodeWithBlankID:@"foo"];
     RedlandNode *predicate = [RedlandNode nodeWithURIString:@"foo:bar"];
     RedlandNode *object = [RedlandNode nodeWithLiteral:@"test"];
+    RedlandNode *object2 = [RedlandNode nodeWithLiteral:@"another test"];
     
     RedlandModel *model = [RedlandModel new];
     STAssertNotNil(model, nil);
@@ -43,6 +44,13 @@
     RedlandStatement *testStatement = [RedlandStatement statementWithSubject:subject
 																   predicate:predicate
 																	  object:object];
+	RedlandStatement *secondStatement = [RedlandStatement statementWithSubject:subject
+																	 predicate:predicate
+																		object:object2];
+	RedlandStatement *likeStatement = [RedlandStatement statementWithSubject:subject
+																   predicate:predicate
+																	  object:nil];
+
     STAssertNoThrow([model addStatement:testStatement], nil);
     STAssertEquals(1, [model size], nil);
     STAssertTrue([model containsStatement:testStatement], nil);
@@ -53,6 +61,12 @@
     STAssertTrue([model node:subject hasOutgoingArc:predicate], nil);
     STAssertNoThrow([model removeStatement:testStatement], nil);
     STAssertFalse([model containsStatement:testStatement], nil);
+	
+	STAssertNoThrow([model addStatement:testStatement], nil);
+	STAssertNoThrow([model addStatement:secondStatement], nil);
+    STAssertEquals(2, [model size], nil);
+	STAssertNoThrow([model removeStatementsLike:likeStatement], nil);
+    STAssertEquals(0, [model size], nil);
 }
 
 - (void)testSubmodel

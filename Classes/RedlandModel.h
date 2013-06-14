@@ -56,6 +56,7 @@
 - (BOOL)containsStatement:(RedlandStatement *)aStatement;
 - (BOOL)removeStatement:(RedlandStatement *)aStatement;
 - (BOOL)removeStatement:(RedlandStatement *)aStatement withContext:(RedlandNode *)contextNode;
+- (void)removeStatementsLike:(RedlandStatement *)aStatement;
 - (void)removeAllStatementsWithContext:(RedlandNode *)contextNode;
 
 - (BOOL)containsContext:(RedlandNode *)contextNode;

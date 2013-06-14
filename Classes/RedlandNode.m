@@ -39,10 +39,21 @@
 
 @implementation RedlandNode
 
+/**
+ *  The "init" initializer redirects to "initWithBlankID:" which creates a blank node with a generated id.
+ *  @return A RedlandNode of the blank type
+ */
+- (id)init
+{
+	return [self initWithBlankID:nil];
+}
+
+
+
 #pragma mark - Convenience Initializers
 /**
  *  @param aString The literal string
- *  @return a RedlandLiteralNode with the given string value. No language or datatype are specified.
+ *  @return a RedlandNode of the literal type with the given string value. No language or datatype are specified.
  */
 + (id)nodeWithLiteral:(NSString *)aString
 {
