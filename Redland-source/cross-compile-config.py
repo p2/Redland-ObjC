@@ -3,7 +3,7 @@
 ##
 
 SOURCES = [
-	'http://xmlsoft.org/sources/libxml2-2.9.1.tar.gz',
+	# 'http://xmlsoft.org/sources/libxml2-2.9.1.tar.gz',
 	'http://download.librdf.org/source/raptor2-2.0.10.tar.gz',
 	'http://download.librdf.org/source/rasqal-0.9.30.tar.gz',
 	'http://download.librdf.org/source/redland-1.0.16.tar.gz',
