@@ -200,8 +200,11 @@ def download(url, directory=None, filename=None, force=False, nostatus=False):
 	meta = urlhandle.info()
 	
 	# start
-	filesize = int(meta.getheaders("Content-Length")[0])
-	print "-->  Downloading %s (%s KB)" % (filename, filesize / 1000)
+	contentlen = meta.getheaders("Content-Length")
+	filesize = int(contentlen[0]) if contentlen else None
+	print "-->  Downloading %s (%s KB)" % (filename, filesize / 1000 if filesize else "??")
+	if filesize is None:
+		nostatus = True
 	
 	loaded = 0
 	blocksize = 8192

@@ -3,5 +3,6 @@ developed at the Institute for Learning and Research Technology,
 University of Bristol, UK (http://www.bristol.ac.uk/).
 
 This product includes the Redland Objective-C bindings 
-(http://purl.org/net/kianga/latest/redland-objc) written by 
-Rene Puls (rpuls@kcore.de).
+(https://github.com/p2/Redland-ObjC/) originally written by
+Rene Puls (rpuls@kcore.de), currently maintained by Pascal
+Pfiffner (https://github.com/p2/).
