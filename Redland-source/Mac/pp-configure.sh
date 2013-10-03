@@ -21,7 +21,7 @@ if [[ 'x' = ${PREFIX}x ]]; then
 fi
 export PREFIX
 
-export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PREFIX/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
 
 export CFLAGS="-std=c99 $ARCH -pipe -I$PREFIX/include"
 export CPPFLAGS="$CFLAGS"

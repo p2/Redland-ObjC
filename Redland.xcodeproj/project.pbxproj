@@ -452,6 +452,7 @@
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 		EE7DF2C615ED5C9C00D328C1 /* cross-compile-config.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile-config.py"; sourceTree = "<group>"; };
 		EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
+		EEC2CE6317E12EF3007A01DC /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
 		EEDE81B315BF375200AC2B64 /* libraptor2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libraptor2.a; sourceTree = "<group>"; };
 		EEDE81B415BF375200AC2B64 /* librasqal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librasqal.a; sourceTree = "<group>"; };
 		EEDE81B515BF375200AC2B64 /* librdf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librdf.a; sourceTree = "<group>"; };
@@ -811,6 +812,7 @@
 				EEDE81B615BF375F00AC2B64 /* Universal-Mac */,
 				EE0CB61D15BDD0DC004BB6C9 /* iOS */,
 				EE0CB61E15BDD10E004BB6C9 /* Mac */,
+				EEC2CE6217E12EF3007A01DC /* Sim */,
 			);
 			name = "Redland Source";
 			path = "Redland-source";
@@ -845,6 +847,14 @@
 			);
 			name = Headers;
 			path = "product-Mac-x86_64/include";
+			sourceTree = "<group>";
+		};
+		EEC2CE6217E12EF3007A01DC /* Sim */ = {
+			isa = PBXGroup;
+			children = (
+				EEC2CE6317E12EF3007A01DC /* pp-configure.sh */,
+			);
+			path = Sim;
 			sourceTree = "<group>";
 		};
 		EEDE81B215BF375200AC2B64 /* Universal-iOS */ = {
