@@ -87,6 +87,10 @@ execfile('cross-compile-config.py')
 ##
 def main():
 	abspath = os.path.abspath(__file__)
+	if ' ' in abspath:
+		print shell_color("x>  Your working directory contains spaces, I can not cross compile.", 'red', True)
+		sys.exit(1)
+	
 	os.chdir(os.path.split(abspath)[0])
 	
 	# collect all needed directories

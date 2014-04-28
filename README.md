@@ -4,7 +4,7 @@ Redland Objective-C Wrapper
 This projects is a resurrection of Rene Puls' Objective-C wrapper for the [Redland C RDF libraries][librdf] for **Mac**, with the addition of a static library
 target suitable for **iOS**. The code now requires **Automatic Reference Counting** (ARC) to be enabled.
 
-The **documentation** is now available at [http://p2.github.io/Redland-ObjC/][docs]
+The **documentation** is available at [http://p2.github.io/Redland-ObjC/][docs]
 
 
 Getting the Framework
@@ -25,6 +25,9 @@ Now whenever there has been an update to the framework and you want to get the l
 
     $ cd YourProject/Redland-ObjC
     $ git pull
+
+**Note** that building the C libraries is not possible if your project directory contains spaces.
+The build script will warn you about this fact and exit.
 
 
 Building the C libraries
