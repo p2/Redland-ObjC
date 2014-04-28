@@ -218,12 +218,12 @@
 	
 	librdf_world *myWorld = [RedlandWorld defaultWrappedWorld];
 	unsigned char *buffer;
-	unsigned int bufSize = librdf_statement_encode2(myWorld, wrappedObject, NULL, 0);
+	size_t bufSize = librdf_statement_encode2(myWorld, wrappedObject, NULL, 0);
 	@try {
 		buffer = malloc(bufSize);
 		if (buffer == NULL) {
 			@throw [NSException exceptionWithName:NSInternalInconsistencyException
-										   reason:[NSString stringWithFormat:@"Failed to allocate buffer of %u bytes for librdf_statement_encode", bufSize]
+										   reason:[NSString stringWithFormat:@"Failed to allocate buffer of %zu bytes for librdf_statement_encode", bufSize]
 										 userInfo:nil];
 		}
 		bufSize = librdf_statement_encode2(myWorld, wrappedObject, buffer, bufSize);

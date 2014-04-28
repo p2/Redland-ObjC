@@ -42,23 +42,24 @@ you can most easily install via [Homebrew]:
     $ brew install pkg-config
 
 
-### How cross compiling works
+#### Cross compiling librdf
 
-There is a Python-script that downloads and (cross-)compiles libxml2, [raptor2], [rasqal] and [librdf], the components you need. The script needs you to have
-Xcode 4.5 and the iOS SDK 5.1 or later installed. Make sure you have installed the command line tools, you do that from within Xcode » Preferences » Downloads
-» Components.
+There is a Python-script that downloads and (cross-)compiles [raptor2], [rasqal] and [librdf], the components you need.
+The script needs you to have Xcode 4.5 and the iOS SDK 5.1 or later installed.
+For Xcode < 5.0, make sure you have installed the command line tools, you do that from within Xcode » Preferences » Downloads » Components.
 
-Just choose the **Redland C Library** target and hit **Run**. Alternatively, open the Terminal and execute the script manually:
+Just choose the **Redland C Library** target and hit **Run**.
+Alternatively, open the Terminal and execute the script manually:
 
     $ cd Redland-ObjC/Redland-source
     $ ./cross-compile.py
 
-This will build libraries for `armv7`, `armv7s`, `i386` and `x86_64`. You can change this in the file `cross-compile-config.py` if you dare. The script will
-only build the missing C libraries, if you want to force a new build run the target **Redland PURGE C Library** or run the script
-`Redland-source/start-over.sh`.
+This will build libraries for `armv7`, `armv7s`, `arm64`, `i386` and `x86_64`.
+You can change this in the file `cross-compile-config.py` if you dare.
+The script will only build the missing C libraries.
+If you want to force a new build run the target **Redland PURGE C Library** or run the script `Redland-source/start-over.sh`.
 
-The process will also download and build **libxml2** version 2.7.8 despite it being included in OS X. This is done because pkg-config and the system-supplied
-lxml don't play together very well. We can't use version libxml 2.9.0 because that version contains a bug and is not compile-able on OS X.
+**Problems?** Take a look at [common errors](https://github.com/p2/Redland-ObjC/wiki/Common-Errors).
 
 [raptor2]: http://librdf.org/raptor/
 [rasqal]: http://librdf.org/rasqal/
@@ -87,6 +88,7 @@ In your app's **Build Phases** under **Link Binary with Libraries**, add these l
   > build fails because of missing headers, simply close and reopen the project again.
 
 * `libxml2.dylib`
+* `libxslt.dylib`
 * `libsqlite3.dylib` (if you use storage)
 
 Now you need to give Xcode some more hints so it can compile your app

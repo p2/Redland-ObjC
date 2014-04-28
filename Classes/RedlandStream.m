@@ -31,8 +31,9 @@
 
 - (void)dealloc
 {
-	if (isWrappedObjectOwner)
+	if (isWrappedObjectOwner) {
 		librdf_free_stream(wrappedObject);
+	}
 }
 
 

@@ -246,7 +246,7 @@
 - (void)encodeWithCoder:(NSCoder *)coder
 {
 	unsigned char *buffer = NULL;
-	unsigned int bufSize;
+	size_t bufSize;
 	NSParameterAssert(coder != nil);
 	
 	bufSize = librdf_node_encode(wrappedObject, NULL, 0);
@@ -254,7 +254,7 @@
 		buffer = malloc(bufSize);
 		if (buffer == NULL) {
 			@throw [NSException exceptionWithName:NSInternalInconsistencyException
-										   reason:[NSString stringWithFormat:@"Failed to allocate buffer of %u bytes for librdf_node_encode", bufSize]
+										   reason:[NSString stringWithFormat:@"Failed to allocate buffer of %zu bytes for librdf_node_encode", bufSize]
 										 userInfo:nil];
 		}
 		bufSize = librdf_node_encode(wrappedObject, buffer, bufSize);

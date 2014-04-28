@@ -157,7 +157,7 @@ def main():
 			
 			# iOS and Simulator universal
 			lib = '%s.a' % lib_base
-			p = subprocess.call('lipo -create -output %s/%s product-iOS-*/lib/%s product-Sim-*/lib/%s' % (UNIVERSAL, lib, lib, lib), shell=True)
+			p = subprocess.call('lipo -create -output %s/%s product-iOS-*/lib/%s product-Mac-*/lib/%s' % (UNIVERSAL, lib, lib, lib), shell=True)
 			if 0 != p:
 				print shell_color('xx>  lipo failed to create the uber-universal library for %s' % lib, 'red', True)
 				#sys.exit(1)

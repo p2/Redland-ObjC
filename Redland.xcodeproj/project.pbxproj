@@ -159,6 +159,7 @@
 		EE555EF315C8F00600F26A1A /* RedlandQueryResultsEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486DF406DA80D500AA6058 /* RedlandQueryResultsEnumerator.h */; settings = {ATTRIBUTES = (); }; };
 		EE555EF415C8F00D00F26A1A /* RedlandNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = EDAC63810694506E007A085A /* RedlandNamespace.h */; settings = {ATTRIBUTES = (); }; };
 		EE555EF515C8F26000F26A1A /* RedlandNode-Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = ED69A49A06F9EB8200A624F7 /* RedlandNode-Convenience.m */; };
+		EE73B7EA190EF02500EBC1ED /* libxslt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE73B7E9190EF02500EBC1ED /* libxslt.dylib */; };
 		EE74748715B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE74748815B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE74748915B902E7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
@@ -184,7 +185,6 @@
 		EE74749F15B905B7004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE7474A115B905CC004A456E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		EE7474AD15B9149C004A456E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
-		EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
 		EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D251B0688A36D0039DA12 /* libcrypto.dylib */; };
 		EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED66E3DC081EA37600951AB6 /* libcurl.3.dylib */; };
 		EE7B1867166BB33A00AAA8A7 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
@@ -450,6 +450,7 @@
 		EE1DDDF315BEDF0400882BDA /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "pp-configure.sh"; path = "Mac/pp-configure.sh"; sourceTree = "<group>"; };
 		EE205F2F160291DD0020752E /* Tests-iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-iOS-Info.plist"; sourceTree = "<group>"; };
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		EE73B7E9190EF02500EBC1ED /* libxslt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.dylib; path = usr/lib/libxslt.dylib; sourceTree = SDKROOT; };
 		EE7DF2C615ED5C9C00D328C1 /* cross-compile-config.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile-config.py"; sourceTree = "<group>"; };
 		EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		EEC2CE6317E12EF3007A01DC /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
@@ -470,7 +471,7 @@
 			files = (
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				EE7474AD15B9149C004A456E /* libxml2.dylib in Frameworks */,
-				EE7474AE15B914A3004A456E /* libxslt.1.dylib in Frameworks */,
+				EE73B7EA190EF02500EBC1ED /* libxslt.dylib in Frameworks */,
 				EE7474AF15B914A8004A456E /* libcrypto.dylib in Frameworks */,
 				EE7474B015B914AB004A456E /* libcurl.3.dylib in Frameworks */,
 				EE7B1867166BB33A00AAA8A7 /* libraptor2.dylib in Frameworks */,
@@ -558,6 +559,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE73B7E9190EF02500EBC1ED /* libxslt.dylib */,
 				ED48EB8108BB596300ACF14F /* SenTestingKit.framework */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 				0867D6A5FE840307C02AAC07 /* AppKit.framework */,

@@ -10,8 +10,8 @@ SOURCES = [
 ]
 
 ARCHS = {
-	'iOS': ['armv7', 'armv7s'],
-	'Sim': ['i386'],
+	'iOS': ['armv7', 'armv7s', 'arm64'],
+	#'Sim': ['i386', 'x86_64'],		disable as we can just use the "Mac" build these days
 	'Mac': ['i386', 'x86_64']
 }
 
