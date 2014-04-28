@@ -4,9 +4,9 @@
 
 SOURCES = [
 	# 'http://xmlsoft.org/sources/libxml2-2.9.1.tar.gz',
-	'http://download.librdf.org/source/raptor2-2.0.10.tar.gz',
-	'http://download.librdf.org/source/rasqal-0.9.30.tar.gz',
-	'http://download.librdf.org/source/redland-1.0.16.tar.gz',
+	'http://download.librdf.org/source/raptor2-2.0.13.tar.gz',
+	'http://download.librdf.org/source/rasqal-0.9.32.tar.gz',
+	'http://download.librdf.org/source/redland-1.0.17.tar.gz',
 ]
 
 ARCHS = {
@@ -16,10 +16,10 @@ ARCHS = {
 }
 
 FLAGS = {
-	'raptor2-2.0.10': {
+	'raptor2-2.0.13': {
 		'*': ['--with-www=none'],
 	},
-	'redland-1.0.16': {
+	'redland-1.0.17': {
 		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
 	},
 }
