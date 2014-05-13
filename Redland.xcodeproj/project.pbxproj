@@ -146,9 +146,6 @@
 		EE5144F915DAEFD400DA9BA2 /* RedlandSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8D28330688B6CF0039DA12 /* RedlandSerializer.h */; settings = {ATTRIBUTES = (); }; };
 		EE5144FA15DAEFD400DA9BA2 /* RedlandQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486C9306DA6F7900AA6058 /* RedlandQuery.h */; settings = {ATTRIBUTES = (); }; };
 		EE5144FB15DAEFD400DA9BA2 /* RedlandQueryResults.h in Headers */ = {isa = PBXBuildFile; fileRef = ED486CEA06DA72DF00AA6058 /* RedlandQueryResults.h */; settings = {ATTRIBUTES = (); }; };
-		EE555EDB15C86B5700F26A1A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2B3E9D06EDD9BA00CE81BB /* libxml2.dylib */; };
-		EE555EDC15C86B5900F26A1A /* libxslt.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED48EB7D08BB593800ACF14F /* libxslt.1.dylib */; };
-		EE555EE315C873B000F26A1A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE555EE215C873B000F26A1A /* libz.dylib */; };
 		EE555EE415C873E300F26A1A /* rdf-syntax.rdf in Resources */ = {isa = PBXBuildFile; fileRef = ED98642206FAEE3C009186B3 /* rdf-syntax.rdf */; };
 		EE555EE515C873E600F26A1A /* rdf-schema.rdf in Resources */ = {isa = PBXBuildFile; fileRef = ED98662B06FB3D05009186B3 /* rdf-schema.rdf */; };
 		EE555EEE15C8EFF100F26A1A /* RedlandException.h in Headers */ = {isa = PBXBuildFile; fileRef = ED11265C069DD654006F17FD /* RedlandException.h */; settings = {ATTRIBUTES = (); }; };
@@ -190,6 +187,8 @@
 		EE7B1867166BB33A00AAA8A7 /* libraptor2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B715BF375F00AC2B64 /* libraptor2.dylib */; };
 		EE7B1868166BB33C00AAA8A7 /* librasqal.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B815BF375F00AC2B64 /* librasqal.dylib */; };
 		EE7B1869166BB33E00AAA8A7 /* librdf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDE81B915BF375F00AC2B64 /* librdf.dylib */; };
+		EEB433C119229A67009E01C6 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB433C019229A67009E01C6 /* libxml2.dylib */; };
+		EEB433C319229A6D009E01C6 /* libxslt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EEB433C219229A6D009E01C6 /* libxslt.dylib */; };
 		EEB65C7C166BB18000ADFF79 /* libraptor2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64715BE5CB4004BB6C9 /* libraptor2.a */; };
 		EEB65C7D166BB18300ADFF79 /* librasqal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64815BE5CB4004BB6C9 /* librasqal.a */; };
 		EEB65C7E166BB18C00ADFF79 /* librdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE0CB64915BE5CB4004BB6C9 /* librdf.a */; };
@@ -452,6 +451,8 @@
 		EE555EE215C873B000F26A1A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
 		EE73B7E9190EF02500EBC1ED /* libxslt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.dylib; path = usr/lib/libxslt.dylib; sourceTree = SDKROOT; };
 		EE7DF2C615ED5C9C00D328C1 /* cross-compile-config.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "cross-compile-config.py"; sourceTree = "<group>"; };
+		EEB433C019229A67009E01C6 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libxml2.dylib; sourceTree = DEVELOPER_DIR; };
+		EEB433C219229A6D009E01C6 /* libxslt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxslt.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libxslt.dylib; sourceTree = DEVELOPER_DIR; };
 		EEC146EC15DECDE6006B8798 /* AppledocSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
 		EEC2CE6317E12EF3007A01DC /* pp-configure.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pp-configure.sh"; sourceTree = "<group>"; };
 		EEDE81B315BF375200AC2B64 /* libraptor2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libraptor2.a; sourceTree = "<group>"; };
@@ -510,11 +511,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE555EE315C873B000F26A1A /* libz.dylib in Frameworks */,
+				EEB433C319229A6D009E01C6 /* libxslt.dylib in Frameworks */,
+				EEB433C119229A67009E01C6 /* libxml2.dylib in Frameworks */,
 				EE205F2E1602917C0020752E /* libredland-ios.a in Frameworks */,
 				EEE7B4B615C85A2E004D5A68 /* SenTestingKit.framework in Frameworks */,
-				EE555EDB15C86B5700F26A1A /* libxml2.dylib in Frameworks */,
-				EE555EDC15C86B5900F26A1A /* libxslt.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +559,8 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEB433C219229A6D009E01C6 /* libxslt.dylib */,
+				EEB433C019229A67009E01C6 /* libxml2.dylib */,
 				EE73B7E9190EF02500EBC1ED /* libxslt.dylib */,
 				ED48EB8108BB596300ACF14F /* SenTestingKit.framework */,
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
@@ -1169,7 +1171,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./cross-compile.py";
+			shellScript = "PATH=/usr/local/bin:$PATH\ncd $SRCROOT/Redland-source\n./build.sh";
 		};
 		EE3F18A717093D620016B7EB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

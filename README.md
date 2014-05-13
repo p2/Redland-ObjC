@@ -39,31 +39,36 @@ The build script will warn you about this fact and exit.
 Building the C libraries
 ------------------------
 
-> **Note:** When building the C libraries with Xcode, the progress bar will appear stalled while saying _Running 1 of 1 custom shell scripts_, which can take
-some minutes. Just be patient, the compilation will go through or abort with an error.
+**TL;DR:** Run the script `Redland-source/build.sh`
 
-The first time you build the framework, the C libraries will automatically be built, so you need not worry about this. Compiling requires `pkg-config` which
-you can most easily install via [Homebrew]:
+> **Note:** When building the C libraries with Xcode, the progress bar will appear stalled while saying _Running 1 of 1 custom shell scripts_, which can take some minutes.
+> Just be patient, the compilation will go through or abort with an error.
 
-    $ brew install pkg-config
+The first time you build the framework, the C libraries will automatically be built, so you need not worry about this.
+Compilation requires `pkg-config`, which will be installed for you if you run the `build.sh` script.
+You can install it yourself via [Homebrew]:
 
+```bash
+$ brew install pkg-config
+```
 
 #### Cross compiling librdf
 
 There is a Python-script that downloads and (cross-)compiles [raptor2], [rasqal] and [librdf], the components you need.
 The script needs you to have Xcode 4.5 and the iOS SDK 5.1 or later installed.
-For Xcode < 5.0, make sure you have installed the command line tools, you do that from within Xcode » Preferences » Downloads » Components.
+If you are on Xcode < 5.0, make sure you have the command line tools installed, you do that from within Xcode » Preferences » Downloads » Components.
 
 Just choose the **Redland C Library** target and hit **Run**.
 Alternatively, open the Terminal and execute the script manually:
 
-    $ cd Redland-ObjC/Redland-source
-    $ ./cross-compile.py
+```bash
+$ cd Redland-ObjC/Redland-source
+$ python cross-compile.py
+```
 
 This will build libraries for `armv7`, `armv7s`, `arm64`, `i386` and `x86_64`.
-You can change this in the file `cross-compile-config.py` if you dare.
-The script will only build the missing C libraries.
-If you want to force a new build run the target **Redland PURGE C Library** or run the script `Redland-source/start-over.sh`.
+You can change all this in the file `cross-compile-config.py` if you dare.
+The script will only build the missing C libraries, if you want to force a new build run the target **Redland PURGE C Library** or run the script `Redland-source/start-over.sh`.
 
 **Problems?** Take a look at [common errors](https://github.com/p2/Redland-ObjC/wiki/Common-Errors).
 

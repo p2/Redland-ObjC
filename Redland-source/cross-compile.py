@@ -234,14 +234,14 @@ def download(url, directory=None, filename=None, force=False, nostatus=False):
 
 
 def unpack_into(archive, directory):
-	"""Unarchives a gzipped tar into the given subdirectories
+	"""Unarchives a gzipped tar into the given subdirectories.
 	
 	Will NOT unpack the archive if there already is a directory with the same
-	base name
+	base name.
 	
 	Returns a tuple with the unpacked directory name as first and a bool
 	indicating whether the archive was freshly extracted or not as second
-	member
+	member.
 	"""
 	
 	newly_unpacked = False
@@ -264,7 +264,7 @@ def unpack_into(archive, directory):
 
 
 def compile_and_install(source, target, platform, arch, flag_mapping):
-	"""Compiles the given source directories into the mapped target directories
+	"""Compiles the given source directories into the mapped target directories.
 	
 	- source directory must be configure/make/make install-able
 	- target is the directory where the products will be installed
