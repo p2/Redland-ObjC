@@ -55,7 +55,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		169AB6971926AC0600C4D421 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 169AB6961926AC0600C4D421 /* libsqlite3.dylib */; };
+		169AB6971926AC0600C4D421 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 169AB6961926AC0600C4D421 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8DC2EF510486A6940098B216 /* Redland_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF5E0370ADEE00C91783 /* Redland_Prefix.pch */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
