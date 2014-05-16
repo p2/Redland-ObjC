@@ -1,0 +1,15 @@
+# sign in at https://travis-ci.org/#
+# http://docs.travis-ci.com/user/build-configuration/#Specify-branches-to-build
+branches:
+  only:
+    - feature/travis
+language: objective-c
+# http://docs.travis-ci.com/user/languages/objective-c/
+xcode_sdk:
+  - iphonesimulator7.0
+#  - iphonesimulator6.1
+#  - iphonesimulator6.0
+#  - iphonesimulator5.1
+#  - iphonesimulator5.0
+xcode_project: Redland.xcodeproj
+xcode_scheme: Redland iOS
