@@ -9,3 +9,5 @@ xcode_sdk:
 #  - iphonesimulator5.0
 xcode_project: Redland.xcodeproj
 xcode_scheme: Redland iOS
+before_install:
+  - git submodule update --init --recursive
