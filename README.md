@@ -2,7 +2,7 @@
 Redland Objective-C Wrapper
 ===========================
 
-[![Build Status](https://travis-ci.org/mro/Redland-ObjC.svg?branch=feature/travis)](https://travis-ci.org/mro/Redland-ObjC)
+[![Build Status](https://travis-ci.org/mro/Redland-ObjC.svg?branch=master)](https://travis-ci.org/mro/Redland-ObjC)
 
 This projects is a resurrection of Rene Puls' Objective-C wrapper for the [Redland C RDF libraries][librdf] for **Mac**, with the addition of a static library target suitable for **iOS**.
 The code now requires **Automatic Reference Counting** (ARC) to be enabled.
