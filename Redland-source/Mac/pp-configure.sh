@@ -29,4 +29,8 @@ export CXXFLAGS="$CFLAGS"
 
 export LDFLAGS="$ARCH -L$PREFIX/lib"
 
+# force sqlite use without pkg-config lookup
+export SQLITE_CFLAGS="-I${SDKROOT}/usr/include"
+export SQLITE_LIBS="-L${SDKROOT}/usr/lib -lsqlite3"
+
 ./configure --prefix="$PREFIX" ${confopts[@]}
