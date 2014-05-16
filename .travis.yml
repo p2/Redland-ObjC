@@ -13,3 +13,8 @@ xcode_sdk:
 #  - iphonesimulator5.0
 xcode_project: Redland.xcodeproj
 xcode_scheme: Redland iOS
+#
+# http://docs.travis-ci.com/user/caching/#Arbitrary-directories
+cache:
+  directories:
+  - Redland-source
