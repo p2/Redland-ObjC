@@ -23,7 +23,7 @@ FLAGS = {
 		'*': ['--with-decimal=none'], # strangely configure picks up a mpfr from somewhere for OS X/Sim builds...
 	},
 	'redland-1.0.17': {
-		'*': ['--disable-modular', '--without-sqlite=3', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
+		'*': ['--disable-modular', '--without-sqlite', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
 	},
 }
 
