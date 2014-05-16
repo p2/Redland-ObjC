@@ -3,7 +3,8 @@
 # http://docs.travis-ci.com/user/build-configuration/#Specify-branches-to-build
 branches:
   only:
-    - feature/travis
+    - master
+    - develop
 #
 # https://github.com/travis-ci/travis-ci/issues/2197#issuecomment-41177752
 before_install:
@@ -19,7 +20,9 @@ install:
 # http://docs.travis-ci.com/user/languages/objective-c/
 language: objective-c
 xcode_sdk:
+  - iphonesimulator7.1
   - iphonesimulator7.0
+  - iphonesimulator6.1
 xcode_project: Redland.xcodeproj
 xcode_scheme: Redland iOS
 #
