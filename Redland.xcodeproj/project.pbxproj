@@ -1062,7 +1062,6 @@
 				EEE7B45B15C84978004D5A68 /* Resources */,
 				EEE7B45915C84978004D5A68 /* Sources */,
 				EEE7B45A15C84978004D5A68 /* Frameworks */,
-				EEE7B45C15C84978004D5A68 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1189,19 +1188,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd $SRCROOT/Redland-source\n./start-over.sh";
-		};
-		EEE7B45C15C84978004D5A68 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
