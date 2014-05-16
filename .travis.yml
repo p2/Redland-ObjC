@@ -1,4 +1,8 @@
 # sign in at https://travis-ci.org/#
+# http://docs.travis-ci.com/user/build-configuration/#Specify-branches-to-build
+branches:
+  only:
+    - feature/travis
 language: objective-c
 # http://docs.travis-ci.com/user/languages/objective-c/
 xcode_sdk:
