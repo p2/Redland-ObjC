@@ -95,10 +95,6 @@ export CPPFLAGS="$CFLAGS"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="--sysroot=$SDKROOT -isysroot $SDKROOT -L${SDKROOT}/usr/lib/system -L${SDKROOT}/usr/lib -L${PREFIX}/lib"
 
-# force sqlite use without pkg-config lookup
-export SQLITE_CFLAGS="-I${SDKROOT}/usr/include"
-export SQLITE_LIBS="-L${SDKROOT}/usr/lib -lsqlite3"
-
 # set paths
 export CC=/usr/bin/gcc		# used to be "${DEVROOT}/usr/bin/gcc", but Xcode 5 no longer bundles gcc for iPhoneOS.platform
 unset CPP					# configure uses "$CC -E" if CPP is not set, which is needed for many configure scripts. So, DON'T set CPP

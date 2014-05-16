@@ -19,11 +19,8 @@ FLAGS = {
 	'raptor2-2.0.13': {
 		'*': ['--with-www=none'],
 	},
-	'rasqal-0.9.32': {
-		'*': ['--with-decimal=none'], # strangely configure picks up a mpfr from somewhere for OS X/Sim builds...
-	},
 	'redland-1.0.17': {
-		'*': ['--disable-modular', '--without-sqlite=3', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
+		'*': ['--disable-modular', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
 	},
 }
 
