@@ -9,6 +9,7 @@ branches:
 # http://docs.travis-ci.com/user/build-timeouts/#Build-times-out-because-no-output-was-received
 install: 
   - cd Redland-source && travis_wait python cross-compile.py
+  - cd -
 #
 # http://docs.travis-ci.com/user/languages/objective-c/
 language: objective-c
