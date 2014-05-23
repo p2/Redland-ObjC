@@ -141,16 +141,21 @@ NSString * const RedlandRelativeURIsFeature = @"http://feature.librdf.org/raptor
 	NSParameterAssert(aModel != nil);
 	NSParameterAssert(uri != nil);
 	
-	int result = librdf_parser_parse_string_into_model(wrappedObject,
+    const int txn_rc = librdf_model_transaction_start([aModel wrappedModel]);
+	const int result = librdf_parser_parse_string_into_model(wrappedObject,
 													   (unsigned char *)[aString UTF8String],
 													   [uri wrappedURI],
 													   [aModel wrappedModel]);
 	[[RedlandWorld defaultWorld] handleStoredErrors];
 	if (result != 0) {
+        if (txn_rc == 0)
+            librdf_model_transaction_rollback([aModel wrappedModel]);
 		@throw [RedlandException exceptionWithName:RedlandExceptionName
 											reason:@"librdf_parser_parse_string_into_model failed"
 										  userInfo:nil];
 	}
+    if (txn_rc == 0)
+        librdf_model_transaction_commit([aModel wrappedModel]);
 }
 
 /**
