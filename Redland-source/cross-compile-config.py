@@ -23,7 +23,9 @@ FLAGS = {
 		'*': ['--with-decimal=none'], # strangely configure picks up a mpfr from somewhere for OS X/Sim builds...
 	},
 	'redland-1.0.17': {
-		'*': ['--disable-modular', '--with-sqlite=3', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
+		# '--enable-modular', '--with-included-ltdl', 
+		# https://stackoverflow.com/questions/9575023/xcode-code-coverage-and-fopenunix2003
+		'*': ['--disable-modular', '--with-sqlite=yes', '--without-mysql', '--without-postgresql', '--without-virtuoso', '--without-bdb'],
 	},
 }
 
