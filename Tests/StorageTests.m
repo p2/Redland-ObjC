@@ -1,10 +1,10 @@
 //
 //  StorageTests.m
 //  Redland Objective-C Bindings
-//  $Id: StorageTests.m 4 2004-09-25 15:49:17Z kianga $
 //
 //  Copyright 2004 Rene Puls <http://purl.org/net/kianga/>
 //	Copyright 2012 Pascal Pfiffner <http://www.chip.org/>
+//	Copyright 2014 Marcus Rohrmoser mobile Softare <http://blog.mro.name/>
 //
 //  This file is available under the following three licenses:
 //   1. GNU Lesser General Public License (LGPL), version 2.1
@@ -25,6 +25,8 @@
 #import "StorageTests.h"
 
 #import "RedlandStorage.h"
+#import "RedlandWorld.h"
+#import <redland.h>
 
 @implementation StorageTests
 
@@ -34,6 +36,23 @@
     
     storage = [RedlandStorage new];
     STAssertNotNil(storage, nil);
+}
+
+
+-(void)testSqlitePresence
+{
+    // List available storage factories.
+    for(int counter = 0;;counter++) {
+        const char *name = NULL;
+        const char *label = NULL;
+        if(0 != librdf_storage_enumerate([RedlandWorld defaultWrappedWorld], counter, &name, &label))
+            break;
+        if (0 == strcmp("sqlite", name)) {
+            // how nice - found it.
+            return;
+        }
+    }
+    STFail(@"storage factory 'sqlite' not present.");
 }
 
 @end
