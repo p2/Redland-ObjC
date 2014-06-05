@@ -55,6 +55,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1608BDB719409EB100C52834 /* UNIX2003.c in Sources */ = {isa = PBXBuildFile; fileRef = 16F05C42192960AE00BDBF34 /* UNIX2003.c */; };
+		1608BDB819409EB400C52834 /* UNIX2003.c in Sources */ = {isa = PBXBuildFile; fileRef = 16F05C42192960AE00BDBF34 /* UNIX2003.c */; };
+		1608BDB919409EBB00C52834 /* UNIX2003.c in Sources */ = {isa = PBXBuildFile; fileRef = 16F05C42192960AE00BDBF34 /* UNIX2003.c */; };
+		1608BDBA19409EBB00C52834 /* UNIX2003.c in Sources */ = {isa = PBXBuildFile; fileRef = 16F05C42192960AE00BDBF34 /* UNIX2003.c */; };
 		169AB6971926AC0600C4D421 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 169AB6961926AC0600C4D421 /* libsqlite3.dylib */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8DC2EF510486A6940098B216 /* Redland_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF5E0370ADEE00C91783 /* Redland_Prefix.pch */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -314,6 +318,7 @@
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		169AB6961926AC0600C4D421 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libsqlite3.dylib; sourceTree = DEVELOPER_DIR; };
+		16F05C42192960AE00BDBF34 /* UNIX2003.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = UNIX2003.c; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* Redland_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Redland_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Redland.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Redland.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -539,6 +544,7 @@
 		0867D691FE84028FC02AAC07 /* Redland */ = {
 			isa = PBXGroup;
 			children = (
+				16F05C42192960AE00BDBF34 /* UNIX2003.c */,
 				EE1DDDF215BEDCC700882BDA /* README.md */,
 				ED98645906FAF0D8009186B3 /* LICENSE.txt */,
 				EDBA0E4807379BDD00610CB1 /* NOTICE.txt */,
@@ -1211,6 +1217,7 @@
 				EDAC63840694506E007A085A /* RedlandNamespace.m in Sources */,
 				ED11265F069DD654006F17FD /* RedlandException.m in Sources */,
 				ED486C9606DA6F7900AA6058 /* RedlandQuery.m in Sources */,
+				1608BDB919409EBB00C52834 /* UNIX2003.c in Sources */,
 				ED486CED06DA72DF00AA6058 /* RedlandQueryResults.m in Sources */,
 				ED486DF706DA80D500AA6058 /* RedlandQueryResultsEnumerator.m in Sources */,
 				ED3B0A6906E621FC001E4C72 /* RedlandModel-Convenience.m in Sources */,
@@ -1229,6 +1236,7 @@
 				ED48EBD608BB70A000ACF14F /* NodeTests.m in Sources */,
 				ED48EBFE08BB73EF00ACF14F /* StatementTests.m in Sources */,
 				ED48EC0908BB74F400ACF14F /* StorageTests.m in Sources */,
+				1608BDBA19409EBB00C52834 /* UNIX2003.c in Sources */,
 				ED48EC1408BB75A500ACF14F /* ModelTests.m in Sources */,
 				ED48EC1908BB760700ACF14F /* ParserTests.m in Sources */,
 				ED48EC2808BB776B00ACF14F /* SerializerTests.m in Sources */,
@@ -1255,6 +1263,7 @@
 				EEE7B48515C8499F004D5A68 /* RedlandQueryResults.m in Sources */,
 				EEE7B48615C849B3004D5A68 /* RedlandException.m in Sources */,
 				EEE7B48715C849B3004D5A68 /* RedlandModel-Convenience.m in Sources */,
+				1608BDB719409EB100C52834 /* UNIX2003.c in Sources */,
 				EEE7B48915C849B3004D5A68 /* RedlandStreamEnumerator.m in Sources */,
 				EEE7B48A15C849B3004D5A68 /* RedlandIteratorEnumerator.m in Sources */,
 				EEE7B48B15C849B3004D5A68 /* RedlandQueryResultsEnumerator.m in Sources */,
@@ -1273,6 +1282,7 @@
 				EE205F271602910A0020752E /* StatementTests.m in Sources */,
 				EE205F281602910A0020752E /* StorageTests.m in Sources */,
 				EE205F291602910A0020752E /* ModelTests.m in Sources */,
+				1608BDB819409EB400C52834 /* UNIX2003.c in Sources */,
 				EE205F2A1602910A0020752E /* ParserTests.m in Sources */,
 				EE205F2B1602910A0020752E /* SerializerTests.m in Sources */,
 				EE205F2C1602910A0020752E /* QueryTests.m in Sources */,
