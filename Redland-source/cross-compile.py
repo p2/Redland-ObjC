@@ -110,6 +110,9 @@ def main():
 		for url in SOURCES:
 			print shell_color('->  %s' % os.path.basename(url), 'magenta')
 			src = download(url, DOWNLOAD)
+			if src is None:
+				_compile_failed(None, "Failed to download %s" % url)
+				sys.exit(1)
 			
 			# unpack and build
 			for platform in ARCHS.keys():
@@ -199,7 +202,10 @@ def download(url, directory=None, filename=None, force=False, nostatus=False):
 			return path
 	
 	# create url and file handles
-	urlhandle = urllib2.urlopen(url)
+	try:
+		urlhandle = urllib2.urlopen(url)
+	except Exception as e:
+		return None
 	filehandle = open(path, 'wb')
 	meta = urlhandle.info()
 	

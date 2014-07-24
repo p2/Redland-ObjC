@@ -14,4 +14,4 @@ fi
 # cross compile
 python cross-compile.py
 
-exit 0
+exit $?
