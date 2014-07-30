@@ -1,0 +1,32 @@
+# sign in at https://travis-ci.org/#
+#
+# http://docs.travis-ci.com/user/build-configuration/#Specify-branches-to-build
+branches:
+  only:
+    - master
+    - develop
+#
+# https://github.com/travis-ci/travis-ci/issues/2197#issuecomment-41177752
+before_install:
+  - brew update
+  - brew upgrade xctool
+#
+# http://docs.travis-ci.com/user/installing-dependencies/#Installing-Projects-from-Source
+# http://docs.travis-ci.com/user/build-timeouts/#Build-times-out-because-no-output-was-received
+install: 
+  - cd Redland-source && travis_wait python cross-compile.py
+  - cd -
+#
+# http://docs.travis-ci.com/user/languages/objective-c/
+language: objective-c
+xcode_sdk:
+  - iphonesimulator7.1
+  - iphonesimulator7.0
+#  - iphonesimulator6.1
+xcode_project: Redland.xcodeproj
+xcode_scheme: Redland iOS
+#
+# http://docs.travis-ci.com/user/caching/#Arbitrary-directories
+cache:
+  directories:
+  - Redland-source
