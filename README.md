@@ -10,7 +10,8 @@ The wrapped libraries are:
 - rasqal _0.9.32_
 - redland _1.0.17_
 
-The **documentation** is available at [http://p2.github.io/Redland-ObjC/][docs]
+The **documentation** is available at [http://p2.github.io/Redland-ObjC/][docs].
+Please note that there will be compilation errors if the path to your project directory contains **spaces**.
 
 
 Getting the Framework
